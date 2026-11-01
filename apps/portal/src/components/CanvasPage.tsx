@@ -9,11 +9,12 @@ import {
   PenTool, 
   Image as ImageIcon, 
   Film, 
-  BookOpen
+  BookOpen,
+  Edit3
 } from 'lucide-react';
 import { MindulleSeal } from './MindulleSeal';
 
-type StudioTool = 'vector' | 'photo' | 'effect' | 'design';
+type StudioTool = 'draw' | 'vector' | 'photo' | 'effect' | 'design';
 
 interface ToolConfig {
   id: StudioTool;
@@ -31,6 +32,16 @@ interface ToolConfig {
 }
 
 const TOOLS: Record<StudioTool, ToolConfig> = {
+  draw: {
+    id: 'draw',
+    name: 'Sonagi Draw',
+    category: 'Infinite Whiteboard & Wireframing',
+    adobeEquivalent: 'FigJam / Miro',
+    version: 'v1.0.0',
+    cliBin: 'sonagi-draw',
+    webUrl: 'https://draw.sonagi.space/',
+    description: '실시간 무한 캔버스, Tldraw 기반 UI 와이어프레임 컴포넌트, Jambot형 AI 아이디에이션 및 Local API 브릿지 지원'
+  },
   vector: {
     id: 'vector',
     name: 'VectorCraft',
@@ -77,8 +88,8 @@ const TOOLS: Record<StudioTool, ToolConfig> = {
   }
 };
 
-export const CanvasPage: React.FC = () => {
-  const [activeTool, setActiveTool] = useState<StudioTool>('vector');
+export const CanvasPage: React.FC<{ initialTool?: StudioTool }> = ({ initialTool = 'draw' }) => {
+  const [activeTool, setActiveTool] = useState<StudioTool>(initialTool);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const current = TOOLS[activeTool];
@@ -102,6 +113,18 @@ export const CanvasPage: React.FC = () => {
 
           {/* App Switcher Tabs */}
           <div className="flex items-center gap-1 bg-black/40 p-1 rounded-sm border border-sng-border/60">
+            <button
+              onClick={() => setActiveTool('draw')}
+              className={`flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-sm transition-all ${
+                activeTool === 'draw'
+                  ? 'bg-cyan-400 text-black shadow-sm font-bold'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <Edit3 className="w-3.5 h-3.5" />
+              <span>Draw</span>
+            </button>
+
             <button
               onClick={() => setActiveTool('vector')}
               className={`flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-sm transition-all ${

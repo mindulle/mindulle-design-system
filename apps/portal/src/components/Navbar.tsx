@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Film, BookOpen, PenTool } from 'lucide-react';
+import { Github, Film, BookOpen, PenTool, Edit3 } from 'lucide-react';
 import { MindulleSeal } from './MindulleSeal';
 
 export const Navbar: React.FC = () => {
@@ -46,6 +46,14 @@ export const Navbar: React.FC = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-3">
+          <Link
+            to="/draw"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-cyan-300 border-2 border-cyan-500/60 bg-cyan-500/10 rounded-sm hover:bg-cyan-500/20 transition-all"
+            title="Open Sonagi Draw Whiteboard Studio"
+          >
+            <Edit3 className="w-3.5 h-3.5" />
+            <span>Draw ↗</span>
+          </Link>
           <a
             href="https://draw.sonagi.space/vector/"
             target="_blank"

@@ -151,7 +151,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/canvas" element={<CanvasPage />} />
+        <Route path="/draw" element={<CanvasPage initialTool="draw" />} />
+        <Route path="/canvas" element={<CanvasPage initialTool="draw" />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/playground" element={<Playground />} />
       </Routes>

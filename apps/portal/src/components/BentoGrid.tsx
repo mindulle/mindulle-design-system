@@ -103,8 +103,15 @@ export const BentoGrid: React.FC = () => {
                 Canvas Bridge를 통해 프롬프트로 다이어그램과 와이어프레임을 즉각 타건합니다.
               </p>
             </div>
-            <div className="font-mono text-xs text-sng-cyan/80 bg-black/40 p-3 rounded-sm border border-sng-cyan/30">
-              wired-card &gt; canvas_bridge &gt; push_to_canvas()
+            <div className="pt-4 border-t-2 border-sng-border flex items-center justify-between">
+              <span className="text-xs font-mono text-sng-cyan">Jambot AI • Local Bridge</span>
+              <Link
+                to="/draw"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-sng-cyan/10 text-sng-cyan border-2 border-sng-cyan rounded-sm text-xs font-semibold hover:bg-sng-cyan hover:text-black transition-all"
+              >
+                캔버스 실행
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </motion.div>
 
