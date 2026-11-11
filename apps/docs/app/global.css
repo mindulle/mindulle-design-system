@@ -17,6 +17,9 @@
   --color-fd-border: #e4e4e7;
   --color-fd-card: #ffffff;
   --color-fd-card-foreground: #18181b;
+
+  --sng-color-bg-surface: #ffffff;
+  --sng-color-background-surface: #ffffff;
 }
 
 .dark {
@@ -33,6 +36,8 @@
   /* Synchronize MDS tokens with Fumadocs dark mode class */
   --sng-color-text-primary: #f1f5f9;
   --sng-color-bg-base: #12151d;
+  --sng-color-bg-surface: #1b202c;
+  --sng-color-background-surface: #1b202c;
   --sng-color-border-default: #2c3547;
 }
 
