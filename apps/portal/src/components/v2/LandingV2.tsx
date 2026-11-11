@@ -2,6 +2,16 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import HeroScene from '../HeroScene';
 
+const MotifMark = ({ variant = 'sail' }: { variant?: 'sail' | 'seed' | 'axis' }) => (
+  <svg aria-hidden="true" className={`motif-mark motif-mark--${variant}`} viewBox="0 0 160 160" fill="none">
+    <path className="motif-axis" d="M80 132V28" />
+    <path className="motif-sail" d="M80 36C112 42 132 62 148 88C116 88 94 76 80 62Z" />
+    <path className="motif-sail motif-sail--secondary" d="M80 62C58 82 44 104 38 132" />
+    <circle className="motif-seed" cx="80" cy="132" r="9" />
+    {variant !== 'axis' && <path className="motif-rays" d="M80 132L52 150M80 132V156M80 132L108 150" />}
+  </svg>
+);
+
 export const LandingV2: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -154,6 +164,7 @@ export const LandingV2: React.FC = () => {
           >
             <HeroScene />
           </motion.div>
+          <div className="motif-hero-mark" aria-hidden="true"><MotifMark variant="sail" /></div>
 
           {/* Top Header Bar */}
           <header className="relative z-10 w-full max-w-[1824px] mx-auto h-[72px] px-8 flex items-center justify-between border-2 border-mds-border bg-mds-card/90 backdrop-blur-md rounded-sm">
@@ -309,6 +320,7 @@ export const LandingV2: React.FC = () => {
                 key={t.id}
                 className="w-[440px] md:w-[480px] h-[340px] p-8 rounded-sm bg-mds-card border-2 border-mds-border hover:border-mds-gold flex flex-col justify-between shadow-2xl transition-colors duration-300 group flex-shrink-0"
               >
+                <div className="motif-card-mark" aria-hidden="true"><MotifMark variant={t.id === '03' ? 'seed' : 'axis'} /></div>
                 <div className="flex items-center justify-between">
                   <span className="font-mono font-bold text-xs text-mds-gold">
                     ARTIFACT • {t.id}
@@ -369,6 +381,7 @@ export const LandingV2: React.FC = () => {
                 whileHover={{ y: -6, borderColor: 'var(--mds-color-brand-accent, #ffd166)' }}
                 className="p-6 rounded-sm bg-mds-dark border-2 border-mds-border flex flex-col justify-between space-y-6 shadow-xl group transition-colors min-h-[380px]"
               >
+                <div className="motif-card-mark motif-card-mark--small" aria-hidden="true"><MotifMark variant={idx % 2 ? 'seed' : 'sail'} /></div>
                 <div className="flex flex-col space-y-1">
                   <span className="font-mono font-bold text-xs text-mds-gold">
                     SCENE • {s.num}

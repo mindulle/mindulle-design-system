@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" fill="none">
+  <title>Mindulle Graphic Motif System</title>
+  <g stroke="#47211b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M80 244C136 204 176 132 202 52"/>
+    <path d="M196 58C242 74 280 106 314 154C264 150 220 132 196 104Z" fill="#f5e5e2"/>
+    <path d="M196 58C244 48 294 62 334 98C288 112 242 102 196 82Z" fill="#fcf2f0"/>
+    <path d="M202 244V52"/>
+    <path d="M176 246H228"/>
+    <circle cx="202" cy="244" r="10" fill="#ffd166" stroke="#b86a04"/>
+    <circle cx="202" cy="244" r="3" fill="#47211b" stroke="none"/>
+  </g>
+  <g transform="translate(420 54)" stroke="#47211b" stroke-width="2" stroke-linecap="round">
+    <path d="M0 128C36 86 82 48 128 0"/>
+    <path d="M128 0C148 36 160 76 156 128C112 104 94 64 128 0Z" fill="#f5e5e2"/>
+    <path d="M128 0C92 20 60 50 42 84" stroke="#d2645f"/>
+    <circle cx="128" cy="0" r="9" fill="#ffd166" stroke="#b86a04"/>
+    <path d="M128 0L170 22M128 0L180 0M128 0L166 -25" stroke="#b86a04"/>
+  </g>
+  <g transform="translate(720 48)" stroke="#47211b" stroke-width="2" stroke-linecap="round">
+    <path d="M60 210V34"/>
+    <path d="M60 34C104 44 138 70 166 112C120 112 84 94 60 72Z" fill="#f5e5e2"/>
+    <path d="M60 72C36 98 18 130 10 172" stroke="#d2645f"/>
+    <path d="M14 210H106"/>
+    <circle cx="60" cy="210" r="12" fill="#ffd166" stroke="#b86a04"/>
+    <circle cx="60" cy="210" r="3" fill="#47211b" stroke="none"/>
+    <path d="M60 210L18 238M60 210L60 252M60 210L102 238" stroke="#b86a04"/>
+  </g>
+</svg>

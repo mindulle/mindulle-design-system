@@ -57,6 +57,99 @@ body {
   font-family: var(--sng-font-sans), 'Pretendard', 'Inter', system-ui, sans-serif;
 }
 
+/* MDS-28 Graphic Motif System */
+.mds-motif-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 3rem;
+}
+
+.mds-motif-card {
+  position: relative;
+  min-height: 220px;
+  padding: 1.25rem;
+  overflow: hidden;
+  border: 2px solid var(--sng-color-border-default);
+  border-radius: var(--sng-radius-md, 8px);
+  background: var(--sng-color-background-surface);
+}
+
+.mds-motif-card::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -44px;
+  bottom: -64px;
+  border: 2px solid var(--sng-color-brand-accent);
+  border-radius: 58% 42% 60% 40%;
+  transform: rotate(-24deg);
+  opacity: 0.45;
+}
+
+.mds-motif-card--seed::after {
+  content: '✦';
+  position: absolute;
+  right: 2rem;
+  bottom: 1.25rem;
+  color: var(--sng-color-brand-accent);
+  font-size: 2rem;
+}
+
+.mds-motif-card--axis {
+  border-left-width: 6px;
+}
+
+.mds-motif-index {
+  display: block;
+  margin-bottom: 4rem;
+  color: var(--sng-color-brand-primary);
+  font: 600 0.7rem/1.2 var(--sng-font-mono, monospace);
+  letter-spacing: 0.08em;
+}
+
+.mds-motif-card strong,
+.mds-motif-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.mds-motif-card strong {
+  display: block;
+  font-size: 1.05rem;
+}
+.mds-motif-card p {
+  color: var(--color-fd-muted-foreground);
+  font-size: 0.85rem;
+}
+
+.mds-empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  margin: 2rem 0;
+  padding: 2rem;
+  border: 2px dashed var(--sng-color-border-default);
+  border-radius: var(--sng-radius-md, 8px);
+  text-align: center;
+  background: var(--sng-color-background-surface);
+}
+
+.mds-empty-state::before {
+  content: '✦';
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--sng-color-brand-accent);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .mds-motif-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==========================================================================
    Fumadocs Official Spacing & Section Breaks
    Clean negative space between sections without artificial borders

@@ -17,3 +17,61 @@ html {
   border: 2px solid #1e2430;
   border-radius: 4px;
 }
+
+/* MDS-28: motif language — sail curve, seed, and structural axis. */
+.motif-mark {
+  width: 160px;
+  height: 160px;
+  opacity: 0.28;
+}
+.motif-axis,
+.motif-sail,
+.motif-rays {
+  stroke: #ffd166;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.motif-sail {
+  fill: rgba(255, 209, 102, 0.08);
+}
+.motif-sail--secondary {
+  fill: none;
+  stroke: #d2645f;
+}
+.motif-seed {
+  fill: #ffd166;
+  stroke: #b86a04;
+  stroke-width: 2;
+}
+.motif-rays {
+  stroke: #b86a04;
+}
+.motif-hero-mark {
+  position: absolute;
+  right: 9%;
+  bottom: 12%;
+  z-index: 1;
+  pointer-events: none;
+  transform: scale(2.2) rotate(-8deg);
+}
+.motif-card-mark {
+  position: absolute;
+  right: 10px;
+  top: 28px;
+  pointer-events: none;
+}
+.motif-card-mark--small {
+  right: -12px;
+  top: 12px;
+  transform: scale(0.8);
+}
+.motif-card-mark + * {
+  position: relative;
+  z-index: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .motif-hero-mark {
+    transform: none;
+  }
+}
