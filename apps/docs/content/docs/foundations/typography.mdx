@@ -1,0 +1,99 @@
+---
+title: 타이포그래피 (Typography & Display)
+description: 한국어 시네마틱 디스플레이 서체와 2px True Stem 헌법 가이드
+---
+
+# 타이포그래피 (Typography)
+
+민들레 디자인 시스템(MDS)은 **"정갈한 분석(Analytics)과 시적 에디토리얼(Editorial)"**의 만남을 지향합니다.
+본문과 UI 요소에는 높은 가독성의 `Pretendard / Inter` 고딕 스택을 채택하고, 히어로 선언문과 전시관, 철학 인용부에는 독자적인 **한국어 시네마틱 디스플레이 서체 스택**을 적용합니다.
+
+---
+
+## 🏛️ 디스플레이 서체 헌법 (The Display Constitution)
+
+MDS 디스플레이 스케일은 다음 3대 원칙을 엄격히 강제합니다:
+
+1. **2px True Stem (최소 기둥 두께 수호)**:
+   - 디스플레이 폰트 크기(≥36px)에서 세로 기둥의 실측 두께가 **최소 2px(실측 2.4px~2.8px)** 이상이어야 합니다.
+   - 고해상도 레티나 디스플레이 및 다크모드에서 세리프 헤어라인이 1px 미만으로 증발하는 현상을 방지합니다.
+2. **Cormorant Garamond 광학 일치도 (Optical Harmony)**:
+   - 영문 대표 서체인 `Cormorant Garamond 700`의 클래식한 세리프 각도 및 스트로크 콘트라스트와 90% 이상의 시각적 조화를 이루는 한글 폰트를 매칭합니다.
+   - `sonagi-graph`의 `visual_consistency_graph` 파이프라인 심사를 통해 **Noto Serif KR 700(96% 조화도)**과 **Maru Buri(휴머니스트 에디토리얼)**를 공식 확정했습니다 (평가 점수: 97/100 `PASS`).
+3. **용도별 듀얼 디스플레이 스택 분리**:
+   - **Cinematic Display (Primary)**: 볼드하고 압도적인 웅장함을 전달하는 메인 타이틀 (`--sng-font-cinematic-display`)
+   - **Editorial Humanist (Secondary)**: 아틀리에 에세이, 시적 매니페스토 및 감성적 인용문 (`--sng-font-editorial-humanist`)
+
+---
+
+## 🎬 4대 디스플레이 스케일 표본 (Live Specimen)
+
+아래는 Figma SSOT 정본(`node: 402:991`)과 1:1로 동기화된 라이브 인터랙티브 타이포그래피 표본입니다:
+
+<TypographySpecimen />
+
+---
+
+## 📐 서체 패밀리 스택 정의
+
+| 서체 역할 | CSS font-family 스택 | 토큰 변수명 | 권장 사용처 |
+| :--- | :--- | :--- | :--- |
+| **Cinematic Display** | `'Cormorant Garamond', 'Noto Serif KR', Georgia, serif` | `--sng-font-cinematic-display` | 히어로 헤드라인, 3D 쇼룸 타이틀 (≥36px) |
+| **Editorial Humanist** | `'Cormorant Garamond', 'MaruBuri', Georgia, serif` | `--sng-font-editorial-humanist` | 아틀리에 에세이, 매니페스토 명문, 인용구 |
+| **Primary Sans (UI)** | `'Pretendard', 'Inter', system-ui, sans-serif` | `--sng-font-sans` | 버튼, 폼, 테이블, 본문 레이블 (11px~18px) |
+| **Editorial Serif** | `'Noto Serif KR', 'Merriweather', Georgia, serif` | `--sng-font-serif` | 장문의 서술형 스토리텔링 본문 |
+| **Monospace (Code)** | `'JetBrains Mono', 'Fira Code', monospace` | `--sng-font-mono` | 코드 블록, 터미널, 데이터 수치 표기 |
+
+---
+
+## 💻 코드 사용법
+
+### 1. Tailwind CSS 유틸리티 클래스
+
+```tsx
+// 1) 시네마틱 히어로 타이틀
+<h1 className="font-cinematic text-5xl font-bold tracking-tight text-white">
+  겨울 끝, 민들레의 비상
+</h1>
+
+// 2) 에디토리얼 감성 부제 및 인용문
+<p className="font-editorial text-2xl font-bold text-amber-400">
+  척박한 콘크리트 틈에서 피어나는 다정함
+</p>
+
+// 3) UI 기본 본문
+<p className="font-sans text-sm text-zinc-400">
+  16종 인터랙티브 컴포넌트와 W3C 시맨틱 토큰 매트릭스.
+</p>
+```
+
+### 2. CSS 변수 직접 호출
+
+```css
+.hero-title {
+  font-family: var(--sng-font-cinematic-display);
+  font-weight: 700;
+  font-size: 4rem; /* 64px */
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.essay-quote {
+  font-family: var(--sng-font-editorial-humanist);
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.4;
+}
+```
+
+---
+
+## 🎨 Figma SSOT 동기화 현황
+
+- **Figma File**: `Mindulle Design System v0.1.0` (Key: `AEoW19jmlUh3rFgzhhV1vH`)
+- **Foundations Board**: `Mindulle Foundations (SSOT Live Sync)` (Node: `198:2974`)
+- **Specimen Card**: `node: 402:991` (`🎬 3. Cinematic Display Scale (True 2px Stem)`)
+- **Figma Local Text Styles**:
+  1. `Display / Cinematic Hero` (64px, Line height 115%, Letter spacing -2.5%)
+  2. `Display / Cinematic Section` (36px, Line height 125%, Letter spacing -2.0%)
+  3. `Display / Editorial Humanist` (36px, Line height 130%, Letter spacing -1.0%)
+  4. `Display / Editorial Quote` (24px, Line height 140%, Letter spacing 0%)

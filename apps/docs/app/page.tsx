@@ -61,13 +61,13 @@ export default function HomePage() {
         {/* Slogan pill badge */}
         <div className="mb-6 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-500 text-xs font-semibold tracking-wide shadow-sm">
           <Sparkles className="size-3.5" />
-          <span>겨울 끝, 민들레.</span>
+          <span className="font-editorial">겨울 끝, 민들레.</span>
           <span className="opacity-40">|</span>
           <span className="font-mono text-[11px] opacity-90">MDS v0.1.0</span>
         </div>
 
-        {/* Main Heading (break-keep & text-balance for clean Korean wrapping) */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight break-keep leading-[1.25] sm:leading-[1.18] max-w-4xl">
+        {/* Main Heading (Korean Cinematic Display: Cormorant Garamond + Noto Serif KR) */}
+        <h1 className="font-cinematic text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight break-keep leading-[1.25] sm:leading-[1.18] max-w-4xl">
           실무를 위한 단단하고 정갈한 <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500">
             민들레 디자인 시스템
@@ -75,7 +75,7 @@ export default function HomePage() {
         </h1>
 
         {/* Description text with break-keep */}
-        <p className="max-w-lg text-sm sm:text-base md:text-lg text-fd-muted-foreground mt-4 mb-7 sm:mb-9 leading-relaxed break-keep font-medium">
+        <p className="font-editorial max-w-lg text-sm sm:text-base md:text-lg text-fd-muted-foreground mt-4 mb-7 sm:mb-9 leading-relaxed break-keep font-medium">
           16종 인터랙티브 컴포넌트와 W3C 시맨틱 토큰 매트릭스.
         </p>
 
@@ -131,7 +131,7 @@ export default function HomePage() {
             <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-amber-500 mb-1">
               DESIGN CONSTITUTION
             </span>
-            <h2 className="text-xl sm:text-2xl font-bold tracking-tight">민들레 3대 조형 헌법</h2>
+            <h2 className="font-cinematic text-xl sm:text-2xl font-bold tracking-tight">민들레 3대 조형 헌법</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-left w-full">

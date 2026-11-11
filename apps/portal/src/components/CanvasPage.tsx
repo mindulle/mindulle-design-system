@@ -10,11 +10,12 @@ import {
   Image as ImageIcon, 
   Film, 
   BookOpen,
-  Edit3
+  Edit3,
+  Video
 } from 'lucide-react';
 import { MindulleSeal } from './MindulleSeal';
 
-type StudioTool = 'draw' | 'vector' | 'photo' | 'effect' | 'design';
+type StudioTool = 'draw' | 'vector' | 'photo' | 'effect' | 'design' | 'video';
 
 interface ToolConfig {
   id: StudioTool;
@@ -85,6 +86,16 @@ const TOOLS: Record<StudioTool, ToolConfig> = {
     cliBin: 'designcraft-cli',
     webUrl: 'https://draw.sonagi.space/publish/',
     description: '다단 그리드 조판, 마스터 페이지, 단락 스타일 및 인쇄 규격 고해상도 PDF 출판'
+  },
+  video: {
+    id: 'video',
+    name: 'FilmCraft',
+    category: 'Non-Linear Video Editing',
+    adobeEquivalent: 'Premiere Pro',
+    version: 'v0.17.0',
+    cliBin: 'filmcraft-cli',
+    webUrl: 'https://draw.sonagi.space/video/',
+    description: '멀티트랙 비디오/오디오 타임라인, 정밀 컷편집, 실시간 트랜스코딩 및 헤드리스 렌더링'
   }
 };
 
@@ -171,6 +182,18 @@ export const CanvasPage: React.FC<{ initialTool?: StudioTool }> = ({ initialTool
             >
               <BookOpen className="w-3.5 h-3.5" />
               <span>Publish</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTool('video')}
+              className={`flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-sm transition-all ${
+                activeTool === 'video'
+                  ? 'bg-sky-400 text-black shadow-sm font-bold'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+              }`}
+            >
+              <Video className="w-3.5 h-3.5" />
+              <span>Video</span>
             </button>
           </div>
 

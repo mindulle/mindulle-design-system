@@ -42,6 +42,22 @@ body {
 }
 
 /* ==========================================================================
+   MDS Korean Cinematic Display Typography Utilities
+   ========================================================================== */
+.font-cinematic {
+  font-family:
+    var(--sng-font-cinematic-display), 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+}
+
+.font-editorial {
+  font-family: var(--sng-font-editorial-humanist), 'Cormorant Garamond', 'MaruBuri', Georgia, serif;
+}
+
+.font-sans-ui {
+  font-family: var(--sng-font-sans), 'Pretendard', 'Inter', system-ui, sans-serif;
+}
+
+/* ==========================================================================
    Fumadocs Official Spacing & Section Breaks
    Clean negative space between sections without artificial borders
    ========================================================================== */
@@ -107,9 +123,12 @@ body {
 }
 
 /* Headings spacing and visual hierarchy */
-.prose h1 {
-  font-size: 2rem !important;
-  font-weight: 800 !important;
+.prose h1,
+h1[data-card-title] {
+  font-family:
+    var(--sng-font-cinematic-display), 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif !important;
+  font-size: 2.15rem !important;
+  font-weight: 700 !important;
   line-height: 1.25 !important;
   margin-top: 2rem !important;
   margin-bottom: 1.25rem !important;
