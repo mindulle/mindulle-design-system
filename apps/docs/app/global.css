@@ -18,8 +18,13 @@
   --color-fd-card: #ffffff;
   --color-fd-card-foreground: #18181b;
 
+  --sng-color-bg-base: #fbfbfa;
   --sng-color-bg-surface: #ffffff;
+  --sng-color-bg-elevated: #ffffff;
   --sng-color-background-surface: #ffffff;
+  --sng-color-background-elevated: #ffffff;
+  --sng-color-text-primary: #18181b;
+  --sng-color-border-default: #e4e4e7;
 }
 
 .dark {
@@ -37,7 +42,9 @@
   --sng-color-text-primary: #f1f5f9;
   --sng-color-bg-base: #12151d;
   --sng-color-bg-surface: #1b202c;
+  --sng-color-bg-elevated: #242b3b;
   --sng-color-background-surface: #1b202c;
+  --sng-color-background-elevated: #242b3b;
   --sng-color-border-default: #2c3547;
 }
 

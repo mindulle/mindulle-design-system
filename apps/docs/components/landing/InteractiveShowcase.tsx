@@ -130,7 +130,7 @@ export function InteractiveShowcase() {
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              className="w-full text-xs p-2 rounded-sm border-2 border-fd-border bg-fd-background text-fd-foreground focus:outline-none focus:border-amber-500"
+              className="w-full text-xs p-2 rounded-sm border-2 border-fd-border bg-fd-card text-fd-foreground focus:outline-none focus:border-amber-500 font-medium"
             />
           </div>
         </div>
@@ -164,7 +164,7 @@ export function InteractiveShowcase() {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   placeholder="텍스트를 입력하세요"
-                  className="bg-fd-background text-fd-foreground border-2 border-fd-border"
+                  className="!bg-fd-background !text-fd-foreground !border-2 !border-fd-border font-medium focus:!border-amber-500"
                 />
               </div>
 
