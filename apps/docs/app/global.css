@@ -29,6 +29,11 @@
   --color-fd-border: #2c3547;
   --color-fd-card: #1b202c;
   --color-fd-card-foreground: #f1f5f9;
+
+  /* Synchronize MDS tokens with Fumadocs dark mode class */
+  --sng-color-text-primary: #f1f5f9;
+  --sng-color-bg-base: #12151d;
+  --sng-color-border-default: #2c3547;
 }
 
 /* MDS 2px Stem styling on FumaDocs elements */
@@ -39,6 +44,8 @@ aside.fd-sidebar {
 
 body {
   font-family: var(--sng-font-sans, system-ui, -apple-system, sans-serif);
+  color: var(--color-fd-foreground);
+  background-color: var(--color-fd-background);
 }
 
 /* ==========================================================================
@@ -208,6 +215,7 @@ body {
   display: flex !important;
   align-items: center !important;
   gap: 8px !important;
+  color: var(--color-fd-muted-foreground) !important;
   transition: all 120ms ease-in-out;
 }
 
@@ -221,6 +229,21 @@ body {
 /* Active Item (Currently Selected Page) */
 :is([id*='sidebar'], aside.fd-sidebar) a[data-active='true'] {
   background-color: rgba(255, 200, 55, 0.14) !important;
+  color: #ffc837 !important;
+  font-weight: 600 !important;
+}
+
+/* Table of Contents (TOC) Items */
+#nd-toc a {
+  color: var(--color-fd-muted-foreground) !important;
+  transition: all 120ms ease-in-out;
+}
+
+#nd-toc a:hover {
+  color: var(--color-fd-foreground) !important;
+}
+
+#nd-toc a[data-active='true'] {
   color: #ffc837 !important;
   font-weight: 600 !important;
 }
