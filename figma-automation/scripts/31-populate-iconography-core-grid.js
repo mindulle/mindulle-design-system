@@ -20,23 +20,13 @@ return new Promise(async (resolve, reject) => {
   const FOUNDATIONS_ID = '198:2974';
   const GRID_NAME = 'Foundations / Iconography / Core 9';
 
+  // Existing published/local components are the icon SSOT. Add a registry
+  // entry here when extending the core set; do not redraw SVGs in this script.
   const CORE_ICONS = [
-    ['add', '<line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/>'],
-    ['arrow-right', '<line x1="4" y1="12" x2="20" y2="12"/><polyline points="13 5 20 12 13 19"/>'],
-    ['check', '<polyline points="19 7 9 17 5 13"/>'],
-    ['close', '<line x1="19" y1="5" x2="5" y2="19"/><line x1="5" y1="5" x2="19" y2="19"/>'],
-    ['document', '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/>'],
-    ['home', '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>'],
-    ['menu', '<line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/>'],
-    ['search', '<circle cx="10" cy="10" r="7"/><line x1="15" y1="15" x2="21" y2="21"/>'],
-    ['user', '<circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.42 3.58-8 8-8s8 3.58 8 8"/>'],
+    ['add', '325:32'], ['arrow-right', '325:13'], ['check', '325:35'],
+    ['close', '325:20'], ['document', '325:24'], ['home', '325:16'],
+    ['menu', '325:40'], ['search', '325:28'], ['user', '325:9'],
   ];
-
-  const svgFor = (name, body) => `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-      fill="none" stroke="#1c1514" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      ${body}
-    </svg>`;
 
   const wrapper = figma.getNodeById(WRAPPER_ID);
   const foundations = figma.getNodeById(FOUNDATIONS_ID);
@@ -50,13 +40,15 @@ return new Promise(async (resolve, reject) => {
   // Populate each wrapper variant with a representative Search icon.
   // The actual icon remains swappable through the component property.
   if (wrapper.type === 'COMPONENT_SET') {
+    const search = await figma.getNodeByIdAsync('325:28');
+    if (!search || search.type !== 'COMPONENT') throw new Error('Search component 325:28 not found');
     const variants = wrapper.children.filter((node) => node.type === 'COMPONENT');
     for (const variant of variants) {
       const old = variant.findChildren(
         (node) => node.name === 'Icon Placeholder' || node.type === 'ELLIPSE'
       );
       old.forEach((node) => node.remove());
-      const icon = figma.createNodeFromSvg(svgFor('search', CORE_ICONS.find(([name]) => name === 'search')[1]));
+      const icon = search.createInstance();
       icon.name = 'Icon / MdsSearchIcon / 24px';
       icon.resize(24, 24);
       icon.x = (variant.width - 24) / 2;
@@ -82,7 +74,7 @@ return new Promise(async (resolve, reject) => {
   grid.children.slice().forEach((node) => node.remove());
   const tileSize = 64;
   const gap = 16;
-  CORE_ICONS.forEach(([name, body], index) => {
+  for (const [index, [name, componentId]] of CORE_ICONS.entries()) {
     const tile = figma.createFrame();
     tile.name = `Icon / Mds${name[0].toUpperCase()}${name.slice(1)}Icon`;
     tile.resize(tileSize, 112);
@@ -91,7 +83,9 @@ return new Promise(async (resolve, reject) => {
     tile.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
     tile.cornerRadius = 8;
 
-    const icon = figma.createNodeFromSvg(svgFor(name, body));
+    const component = await figma.getNodeByIdAsync(componentId);
+    if (!component || component.type !== 'COMPONENT') throw new Error(`Missing icon component: ${componentId}`);
+    const icon = component.createInstance();
     icon.name = `Mds${name[0].toUpperCase()}${name.slice(1)}Icon / 24px / 2px`;
     icon.resize(24, 24);
     icon.x = 20;
@@ -107,9 +101,6 @@ return new Promise(async (resolve, reject) => {
     label.y = 76;
     tile.appendChild(label);
     grid.appendChild(tile);
-  });
-
-  figma.currentPage.selection = [grid];
-  figma.viewport.scrollAndZoomIntoView([grid]);
+  }
   resolve({ wrapperId: WRAPPER_ID, gridId: grid.id, icons: CORE_ICONS.length });
 });
