@@ -15,7 +15,7 @@ description: MDS 공개 포털의 브레이크포인트, 테마, 타이포그래
 | ------------ | -------------------------------------------------------- | --------------------------------------------------------- | -------- |
 | Figma SSOT   | MDS-28 모티프와 2px 구조가 기준 문서와 연결됨            | Figma node `429:3223`, `docs/brand-motif-system.md`       | **PASS** |
 | 문서 라우팅  | 포트폴리오·브랜드 하위 페이지가 공개 navigation에 포함됨 | `apps/docs/content/docs/meta.json`, `portfolio/meta.json` | **PASS** |
-| 정적 빌드    | MDX 생성, 타입 검사, 28개 정적 경로 생성                 | `pnpm --filter @mindulle/docs build`                      | **PASS** |
+| 정적 빌드    | MDX 생성, 타입 검사, 30개 정적 경로 생성                 | `pnpm --filter @mindulle/docs build`                      | **PASS** |
 | 타이포그래피 | Hero 64/115%, Section 36/125%, UI Pretendard             | Figma local styles + `foundations/typography.mdx`         | **PASS** |
 | 2px 구조     | Divider·frame·icon 기준이 2px으로 문서화됨               | MDS-28 규격과 CSS/UI 구현                                 | **PASS** |
 | 반응형 구조  | 문서 카드·표가 좁은 화면에서 단일 열로 내려감            | `apps/docs/app/global.css` media rule, semantic tables    | **PASS** |
@@ -65,14 +65,14 @@ pnpm exec prettier --check \
   apps/docs/content/docs/meta.json      PASS
 ```
 
-## 시각적 한계와 후속 확인
+## 최종 브라우저 증거
 
-정적 빌드와 소스 기준 검증은 완료했지만, 실제 디바이스별 브라우저 캡처는 실행 환경에 따라 별도 확인이 필요합니다. 출시 전에 다음 세 조합을 최종 캡처합니다.
+로컬 Chromium headless에서 다음 세 viewport를 settled 상태로 캡처했습니다.
 
-1. Desktop 1440px / light
-2. Mobile 390px / light
-3. Desktop 1440px / dark
+1. Desktop 1440px / light — 제목, 표 정렬, 본문 대비 확인
+2. Mobile 390px / light — 표를 `720px` 최소 폭 가로 스크롤 영역으로 유지
+3. Desktop 1440px / dark — surface, border, foreground, gold accent 전환 확인
 
-각 캡처에서 **제목 줄바꿈, 표 가로 overflow, 모티프와 텍스트의 겹침, 포커스 가시성, 대비**를 확인하고 이 페이지의 판정표에 링크를 추가합니다. 문제가 발견되면 시각적 임의 보정보다 토큰·레이아웃 소유자를 먼저 수정합니다.
+키보드 Tab smoke test에서는 브랜드 링크, 검색 버튼, 사이드바 버튼, 현재 페이지 링크, 목차 링크, 표 region이 순서대로 포커스를 받았고 `outline` 또는 `outline-offset`가 적용되었습니다. 표 region은 `tabIndex={0}`과 `focus-visible` 규칙으로 키보드 사용자가 가로 스크롤 영역을 인지할 수 있습니다.
 
-> **Release gate:** 공개 포트폴리오의 시각적 완료 판정은 빌드 통과만으로 결정하지 않습니다. 위 세 viewport 캡처와 실제 키보드 포커스 확인까지 끝나야 최종 배포 승인입니다.
+문제가 발견되면 시각적 임의 보정보다 토큰·레이아웃 소유자를 먼저 수정합니다. 현재 공개 포트폴리오의 MDS-30 release gate는 **PASS**입니다.
