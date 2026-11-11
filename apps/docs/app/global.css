@@ -144,6 +144,26 @@ body {
   font-size: 1.5rem;
 }
 
+/* MDS-30: preserve comparison tables on narrow viewports without crushing cells. */
+.mds-case-study-table {
+  max-width: 100%;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.mds-case-study-table:focus-visible {
+  outline: 2px solid var(--sng-color-brand-accent);
+  outline-offset: 4px;
+}
+
+.mds-case-study-table table {
+  min-width: 720px;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .mds-motif-grid {
     grid-template-columns: 1fr;
