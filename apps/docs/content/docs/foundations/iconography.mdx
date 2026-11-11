@@ -80,6 +80,23 @@ Figma의 코어 아이콘 인스턴스명, React의 정식 export, 문서 예제
 새 코드와 Figma 인스턴스에는 `Mds*Icon`을 사용하고, `Sng*Icon`은 기존 import를
 깨뜨리지 않기 위한 호환 레이어로만 사용합니다.
 
+### Core 9 네이밍 manifest
+
+| Figma 인스턴스 | 정식 Code export | 레거시 별칭 |
+| :--- | :--- | :--- |
+| `Icon / MdsAddIcon / 2px` | `MdsAddIcon` | `SngAddIcon` |
+| `Icon / MdsArrowRightIcon / 2px` | `MdsArrowRightIcon` | `SngArrowRightIcon` |
+| `Icon / MdsCheckIcon / 2px` | `MdsCheckIcon` | `SngCheckIcon` |
+| `Icon / MdsCloseIcon / 2px` | `MdsCloseIcon` | `SngCloseIcon` |
+| `Icon / MdsDocumentIcon / 2px` | `MdsDocumentIcon` | `SngDocumentIcon` |
+| `Icon / MdsHomeIcon / 2px` | `MdsHomeIcon` | `SngHomeIcon` |
+| `Icon / MdsMenuIcon / 2px` | `MdsMenuIcon` | `SngMenuIcon` |
+| `Icon / MdsSearchIcon / 2px` | `MdsSearchIcon` | `SngSearchIcon` |
+| `Icon / MdsUserIcon / 2px` | `MdsUserIcon` | `SngUserIcon` |
+
+The machine-readable source for this table is `packages/icons/icon-manifest.json`.
+Run `pnpm --filter @mindulle/icons verify:naming` to check all three surfaces.
+
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | `size` | `number \| string` | `24` | 아이콘의 가로/세로 픽셀 크기 |
