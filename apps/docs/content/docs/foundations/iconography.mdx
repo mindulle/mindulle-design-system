@@ -69,3 +69,36 @@ MDS 아이콘 컴포넌트는 `LucideProps`와 100% 호환됩니다:
 | `color` | `string` | `'currentColor'` | 획 색상 (부모의 텍스트 색상 상속) |
 | `strokeWidth` | `number` | `2` | 획 두께 (The True 2px 헌법에 따라 기본값 2 고정) |
 | `className` | `string` | `''` | Tailwind 유틸리티 클래스 주입 |
+
+---
+
+## ♿ 접근성 사용 규칙 (Accessibility)
+
+아이콘 자체는 의미를 전달하는 장식 요소인지, 상호작용의 이름을 보조하는 요소인지에 따라 다르게 처리합니다.
+
+### 아이콘-only 컨트롤
+
+접근 가능한 이름은 아이콘이 아니라 **부모 버튼**에 제공합니다.
+
+```tsx
+<button type="button" aria-label="검색">
+  <MdsSearchIcon aria-hidden="true" size={20} />
+</button>
+```
+
+### 장식용 아이콘
+
+이미 인접한 텍스트가 의미를 전달한다면 보조 기술에서 중복 읽히지 않도록 숨깁니다.
+
+```tsx
+<span className="flex items-center gap-2">
+  <MdsCheckIcon aria-hidden="true" size={16} />
+  <span>저장 완료</span>
+</span>
+```
+
+### 터치 타깃과 시각 크기 분리
+
+`16px`, `20px`, `24px`, `32px`는 아이콘의 **시각적 크기**입니다. 아이콘이 버튼 안에 들어갈 때는 부모 컨트롤이 최소 `24px` 이상의 상호작용 영역을 제공해야 하며, 터치 중심 UI에서는 `44px` 이상을 권장합니다.
+
+아이콘의 색상만으로 상태를 구분하지 말고, 텍스트·모양·선택 상태·aria 속성을 함께 사용합니다.
