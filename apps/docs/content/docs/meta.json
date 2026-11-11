@@ -3,8 +3,11 @@
   "pages": [
     "---개요---",
     "index",
+    "---브랜드 아이덴티티---",
+    "brand/index",
     "---파운데이션---",
     "foundations/colors",
+    "foundations/typography",
     "---기본 컴포넌트---",
     "components/button",
     "components/badge",

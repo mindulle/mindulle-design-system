@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.13 158.74" width="96mm" height="56mm">
+  <defs>
+    <style>
+      .bleed-box { fill: #faf8f5; }
+      .cut-line { fill: none; stroke: #e0dcd5; stroke-width: 0.5; stroke-dasharray: 2 2; }
+      .primary-text { fill: #1c1514; font-family: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif; }
+      .meta-text { fill: #47211b; font-family: 'Pretendard', sans-serif; }
+      .sub-text { fill: #756563; font-family: 'Pretendard', sans-serif; }
+      .accent-gold { fill: #d97706; }
+      .true-stem { stroke: #1c1514; stroke-width: 2; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <!-- 1. Bleed Background (96mm x 56mm = 272.13pt x 158.74pt) -->
+  <rect class="bleed-box" width="272.13" height="158.74" />
+
+  <!-- 2. Trim Line Indicator (90mm x 50mm = 255.12pt x 141.73pt, Offset 8.5pt = 3mm) -->
+  <rect class="cut-line" x="8.5" y="8.5" width="255.12" height="141.73" rx="0" />
+
+  <!-- 3. Master Seal (The True 2px Stem Emblem) -->
+  <g transform="translate(32, 38) scale(1.4)">
+    <!-- Base Seed Pod (Gold Core) -->
+    <path d="M 11.5,17.2 C 9.6,17.5 8.6,19 9.8,21.5 C 10.6,22.2 11.6,22.4 12.4,21.8 C 13.8,19.4 13,17.6 11.5,17.2 Z" fill="#ffd166" stroke="#f59e0b" stroke-width="1.0" />
+    <circle cx="11.5" cy="19.4" r="0.65" fill="#ffffff" />
+    <!-- True 2px Mast -->
+    <path d="M 11.5,17.2 C 12.6,12.8 13.8,8.2 13.5,3.6" class="true-stem" />
+    <!-- Main Sail -->
+    <path d="M 12.2,14.6 C 8.2,13.2 4.6,11.2 3.6,7.6 C 6.2,7.4 9.2,8 13.2,8.4 Z" stroke="#1c1514" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="#1c1514" fill-opacity="0.08" />
+    <path d="M 11.4,13.6 C 8.6,12.3 6.6,11 5.2,8.6" stroke="#ffd166" stroke-width="1.4" stroke-linecap="round" />
+    <!-- Jib Sail -->
+    <path d="M 13,8 C 9.8,6.6 7.8,5.2 7.2,3.2 C 9.2,3.1 11.2,3.6 13.4,4.2 Z" stroke="#1c1514" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" fill="#1c1514" fill-opacity="0.08" />
+    <!-- Apex Lift Core -->
+    <circle cx="13.5" cy="3.6" r="1.4" fill="#ffd166" />
+    <circle cx="13.1" cy="3.2" r="0.5" fill="#ffffff" />
+  </g>
+
+  <!-- 4. Atelier Brand Typography -->
+  <text x="78" y="58" class="primary-text" font-size="16" font-weight="700" letter-spacing="0.05em">MINDULLE ATELIER</text>
+  <text x="78" y="73" class="meta-text" font-size="8.5" font-weight="600" letter-spacing="0.02em">민들레 스튜디오 • 소프트웨어 &amp; 디자인 공방</text>
+  <text x="78" y="85" class="sub-text" font-size="7.5" font-weight="400">"겨울 끝, 민들레. 도구는 단단하게, 일상은 자유롭게."</text>
+
+  <!-- 5. Horizontal Divider (True 1px Subtle Line) -->
+  <line x1="32" y1="98" x2="240" y2="98" stroke="#d7c5c2" stroke-width="0.8" />
+
+  <!-- 6. Artisan & Direct Reach Meta (Front & Clearspace) -->
+  <text x="32" y="116" class="primary-text" font-size="9" font-weight="700">Artisan / Architect</text>
+  <text x="32" y="127" class="meta-text" font-size="8" font-weight="500">Park Hyeseong (박혜성)</text>
+
+  <text x="140" y="116" class="sub-text" font-size="7.5">Web: https://sonagi.space</text>
+  <text x="140" y="127" class="sub-text" font-size="7.5">Contact: bot@sonagi.space</text>
+</svg>
