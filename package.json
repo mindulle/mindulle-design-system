@@ -1,5 +1,5 @@
 {
-  "name": "sonagi-design-system",
+  "name": "mindulle-design-system",
   "private": true,
   "description": "Mindulle Design System (MDS v0.1.0) — Core UI & Tokens (powered by Sonagi Engine)",
   "packageManager": "pnpm@11.1.2",

@@ -41,7 +41,7 @@ export default function HomePage() {
             <span>문서 보기</span>
           </Link>
           <Link
-            href="https://github.com/mindulle/sonagi-design-system"
+            href="https://github.com/mindulle/mindulle-design-system"
             target="_blank"
             rel="noreferrer"
             className="text-xs sm:text-sm font-medium text-fd-muted-foreground hover:text-fd-foreground transition-colors p-1"

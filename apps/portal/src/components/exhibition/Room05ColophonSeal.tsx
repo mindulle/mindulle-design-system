@@ -140,7 +140,7 @@ export const Room05ColophonSeal: React.FC = () => {
           {/* Action CTAs */}
           <div className="flex flex-wrap items-center gap-4 pt-3">
             <a
-              href="https://github.com/mindulle/sonagi-design-system"
+              href="https://github.com/mindulle/mindulle-design-system"
               target="_blank"
               rel="noreferrer"
               className="px-8 py-3.5 bg-mds-gold text-black font-mono font-bold text-xs tracking-wider rounded-sm hover:bg-mds-gold/90 transition-all shadow-lg shadow-mds-gold/20"

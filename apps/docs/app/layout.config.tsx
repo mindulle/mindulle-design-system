@@ -14,5 +14,5 @@ export const baseOptions: BaseLayoutProps = {
       </span>
     ),
   },
-  githubUrl: 'https://github.com/mindulle/sonagi-design-system',
+  githubUrl: 'https://github.com/mindulle/mindulle-design-system',
 };

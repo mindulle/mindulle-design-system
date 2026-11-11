@@ -417,7 +417,7 @@ export const LandingV2: React.FC = () => {
         {/* Action CTAs */}
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <a
-            href="https://github.com/mindulle/sonagi-design-system"
+            href="https://github.com/mindulle/mindulle-design-system"
             target="_blank"
             rel="noreferrer"
             className="px-8 py-4 bg-mds-gold text-black font-mono font-bold text-xs tracking-wider rounded-sm hover:bg-mds-gold/90 transition-all shadow-xl shadow-mds-gold/20"
