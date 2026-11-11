@@ -1,0 +1,74 @@
+---
+title: Public Visual QA
+description: MDS 공개 포털의 브레이크포인트, 테마, 타이포그래피와 접근성 검증 기록
+---
+
+# Public Visual QA
+
+이 문서는 MDS-30 공개 포트폴리오를 배포하기 전에 수행한 시각 품질 점검의 **판정 기준과 증거**를 기록합니다. 시각 검증은 “빌드가 된다”와 “실제 화면에서 읽히고 정렬된다”를 분리해 다룹니다.
+
+## 검증 매트릭스
+
+| 영역         | 기준                                                     | 증거                                                      | 판정     |
+| ------------ | -------------------------------------------------------- | --------------------------------------------------------- | -------- |
+| Figma SSOT   | MDS-28 모티프와 2px 구조가 기준 문서와 연결됨            | Figma node `429:3223`, `docs/brand-motif-system.md`       | **PASS** |
+| 문서 라우팅  | 포트폴리오·브랜드 하위 페이지가 공개 navigation에 포함됨 | `apps/docs/content/docs/meta.json`, `portfolio/meta.json` | **PASS** |
+| 정적 빌드    | MDX 생성, 타입 검사, 28개 정적 경로 생성                 | `pnpm --filter @mindulle/docs build`                      | **PASS** |
+| 타이포그래피 | Hero 64/115%, Section 36/125%, UI Pretendard             | Figma local styles + `foundations/typography.mdx`         | **PASS** |
+| 2px 구조     | Divider·frame·icon 기준이 2px으로 문서화됨               | MDS-28 규격과 CSS/UI 구현                                 | **PASS** |
+| 반응형 구조  | 문서 카드·표가 좁은 화면에서 단일 열로 내려감            | `apps/docs/app/global.css` media rule, semantic tables    | **PASS** |
+| 라이트/다크  | 배경·본문·포인트의 의미 토큰과 대비 규칙 확인            | token CSS + brand guide                                   | **PASS** |
+| 접근성       | 제목 계층, 표 헤더, 링크 이름, 대체 텍스트 정책          | MDX 구조 및 공개 브랜드 규칙                              | **PASS** |
+
+## 상태별 점검
+
+### 기본 상태
+
+- 페이지 제목은 문서의 목적을 바로 설명합니다.
+- 첫 화면의 큰 제목은 시네마틱 디스플레이, 본문은 UI sans 스택을 사용합니다.
+- 모티프는 구조를 보조하며 본문 정보를 가리지 않습니다.
+
+### 좁은 화면
+
+- 3열 모티프 카드는 CSS media rule에 따라 1열로 전환됩니다.
+- 긴 URL과 코드 토큰은 인라인 문장과 분리해 읽을 수 있습니다.
+- 표는 짧은 셀 문장과 명확한 열 제목을 사용합니다.
+
+### 다크 모드
+
+- 문서 셸의 foreground, muted, border, card 토큰이 함께 전환됩니다.
+- 골드는 장식·도착점으로만 사용하고 본문 텍스트 대비를 대신하지 않습니다.
+- 그림자 대신 2px 구조선과 면 분할로 계층을 표시합니다.
+
+### 접근성
+
+- 제목은 `h1 → h2 → h3` 순서를 지킵니다.
+- 표는 헤더 행을 포함하고, 링크 텍스트만 읽어도 목적을 알 수 있게 작성합니다.
+- 로고·아이콘은 의미가 있을 때 대체 텍스트를 제공하고, 장식 모티프만으로 상태를 전달하지 않습니다.
+- `prefers-reduced-motion` 사용자는 모션 전환 없이 동일한 정보에 접근할 수 있어야 합니다.
+
+## 실행 검증
+
+```text
+pnpm --filter @mindulle/docs lint
+  → fumadocs-mdx + tsc --noEmit       PASS
+
+pnpm --filter @mindulle/docs build
+  → MDX generation + Next static export PASS
+
+pnpm exec prettier --check \
+  apps/docs/content/docs/portfolio \
+  apps/docs/content/docs/meta.json      PASS
+```
+
+## 시각적 한계와 후속 확인
+
+정적 빌드와 소스 기준 검증은 완료했지만, 실제 디바이스별 브라우저 캡처는 실행 환경에 따라 별도 확인이 필요합니다. 출시 전에 다음 세 조합을 최종 캡처합니다.
+
+1. Desktop 1440px / light
+2. Mobile 390px / light
+3. Desktop 1440px / dark
+
+각 캡처에서 **제목 줄바꿈, 표 가로 overflow, 모티프와 텍스트의 겹침, 포커스 가시성, 대비**를 확인하고 이 페이지의 판정표에 링크를 추가합니다. 문제가 발견되면 시각적 임의 보정보다 토큰·레이아웃 소유자를 먼저 수정합니다.
+
+> **Release gate:** 공개 포트폴리오의 시각적 완료 판정은 빌드 통과만으로 결정하지 않습니다. 위 세 viewport 캡처와 실제 키보드 포커스 확인까지 끝나야 최종 배포 승인입니다.
