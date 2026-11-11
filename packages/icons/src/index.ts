@@ -1,24 +1,24 @@
 import * as React from "react";
 export * from "lucide-react";
 
-// Original Sng* exports (backward compatibility)
-export * from "./components/SngAddIcon";
-export * from "./components/SngArrowRightIcon";
-export * from "./components/SngCheckIcon";
-export * from "./components/SngCloseIcon";
-export * from "./components/SngDocumentIcon";
-export * from "./components/SngHomeIcon";
-export * from "./components/SngMenuIcon";
-export * from "./components/SngSearchIcon";
-export * from "./components/SngUserIcon";
+// Mds* is canonical across Figma, code, and docs.
+export * from "./components/MdsAddIcon";
+export * from "./components/MdsArrowRightIcon";
+export * from "./components/MdsCheckIcon";
+export * from "./components/MdsCloseIcon";
+export * from "./components/MdsDocumentIcon";
+export * from "./components/MdsHomeIcon";
+export * from "./components/MdsMenuIcon";
+export * from "./components/MdsSearchIcon";
+export * from "./components/MdsUserIcon";
 
-// Mds* Alias exports (Mindulle Design System standard)
-export { SngAddIcon as MdsAddIcon } from "./components/SngAddIcon";
-export { SngArrowRightIcon as MdsArrowRightIcon } from "./components/SngArrowRightIcon";
-export { SngCheckIcon as MdsCheckIcon } from "./components/SngCheckIcon";
-export { SngCloseIcon as MdsCloseIcon } from "./components/SngCloseIcon";
-export { SngDocumentIcon as MdsDocumentIcon } from "./components/SngDocumentIcon";
-export { SngHomeIcon as MdsHomeIcon } from "./components/SngHomeIcon";
-export { SngMenuIcon as MdsMenuIcon } from "./components/SngMenuIcon";
-export { SngSearchIcon as MdsSearchIcon } from "./components/SngSearchIcon";
-export { SngUserIcon as MdsUserIcon } from "./components/SngUserIcon";
+// Sng* remains a source-compatible alias for pre-MDS consumers.
+export { MdsAddIcon as SngAddIcon } from "./components/MdsAddIcon";
+export { MdsArrowRightIcon as SngArrowRightIcon } from "./components/MdsArrowRightIcon";
+export { MdsCheckIcon as SngCheckIcon } from "./components/MdsCheckIcon";
+export { MdsCloseIcon as SngCloseIcon } from "./components/MdsCloseIcon";
+export { MdsDocumentIcon as SngDocumentIcon } from "./components/MdsDocumentIcon";
+export { MdsHomeIcon as SngHomeIcon } from "./components/MdsHomeIcon";
+export { MdsMenuIcon as SngMenuIcon } from "./components/MdsMenuIcon";
+export { MdsSearchIcon as SngSearchIcon } from "./components/MdsSearchIcon";
+export { MdsUserIcon as SngUserIcon } from "./components/MdsUserIcon";

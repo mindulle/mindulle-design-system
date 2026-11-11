@@ -41,7 +41,7 @@ pnpm add @mindulle/icons
 
 ```tsx
 import React from 'react';
-// 1) MDS 표준 코어 아이콘 (Mds* 또는 레거시 Sng* 접두사)
+// 1) MDS 표준 코어 아이콘 (Mds*; Sng*는 레거시 별칭)
 import { MdsSearchIcon, MdsAddIcon, MdsCheckIcon } from '@mindulle/icons';
 // 2) Lucide 전체 확장 아이콘 리익스포트
 import { Sparkles, ShieldCheck } from '@mindulle/icons';
@@ -62,6 +62,23 @@ export function SearchHeader() {
 ## 📐 Props 명세
 
 MDS 아이콘 컴포넌트는 `LucideProps`와 100% 호환됩니다:
+
+### 이름 규칙과 레거시 호환성
+
+Figma의 코어 아이콘 인스턴스명, React의 정식 export, 문서 예제는 모두
+`Mds*Icon`을 기준으로 합니다. 기존 제품 코드의 마이그레이션을 위해 `Sng*Icon`도
+동일한 컴포넌트의 별칭으로 계속 제공합니다.
+
+| 정식 이름 | 레거시 별칭 | 상태 |
+| :--- | :--- | :--- |
+| `MdsSearchIcon` | `SngSearchIcon` | 호환 유지 |
+| `MdsAddIcon` | `SngAddIcon` | 호환 유지 |
+| `MdsCheckIcon` | `SngCheckIcon` | 호환 유지 |
+| `MdsUserIcon`, `MdsArrowRightIcon`, `MdsHomeIcon` | 대응 `Sng*Icon` | 호환 유지 |
+| `MdsCloseIcon`, `MdsDocumentIcon`, `MdsMenuIcon` | 대응 `Sng*Icon` | 호환 유지 |
+
+새 코드와 Figma 인스턴스에는 `Mds*Icon`을 사용하고, `Sng*Icon`은 기존 import를
+깨뜨리지 않기 위한 호환 레이어로만 사용합니다.
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
