@@ -10,6 +10,7 @@ import defaultMdxComponents from 'fumadocs-ui/mdx';
 import { ComponentPreview } from '@/components/sandbox/ComponentPreview';
 import { ColorMatrix } from '@/components/tokens/ColorMatrix';
 import { TypographySpecimen } from '@/components/tokens/TypographySpecimen';
+import { IconGalleryViewer } from '@/components/tokens/IconGalleryViewer';
 
 interface PageProps {
   params: Promise<{ slug?: string[] }>;
@@ -35,6 +36,7 @@ export default async function Page({ params }: PageProps) {
               ComponentPreview,
               ColorMatrix,
               TypographySpecimen,
+              IconGalleryViewer,
             } as any
           }
         />
