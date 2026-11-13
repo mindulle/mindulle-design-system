@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "verify:naming": "node scripts/verify-icon-naming.mjs"
   }
 }

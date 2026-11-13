@@ -17,7 +17,7 @@ ROOT_DIR = "/home/ubuntu/sonagi-design-system/packages/brand-assets"
 # Approved Brand Colors (Normalized lower-case hex)
 APPROVED_PALETTE = {
     "#faf8f5", "#f5efe6", "#ffffff", "#ede4d6", "#ede7de", "#f5f0ea", # Light Paper Tones
-    "#060911", "#070a12", "#090d16", "#0b101d", "#161b22", "#161b26", # Dark Canvas Tones
+    "#060911", "#070a12", "#090d16", "#0b101d", "#161b22", "#161b26", "#1e2430", # Dark Canvas Tones
     "#1c1514", "#140e0c", "#2a201c", "#2a2421", "#30363d", "#3f3935", "#d6cfc7", "#78716c", "#57534e", "#44403c", "#8b949e", # Architecture & Lines
     "#d97706", "#b45309", "#9a3412", "#ffd166", "#f59e0b", "#fff5cc", "#fbbf24", "#fef3c7", # Dandelion Gold Accents
     "#2563eb", "#4a90e2", "#3b82f6", "#1e40af", "#00ffcc" # Sonagi Rain & Electric Accents

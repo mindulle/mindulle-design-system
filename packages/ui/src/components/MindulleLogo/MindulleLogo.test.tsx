@@ -16,6 +16,7 @@ describe('MindulleLogo Component', () => {
     const { container } = render(<MindulleLogo size={48} withBackground />);
     const rect = container.querySelector('rect');
     expect(rect).toBeDefined();
-    expect(rect?.getAttribute('width')).toBe('400');
+    expect(rect?.getAttribute('width')).toBe('24');
+    expect(rect?.getAttribute('rx')).toBe('4');
   });
 });

@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as Icons from '@mindulle/icons';
 
 const customIconNames = [
-  'SngAddIcon', 'SngArrowRightIcon', 'SngCheckIcon', 'SngCloseIcon', 
-  'SngDocumentIcon', 'SngHomeIcon', 'SngMenuIcon', 'SngSearchIcon', 'SngUserIcon'
+  'MdsAddIcon', 'MdsArrowRightIcon', 'MdsCheckIcon', 'MdsCloseIcon',
+  'MdsDocumentIcon', 'MdsHomeIcon', 'MdsMenuIcon', 'MdsSearchIcon', 'MdsUserIcon'
 ];
 
 function IconGallery() {

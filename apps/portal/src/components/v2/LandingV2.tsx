@@ -2,6 +2,16 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import HeroScene from '../HeroScene';
 
+const MotifMark = ({ variant = 'sail' }: { variant?: 'sail' | 'seed' | 'axis' }) => (
+  <svg aria-hidden="true" className={`motif-mark motif-mark--${variant}`} viewBox="0 0 160 160" fill="none">
+    <path className="motif-axis" d="M80 132V28" />
+    <path className="motif-sail" d="M80 36C112 42 132 62 148 88C116 88 94 76 80 62Z" />
+    <path className="motif-sail motif-sail--secondary" d="M80 62C58 82 44 104 38 132" />
+    <circle className="motif-seed" cx="80" cy="132" r="9" />
+    {variant !== 'axis' && <path className="motif-rays" d="M80 132L52 150M80 132V156M80 132L108 150" />}
+  </svg>
+);
+
 export const LandingV2: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -154,11 +164,12 @@ export const LandingV2: React.FC = () => {
           >
             <HeroScene />
           </motion.div>
+          <div className="motif-hero-mark" aria-hidden="true"><MotifMark variant="sail" /></div>
 
           {/* Top Header Bar */}
           <header className="relative z-10 w-full max-w-[1824px] mx-auto h-[72px] px-8 flex items-center justify-between border-2 border-mds-border bg-mds-card/90 backdrop-blur-md rounded-sm">
             <div className="flex flex-col">
-              <span className="font-serif font-bold text-base tracking-[0.2em] text-white">
+              <span className="font-cinematic font-bold text-base tracking-[0.2em] text-white">
                 M I N D U L L E &nbsp; S T U D I O
               </span>
               <span className="font-sans text-[10px] text-mds-muted tracking-wider uppercase">
@@ -183,12 +194,12 @@ export const LandingV2: React.FC = () => {
             <span className="px-3.5 py-1 rounded-full border border-mds-gold/60 bg-mds-gold/10 text-mds-gold font-mono text-xs tracking-widest uppercase mb-4">
               ATELIER CONSTITUTION • ARTICLE I
             </span>
-            <h1 className="font-serif font-bold text-4xl sm:text-6xl md:text-7xl text-white tracking-tight leading-tight break-keep text-center">
+            <h1 className="font-cinematic font-bold text-4xl sm:text-6xl md:text-7xl text-white tracking-tight leading-tight break-keep text-center">
               "도구가 완벽할 때,
               <br />
               손길은 비로소 자유로워진다."
             </h1>
-            <p className="font-serif italic text-lg sm:text-xl md:text-2xl text-mds-gold tracking-wide pt-4 max-w-2xl">
+            <p className="font-cinematic italic text-lg sm:text-xl md:text-2xl text-mds-gold tracking-wide pt-4 max-w-2xl">
               When the machine is flawless, the human soul finds its solace.
             </p>
           </motion.div>
@@ -212,7 +223,7 @@ export const LandingV2: React.FC = () => {
             <span className="font-mono font-bold text-xs text-mds-rain tracking-widest uppercase">
               ARTICLE II • DUAL METAPHOR BLEND
             </span>
-            <h2 className="font-serif font-bold text-4xl md:text-6xl tracking-tight text-current">
+            <h2 className="font-cinematic font-bold text-4xl md:text-6xl tracking-tight text-current">
               거친 성벽의 방패(소나기) 안에 피어난,
               <br />
               가장 다정한 안식처(민들레).
@@ -290,7 +301,7 @@ export const LandingV2: React.FC = () => {
               <span className="font-mono font-bold text-xs text-mds-gold tracking-widest uppercase">
                 ARTICLE III • THE 6-IN-1 TOOLING SUITE
               </span>
-              <h2 className="font-serif font-bold text-3xl md:text-5xl text-white tracking-tight">
+              <h2 className="font-cinematic font-bold text-3xl md:text-5xl text-white tracking-tight">
                 "도구가 완전할 때, 손길은 거침없이 뻗어 나간다."
               </h2>
             </div>
@@ -309,6 +320,7 @@ export const LandingV2: React.FC = () => {
                 key={t.id}
                 className="w-[440px] md:w-[480px] h-[340px] p-8 rounded-sm bg-mds-card border-2 border-mds-border hover:border-mds-gold flex flex-col justify-between shadow-2xl transition-colors duration-300 group flex-shrink-0"
               >
+                <div className="motif-card-mark" aria-hidden="true"><MotifMark variant={t.id === '03' ? 'seed' : 'axis'} /></div>
                 <div className="flex items-center justify-between">
                   <span className="font-mono font-bold text-xs text-mds-gold">
                     ARTIFACT • {t.id}
@@ -318,7 +330,7 @@ export const LandingV2: React.FC = () => {
                   </span>
                 </div>
                 <div className="flex flex-col space-y-2">
-                  <h3 className="font-serif font-bold text-3xl text-white group-hover:text-mds-gold transition-colors">
+                  <h3 className="font-cinematic font-bold text-3xl text-white group-hover:text-mds-gold transition-colors">
                     {t.name}
                   </h3>
                   <span className="font-mono font-bold text-[11px] text-mds-rain tracking-wider uppercase">
@@ -350,7 +362,7 @@ export const LandingV2: React.FC = () => {
             <span className="font-mono font-bold text-xs text-mds-gold tracking-widest uppercase">
               ARTICLE IV • CINEMATIC SCENOGRAPHY
             </span>
-            <h2 className="font-serif font-bold text-3xl md:text-5xl text-white tracking-tight">
+            <h2 className="font-editorial font-bold text-3xl md:text-5xl text-white tracking-tight">
               "겨울 끝, 민들레."
             </h2>
             <p className="font-sans text-sm text-mds-muted leading-relaxed pt-1">
@@ -369,6 +381,7 @@ export const LandingV2: React.FC = () => {
                 whileHover={{ y: -6, borderColor: 'var(--mds-color-brand-accent, #ffd166)' }}
                 className="p-6 rounded-sm bg-mds-dark border-2 border-mds-border flex flex-col justify-between space-y-6 shadow-xl group transition-colors min-h-[380px]"
               >
+                <div className="motif-card-mark motif-card-mark--small" aria-hidden="true"><MotifMark variant={idx % 2 ? 'seed' : 'sail'} /></div>
                 <div className="flex flex-col space-y-1">
                   <span className="font-mono font-bold text-xs text-mds-gold">
                     SCENE • {s.num}
@@ -378,7 +391,7 @@ export const LandingV2: React.FC = () => {
                   </span>
                 </div>
                 <div className="flex flex-col space-y-2 my-auto">
-                  <h3 className="font-serif font-bold text-2xl text-white group-hover:text-mds-gold transition-colors">
+                  <h3 className="font-editorial font-bold text-2xl text-white group-hover:text-mds-gold transition-colors">
                     {s.title}
                   </h3>
                   <p className="font-sans text-xs text-mds-muted leading-relaxed">
@@ -402,14 +415,14 @@ export const LandingV2: React.FC = () => {
           <span className="font-mono font-bold text-xs text-mds-gold tracking-widest uppercase">
             ATELIER CONSTITUTION • EPILOGUE
           </span>
-          <h2 className="font-serif font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight">
+          <h2 className="font-editorial font-bold text-4xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight">
             "당신이 화면을 끄고,
             <br />
             삶의 가장 소중한 장면 속으로
             <br />
             걸어 들어갈 수 있도록."
           </h2>
-          <p className="font-serif italic text-lg md:text-xl text-mds-gold pt-2">
+          <p className="font-editorial italic text-lg md:text-xl text-mds-gold pt-2">
             So that you may step away from the screen, and walk into the dearest scenes of your life.
           </p>
         </div>
@@ -417,7 +430,7 @@ export const LandingV2: React.FC = () => {
         {/* Action CTAs */}
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <a
-            href="https://github.com/mindulle/sonagi-design-system"
+            href="https://github.com/mindulle/mindulle-design-system"
             target="_blank"
             rel="noreferrer"
             className="px-8 py-4 bg-mds-gold text-black font-mono font-bold text-xs tracking-wider rounded-sm hover:bg-mds-gold/90 transition-all shadow-xl shadow-mds-gold/20"

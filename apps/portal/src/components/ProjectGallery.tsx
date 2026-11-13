@@ -22,7 +22,7 @@ const PROJECTS: Project[] = [
     tags: ['Figma Plugin', 'W3C Tokens', 'OKLCH', 'Storybook', 'Tailwind'],
     description:
       'W3C 표준 디자인 토큰 컴파일러 및 OKLCH 2-Tier 시맨틱 컬러 기반 디자인 시스템. Figma 플러그인과 콘솔 스크립트로 디자인-코드 간 양방향 동기화를 달성했습니다.',
-    githubUrl: 'https://github.com/mindulle/sonagi-design-system',
+    githubUrl: 'https://github.com/mindulle/mindulle-design-system',
     accentColor: '#d2645f',
   },
   {
@@ -66,7 +66,7 @@ const PROJECTS: Project[] = [
     tags: ['Three.js', 'Theatre.js', 'Blender .glb', 'R3F', 'Framer Motion'],
     description:
       '웹 상에서 개발자 없이 정밀한 타임라인 키프레임과 카메라 워크를 연출할 수 있는 시네마틱 3D 스튜디오. Blender 정지 자산과 웹 모션을 유기적으로 결합합니다.',
-    githubUrl: 'https://github.com/mindulle/sonagi-design-system',
+    githubUrl: 'https://github.com/mindulle/mindulle-design-system',
     accentColor: '#4A90E2',
   },
   {

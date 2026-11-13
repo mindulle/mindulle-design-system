@@ -17,6 +17,9 @@ return new Promise(async (resolve) => {
 
     const serifFont = await loadSafeFont("Cormorant Garamond", "Bold");
     const serifMedium = await loadSafeFont("Cormorant Garamond", "Medium");
+    const notoSerifBold = await loadSafeFont("Noto Serif KR", "Bold");
+    const maruBuriBold = await loadSafeFont("MaruBuri", "Bold");
+    const maruBuriRegular = await loadSafeFont("MaruBuri", "Regular");
     const sansBold = await loadSafeFont("Inter", "Bold");
     const sansMedium = await loadSafeFont("Inter", "Medium");
     const sansRegular = await loadSafeFont("Inter", "Regular");
@@ -161,7 +164,7 @@ return new Promise(async (resolve) => {
       manifestoBox.appendChild(eyebrow);
 
       const mainQuote = figma.createText();
-      mainQuote.fontName = serifFont; mainQuote.characters = quoteKo;
+      mainQuote.fontName = notoSerifBold; mainQuote.characters = quoteKo;
       mainQuote.fontSize = 26; mainQuote.fills = [{ type: 'SOLID', color: COLOR_TEXT_WHITE }];
       mainQuote.textAutoResize = "HEIGHT";
       mainQuote.resize(1180, 36);
@@ -309,7 +312,7 @@ return new Promise(async (resolve) => {
     mDarkVisual.appendChild(mDarkLabel); mDark.appendChild(mDarkVisual);
 
     const mDarkCopy = figma.createFrame(); mDarkCopy.layoutMode = "VERTICAL"; mDarkCopy.itemSpacing = 8; mDarkCopy.layoutAlign = "STRETCH"; mDarkCopy.fills = [];
-    const mDarkTitle = figma.createText(); mDarkTitle.fontName = serifFont; mDarkTitle.characters = "\"얼어붙은 땅을 깨우는 벼락같은 몰입과 방패.\"";
+    const mDarkTitle = figma.createText(); mDarkTitle.fontName = notoSerifBold; mDarkTitle.characters = "\"얼어붙은 땅을 깨우는 벼락같은 몰입과 방패.\"";
     mDarkTitle.fontSize = 20; mDarkTitle.fills = [{ type: 'SOLID', color: COLOR_TEXT_WHITE }]; mDarkCopy.appendChild(mDarkTitle);
     const mDarkDesc = figma.createText(); mDarkDesc.fontName = sansRegular;
     mDarkDesc.characters = "거칠고 폭발적인 기술력으로 창작자의 주권을 지켜내는 디지털 방파제. 2px 솔리드 선화로 세우는 네오 브루탈리즘 건축 헌법.";
@@ -337,7 +340,7 @@ return new Promise(async (resolve) => {
     mLightVisual.appendChild(mLightLabel); mLight.appendChild(mLightVisual);
 
     const mLightCopy = figma.createFrame(); mLightCopy.layoutMode = "VERTICAL"; mLightCopy.itemSpacing = 8; mLightCopy.layoutAlign = "STRETCH"; mLightCopy.fills = [];
-    const mLightTitle = figma.createText(); mLightTitle.fontName = serifFont; mLightTitle.characters = "\"척박한 콘크리트 틈에서 피어나는 다정함.\"";
+    const mLightTitle = figma.createText(); mLightTitle.fontName = maruBuriBold; mLightTitle.characters = "\"척박한 콘크리트 틈에서 피어나는 다정함.\"";
     mLightTitle.fontSize = 20; mLightTitle.fills = [{ type: 'SOLID', color: COLOR_TEXT_INK }]; mLightCopy.appendChild(mLightTitle);
     const mLightDesc = figma.createText(); mLightDesc.fontName = sansRegular;
     mLightDesc.characters = "차가운 성벽의 족쇄를 풀고, 오후의 햇살과 젖은 흙내음처럼 창작자의 손길을 따스하게 보듬는 인간의 영혼.";
@@ -633,7 +636,7 @@ return new Promise(async (resolve) => {
 
       const pFoot = figma.createFrame();
       pFoot.layoutMode = "VERTICAL"; pFoot.itemSpacing = 6; pFoot.layoutAlign = "STRETCH"; pFoot.fills = [];
-      const pTitle = figma.createText(); pTitle.fontName = serifFont; pTitle.characters = s.title;
+      const pTitle = figma.createText(); pTitle.fontName = maruBuriBold; pTitle.characters = s.title;
       pTitle.fontSize = 22; pTitle.fills = [{ type: 'SOLID', color: COLOR_TEXT_WHITE }]; pTitle.textAutoResize = "WIDTH_AND_HEIGHT"; pFoot.appendChild(pTitle);
 
       // 🌟 [줄바꿈 핵심] 폭 288px 고정 + HEIGHT 모드로 3줄 완벽 래핑!
@@ -716,7 +719,7 @@ return new Promise(async (resolve) => {
     headArea.layoutMode = "VERTICAL"; headArea.itemSpacing = 8; headArea.layoutAlign = "STRETCH"; headArea.fills = [];
     const colophonEyebrow = figma.createText(); colophonEyebrow.fontName = sansBold; colophonEyebrow.characters = "MINDULLE ATELIER • SOVEREIGN SOFTWARE FORGE";
     colophonEyebrow.fontSize = 11; colophonEyebrow.fills = [{ type: 'SOLID', color: COLOR_GOLD }]; colophonEyebrow.textAutoResize = "WIDTH_AND_HEIGHT"; headArea.appendChild(colophonEyebrow);
-    const colophonTitle = figma.createText(); colophonTitle.fontName = serifFont; colophonTitle.characters = "\"기계가 완벽해야 사람이 쉴 수 있다.\"";
+    const colophonTitle = figma.createText(); colophonTitle.fontName = maruBuriBold; colophonTitle.characters = "\"기계가 완벽해야 사람이 쉴 수 있다.\"";
     colophonTitle.fontSize = 34; colophonTitle.fills = [{ type: 'SOLID', color: COLOR_TEXT_WHITE }]; colophonTitle.textAutoResize = "WIDTH_AND_HEIGHT"; headArea.appendChild(colophonTitle);
     const colophonEn = figma.createText(); colophonEn.fontName = serifMedium; colophonEn.characters = "When the machine is flawless, the human soul finds its solace.";
     colophonEn.fontSize = 15; colophonEn.fills = [{ type: 'SOLID', color: COLOR_GOLD }]; colophonEn.textAutoResize = "WIDTH_AND_HEIGHT"; headArea.appendChild(colophonEn);

@@ -1,0 +1,104 @@
+---
+title: MDS 포트폴리오 케이스 스터디 (Case Study)
+description: 문제에서 공개 가능한 디자인 시스템 결과물까지, Mindulle Design System의 구축 과정
+---
+
+# MDS 포트폴리오 케이스 스터디
+
+> **문제 → 원칙 → 구현 → 결과**
+
+Mindulle Design System(MDS)은 시네마틱한 브랜드 서사와 개발자가 재사용할 수 있는 토큰·컴포넌트 시스템을 한 흐름으로 묶기 위해 만들어졌습니다. 이 케이스 스터디는 내부 구현을 외부 독자가 검증할 수 있는 공개 서사로 정리합니다.
+
+## 한눈에 보는 결과
+
+<div className="mds-case-study-table" role="region" aria-label="MDS 결과 비교표" tabIndex={0}>
+
+| 축           | 문제                                    | 결정                                           | 결과                                    |
+| ------------ | --------------------------------------- | ---------------------------------------------- | --------------------------------------- |
+| 조형         | 화면과 컴포넌트마다 선의 무게가 흔들림  | **True 2px Stem**과 Weathered Radius           | Figma·코드·문서의 공통 시각 언어        |
+| 토큰         | 원시값과 컴포넌트 의미가 섞임           | W3C **Primitives → Semantics 2-Tier**          | 테마 변경과 추적이 가능한 토큰 계층     |
+| 타이포그래피 | 영문과 한글 디스플레이의 광학 균형 부족 | Cormorant Garamond + Noto Serif KR / Maru Buri | 한국어 시네마틱 디스플레이 스택         |
+| 아이콘       | 제품·문서·Figma 이름이 분리됨           | 24×24 Icon Wrapper와 manifest                  | 일관된 광학 부피와 참조 규칙            |
+| 브랜드       | 그래픽 요소가 장식에 머묾               | Sail Arc · Seed Orbit · Axis Frame             | 흐름·도착·구조를 전달하는 모티프 시스템 |
+
+</div>
+
+## 1. 문제: 예쁜 화면을 넘어서는 일관성
+
+MDS의 초기 문제는 컴포넌트의 존재가 아니라 **판단 기준의 분산**이었습니다.
+
+- 1px·1.5px·2px 선이 화면마다 혼재했습니다.
+- 색상과 간격이 원시값으로 복사되어 다크 모드에서 의미가 흐려졌습니다.
+- 한글 제목과 영문 제목의 세로 기둥 두께가 맞지 않았습니다.
+- Figma의 컴포넌트명, 코드 export, 문서 표기가 서로 달랐습니다.
+- 브랜드 모티프가 제품 화면에서 재사용 가능한 문법으로 정의되지 않았습니다.
+
+## 2. 원칙: 조형 헌법을 토큰과 컴포넌트에 연결
+
+### True 2px Stem
+
+핵심 축·프레임·아이콘 선화는 정확한 2px을 기준으로 합니다. `strokeWidth="2"`, 라운드 캡·조인, 8px 그리드 스냅을 함께 적용해 선명도를 유지합니다.
+
+### W3C Token 2-Tier
+
+```text
+Primitive values ──alias──> Semantic roles ──consume──> UI components
+       색·간격·서체             surface·border·text          Button·Card·Input
+```
+
+컴포넌트는 원시 색상 대신 의미 토큰을 소비합니다. 이 연결 덕분에 라이트·다크 모드와 외부 소비자가 같은 계약을 사용할 수 있습니다.
+
+### Korean Cinematic Typography
+
+| 용도      | 스택                                           | 기준                |
+| --------- | ---------------------------------------------- | ------------------- |
+| Hero      | `Cormorant Garamond 700` + `Noto Serif KR 700` | 64px / 115% / -2.5% |
+| Section   | `Cormorant Garamond 700` + `Noto Serif KR 700` | 36px / 125% / -2%   |
+| Editorial | `Cormorant Garamond` + `Maru Buri`             | 36px / 130% / -1%   |
+| UI        | `Pretendard` / `Inter`                         | 11–18px 가독성 우선 |
+
+## 3. 구현 사례
+
+### 3.1 Figma → Code → Docs SSOT
+
+Figma는 시각 규격과 컴포넌트 상태의 기준이고, `@mindulle/tokens`는 코드가 소비하는 토큰 계층이며, `apps/docs`는 외부 사용자가 확인하는 공개 계약입니다.
+
+```text
+Figma SSOT
+  ├─ 117 variables / 37 components
+  ├─ local text styles / Icon Wrapper
+  └─ brand motif board
+          │
+          ├── @mindulle/tokens → @mindulle/ui / @mindulle/icons
+          │
+          └── apps/docs → public contract + usage examples
+```
+
+### 3.2 Icon Wrapper
+
+24×24 마스터 래퍼는 아이콘 자체를 다시 그리는 도구가 아니라, 패딩·광학 부피·상태 표현을 고정하는 경계입니다. 이 케이스 스터디에서는 MDS-27의 naming parity 결과를 소비하며, 명명 규칙 자체를 변경하지 않습니다.
+
+### 3.3 Graphic Motif System
+
+- **Sail Arc**는 시선을 다음 장면으로 운반합니다.
+- **Seed Orbit**는 작은 시작과 완료 지점을 표시합니다.
+- **Axis Frame**은 구조와 신뢰를 고정합니다.
+
+세 모티프는 MDS-28 Figma [Brand Identity Board](https://www.figma.com/design/AEoW19jmlUh3rFgzhhV1vH/Mindulle-Design-System-v0.1.0?node-id=429-3223)와 [규격 문서](https://github.com/mindulle/mindulle-design-system/blob/main/docs/brand-motif-system.md)에 연결됩니다.
+
+## 4. 결과와 공개 계약
+
+- 16종 UI 컴포넌트와 토큰 문서를 정적 문서 포털로 배포합니다.
+- 브랜드 자산·상업 사용 규칙을 별도 공개 가이드로 분리합니다.
+- Figma 보드, 토큰 변수, React 컴포넌트, MDX 문서가 서로를 참조합니다.
+- 공개 사용자는 설치·토큰·브랜드·상업 사용 페이지를 한 경로에서 확인할 수 있습니다.
+
+다음 페이지의 [Public Visual QA](./visual-qa)에서 브레이크포인트·테마·접근성 기준과 검증 결과를 확인하세요.
+
+## 기준 문서
+
+- [공개 브랜드 가이드](../brand)
+- [타이포그래피](../foundations/typography)
+- [그래픽 모티프](../foundations/motifs)
+- [아이코노그래피](../foundations/iconography)
+- [독립 품질 감사 보고서](https://github.com/mindulle/mindulle-design-system/blob/main/docs/CLAUDE_OPUS_MDS_INDEPENDENT_AUDIT_REPORT.md)

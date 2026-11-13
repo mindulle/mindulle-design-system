@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="60mm" height="60mm">
+  <defs>
+    <style>
+      .sticker-bg { fill: #1c1412; }
+      .cut-circle { fill: none; stroke: #d97706; stroke-width: 0.8; stroke-dasharray: 2 2; }
+      .dandelion-text { fill: #ffd166; font-family: 'Noto Serif KR', Georgia, serif; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; }
+      .latin-sub { fill: #f7eeec; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 8px; letter-spacing: 0.2em; }
+      .true-mast { stroke: #f7eeec; stroke-width: 2; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <!-- 1. Background Badge -->
+  <circle cx="100" cy="100" r="96" class="sticker-bg" />
+  <circle cx="100" cy="100" r="92" class="cut-circle" />
+
+  <!-- 2. Master Symbol in Center -->
+  <g transform="translate(76, 52) scale(2.0)">
+    <path d="M 11.5,17.2 C 9.6,17.5 8.6,19 9.8,21.5 C 10.6,22.2 11.6,22.4 12.4,21.8 C 13.8,19.4 13,17.6 11.5,17.2 Z" fill="#ffd166" stroke="#f59e0b" stroke-width="1.0" />
+    <circle cx="11.5" cy="19.4" r="0.65" fill="#ffffff" />
+    <path d="M 11.5,17.2 C 12.6,12.8 13.8,8.2 13.5,3.6" class="true-mast" />
+    <path d="M 12.2,14.6 C 8.2,13.2 4.6,11.2 3.6,7.6 C 6.2,7.4 9.2,8 13.2,8.4 Z" stroke="#f7eeec" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" fill="#f7eeec" fill-opacity="0.12" />
+    <path d="M 11.4,13.6 C 8.6,12.3 6.6,11 5.2,8.6" stroke="#ffd166" stroke-width="1.4" stroke-linecap="round" />
+    <path d="M 13,8 C 9.8,6.6 7.8,5.2 7.2,3.2 C 9.2,3.1 11.2,3.6 13.4,4.2 Z" stroke="#f7eeec" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" fill="#f7eeec" fill-opacity="0.12" />
+    <circle cx="13.5" cy="3.6" r="1.4" fill="#ffd166" />
+    <circle cx="13.1" cy="3.2" r="0.5" fill="#ffffff" />
+  </g>
+
+  <!-- 3. Bottom Brand Typography -->
+  <text x="100" y="148" class="dandelion-text" text-anchor="middle">겨울 끝, 민들레</text>
+  <text x="100" y="162" class="latin-sub" text-anchor="middle">MINDULLE ATELIER</text>
+</svg>

@@ -56,7 +56,7 @@ export const ExhibitionRoomLayout: React.FC<ExhibitionRoomLayoutProps> = ({
         <header className="h-[72px] px-8 flex items-center justify-between border-b-2 border-mds-border bg-mds-card flex-shrink-0">
           {/* Brand Identity */}
           <div className="flex flex-col">
-            <span className="font-serif font-bold text-base tracking-[0.2em] text-white">
+            <span className="font-cinematic font-bold text-base tracking-[0.2em] text-white">
               M I N D U L L E &nbsp; S T U D I O
             </span>
             <span className="font-sans text-[10px] text-mds-muted tracking-wider uppercase">
@@ -93,10 +93,10 @@ export const ExhibitionRoomLayout: React.FC<ExhibitionRoomLayoutProps> = ({
             <span className="font-mono text-[10px] font-bold tracking-[0.15em] text-mds-gold">
               {article}
             </span>
-            <h2 className="font-serif font-bold text-2xl md:text-3xl text-white tracking-tight">
+            <h2 className="font-cinematic font-bold text-2xl md:text-3xl text-white tracking-tight">
               {quoteKo}
             </h2>
-            <p className="font-serif italic text-sm md:text-base text-mds-gold/90 tracking-wide">
+            <p className="font-cinematic italic text-sm md:text-base text-mds-gold/90 tracking-wide">
               {quoteEn}
             </p>
           </div>

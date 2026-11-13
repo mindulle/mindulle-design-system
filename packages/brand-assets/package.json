@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mindulle/sonagi-design-system.git",
+    "url": "git+https://github.com/mindulle/mindulle-design-system.git",
     "directory": "packages/brand-assets"
   },
   "files": [

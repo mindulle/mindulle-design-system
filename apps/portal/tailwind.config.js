@@ -47,6 +47,8 @@ export default {
       fontFamily: {
         sans: ['Inter', 'Pretendard', 'system-ui', 'sans-serif'],
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        cinematic: ['"Cormorant Garamond"', '"Noto Serif KR"', 'Georgia', 'serif'],
+        editorial: ['"Cormorant Garamond"', '"MaruBuri"', 'Georgia', 'serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
     },

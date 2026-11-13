@@ -17,6 +17,9 @@ return new Promise(async (resolve) => {
 
     const serifFont = await loadSafeFont("Cormorant Garamond", "Bold");
     const serifMedium = await loadSafeFont("Cormorant Garamond", "Medium");
+    const notoSerifBold = await loadSafeFont("Noto Serif KR", "Bold");
+    const maruBuriBold = await loadSafeFont("MaruBuri", "Bold");
+    const maruBuriRegular = await loadSafeFont("MaruBuri", "Regular");
     const sansBold = await loadSafeFont("Inter", "Bold");
     const sansMedium = await loadSafeFont("Inter", "Medium");
     const sansRegular = await loadSafeFont("Inter", "Regular");
@@ -149,7 +152,7 @@ return new Promise(async (resolve) => {
     heroBox.itemSpacing = 16; heroBox.x = cX - 550; heroBox.y = cY - 90; heroBox.resize(1100, 180); heroBox.fills = [];
 
     const heroTitle = figma.createText();
-    heroTitle.fontName = serifFont; heroTitle.characters = "\"도구가 완벽할 때, 손길은 비로소 자유로워진다.\"";
+    heroTitle.fontName = notoSerifBold; heroTitle.characters = "\"도구가 완벽할 때, 손길은 비로소 자유로워진다.\"";
     heroTitle.fontSize = 40; heroTitle.fills = [{ type: 'SOLID', color: COLOR_TEXT_WHITE }];
     heroTitle.textAutoResize = "WIDTH_AND_HEIGHT"; heroBox.appendChild(heroTitle);
 
@@ -183,7 +186,7 @@ return new Promise(async (resolve) => {
     colDark.paddingLeft = 40; colDark.paddingRight = 40; colDark.paddingTop = 40; colDark.paddingBottom = 40;
     const cdTag = figma.createText(); cdTag.fontName = sansBold; cdTag.characters = "SCROLL-TRIGGER 01 • WILD ARCHITECTURE (소나기)";
     cdTag.fontSize = 11; cdTag.fills = [{ type: 'SOLID', color: COLOR_RAIN }]; colDark.appendChild(cdTag);
-    const cdTitle = figma.createText(); cdTitle.fontName = serifFont; cdTitle.characters = "\"얼어붙은 땅을 깨우는 벼락같은 몰입과 방패.\"";
+    const cdTitle = figma.createText(); cdTitle.fontName = notoSerifBold; cdTitle.characters = "\"얼어붙은 땅을 깨우는 벼락같은 몰입과 방패.\"";
     cdTitle.fontSize = 26; cdTitle.fills = [{ type: 'SOLID', color: COLOR_TEXT_WHITE }]; colDark.appendChild(cdTitle);
     const cdDesc = figma.createText(); cdDesc.fontName = sansRegular;
     cdDesc.characters = "거칠고 폭발적인 기술력으로 창작자의 주권을 지켜내는 디지털 방파제. 스크롤 위치에 따라 어두운 밤하늘에 빗줄기가 쏟아지는 시네마틱 셰이더 활성화.";
@@ -198,7 +201,7 @@ return new Promise(async (resolve) => {
     colLight.paddingLeft = 40; colLight.paddingRight = 40; colLight.paddingTop = 40; colLight.paddingBottom = 40;
     const clTag = figma.createText(); clTag.fontName = sansBold; clTag.characters = "SCROLL-TRIGGER 02 • LIVING SOUL (민들레)";
     clTag.fontSize = 11; clTag.fills = [{ type: 'SOLID', color: COLOR_PAPER_BORDER }]; colLight.appendChild(clTag);
-    const clTitle = figma.createText(); clTitle.fontName = serifFont; clTitle.characters = "\"척박한 콘크리트 틈에서 피어나는 다정함.\"";
+    const clTitle = figma.createText(); clTitle.fontName = maruBuriBold; clTitle.characters = "\"척박한 콘크리트 틈에서 피어나는 다정함.\"";
     clTitle.fontSize = 26; clTitle.fills = [{ type: 'SOLID', color: COLOR_TEXT_INK }]; colLight.appendChild(clTitle);
     const clDesc = figma.createText(); clDesc.fontName = sansRegular;
     clDesc.characters = "차가운 성벽의 족쇄를 풀고, 오후의 햇살과 젖은 흙내음처럼 창작자의 손길을 따스하게 보듬는 안식처. 스크롤이 도달하면 배경이 웜 화이트 종이로 부드럽게 모핑.";
@@ -314,7 +317,7 @@ return new Promise(async (resolve) => {
       p.appendChild(artP);
 
       const pb = figma.createFrame(); pb.layoutMode = "VERTICAL"; pb.itemSpacing = 4; pb.layoutAlign = "STRETCH"; pb.fills = [];
-      const title = figma.createText(); title.fontName = serifFont; title.characters = s.title; title.fontSize = 22; title.fills = [{ type: 'SOLID', color: COLOR_TEXT_WHITE }]; pb.appendChild(title);
+      const title = figma.createText(); title.fontName = maruBuriBold; title.characters = s.title; title.fontSize = 22; title.fills = [{ type: 'SOLID', color: COLOR_TEXT_WHITE }]; pb.appendChild(title);
       const sub = figma.createText(); sub.fontName = sansMedium; sub.characters = s.sub; sub.fontSize = 10; sub.fills = [{ type: 'SOLID', color: COLOR_TEXT_MUTED }]; pb.appendChild(sub);
       p.appendChild(pb);
 
@@ -347,7 +350,7 @@ return new Promise(async (resolve) => {
     sealR.resize(240, 240); sealR.fills = [{ type: 'SOLID', color: COLOR_SURFACE }]; sealR.strokes = [{ type: 'SOLID', color: COLOR_GOLD }]; sealR.strokeWeight = 2;
     s05Center.appendChild(sealR);
 
-    const fTitle = figma.createText(); fTitle.fontName = serifFont; fTitle.characters = "\"기계가 완벽해야 사람이 쉴 수 있다.\"";
+    const fTitle = figma.createText(); fTitle.fontName = maruBuriBold; fTitle.characters = "\"기계가 완벽해야 사람이 쉴 수 있다.\"";
     fTitle.fontSize = 36; fTitle.fills = [{ type: 'SOLID', color: COLOR_TEXT_WHITE }]; fTitle.textAutoResize = "WIDTH_AND_HEIGHT"; s05Center.appendChild(fTitle);
 
     const fEn = figma.createText(); fEn.fontName = serifMedium; fEn.characters = "When the machine is flawless, human soul finds its solace.";

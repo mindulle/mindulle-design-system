@@ -144,6 +144,10 @@
   --mds-font-sans: var(--sng-font-sans);
   --sng-font-serif: 'Noto Serif KR', 'Merriweather', Georgia, serif;
   --mds-font-serif: var(--sng-font-serif);
+  --sng-font-cinematic-display: 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;
+  --mds-font-cinematic-display: var(--sng-font-cinematic-display);
+  --sng-font-editorial-humanist: 'Cormorant Garamond', 'MaruBuri', Georgia, serif;
+  --mds-font-editorial-humanist: var(--sng-font-editorial-humanist);
   --sng-font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --mds-font-mono: var(--sng-font-mono);
   --sng-font-wordmark-en: 'Jura Light', sans-serif;

@@ -28,12 +28,12 @@ export function MindulleLogo({
   const goldColor = '#ffd166';
   const goldSub = '#f59e0b';
   const bgColor = isLight ? '#faf8f5' : '#060911';
-  const fillOpacity = isLight ? 0.04 : 0.08;
+  const fillOpacity = isLight ? 0.05 : 0.1;
 
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 400 400"
+      viewBox="0 0 24 24"
       width={size}
       height={size}
       fill="none"
@@ -42,70 +42,68 @@ export function MindulleLogo({
       {...props}
     >
       {withBackground && (
-        <rect width="400" height="400" rx="24" fill={bgColor} />
+        <rect width="24" height="24" rx="4" fill={bgColor} />
       )}
 
-      <g transform="translate(195, 205)">
-        {/* 01. Seed Origin Pod (Gold Core) */}
-        <path
-          d="M -16,72 C -24,58 -22,44 -14,38 C -6,44 -2,58 -16,72 Z"
-          fill={goldColor}
-          stroke={goldSub}
-          strokeWidth="1.2"
-        />
-        <circle cx="-14" cy="52" r="2" fill="#ffffff" />
+      {/* 01. Seed Origin Pod (Gold Core at Base) */}
+      <path
+        d="M 11.5,17.2 C 9.6,17.5 8.6,19 9.8,21.5 C 10.6,22.2 11.6,22.4 12.4,21.8 C 13.8,19.4 13,17.6 11.5,17.2 Z"
+        fill={goldColor}
+        stroke={goldSub}
+        strokeWidth="1.0"
+      />
+      <circle cx="11.5" cy="19.4" r="0.65" fill="#ffffff" />
 
-        {/* 02. The Main Mast (Crisp mast curving forward) */}
-        <path
-          d="M -14,38 C -2,12 14,-25 8,-85"
-          stroke={strokeColor}
-          strokeWidth="3.2"
-          strokeLinecap="round"
-        />
+      {/* 02. The Main Mast (True 2px Stem - Crisp curving mast) */}
+      <path
+        d="M 11.5,17.2 C 12.6,12.8 13.8,8.2 13.5,3.6"
+        stroke={strokeColor}
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
 
-        {/* 03. Primary Main Sail (Sweeping aerodynamic wing) */}
-        <path
-          d="M -4,22 C -42,5 -75,-15 -85,-55 C -65,-46 -35,-42 3,-45 Z"
-          stroke={strokeColor}
-          strokeWidth="2.6"
-          strokeLinejoin="round"
-          strokeLinecap="round"
-          fill={strokeColor}
-          fillOpacity={fillOpacity}
-        />
-        {/* Sail Internal Gold Tension Spine */}
-        <path
-          d="M -9,12 C -32,-6 -55,-20 -66,-42"
-          stroke={goldColor}
-          strokeWidth="2.2"
-          strokeLinecap="round"
-        />
+      {/* 03. Primary Main Sail (Sweeping aerodynamic wing) */}
+      <path
+        d="M 12.2,14.6 C 8.2,13.2 4.6,11.2 3.6,7.6 C 6.2,7.4 9.2,8 13.2,8.4 Z"
+        stroke={strokeColor}
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        fill={strokeColor}
+        fillOpacity={fillOpacity}
+      />
+      {/* Sail Internal Gold Tension Spine */}
+      <path
+        d="M 11.4,13.6 C 8.6,12.3 6.6,11 5.2,8.6"
+        stroke={goldColor}
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
 
-        {/* 04. Top Jib Sail (Secondary upper aerodynamic feather) */}
-        <path
-          d="M 3,-24 C -22,-40 -44,-58 -52,-88 C -38,-80 -18,-74 7,-72 Z"
-          stroke={strokeColor}
-          strokeWidth="2.2"
-          strokeLinejoin="round"
-          strokeLinecap="round"
-          fill={strokeColor}
-          fillOpacity={fillOpacity}
-        />
+      {/* 04. Top Jib Sail (Secondary upper aerodynamic feather) */}
+      <path
+        d="M 13,8 C 9.8,6.6 7.8,5.2 7.2,3.2 C 9.2,3.1 11.2,3.6 13.4,4.2 Z"
+        stroke={strokeColor}
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        fill={strokeColor}
+        fillOpacity={fillOpacity}
+      />
 
-        {/* 05. Leading Whispering Breeze Line (Dash) */}
-        <path
-          d="M 8,-85 C 26,-58 40,-32 46,-2"
-          stroke={goldColor}
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeDasharray="3 3"
-          opacity="0.8"
-        />
+      {/* 05. Leading Whispering Breeze Line (Dash) */}
+      <path
+        d="M 13.5,3.6 C 16.8,5.2 19.2,8.4 20.4,13"
+        stroke={goldColor}
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeDasharray="2 1.5"
+        opacity="0.85"
+      />
 
-        {/* Apex Lift Core */}
-        <circle cx="8" cy="-85" r="4.5" fill={goldColor} />
-        <circle cx="6" cy="-87" r="1.5" fill="#ffffff" />
-      </g>
+      {/* Apex Lift Core */}
+      <circle cx="13.5" cy="3.6" r="1.4" fill={goldColor} />
+      <circle cx="13.1" cy="3.2" r="0.5" fill="#ffffff" />
     </svg>
   );
 }

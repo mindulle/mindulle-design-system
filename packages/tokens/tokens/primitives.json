@@ -302,6 +302,14 @@
         "$value": "'Noto Serif KR', 'Merriweather', Georgia, serif",
         "$type": "fontFamily"
       },
+      "cinematic-display": {
+        "$value": "'Cormorant Garamond', 'Noto Serif KR', Georgia, serif",
+        "$type": "fontFamily"
+      },
+      "editorial-humanist": {
+        "$value": "'Cormorant Garamond', 'MaruBuri', Georgia, serif",
+        "$type": "fontFamily"
+      },
       "mono": {
         "$value": "'JetBrains Mono', 'Fira Code', 'Consolas', monospace",
         "$type": "fontFamily"

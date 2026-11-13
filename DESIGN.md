@@ -72,8 +72,10 @@ Never use `#00ffcc` outside the wordmark context.
 
 ## Typography Rules
 
+- **Cinematic Display (Primary):** `'Cormorant Garamond', 'Noto Serif KR', Georgia, serif` — Hero & Display headings (≥36px, Weight 700/600, True 2px Stem standard)
+- **Editorial Humanist (Secondary):** `'Cormorant Garamond', 'MaruBuri', Georgia, serif` — Atelier essays, brand philosophy & narrative quotes
 - **Primary sans:** `'Pretendard', 'Inter', system-ui, sans-serif` — all body and UI copy
-- **Serif (editorial):** `'Noto Serif KR', 'Merriweather', Georgia, serif` — long-form content only
+- **Serif (editorial body):** `'Noto Serif KR', 'Merriweather', Georgia, serif` — long-form reading content
 - **Mono:** `'JetBrains Mono', 'Fira Code', 'Consolas', monospace` — code, numbers in tables
 - **Wordmark EN:** `'Jura Light', sans-serif` / **Wordmark KO:** `'Designhouse Light', sans-serif` — brand use only
 

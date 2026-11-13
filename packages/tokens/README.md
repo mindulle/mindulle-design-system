@@ -78,12 +78,14 @@ document.documentElement.removeAttribute('data-theme');
 
 ### 타이포그래피
 
-| 변수                   | 값                           |
-| ---------------------- | ---------------------------- |
-| `--sng-font-sans`      | Pretendard, Inter, system-ui |
-| `--sng-font-serif`     | Noto Serif KR, Merriweather  |
-| `--sng-font-mono`      | JetBrains Mono, Fira Code    |
-| `--sng-font-size-base` | 16px                         |
+| 변수                            | 값                                |
+| ------------------------------- | --------------------------------- |
+| `--sng-font-cinematic-display`  | Cormorant Garamond, Noto Serif KR |
+| `--sng-font-editorial-humanist` | Cormorant Garamond, MaruBuri      |
+| `--sng-font-sans`               | Pretendard, Inter, system-ui      |
+| `--sng-font-serif`              | Noto Serif KR, Merriweather       |
+| `--sng-font-mono`               | JetBrains Mono, Fira Code         |
+| `--sng-font-size-base`          | 16px                              |
 
 ### 간격 / 반경 / 기타
 

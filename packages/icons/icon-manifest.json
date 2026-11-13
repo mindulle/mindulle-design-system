@@ -1,0 +1,83 @@
+[
+  {
+    "key": "add",
+    "figmaNodeId": "325:32",
+    "figmaComponentName": "❖ Icon/Add",
+    "figmaInstanceName": "Icon / MdsAddIcon / 2px",
+    "codeName": "MdsAddIcon",
+    "legacyName": "SngAddIcon",
+    "description": "항목 추가, 플러스 동작"
+  },
+  {
+    "key": "arrow-right",
+    "figmaNodeId": "325:13",
+    "figmaComponentName": "❖ Icon/Arrow-right",
+    "figmaInstanceName": "Icon / MdsArrowRightIcon / 2px",
+    "codeName": "MdsArrowRightIcon",
+    "legacyName": "SngArrowRightIcon",
+    "description": "다음 단계, 이동, 링크"
+  },
+  {
+    "key": "check",
+    "figmaNodeId": "325:35",
+    "figmaComponentName": "❖ Icon/Check",
+    "figmaInstanceName": "Icon / MdsCheckIcon / 2px",
+    "codeName": "MdsCheckIcon",
+    "legacyName": "SngCheckIcon",
+    "description": "완료, 체크박스 확인"
+  },
+  {
+    "key": "close",
+    "figmaNodeId": "325:20",
+    "figmaComponentName": "❖ Icon/Close",
+    "figmaInstanceName": "Icon / MdsCloseIcon / 2px",
+    "codeName": "MdsCloseIcon",
+    "legacyName": "SngCloseIcon",
+    "description": "닫기, 삭제, 모달 해제"
+  },
+  {
+    "key": "document",
+    "figmaNodeId": "325:24",
+    "figmaComponentName": "❖ Icon/Document",
+    "figmaInstanceName": "Icon / MdsDocumentIcon / 2px",
+    "codeName": "MdsDocumentIcon",
+    "legacyName": "SngDocumentIcon",
+    "description": "문서, 사양서, 기술 아티클"
+  },
+  {
+    "key": "home",
+    "figmaNodeId": "325:16",
+    "figmaComponentName": "❖ Icon/Home",
+    "figmaInstanceName": "Icon / MdsHomeIcon / 2px",
+    "codeName": "MdsHomeIcon",
+    "legacyName": "SngHomeIcon",
+    "description": "홈, 관문 대시보드"
+  },
+  {
+    "key": "menu",
+    "figmaNodeId": "325:40",
+    "figmaComponentName": "❖ Icon/Menu",
+    "figmaInstanceName": "Icon / MdsMenuIcon / 2px",
+    "codeName": "MdsMenuIcon",
+    "legacyName": "SngMenuIcon",
+    "description": "햄버거 메뉴, 사이드바 토글"
+  },
+  {
+    "key": "search",
+    "figmaNodeId": "325:28",
+    "figmaComponentName": "❖ Icon/Search",
+    "figmaInstanceName": "Icon / MdsSearchIcon / 2px",
+    "codeName": "MdsSearchIcon",
+    "legacyName": "SngSearchIcon",
+    "description": "검색 폼, 쿼리 탐색"
+  },
+  {
+    "key": "user",
+    "figmaNodeId": "325:9",
+    "figmaComponentName": "❖ Icon/User",
+    "figmaInstanceName": "Icon / MdsUserIcon / 2px",
+    "codeName": "MdsUserIcon",
+    "legacyName": "SngUserIcon",
+    "description": "사용자 프로필, 아틀리에 장인"
+  }
+]

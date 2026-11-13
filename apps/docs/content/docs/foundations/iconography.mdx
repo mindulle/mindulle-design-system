@@ -1,0 +1,138 @@
+---
+title: 아이코노그래피 (Iconography)
+description: The True 2px Stem 헌법 기반의 인터랙티브 아이콘 시스템 및 뷰어
+---
+
+# 아이코노그래피 (Iconography)
+
+민들레 디자인 시스템(MDS v0.1.0)의 아이콘은 **"The True 2px Stem"** 조형 헌법을 철저히 수호합니다.  
+서브픽셀 렌더링에 의한 흐림을 방지하기 위해 모든 코어 아이콘은 **2.0px 솔리드 스트로크**와 부드러운 라운드 캡/조인을 준수합니다.
+
+---
+
+## 🏛️ 아이콘 조형 헌법 (The 2px Icon Rules)
+
+1. **The True 2px Law**: 모든 획 두께는 정확히 `strokeWidth={2}`를 고수합니다. (1.2px, 1.5px 등의 임의 축소 금지)
+2. **24x24 마스터 그리드**: 기본 뷰박스는 `0 0 24 24`이며, 정사각 비율 안에서 무게 중심(Visual Weight)을 맞춥니다.
+3. **Round Cap & Join**: `strokeLinecap="round"`와 `strokeLinejoin="round"`를 적용하여 차가운 기계적 절단면을 배제하고 단단하면서도 다정한 인상을 전달합니다.
+4. **Lucide React 확장성**: 9종의 코어 독자 아이콘 외에 방대한 생태계 아이콘이 필요할 경우, 동일한 2px 스트로크 규격을 공유하는 Lucide 아이콘을 패키지에서 전역 제공합니다.
+
+---
+
+## 🔍 코어 아이콘 인터랙티브 갤러리
+
+아래 카드를 클릭하면 즉시 사용할 수 있는 JSX 코드가 클립보드에 복사됩니다:
+
+<IconGalleryViewer />
+
+---
+
+## 💻 설치 및 사용법
+
+`@mindulle/icons` 패키지를 설치하여 독자 아이콘과 Lucide 확장 아이콘을 동시에 사용합니다.
+
+### 1. 패키지 설치
+
+```bash
+pnpm add @mindulle/icons
+```
+
+### 2. 코드 예제
+
+```tsx
+import React from 'react';
+// 1) MDS 표준 코어 아이콘 (Mds*; Sng*는 레거시 별칭)
+import { MdsSearchIcon, MdsAddIcon, MdsCheckIcon } from '@mindulle/icons';
+// 2) Lucide 전체 확장 아이콘 리익스포트
+import { Sparkles, ShieldCheck } from '@mindulle/icons';
+
+export function SearchHeader() {
+  return (
+    <div className="flex items-center gap-3">
+      <MdsSearchIcon size={20} className="text-stone-700 dark:text-stone-200" />
+      <span className="font-sans text-sm">통합 검색</span>
+      <MdsAddIcon size={18} strokeWidth={2} />
+    </div>
+  );
+}
+```
+
+---
+
+## 📐 Props 명세
+
+MDS 아이콘 컴포넌트는 `LucideProps`와 100% 호환됩니다:
+
+### 이름 규칙과 레거시 호환성
+
+Figma의 코어 아이콘 인스턴스명, React의 정식 export, 문서 예제는 모두
+`Mds*Icon`을 기준으로 합니다. 기존 제품 코드의 마이그레이션을 위해 `Sng*Icon`도
+동일한 컴포넌트의 별칭으로 계속 제공합니다.
+
+| 정식 이름 | 레거시 별칭 | 상태 |
+| :--- | :--- | :--- |
+| `MdsSearchIcon` | `SngSearchIcon` | 호환 유지 |
+| `MdsAddIcon` | `SngAddIcon` | 호환 유지 |
+| `MdsCheckIcon` | `SngCheckIcon` | 호환 유지 |
+| `MdsUserIcon`, `MdsArrowRightIcon`, `MdsHomeIcon` | 대응 `Sng*Icon` | 호환 유지 |
+| `MdsCloseIcon`, `MdsDocumentIcon`, `MdsMenuIcon` | 대응 `Sng*Icon` | 호환 유지 |
+
+새 코드와 Figma 인스턴스에는 `Mds*Icon`을 사용하고, `Sng*Icon`은 기존 import를
+깨뜨리지 않기 위한 호환 레이어로만 사용합니다.
+
+### Core 9 네이밍 manifest
+
+| Figma 인스턴스 | 정식 Code export | 레거시 별칭 |
+| :--- | :--- | :--- |
+| `Icon / MdsAddIcon / 2px` | `MdsAddIcon` | `SngAddIcon` |
+| `Icon / MdsArrowRightIcon / 2px` | `MdsArrowRightIcon` | `SngArrowRightIcon` |
+| `Icon / MdsCheckIcon / 2px` | `MdsCheckIcon` | `SngCheckIcon` |
+| `Icon / MdsCloseIcon / 2px` | `MdsCloseIcon` | `SngCloseIcon` |
+| `Icon / MdsDocumentIcon / 2px` | `MdsDocumentIcon` | `SngDocumentIcon` |
+| `Icon / MdsHomeIcon / 2px` | `MdsHomeIcon` | `SngHomeIcon` |
+| `Icon / MdsMenuIcon / 2px` | `MdsMenuIcon` | `SngMenuIcon` |
+| `Icon / MdsSearchIcon / 2px` | `MdsSearchIcon` | `SngSearchIcon` |
+| `Icon / MdsUserIcon / 2px` | `MdsUserIcon` | `SngUserIcon` |
+
+The machine-readable source for this table is `packages/icons/icon-manifest.json`.
+Run `pnpm --filter @mindulle/icons verify:naming` to check all three surfaces.
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `size` | `number \| string` | `24` | 아이콘의 가로/세로 픽셀 크기 |
+| `color` | `string` | `'currentColor'` | 획 색상 (부모의 텍스트 색상 상속) |
+| `strokeWidth` | `number` | `2` | 획 두께 (The True 2px 헌법에 따라 기본값 2 고정) |
+| `className` | `string` | `''` | Tailwind 유틸리티 클래스 주입 |
+
+---
+
+## ♿ 접근성 사용 규칙 (Accessibility)
+
+아이콘 자체는 의미를 전달하는 장식 요소인지, 상호작용의 이름을 보조하는 요소인지에 따라 다르게 처리합니다.
+
+### 아이콘-only 컨트롤
+
+접근 가능한 이름은 아이콘이 아니라 **부모 버튼**에 제공합니다.
+
+```tsx
+<button type="button" aria-label="검색">
+  <MdsSearchIcon aria-hidden="true" size={20} />
+</button>
+```
+
+### 장식용 아이콘
+
+이미 인접한 텍스트가 의미를 전달한다면 보조 기술에서 중복 읽히지 않도록 숨깁니다.
+
+```tsx
+<span className="flex items-center gap-2">
+  <MdsCheckIcon aria-hidden="true" size={16} />
+  <span>저장 완료</span>
+</span>
+```
+
+### 터치 타깃과 시각 크기 분리
+
+`16px`, `20px`, `24px`, `32px`는 아이콘의 **시각적 크기**입니다. 아이콘이 버튼 안에 들어갈 때는 부모 컨트롤이 최소 `24px` 이상의 상호작용 영역을 제공해야 하며, 터치 중심 UI에서는 `44px` 이상을 권장합니다.
+
+아이콘의 색상만으로 상태를 구분하지 말고, 텍스트·모양·선택 상태·aria 속성을 함께 사용합니다.
