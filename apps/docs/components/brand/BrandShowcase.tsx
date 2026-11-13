@@ -1,0 +1,562 @@
+'use client';
+
+import React, { useState } from 'react';
+import { Newspaper, ZoomIn, Sparkles, Feather, Printer, Check, Copy } from 'lucide-react';
+
+export function BrandShowcase() {
+  const [activeTab, setActiveTab] = useState<'masthead' | 'optical' | 'motifs' | 'constitution'>('masthead');
+  const [previewTheme, setPreviewTheme] = useState<'light' | 'dark'>('light');
+  const [zoomLevel, setZoomLevel] = useState<number>(1);
+  const [copiedText, setCopiedText] = useState<string | null>(null);
+
+  const copyCode = (text: string, label: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedText(label);
+    setTimeout(() => setCopiedText(null), 2000);
+  };
+
+  return (
+    <div className="w-full my-8 rounded-xl border border-fd-border bg-fd-card overflow-hidden shadow-sm not-prose">
+      {/* 1. Header Toolbar */}
+      <div className="flex flex-wrap items-center justify-between border-b border-fd-border bg-fd-muted/30 px-4 py-3 gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <button
+            onClick={() => setActiveTab('masthead')}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
+              activeTab === 'masthead'
+                ? 'bg-fd-background text-fd-foreground shadow-xs'
+                : 'text-fd-muted-foreground hover:text-fd-foreground'
+            }`}
+          >
+            <Newspaper size={14} className="text-amber-500" />
+            <span>신문 마스트헤드</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('optical')}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
+              activeTab === 'optical'
+                ? 'bg-fd-background text-fd-foreground shadow-xs'
+                : 'text-fd-muted-foreground hover:text-fd-foreground'
+            }`}
+          >
+            <ZoomIn size={14} className="text-amber-500" />
+            <span>광학 크기 매트릭스</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('motifs')}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
+              activeTab === 'motifs'
+                ? 'bg-fd-background text-fd-foreground shadow-xs'
+                : 'text-fd-muted-foreground hover:text-fd-foreground'
+            }`}
+          >
+            <Feather size={14} className="text-amber-500" />
+            <span>1도 선화 에칭 4종</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('constitution')}
+            className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
+              activeTab === 'constitution'
+                ? 'bg-fd-background text-fd-foreground shadow-xs'
+                : 'text-fd-muted-foreground hover:text-fd-foreground'
+            }`}
+          >
+            <Sparkles size={14} className="text-amber-500" />
+            <span>85:15 조형 헌법</span>
+          </button>
+        </div>
+
+        {/* Theme toggle for live preview */}
+        <div className="flex items-center gap-2">
+          <div className="flex items-center rounded-lg border border-fd-border bg-fd-background p-0.5 text-xs">
+            <button
+              onClick={() => setPreviewTheme('light')}
+              className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                previewTheme === 'light' ? 'bg-amber-500/10 text-amber-600 font-bold' : 'text-fd-muted-foreground'
+              }`}
+            >
+              미색 신문지
+            </button>
+            <button
+              onClick={() => setPreviewTheme('dark')}
+              className={`px-2.5 py-1 rounded-md font-medium transition-colors ${
+                previewTheme === 'dark' ? 'bg-amber-500/20 text-amber-400 font-bold' : 'text-fd-muted-foreground'
+              }`}
+            >
+              아카이벌 다크
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* 2. Tab Contents */}
+      <div className="p-4 sm:p-6">
+        {/* TAB 1: Broadsheet Masthead */}
+        {activeTab === 'masthead' && (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between text-xs text-fd-muted-foreground">
+              <span className="font-mono">assets/svg/lockups/mindulle-garden-masthead.svg (800x180)</span>
+              <button
+                onClick={() =>
+                  copyCode(
+                    `<GazetteMasthead vol="VOL. 01" issue="ISSUE 01" />`,
+                    'masthead-code'
+                  )
+                }
+                className="inline-flex items-center gap-1 text-xs hover:text-amber-500 transition-colors"
+              >
+                {copiedText === 'masthead-code' ? (
+                  <>
+                    <Check size={12} className="text-emerald-500" />
+                    <span>복사됨!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy size={12} />
+                    <span>React 컴포넌트 복사</span>
+                  </>
+                )}
+              </button>
+            </div>
+
+            {/* Live Masthead Rendering Container */}
+            <div
+              className={`w-full rounded-lg border transition-all p-6 sm:p-8 flex flex-col items-center justify-center ${
+                previewTheme === 'light'
+                  ? 'bg-[#FBF9F5] border-[#D6D3CD] text-[#161616]'
+                  : 'bg-[#12100E] border-[#383431] text-[#F7EEEC]'
+              }`}
+              style={{
+                boxShadow: '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
+              }}
+            >
+              {/* Top Double Hairline */}
+              <div className="w-full flex flex-col gap-[3px]" aria-hidden="true">
+                <div
+                  className="w-full h-[2px]"
+                  style={{ backgroundColor: previewTheme === 'light' ? '#161616' : '#F7EEEC' }}
+                />
+                <div
+                  className="w-full h-[1px]"
+                  style={{ backgroundColor: previewTheme === 'light' ? '#D6D3CD' : '#383431' }}
+                />
+              </div>
+
+              {/* Meta Line */}
+              <div className="w-full py-2 flex items-center justify-between text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#57534E] dark:text-[#A8A29E]">
+                <span>VOL. 01 • ISSUE 01</span>
+                <span className="font-bold tracking-[0.25em]" style={{ fontFamily: 'Georgia, serif' }}>
+                  M I N D U L L E &nbsp; A T E L I E R
+                </span>
+                <span>EST. 2026 • WINTER&apos;S END</span>
+              </div>
+
+              <div
+                className="w-full h-[1px] mb-6"
+                style={{ backgroundColor: previewTheme === 'light' ? '#D6D3CD' : '#383431' }}
+              />
+
+              {/* Title Centerpiece */}
+              <div className="text-center flex flex-col items-center gap-2 my-2">
+                <div className="flex items-center justify-center gap-3">
+                  <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                    <line x1="16" y1="14" x2="16" y2="28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M 6 15 C 6 7, 14 3, 26 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <circle cx="16" cy="12" r="3.5" fill="#D97706" />
+                  </svg>
+                  <h2
+                    className="text-2xl sm:text-4xl font-bold tracking-[0.25em] uppercase"
+                    style={{ fontFamily: 'Georgia, serif' }}
+                  >
+                    MINDULLE GARDEN
+                  </h2>
+                </div>
+                <p className="text-xs sm:text-sm font-semibold tracking-[0.35em] text-[#57534E] dark:text-[#A8A29E]">
+                  민 들 레 정 원
+                </p>
+                <p className="text-xs sm:text-sm italic tracking-normal text-[#78716C] dark:text-[#78716C] mt-1" style={{ fontFamily: 'Georgia, serif' }}>
+                  &ldquo;돌 틈에 단단히 뿌리내리고, 가볍게 사유하는 정원사의 지면&rdquo;
+                </p>
+              </div>
+
+              {/* Bottom Double Hairline */}
+              <div className="w-full flex flex-col gap-[3px] mt-6" aria-hidden="true">
+                <div
+                  className="w-full h-[1px]"
+                  style={{ backgroundColor: previewTheme === 'light' ? '#D6D3CD' : '#383431' }}
+                />
+                <div
+                  className="w-full h-[2px]"
+                  style={{ backgroundColor: previewTheme === 'light' ? '#161616' : '#F7EEEC' }}
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: Optical Sizing Matrix */}
+        {activeTab === 'optical' && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <p className="text-xs text-fd-muted-foreground">
+                뷰포트 크기 축소 시 서브픽셀 뭉개짐을 방지하기 위해 독립 작도된 4단계 광학 크기입니다.
+              </p>
+              <div className="flex items-center gap-1.5">
+                {[1, 2, 4].map((scale) => (
+                  <button
+                    key={scale}
+                    onClick={() => setZoomLevel(scale)}
+                    className={`px-2 py-1 text-xs font-mono rounded border transition-colors ${
+                      zoomLevel === scale
+                        ? 'bg-amber-500/10 border-amber-500/40 text-amber-600 font-bold'
+                        : 'border-fd-border text-fd-muted-foreground hover:bg-fd-accent'
+                    }`}
+                  >
+                    {scale}x 줌
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              {/* 16px Favicon */}
+              <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-4">
+                <div className="w-full flex justify-between items-center text-[11px] font-mono border-b border-fd-border pb-2">
+                  <span className="font-bold text-amber-500">16 x 16 px</span>
+                  <span className="text-fd-muted-foreground">극소형 탭</span>
+                </div>
+                <div
+                  className="p-6 rounded-md flex items-center justify-center transition-transform"
+                  style={{
+                    backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
+                    border: '1px solid var(--sng-color-border-subtle, #e5e7eb)',
+                    transform: `scale(${zoomLevel})`,
+                  }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <line
+                      x1="8"
+                      y1="7"
+                      x2="8"
+                      y2="15"
+                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M 3.5 7.5 C 3.5 3.5, 7.5 1.5, 12.5 4.5"
+                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                    />
+                    <circle cx="8" cy="6" r="1.75" fill="#D97706" />
+                  </svg>
+                </div>
+                <p className="text-[10px] text-fd-muted-foreground text-center">
+                  2px 중심축 + 코어 단순화 (픽셀 힌팅)
+                </p>
+              </div>
+
+              {/* 32px Favicon */}
+              <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-4">
+                <div className="w-full flex justify-between items-center text-[11px] font-mono border-b border-fd-border pb-2">
+                  <span className="font-bold text-amber-500">32 x 32 px</span>
+                  <span className="text-fd-muted-foreground">표준 파비콘</span>
+                </div>
+                <div
+                  className="p-6 rounded-md flex items-center justify-center transition-transform"
+                  style={{
+                    backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
+                    border: '1px solid var(--sng-color-border-subtle, #e5e7eb)',
+                    transform: `scale(${zoomLevel})`,
+                  }}
+                >
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <line
+                      x1="16"
+                      y1="15"
+                      x2="16"
+                      y2="30"
+                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M 6 15 C 6 7, 14 3, 26 9"
+                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <line x1="16" y1="12" x2="16" y2="6" stroke="#D97706" strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="12" x2="21.5" y2="8.5" stroke="#D97706" strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="12" x2="10.5" y2="8.5" stroke="#D97706" strokeWidth="1.75" strokeLinecap="round" />
+                    <circle cx="16" cy="12" r="3" fill="#D97706" />
+                  </svg>
+                </div>
+                <p className="text-[10px] text-fd-muted-foreground text-center">
+                  2px 기둥 + 3방향 방사선 + 돛 곡선
+                </p>
+              </div>
+
+              {/* 64px Responsive Favicon */}
+              <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-4">
+                <div className="w-full flex justify-between items-center text-[11px] font-mono border-b border-fd-border pb-2">
+                  <span className="font-bold text-amber-500">64 x 64 px</span>
+                  <span className="text-fd-muted-foreground">반응형 마스터</span>
+                </div>
+                <div
+                  className="p-6 rounded-md flex items-center justify-center transition-transform"
+                  style={{
+                    backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
+                    border: '1px solid var(--sng-color-border-subtle, #e5e7eb)',
+                    transform: `scale(${zoomLevel})`,
+                  }}
+                >
+                  <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="24" r="16" fill="#D97706" opacity="0.12" />
+                    <line
+                      x1="32"
+                      y1="30"
+                      x2="32"
+                      y2="58"
+                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M 12 30 C 12 14, 28 6, 52 18"
+                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                    <line x1="32" y1="24" x2="32" y2="12" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
+                    <line x1="32" y1="24" x2="43" y2="17" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
+                    <line x1="32" y1="24" x2="21" y2="17" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
+                    <circle cx="32" cy="24" r="5.5" fill="#D97706" />
+                  </svg>
+                </div>
+                <p className="text-[10px] text-fd-muted-foreground text-center">
+                  미디어쿼리 내장 다크모드 대응
+                </p>
+              </div>
+
+              {/* 120px Master Emblem */}
+              <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-4">
+                <div className="w-full flex justify-between items-center text-[11px] font-mono border-b border-fd-border pb-2">
+                  <span className="font-bold text-amber-500">120 x 120 px</span>
+                  <span className="text-fd-muted-foreground">마스터 심볼</span>
+                </div>
+                <div
+                  className="p-6 rounded-md flex items-center justify-center transition-transform"
+                  style={{
+                    backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
+                    border: '1px solid var(--sng-color-border-subtle, #e5e7eb)',
+                    transform: `scale(${zoomLevel})`,
+                  }}
+                >
+                  <svg width="48" height="48" viewBox="0 0 120 120" fill="none">
+                    <line
+                      x1="60"
+                      y1="52"
+                      x2="60"
+                      y2="108"
+                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M 22 56 C 22 28, 52 14, 98 34"
+                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                    <line
+                      x1="42"
+                      y1="108"
+                      x2="78"
+                      y2="108"
+                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                    />
+                    <line x1="60" y1="42" x2="60" y2="20" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
+                    <line x1="60" y1="42" x2="79" y2="31" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
+                    <line x1="60" y1="42" x2="41" y2="31" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
+                    <circle cx="60" cy="42" r="9" fill="#D97706" />
+                  </svg>
+                </div>
+                <p className="text-[10px] text-fd-muted-foreground text-center">
+                  스튜디오 공식 마스터 엠블럼
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3: Botanical Etching Motifs */}
+        {activeTab === 'motifs' && (
+          <div className="space-y-4">
+            <p className="text-xs text-fd-muted-foreground">
+              신문 칼럼 여백과 기사 종결부에 1도 단색 먹색으로 얹히는 보태니컬 펜 선화 4종 에셋입니다.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              {/* Motif 1: Sprout */}
+              <div
+                className="p-5 rounded-lg border flex flex-col items-center justify-between gap-3 text-center"
+                style={{
+                  backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
+                  borderColor: previewTheme === 'light' ? '#E5E7EB' : '#2D2A27',
+                }}
+              >
+                <span className="text-[10px] font-mono uppercase tracking-wider text-amber-500 font-bold">
+                  MOTIF 01 • SPROUT
+                </span>
+                <div className="p-3 text-[var(--sng-color-text-primary)]">
+                  <svg width="40" height="40" viewBox="0 0 32 32" fill="none" className="stroke-current">
+                    <path
+                      d="M 16 30 L 16 14 C 16 9, 23 8, 26 12 C 26 7, 19 6, 16 11 C 13 6, 6 7, 6 12 C 9 8, 16 9, 16 14"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <line x1="8" y1="30" x2="24" y2="30" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 3" opacity="0.6" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold font-sans">돌 틈의 싹</h4>
+                  <p className="text-[11px] text-fd-muted-foreground mt-0.5">2px 줄기와 떡잎 선화</p>
+                </div>
+              </div>
+
+              {/* Motif 2: Golden Seed */}
+              <div
+                className="p-5 rounded-lg border flex flex-col items-center justify-between gap-3 text-center"
+                style={{
+                  backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
+                  borderColor: previewTheme === 'light' ? '#E5E7EB' : '#2D2A27',
+                }}
+              >
+                <span className="text-[10px] font-mono uppercase tracking-wider text-amber-500 font-bold">
+                  MOTIF 02 • SEED
+                </span>
+                <div className="p-3 text-amber-500">
+                  <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="3.5" fill="currentColor" />
+                    <line x1="16" y1="10" x2="16" y2="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <line x1="21.2" y1="19" x2="26.4" y2="22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <line x1="10.8" y1="19" x2="5.6" y2="22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold font-sans">생명력의 씨앗</h4>
+                  <p className="text-[11px] text-fd-muted-foreground mt-0.5">3방향 방사선 오르빗</p>
+                </div>
+              </div>
+
+              {/* Motif 3: Pappus */}
+              <div
+                className="p-5 rounded-lg border flex flex-col items-center justify-between gap-3 text-center"
+                style={{
+                  backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
+                  borderColor: previewTheme === 'light' ? '#E5E7EB' : '#2D2A27',
+                }}
+              >
+                <span className="text-[10px] font-mono uppercase tracking-wider text-amber-500 font-bold">
+                  MOTIF 03 • PAPPUS
+                </span>
+                <div className="p-3 text-[var(--sng-color-text-primary)]">
+                  <svg width="40" height="40" viewBox="0 0 32 32" fill="none" className="stroke-current">
+                    <path d="M 16 14 L 6 6 M 16 14 L 11 4 M 16 14 L 16 3 M 16 14 L 21 4 M 16 14 L 26 6" strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="14" x2="16" y2="22" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M 16 22 C 14.5 24, 14.5 27, 16 29 C 17.5 27, 17.5 24, 16 22 Z" fill="currentColor" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold font-sans">비행하는 깃털 홀씨</h4>
+                  <p className="text-[11px] text-fd-muted-foreground mt-0.5">지혜와 도구의 확산</p>
+                </div>
+              </div>
+
+              {/* Motif 4: End Mark */}
+              <div
+                className="p-5 rounded-lg border flex flex-col items-center justify-between gap-3 text-center"
+                style={{
+                  backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
+                  borderColor: previewTheme === 'light' ? '#E5E7EB' : '#2D2A27',
+                }}
+              >
+                <span className="text-[10px] font-mono uppercase tracking-wider text-amber-500 font-bold">
+                  MOTIF 04 • END MARK
+                </span>
+                <div className="p-3 text-amber-500">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="11" r="2.5" />
+                    <path d="M 10 11 C 6 10, 4 14, 8 16 C 10 17, 11 14, 10 11 Z" />
+                    <path d="M 14 11 C 18 10, 20 14, 16 16 C 14 17, 13 14, 14 11 Z" />
+                    <path d="M 12 13 C 12 18, 9 20, 7 19.5 C 8 21, 13 21, 13.5 15 C 13.5 14, 12.5 13, 12 13 Z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold font-sans">기사 종결부호 ❦</h4>
+                  <p className="text-[11px] text-fd-muted-foreground mt-0.5">본문 끝에 놓이는 인쇄 부호</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 4: 85:15 Visual Constitution */}
+        {activeTab === 'constitution' && (
+          <div className="space-y-6">
+            {/* Visual Bar Breakdown */}
+            <div className="space-y-2">
+              <div className="flex justify-between text-xs font-mono">
+                <span className="font-bold text-fd-foreground">85% 신문 조판 그리드 &amp; 활판 인쇄</span>
+                <span className="font-bold text-amber-500">15% 1도 보태니컬 에칭</span>
+              </div>
+              <div className="w-full h-4 rounded-full overflow-hidden flex border border-fd-border">
+                <div className="h-full bg-stone-800 dark:bg-stone-200" style={{ width: '85%' }} />
+                <div className="h-full bg-amber-500" style={{ width: '15%' }} />
+              </div>
+            </div>
+
+            {/* Constitution Details Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg border border-fd-border bg-fd-background space-y-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-fd-foreground flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-stone-800 dark:bg-stone-200" />
+                  <span>85% 시스템 골격 (System Grid)</span>
+                </h4>
+                <ul className="text-xs text-fd-muted-foreground space-y-1.5 list-disc list-inside">
+                  <li>The True 2px Stem (정직한 2.0px 중심축 및 경계선)</li>
+                  <li>1px / 2px 물리적 헤어라인 분할선</li>
+                  <li>따뜻한 미색 재생 신문용지 (#FBF9F5)</li>
+                  <li>깊은 활판 인쇄 먹색 활자 (#161616)</li>
+                  <li>Cormorant Garamond 700 클래식 세리프 활자</li>
+                </ul>
+              </div>
+
+              <div className="p-4 rounded-lg border border-fd-border bg-fd-background space-y-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-amber-500 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-500" />
+                  <span>15% 그래픽 악센트 (Vitality Accent)</span>
+                </h4>
+                <ul className="text-xs text-fd-muted-foreground space-y-1.5 list-disc list-inside">
+                  <li>지면 구석에 작고 단정하게 얹히는 1도 선화 에칭</li>
+                  <li>생명력을 밝히는 단 하나의 앰버 골드 (#D97706 / #F59E0B)</li>
+                  <li>비바람에 깎여 나간 4px / 6px 자연석 라운딩</li>
+                  <li>기사 본문 종결부호 ❦</li>
+                  <li>가독성을 지키는 2% 초미세 종이 그레인</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

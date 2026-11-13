@@ -11,6 +11,7 @@ import { ComponentPreview } from '@/components/sandbox/ComponentPreview';
 import { ColorMatrix } from '@/components/tokens/ColorMatrix';
 import { TypographySpecimen } from '@/components/tokens/TypographySpecimen';
 import { IconGalleryViewer } from '@/components/tokens/IconGalleryViewer';
+import { BrandShowcase } from '@/components/brand/BrandShowcase';
 
 interface PageProps {
   params: Promise<{ slug?: string[] }>;
@@ -37,6 +38,7 @@ export default async function Page({ params }: PageProps) {
               ColorMatrix,
               TypographySpecimen,
               IconGalleryViewer,
+              BrandShowcase,
             } as any
           }
         />
