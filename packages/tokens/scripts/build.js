@@ -8,6 +8,7 @@ const DIST_DIR = path.join(ROOT, 'dist');
 
 const PRIMITIVES_SRC = path.join(TOKENS_DIR, 'primitives.json');
 const SEMANTICS_SRC = path.join(TOKENS_DIR, 'semantics.json');
+const BREAKPOINTS_SRC = path.join(TOKENS_DIR, 'breakpoints.json');
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -51,6 +52,10 @@ function getCssVarName(pathArray) {
      else if (parts[1] === 'easing') parts = ['ease', parts[2]];
   } else if (parts[0] === 'zIndex') {
      parts = ['z', parts[1]];
+  } else if (parts[0] === 'breakpoints') {
+     parts = ['breakpoint', ...parts.slice(1)];
+  } else if (parts[0] === 'touch') {
+     parts = ['touch', ...parts.slice(1)];
   }
   return `--sng-${parts.join('-')}`;
 }
@@ -112,6 +117,14 @@ function build() {
     Object.assign(flatTokens, primTokens);
     cssOutput += `/* --- Primitive Tokens --- */\n`;
     cssOutput += generateCssBlock(':root', primTokens);
+  }
+
+  if (fs.existsSync(BREAKPOINTS_SRC)) {
+    const bpData = JSON.parse(fs.readFileSync(BREAKPOINTS_SRC, 'utf8'));
+    const bpTokens = extractTokens(bpData);
+    Object.assign(flatTokens, bpTokens);
+    cssOutput += `/* --- Responsive Breakpoints & Touch Target Tokens --- */\n`;
+    cssOutput += generateCssBlock(':root', bpTokens);
   }
   
   if (fs.existsSync(SEMANTICS_SRC)) {

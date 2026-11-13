@@ -3,44 +3,60 @@
     "desktop": {
       "max-width": {
         "$value": "1200px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$description": "데스크톱 최대 너비 (1200px)"
       },
-      "global-margin": {
+      "margin": {
         "$value": "32px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$description": "데스크톱 외곽 여백 (32px)"
       },
       "gap": {
         "$value": "24px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$description": "데스크톱 그리드 간격 (24px)"
       }
     },
     "tablet": {
       "max-width": {
         "$value": "768px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$description": "태블릿 최대 너비 (768px)"
       },
-      "global-margin": {
+      "margin": {
         "$value": "24px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$description": "태블릿 외곽 여백 (24px)"
       },
       "gap": {
         "$value": "16px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$description": "태블릿 그리드 간격 (16px)"
       }
     },
     "mobile": {
       "max-width": {
         "$value": "390px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$description": "모바일 표준 뷰포트 너비 (390px)"
       },
-      "global-margin": {
+      "margin": {
         "$value": "16px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$description": "모바일 외곽 여백 (16px)"
       },
       "gap": {
         "$value": "16px",
-        "$type": "dimension"
+        "$type": "dimension",
+        "$description": "모바일 그리드 간격 (16px)"
       }
+    }
+  },
+  "touch": {
+    "min": {
+      "$value": "44px",
+      "$type": "dimension",
+      "$description": "WCAG 2.1 AA 모바일 인터랙티브 요소 최소 터치 영역 (44px)"
     }
   }
 }

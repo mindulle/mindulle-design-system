@@ -270,6 +270,30 @@
   --mds-z-tooltip: var(--sng-z-tooltip);
 }
 
+/* --- Responsive Breakpoints & Touch Target Tokens --- */
+:root {
+  --sng-breakpoint-desktop-max-width: 1200px;
+  --mds-breakpoint-desktop-max-width: var(--sng-breakpoint-desktop-max-width);
+  --sng-breakpoint-desktop-margin: 32px;
+  --mds-breakpoint-desktop-margin: var(--sng-breakpoint-desktop-margin);
+  --sng-breakpoint-desktop-gap: 24px;
+  --mds-breakpoint-desktop-gap: var(--sng-breakpoint-desktop-gap);
+  --sng-breakpoint-tablet-max-width: 768px;
+  --mds-breakpoint-tablet-max-width: var(--sng-breakpoint-tablet-max-width);
+  --sng-breakpoint-tablet-margin: 24px;
+  --mds-breakpoint-tablet-margin: var(--sng-breakpoint-tablet-margin);
+  --sng-breakpoint-tablet-gap: 16px;
+  --mds-breakpoint-tablet-gap: var(--sng-breakpoint-tablet-gap);
+  --sng-breakpoint-mobile-max-width: 390px;
+  --mds-breakpoint-mobile-max-width: var(--sng-breakpoint-mobile-max-width);
+  --sng-breakpoint-mobile-margin: 16px;
+  --mds-breakpoint-mobile-margin: var(--sng-breakpoint-mobile-margin);
+  --sng-breakpoint-mobile-gap: 16px;
+  --mds-breakpoint-mobile-gap: var(--sng-breakpoint-mobile-gap);
+  --sng-touch-min: 44px;
+  --mds-touch-min: var(--sng-touch-min);
+}
+
 /* --- Core Typography, Layout & Elevation --- */
 :root {
   --sng-typography-h1-fontSize: 48px;
