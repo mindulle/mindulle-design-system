@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
+  <!-- Editorial End Mark (❦ Dandelion Bud Florets) -->
+  <!-- Placed at the end of articles on newsprint -->
+  <g fill="currentColor">
+    <!-- Center seed bud -->
+    <circle cx="12" cy="11" r="2.5" />
+    
+    <!-- Left petal wing -->
+    <path d="M 10 11 C 6 10, 4 14, 8 16 C 10 17, 11 14, 10 11 Z" />
+    
+    <!-- Right petal wing -->
+    <path d="M 14 11 C 18 10, 20 14, 16 16 C 14 17, 13 14, 14 11 Z" />
+    
+    <!-- Bottom stem curl -->
+    <path d="M 12 13 C 12 18, 9 20, 7 19.5 C 8 21, 13 21, 13.5 15 C 13.5 14, 12.5 13, 12 13 Z" />
+  </g>
+</svg>

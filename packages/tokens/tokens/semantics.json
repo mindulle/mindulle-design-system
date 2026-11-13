@@ -150,6 +150,33 @@
             "$value": "var(--sng-color-state-danger-bg)",
             "$type": "color"
           }
+        },
+        "editorial": {
+          "newsprint-bg": {
+            "$value": "#FBF9F5",
+            "$type": "color",
+            "$description": "민들레 정원 재생 신문용지 미색 지면 배경"
+          },
+          "ink-primary": {
+            "$value": "#161616",
+            "$type": "color",
+            "$description": "신문 활판 인쇄 잉크 깊은 먹색 본문"
+          },
+          "ink-secondary": {
+            "$value": "#57534E",
+            "$type": "color",
+            "$description": "신문 활판 인쇄 잉크 보조 메타/캡션"
+          },
+          "ink-hairline": {
+            "$value": "#D6D3CD",
+            "$type": "color",
+            "$description": "신문 지면 1px/2px 물리적 분할선 실선"
+          },
+          "gold-accent": {
+            "$value": "#D97706",
+            "$type": "color",
+            "$description": "신문 흑백 지면 위 유일한 스팟 악센트 앰버 골드"
+          }
         }
       }
     },
@@ -295,6 +322,33 @@
           "error-bg": {
             "$value": "var(--sng-color-state-danger-bg)",
             "$type": "color"
+          }
+        },
+        "editorial": {
+          "newsprint-bg": {
+            "$value": "#12100E",
+            "$type": "color",
+            "$description": "민들레 정원 아카이벌 어두운 신문 지면 배경"
+          },
+          "ink-primary": {
+            "$value": "#F7EEEC",
+            "$type": "color",
+            "$description": "어두운 지면 위 부드러운 아이보리 인쇄 잉크 본문"
+          },
+          "ink-secondary": {
+            "$value": "#A8A29E",
+            "$type": "color",
+            "$description": "어두운 지면 위 보조 메타/캡션"
+          },
+          "ink-hairline": {
+            "$value": "#383431",
+            "$type": "color",
+            "$description": "어두운 지면 위 1px/2px 물리적 분할선"
+          },
+          "gold-accent": {
+            "$value": "#F59E0B",
+            "$type": "color",
+            "$description": "어두운 지면 위 유일한 스팟 악센트 앰버 골드"
           }
         }
       }

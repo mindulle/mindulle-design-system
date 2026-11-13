@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="none">
+  <style>
+    :root {
+      --stem-color: #161616;
+      --seed-color: #D97706;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --stem-color: #F7EEEC;
+        --seed-color: #F59E0B;
+      }
+    }
+    .stem { stroke: var(--stem-color); }
+    .seed { fill: var(--seed-color); }
+  </style>
+
+  <!-- True 2px Central Axis / Stem (pixel-hinted on x=8) -->
+  <line x1="8" y1="7" x2="8" y2="15" stroke-width="2" stroke-linecap="round" class="stem" />
+
+  <!-- Dandelion Sail Arc (Asymmetric wind curve) -->
+  <path d="M 3.5 7.5 C 3.5 3.5, 7.5 1.5, 12.5 4.5" stroke-width="1.75" stroke-linecap="round" class="stem" />
+
+  <!-- Golden Seed Core (optical anchor) -->
+  <circle cx="8" cy="6" r="1.75" class="seed" />
+</svg>

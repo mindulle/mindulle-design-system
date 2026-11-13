@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <style>
+    :root {
+      --stem-color: #161616;
+      --seed-color: #D97706;
+      --ray-color: #D97706;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --stem-color: #F7EEEC;
+        --seed-color: #F59E0B;
+        --ray-color: #FBBF24;
+      }
+    }
+    .stem { stroke: var(--stem-color); }
+    .seed { fill: var(--seed-color); }
+    .ray { stroke: var(--ray-color); }
+  </style>
+
+  <!-- 1. The True 2px Stem (Vertical axis, x=16) -->
+  <line x1="16" y1="15" x2="16" y2="30" stroke-width="2" stroke-linecap="round" class="stem" />
+
+  <!-- 2. Asymmetric Sail Curve (Winter's wind curve) -->
+  <path d="M 6 15 C 6 7, 14 3, 26 9" stroke-width="2" stroke-linecap="round" class="stem" />
+
+  <!-- 3. Seed Orbit: 3 Radiating Rays (Life vitality) -->
+  <line x1="16" y1="12" x2="16" y2="6" stroke-width="1.75" stroke-linecap="round" class="ray" />
+  <line x1="16" y1="12" x2="21.5" y2="8.5" stroke-width="1.75" stroke-linecap="round" class="ray" />
+  <line x1="16" y1="12" x2="10.5" y2="8.5" stroke-width="1.75" stroke-linecap="round" class="ray" />
+
+  <!-- 4. Golden Seed Core (Center anchor) -->
+  <circle cx="16" cy="12" r="3" class="seed" />
+</svg>
