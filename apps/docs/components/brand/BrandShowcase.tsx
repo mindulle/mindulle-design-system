@@ -163,9 +163,15 @@ export function BrandShowcase() {
               <div className="text-center flex flex-col items-center gap-2 my-2">
                 <div className="flex items-center justify-center gap-3">
                   <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
-                    <line x1="16" y1="14" x2="16" y2="28" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M 6 15 C 6 7, 14 3, 26 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="16" cy="12" r="3.5" fill="#D97706" />
+                    <line x1="16" y1="14" x2="16" y2="3.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="14" x2="10.5" y2="5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="14" x2="21.5" y2="5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="14" x2="5.5" y2="8.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="14" x2="26.5" y2="8.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+                    <path d="M 5.5 8.5 Q 16 1.8 26.5 8.5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeDasharray="1.5 2" opacity="0.65" />
+                    <circle cx="16" cy="14" r="1.5" fill="#D97706" />
+                    <line x1="16" y1="14" x2="16" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="M 16 22.5 C 14.2 24.5, 14.2 28, 16 29.5 C 17.8 28, 17.8 24.5, 16 22.5 Z" fill="#D97706" />
                   </svg>
                   <h2
                     className="text-2xl sm:text-4xl font-bold tracking-[0.25em] uppercase"
@@ -237,26 +243,16 @@ export function BrandShowcase() {
                   }}
                 >
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <line
-                      x1="8"
-                      y1="7"
-                      x2="8"
-                      y2="15"
-                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M 3.5 7.5 C 3.5 3.5, 7.5 1.5, 12.5 4.5"
-                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
-                      strokeWidth="1.75"
-                      strokeLinecap="round"
-                    />
-                    <circle cx="8" cy="6" r="1.75" fill="#D97706" />
+                    <line x1="8" y1="7.5" x2="8" y2="2" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="8" y1="7.5" x2="3" y2="3.5" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="8" y1="7.5" x2="13" y2="3.5" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
+                    <path d="M 3 3.5 Q 8 1.5 13 3.5" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1" strokeLinecap="round" strokeDasharray="1.5 1.5" opacity="0.75" />
+                    <line x1="8" y1="7.5" x2="8" y2="12" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <path d="M 8 11.5 C 6.8 12.8, 6.8 14.5, 8 15.2 C 9.2 14.5, 9.2 12.8, 8 11.5 Z" fill="#D97706" />
                   </svg>
                 </div>
                 <p className="text-[10px] text-fd-muted-foreground text-center">
-                  2px 중심축 + 코어 단순화 (픽셀 힌팅)
+                  2px 기둥 + 3가닥 깃털 (16px 힌팅)
                 </p>
               </div>
 
@@ -275,29 +271,19 @@ export function BrandShowcase() {
                   }}
                 >
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <line
-                      x1="16"
-                      y1="15"
-                      x2="16"
-                      y2="30"
-                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M 6 15 C 6 7, 14 3, 26 9"
-                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <line x1="16" y1="12" x2="16" y2="6" stroke="#D97706" strokeWidth="1.75" strokeLinecap="round" />
-                    <line x1="16" y1="12" x2="21.5" y2="8.5" stroke="#D97706" strokeWidth="1.75" strokeLinecap="round" />
-                    <line x1="16" y1="12" x2="10.5" y2="8.5" stroke="#D97706" strokeWidth="1.75" strokeLinecap="round" />
-                    <circle cx="16" cy="12" r="3" fill="#D97706" />
+                    <line x1="16" y1="14" x2="16" y2="3.5" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="14" x2="10.5" y2="5" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="14" x2="21.5" y2="5" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="14" x2="5.5" y2="8.5" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="16" y1="14" x2="26.5" y2="8.5" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
+                    <path d="M 5.5 8.5 Q 16 1.8 26.5 8.5" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.25" strokeLinecap="round" strokeDasharray="1.5 2" opacity="0.65" />
+                    <circle cx="16" cy="14" r="1.5" fill="#D97706" />
+                    <line x1="16" y1="14" x2="16" y2="23" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <path d="M 16 22.5 C 14.2 24.5, 14.2 28, 16 29.5 C 17.8 28, 17.8 24.5, 16 22.5 Z" fill="#D97706" />
                   </svg>
                 </div>
                 <p className="text-[10px] text-fd-muted-foreground text-center">
-                  2px 기둥 + 3방향 방사선 + 돛 곡선
+                  5방향 깃털 낙하산 + 2px 대 + 골드 씨앗
                 </p>
               </div>
 
@@ -316,30 +302,23 @@ export function BrandShowcase() {
                   }}
                 >
                   <svg width="48" height="48" viewBox="0 0 64 64" fill="none">
-                    <circle cx="32" cy="24" r="16" fill="#D97706" opacity="0.12" />
-                    <line
-                      x1="32"
-                      y1="30"
-                      x2="32"
-                      y2="58"
-                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M 12 30 C 12 14, 28 6, 52 18"
-                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    <line x1="32" y1="24" x2="32" y2="12" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
-                    <line x1="32" y1="24" x2="43" y2="17" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
-                    <line x1="32" y1="24" x2="21" y2="17" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="32" cy="24" r="5.5" fill="#D97706" />
+                    <circle cx="32" cy="18" r="15" fill="#D97706" opacity="0.12" />
+                    <line x1="32" y1="28" x2="32" y2="6" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <line x1="32" y1="28" x2="21" y2="9" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <line x1="32" y1="28" x2="43" y2="9" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <line x1="32" y1="28" x2="12" y2="16" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <line x1="32" y1="28" x2="52" y2="16" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <line x1="32" y1="28" x2="7" y2="25" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
+                    <line x1="32" y1="28" x2="57" y2="25" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
+                    <path d="M 7 25 Q 32 3 57 25" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.25" strokeLinecap="round" strokeDasharray="2 3" opacity="0.6" />
+                    <circle cx="32" cy="28" r="2.5" fill="#D97706" />
+                    <line x1="32" y1="28" x2="32" y2="47" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2.5" strokeLinecap="round" />
+                    <path d="M 32 46 C 28.5 50, 28.5 56.5, 32 59.5 C 35.5 56.5, 35.5 50, 32 46 Z" fill="#D97706" />
+                    <circle cx="32" cy="52" r="1.5" fill="#FFFFFF" opacity="0.4" />
                   </svg>
                 </div>
                 <p className="text-[10px] text-fd-muted-foreground text-center">
-                  미디어쿼리 내장 다크모드 대응
+                  7방향 깃털 + 미세 골드 오라
                 </p>
               </div>
 
@@ -358,38 +337,23 @@ export function BrandShowcase() {
                   }}
                 >
                   <svg width="48" height="48" viewBox="0 0 120 120" fill="none">
-                    <line
-                      x1="60"
-                      y1="52"
-                      x2="60"
-                      y2="108"
-                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M 22 56 C 22 28, 52 14, 98 34"
-                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    <line
-                      x1="42"
-                      y1="108"
-                      x2="78"
-                      y2="108"
-                      stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'}
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    <line x1="60" y1="42" x2="60" y2="20" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
-                    <line x1="60" y1="42" x2="79" y2="31" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
-                    <line x1="60" y1="42" x2="41" y2="31" stroke="#D97706" strokeWidth="2" strokeLinecap="round" />
-                    <circle cx="60" cy="42" r="9" fill="#D97706" />
+                    <circle cx="60" cy="34" r="28" fill="#D97706" opacity="0.10" />
+                    <line x1="60" y1="52" x2="60" y2="12" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2.2" strokeLinecap="round" />
+                    <line x1="60" y1="52" x2="39" y2="18" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <line x1="60" y1="52" x2="81" y2="18" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <line x1="60" y1="52" x2="22" y2="31" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <line x1="60" y1="52" x2="98" y2="31" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
+                    <line x1="60" y1="52" x2="13" y2="48" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.8" strokeLinecap="round" />
+                    <line x1="60" y1="52" x2="107" y2="48" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.8" strokeLinecap="round" />
+                    <path d="M 13 48 Q 60 8 107 48" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2.5 3.5" opacity="0.55" />
+                    <circle cx="60" cy="52" r="3.5" fill="#D97706" />
+                    <line x1="60" y1="52" x2="60" y2="87" stroke={previewTheme === 'light' ? '#161616' : '#F7EEEC'} strokeWidth="2.5" strokeLinecap="round" />
+                    <path d="M 60 86 C 53.5 93, 53.5 106, 60 112 C 66.5 106, 66.5 93, 60 86 Z" fill="#D97706" />
+                    <circle cx="60" cy="98" r="3" fill="#FFFFFF" opacity="0.35" />
                   </svg>
                 </div>
                 <p className="text-[10px] text-fd-muted-foreground text-center">
-                  스튜디오 공식 마스터 엠블럼
+                  스튜디오 공식 마스터 홀씨 엠블럼
                 </p>
               </div>
             </div>

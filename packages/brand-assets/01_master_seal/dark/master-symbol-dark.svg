@@ -1,30 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" fill="none">
-  <!-- Master Symbol (Dark Base): The Dynamic Wing-Sail (바람을 가르는 비대칭 돛) -->
-  <rect width="400" height="400" rx="16" fill="#060911" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <!-- Mindulle Atelier Master Symbol (Direction A: Floating Pappus Seed Master) -->
+  <!-- Coordinates: 120x120 Master Grid, 2.5px True Stem, Botanical Seed & Plumes -->
+  <style>
+    :root {
+      --axis-color: #161616;
+      --plume-color: #161616;
+      --gold-core: #D97706;
+      --gold-accent: #F59E0B;
+      --halo-color: rgba(217, 119, 6, 0.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --axis-color: #F7EEEC;
+        --plume-color: #F7EEEC;
+        --gold-core: #F59E0B;
+        --gold-accent: #FBBF24;
+        --halo-color: rgba(245, 158, 11, 0.14);
+      }
+    }
+    .axis { stroke: var(--axis-color); }
+    .plume { stroke: var(--plume-color); }
+    .seed-core { fill: var(--gold-core); }
+    .seed-accent { stroke: var(--gold-accent); fill: var(--gold-accent); }
+    .halo { fill: var(--halo-color); }
+  </style>
 
-  <g transform="translate(195, 205)">
-    <!-- 01. Seed Origin Pod (Gold Core) -->
-    <path d="M -16,72 C -24,58 -22,44 -14,38 C -6,44 -2,58 -16,72 Z" fill="#ffd166" stroke="#f59e0b" stroke-width="1.2" />
-    <circle cx="-14" cy="52" r="2" fill="#ffffff" />
+  <!-- 1. Soft Gold Aura behind the floating parachute -->
+  <circle cx="60" cy="34" r="28" class="halo" />
 
-    <!-- 02. The Main Mast (Crisp White curving forward) -->
-    <path d="M -14,38 C -2,12 14,-25 8,-85" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+  <!-- 2. Parachute Ribs (7 Botanical Plumes) -->
+  <!-- Center vertical rib -->
+  <line x1="60" y1="52" x2="60" y2="12" stroke-width="2.2" stroke-linecap="round" class="plume" />
+  <!-- Left/Right inner pair -->
+  <line x1="60" y1="52" x2="39" y2="18" stroke-width="2" stroke-linecap="round" class="plume" />
+  <line x1="60" y1="52" x2="81" y2="18" stroke-width="2" stroke-linecap="round" class="plume" />
+  <!-- Left/Right mid pair -->
+  <line x1="60" y1="52" x2="22" y2="31" stroke-width="2" stroke-linecap="round" class="plume" />
+  <line x1="60" y1="52" x2="98" y2="31" stroke-width="2" stroke-linecap="round" class="plume" />
+  <!-- Left/Right wide pair -->
+  <line x1="60" y1="52" x2="13" y2="48" stroke-width="1.8" stroke-linecap="round" class="plume" />
+  <line x1="60" y1="52" x2="107" y2="48" stroke-width="1.8" stroke-linecap="round" class="plume" />
 
-    <!-- 03. Primary Main Sail (Sweeping aerodynamic wing) -->
-    <path d="M -4,22 C -42,5 -75,-15 -85,-55 C -65,-46 -35,-42 3,-45 Z" 
-          stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="#ffffff" fill-opacity="0.06" />
-    <!-- Sail Internal Gold Tension Spine -->
-    <path d="M -9,12 C -32,-6 -55,-20 -66,-42" stroke="#ffd166" stroke-width="2" stroke-linecap="round" />
+  <!-- 3. Fine Botanical Feather Bristles (1도 에칭 잔털) -->
+  <path
+    d="M 60 22 L 56 18 M 60 28 L 64 24 M 60 34 L 56 30 M 60 40 L 64 36
+       M 48 32 L 44 28 M 40 24 L 36 20
+       M 72 32 L 76 28 M 80 24 L 84 20"
+    stroke-width="1.25"
+    stroke-linecap="round"
+    class="plume"
+    opacity="0.6"
+  />
 
-    <!-- 04. Top Jib Sail (Secondary upper aerodynamic feather) -->
-    <path d="M 3,-24 C -22,-40 -44,-58 -52,-88 C -38,-80 -18,-74 7,-72 Z" 
-          stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" fill="#ffffff" fill-opacity="0.06" />
+  <!-- 4. Delicate Connecting Wind Canopy Arc -->
+  <path
+    d="M 13 48 Q 60 8 107 48"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-dasharray="2.5 3.5"
+    class="plume"
+    opacity="0.55"
+  />
 
-    <!-- 05. Leading Whispering Breeze Line (Dash) -->
-    <path d="M 8,-85 C 26,-58 40,-32 46,-2" stroke="#ffd166" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="3 3" opacity="0.8" />
+  <!-- 5. Parachute Vertex Node (Gold anchor) -->
+  <circle cx="60" cy="52" r="3.5" class="seed-accent" />
 
-    <!-- Apex Lift Core -->
-    <circle cx="8" cy="-85" r="4.5" fill="#ffd166" />
-    <circle cx="6" cy="-87" r="1.5" fill="#ffffff" />
-  </g>
+  <!-- 6. Central Stalk: The True 2px Stem (x=60, y=52 to y=87) -->
+  <line x1="60" y1="52" x2="60" y2="87" stroke-width="2.5" stroke-linecap="round" class="axis" />
+
+  <!-- 7. Botanical Dandelion Achene (Seed payload at bottom) -->
+  <path
+    d="M 60 86 C 53.5 93, 53.5 106, 60 112 C 66.5 106, 66.5 93, 60 86 Z"
+    class="seed-core"
+  />
+  <circle cx="60" cy="98" r="3" fill="#FFFFFF" opacity="0.35" />
+
+  <!-- 8. Subtle foundation wind hair arc -->
+  <path
+    d="M 46 112 A 16 16 0 0 0 74 112"
+    stroke-width="1.25"
+    stroke-linecap="round"
+    stroke-dasharray="2 3"
+    class="axis"
+    opacity="0.4"
+  />
 </svg>

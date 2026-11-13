@@ -1,90 +1,42 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
-  <defs>
-    <style>
+  <!-- Mindulle Favicon 32 (Direction A: Floating Pappus Seed) -->
+  <style>
+    :root {
+      --stem-color: #161616;
+      --seed-color: #D97706;
+      --plume-color: #161616;
+      --accent-color: #D97706;
+    }
+    @media (prefers-color-scheme: dark) {
       :root {
-        --mds-fav-bg: #060911;
-        --mds-fav-border: #30363d;
-        --mds-fav-stem: #ffffff;
-        --mds-fav-gold: #ffd166;
-        --mds-fav-sub: #f59e0b;
-        --mds-fav-sail-op: 0.12;
+        --stem-color: #F7EEEC;
+        --seed-color: #F59E0B;
+        --plume-color: #F7EEEC;
+        --accent-color: #FBBF24;
       }
-      @media (prefers-color-scheme: light) {
-        :root {
-          --mds-fav-bg: #faf8f5;
-          --mds-fav-border: #d0d7de;
-          --mds-fav-stem: #1c1514;
-          --mds-fav-gold: #f59e0b;
-          --mds-fav-sub: #d97706;
-          --mds-fav-sail-op: 0.08;
-        }
-      }
-    </style>
-  </defs>
+    }
+    .stem { stroke: var(--stem-color); }
+    .seed { fill: var(--seed-color); }
+    .plume { stroke: var(--plume-color); }
+    .accent { fill: var(--accent-color); }
+  </style>
 
-  <!-- 4px Weathered Radius Container -->
-  <rect width="32" height="32" rx="7" fill="var(--mds-fav-bg)" stroke="var(--mds-fav-border)" stroke-width="1.5" />
+  <!-- 1. Parachute Plumes (5-way delicate radial rays) -->
+  <line x1="16" y1="14" x2="16" y2="3.5" stroke-width="1.75" stroke-linecap="round" class="plume" />
+  <line x1="16" y1="14" x2="10.5" y2="5" stroke-width="1.75" stroke-linecap="round" class="plume" />
+  <line x1="16" y1="14" x2="21.5" y2="5" stroke-width="1.75" stroke-linecap="round" class="plume" />
+  <line x1="16" y1="14" x2="5.5" y2="8.5" stroke-width="1.75" stroke-linecap="round" class="plume" />
+  <line x1="16" y1="14" x2="26.5" y2="8.5" stroke-width="1.75" stroke-linecap="round" class="plume" />
 
-  <!-- Center Group scaled & placed (24x24 master motif inside 32x32 container) -->
-  <g transform="translate(4, 4)">
-    <!-- 01. Seed Origin Pod (Gold Core) -->
-    <path
-      d="M 11.5,17.2 C 9.6,17.5 8.6,19 9.8,21.5 C 10.6,22.2 11.6,22.4 12.4,21.8 C 13.8,19.4 13,17.6 11.5,17.2 Z"
-      fill="var(--mds-fav-gold)"
-      stroke="var(--mds-fav-sub)"
-      stroke-width="1.0"
-    />
-    <circle cx="11.5" cy="19.4" r="0.65" fill="#ffffff" />
+  <!-- 2. Delicate connecting canopy arc (Wind curve) -->
+  <path d="M 5.5 8.5 Q 16 1.8 26.5 8.5" stroke-width="1.25" stroke-linecap="round" stroke-dasharray="1.5 2" class="plume" opacity="0.65" />
 
-    {/* 02. The Main Mast (True 2px Stem) */}
-    <path
-      d="M 11.5,17.2 C 12.6,12.8 13.8,8.2 13.5,3.6"
-      stroke="var(--mds-fav-stem)"
-      stroke-width="2"
-      stroke-linecap="round"
-    />
+  <!-- 3. Parachute Vertex Node -->
+  <circle cx="16" cy="14" r="1.5" class="accent" />
 
-    <!-- 03. Primary Main Sail -->
-    <path
-      d="M 12.2,14.6 C 8.2,13.2 4.6,11.2 3.6,7.6 C 6.2,7.4 9.2,8 13.2,8.4 Z"
-      stroke="var(--mds-fav-stem)"
-      stroke-width="1.8"
-      stroke-linejoin="round"
-      stroke-linecap="round"
-      fill="var(--mds-fav-stem)"
-      fill-opacity="var(--mds-fav-sail-op)"
-    />
-    <!-- Sail Tension Spine -->
-    <path
-      d="M 11.4,13.6 C 8.6,12.3 6.6,11 5.2,8.6"
-      stroke="var(--mds-fav-gold)"
-      stroke-width="1.4"
-      stroke-linecap="round"
-    />
+  <!-- 4. Central Stalk (The True 2px Stem) -->
+  <line x1="16" y1="14" x2="16" y2="23" stroke-width="2" stroke-linecap="round" class="stem" />
 
-    <!-- 04. Top Jib Sail -->
-    <path
-      d="M 13,8 C 9.8,6.6 7.8,5.2 7.2,3.2 C 9.2,3.1 11.2,3.6 13.4,4.2 Z"
-      stroke="var(--mds-fav-stem)"
-      stroke-width="1.5"
-      stroke-linejoin="round"
-      stroke-linecap="round"
-      fill="var(--mds-fav-stem)"
-      fill-opacity="var(--mds-fav-sail-op)"
-    />
-
-    <!-- 05. Leading Whispering Breeze Line -->
-    <path
-      d="M 13.5,3.6 C 16.8,5.2 19.2,8.4 20.4,13"
-      stroke="var(--mds-fav-gold)"
-      stroke-width="1.25"
-      stroke-linecap="round"
-      stroke-dasharray="2 1.5"
-      opacity="0.85"
-    />
-
-    <!-- Apex Lift Core -->
-    <circle cx="13.5" cy="3.6" r="1.4" fill="var(--mds-fav-gold)" />
-    <circle cx="13.1" cy="3.2" r="0.5" fill="#ffffff" />
-  </g>
+  <!-- 5. Teardrop Seed Core (Gold payload at bottom) -->
+  <path d="M 16 22.5 C 14.2 24.5, 14.2 28, 16 29.5 C 17.8 28, 17.8 24.5, 16 22.5 Z" class="seed" />
 </svg>

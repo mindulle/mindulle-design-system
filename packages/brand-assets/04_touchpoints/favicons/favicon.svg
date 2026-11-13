@@ -1,39 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <!-- Mindulle Favicon 32 (Direction A: Floating Pappus Seed) -->
   <style>
     :root {
       --stem-color: #161616;
       --seed-color: #D97706;
-      --ray-color: #D97706;
-      --halo-color: rgba(217, 119, 6, 0.12);
+      --plume-color: #161616;
+      --accent-color: #D97706;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --stem-color: #F7EEEC;
         --seed-color: #F59E0B;
-        --ray-color: #FBBF24;
-        --halo-color: rgba(245, 158, 11, 0.16);
+        --plume-color: #F7EEEC;
+        --accent-color: #FBBF24;
       }
     }
     .stem { stroke: var(--stem-color); }
     .seed { fill: var(--seed-color); }
-    .ray { stroke: var(--ray-color); }
-    .halo { fill: var(--halo-color); }
+    .plume { stroke: var(--plume-color); }
+    .accent { fill: var(--accent-color); }
   </style>
 
-  <!-- Background Soft Aura (Subtle optical anchor) -->
-  <circle cx="32" cy="24" r="16" class="halo" />
+  <!-- 1. Parachute Plumes (5-way delicate radial rays) -->
+  <line x1="16" y1="14" x2="16" y2="3.5" stroke-width="1.75" stroke-linecap="round" class="plume" />
+  <line x1="16" y1="14" x2="10.5" y2="5" stroke-width="1.75" stroke-linecap="round" class="plume" />
+  <line x1="16" y1="14" x2="21.5" y2="5" stroke-width="1.75" stroke-linecap="round" class="plume" />
+  <line x1="16" y1="14" x2="5.5" y2="8.5" stroke-width="1.75" stroke-linecap="round" class="plume" />
+  <line x1="16" y1="14" x2="26.5" y2="8.5" stroke-width="1.75" stroke-linecap="round" class="plume" />
 
-  <!-- 1. The True 2px Stem (Scaled 2.5px for 64px viewBox) -->
-  <line x1="32" y1="30" x2="32" y2="58" stroke-width="2.5" stroke-linecap="round" class="stem" />
+  <!-- 2. Delicate connecting canopy arc (Wind curve) -->
+  <path d="M 5.5 8.5 Q 16 1.8 26.5 8.5" stroke-width="1.25" stroke-linecap="round" stroke-dasharray="1.5 2" class="plume" opacity="0.65" />
 
-  <!-- 2. Asymmetric Sail Arc (Graceful Bézier curve) -->
-  <path d="M 12 30 C 12 14, 28 6, 52 18" stroke-width="2.5" stroke-linecap="round" class="stem" />
+  <!-- 3. Parachute Vertex Node -->
+  <circle cx="16" cy="14" r="1.5" class="accent" />
 
-  <!-- 3. Seed Orbit: 3 Directional Rays -->
-  <line x1="32" y1="24" x2="32" y2="12" stroke-width="2" stroke-linecap="round" class="ray" />
-  <line x1="32" y1="24" x2="43" y2="17" stroke-width="2" stroke-linecap="round" class="ray" />
-  <line x1="32" y1="24" x2="21" y2="17" stroke-width="2" stroke-linecap="round" class="ray" />
+  <!-- 4. Central Stalk (The True 2px Stem) -->
+  <line x1="16" y1="14" x2="16" y2="23" stroke-width="2" stroke-linecap="round" class="stem" />
 
-  <!-- 4. Golden Seed Core (Outer edge & center disc) -->
-  <circle cx="32" cy="24" r="5.5" class="seed" />
+  <!-- 5. Teardrop Seed Core (Gold payload at bottom) -->
+  <path d="M 16 22.5 C 14.2 24.5, 14.2 28, 16 29.5 C 17.8 28, 17.8 24.5, 16 22.5 Z" class="seed" />
 </svg>

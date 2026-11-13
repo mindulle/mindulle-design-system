@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" width="360" height="64" fill="none">
-  <!-- Mindulle Atelier Master Horizontal Lockup (1.0D : 0.25D : 2.2D Golden Formula) -->
+  <!-- Mindulle Atelier Master Horizontal Lockup (Direction A: Floating Pappus Seed) -->
   <style>
     :root {
       --ink-primary: #161616;
@@ -18,20 +18,27 @@
     .text-main { fill: var(--ink-primary); font-family: "Cormorant Garamond", Georgia, serif; font-size: 20px; font-weight: 700; letter-spacing: 0.28em; }
     .text-sub { fill: var(--ink-secondary); font-family: "JetBrains Mono", monospace; font-size: 8.5px; font-weight: 600; letter-spacing: 0.18em; }
     .divider { stroke: var(--divider-color); stroke-width: 1.5px; }
+    .plume { stroke: var(--ink-primary); }
+    .stem { stroke: var(--ink-primary); }
+    .seed { fill: var(--gold-core); }
   </style>
 
-  <!-- 1. Left Symbol (48x48 box, offset (8, 8)) -->
+  <!-- 1. Left Symbol: Floating Pappus Seed (48x48 box, offset (8, 8)) -->
   <g transform="translate(8, 8)">
-    <!-- 2px Axis Stem -->
-    <line x1="24" y1="20" x2="24" y2="44" stroke="var(--ink-primary)" stroke-width="2" stroke-linecap="round" />
-    <!-- Sail Arc -->
-    <path d="M 10 22 C 10 10, 20 4, 38 12" stroke="var(--ink-primary)" stroke-width="2" stroke-linecap="round" />
-    <!-- Seed Rays -->
-    <line x1="24" y1="16" x2="24" y2="9" stroke="var(--gold-core)" stroke-width="1.75" stroke-linecap="round" />
-    <line x1="24" y1="16" x2="31" y2="12" stroke="var(--gold-core)" stroke-width="1.75" stroke-linecap="round" />
-    <line x1="24" y1="16" x2="17" y2="12" stroke="var(--gold-core)" stroke-width="1.75" stroke-linecap="round" />
-    <!-- Golden Seed Core -->
-    <circle cx="24" cy="16" r="4" fill="var(--gold-core)" />
+    <!-- Parachute Plumes (5 ribs) -->
+    <line x1="24" y1="21" x2="24" y2="7" stroke-width="1.75" stroke-linecap="round" class="plume" />
+    <line x1="24" y1="21" x2="16.5" y2="9" stroke-width="1.75" stroke-linecap="round" class="plume" />
+    <line x1="24" y1="21" x2="31.5" y2="9" stroke-width="1.75" stroke-linecap="round" class="plume" />
+    <line x1="24" y1="21" x2="10" y2="14" stroke-width="1.5" stroke-linecap="round" class="plume" />
+    <line x1="24" y1="21" x2="38" y2="14" stroke-width="1.5" stroke-linecap="round" class="plume" />
+    <!-- Curved Wind Canopy -->
+    <path d="M 10 14 Q 24 5 38 14" stroke-width="1.25" stroke-linecap="round" stroke-dasharray="1.5 2" class="plume" opacity="0.65" />
+    <!-- Vertex Node -->
+    <circle cx="24" cy="21" r="1.5" class="seed" />
+    <!-- 2px Stalk Stem -->
+    <line x1="24" y1="21" x2="24" y2="34" stroke-width="2" stroke-linecap="round" class="stem" />
+    <!-- Teardrop Seed Core -->
+    <path d="M 24 33.5 C 21.8 35.8, 21.8 40, 24 42 C 26.2 40, 26.2 35.8, 24 33.5 Z" class="seed" />
   </g>
 
   <!-- 2. Vertical Divider (x=72, y=14 to y=50) -->

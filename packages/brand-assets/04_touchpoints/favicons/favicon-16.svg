@@ -1,25 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="none">
+  <!-- Mindulle Favicon 16 (Direction A: Floating Pappus Seed) -->
   <style>
     :root {
       --stem-color: #161616;
       --seed-color: #D97706;
+      --plume-color: #161616;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --stem-color: #F7EEEC;
         --seed-color: #F59E0B;
+        --plume-color: #F7EEEC;
       }
     }
     .stem { stroke: var(--stem-color); }
     .seed { fill: var(--seed-color); }
+    .plume { stroke: var(--plume-color); }
   </style>
 
-  <!-- True 2px Central Axis / Stem (pixel-hinted on x=8) -->
-  <line x1="8" y1="7" x2="8" y2="15" stroke-width="2" stroke-linecap="round" class="stem" />
+  <!-- 1. Parachute Plumes (3-way clean rays for 16px pixel grid) -->
+  <line x1="8" y1="7.5" x2="8" y2="2" stroke-width="1.75" stroke-linecap="round" class="plume" />
+  <line x1="8" y1="7.5" x2="3" y2="3.5" stroke-width="1.75" stroke-linecap="round" class="plume" />
+  <line x1="8" y1="7.5" x2="13" y2="3.5" stroke-width="1.75" stroke-linecap="round" class="plume" />
 
-  <!-- Dandelion Sail Arc (Asymmetric wind curve) -->
-  <path d="M 3.5 7.5 C 3.5 3.5, 7.5 1.5, 12.5 4.5" stroke-width="1.75" stroke-linecap="round" class="stem" />
+  <!-- 2. Delicate connecting canopy arc -->
+  <path d="M 3 3.5 Q 8 1.5 13 3.5" stroke-width="1" stroke-linecap="round" stroke-dasharray="1.5 1.5" class="plume" opacity="0.75" />
 
-  <!-- Golden Seed Core (optical anchor) -->
-  <circle cx="8" cy="6" r="1.75" class="seed" />
+  <!-- 3. Central Stalk (The True 2px Stem) -->
+  <line x1="8" y1="7.5" x2="8" y2="12" stroke-width="2" stroke-linecap="round" class="stem" />
+
+  <!-- 4. Teardrop Seed Core (Gold payload at bottom) -->
+  <path d="M 8 11.5 C 6.8 12.8, 6.8 14.5, 8 15.2 C 9.2 14.5, 9.2 12.8, 8 11.5 Z" class="seed" />
 </svg>
