@@ -1,38 +1,29 @@
 ---
-title: 공개 브랜드 가이드 (Public Brand Guide)
-description: Mindulle Atelier와 Sonagi의 브랜드 위계, 시각 헌법, 신문지 조판 및 안전한 상업 사용 가이드
+title: 민들레 마스터 브랜드 북 (The Master Brand Book)
+description: 민들레 스튜디오 & 민들레 정원의 시각 헌법, 신문지 조판, 톤앤매너, 광학 락업 및 인쇄 공학 통합 가이드
 ---
 
-# 공개 브랜드 가이드 (Public Brand Guide)
+# 🏛️ 민들레 마스터 브랜드 북 (The Master Brand Book)
 
 > **"겨울 끝, 민들레. 도구는 단단하게, 일상은 자유롭게."**  
 > (At Winter's End, Dandelion.)
 
-이 페이지는 외부 고객·협업자·제작자가 **Mindulle Atelier**와 **Sonagi**를 올바르게 소개하고 사용할 수 있도록 만든 공개 요약본입니다. 최상위 시각 정체성 원본은 [Visual Identity Charter (ADR 0016)](https://github.com/mindulle/mindulle-brand/blob/main/docs/VISUAL_IDENTITY_CHARTER.md)에 의거하며, 실제 배포에는 [Commercial Usage Rules](./commercial-usage)를 함께 적용합니다.
-
-## 한 문장으로 이해하기
-
-**Mindulle는 창작자의 영혼과 아틀리에를, Sonagi는 무대 뒤에서 돌아가는 강력한 엔지니어링 엔진을 뜻합니다.**  
-그리고 그 스튜디오가 가꾸는 대외 지면은 활판 인쇄의 정갈한 물성을 품은 **「민들레 정원 (Mindulle Garden)」**입니다.
+본 문서는 민들레 스튜디오(Mindulle Atelier)와 민들레 정원(Mindulle Garden)의 **시각 정체성 헌법, 보이스 앤 톤앤매너, 신문 지면 조판, 광학 심볼 규격, 실물 인쇄 공학**을 단일 정본으로 통합한 최고 브랜드 가이드북(Master Brand Book v0.1.0)입니다.
 
 ---
 
-## 🏛️ 3-Tier 브랜드 거버넌스 위계 (ADR 0016)
+## Chapter 01. 브랜드 영혼 & 시각 정체성 헌법
 
-소나기·민들레 생태계의 브랜드 위계는 상위 철학에서 실무 도구로 수직 전개됩니다.
+### 1.1. 우리의 본질 (Core Manifesto)
 
-| 계층 | 명칭 | 상징 및 역할 | 전용 서체 |
-| :--- | :--- | :--- | :--- |
-| **Tier 1** | **민들레 스튜디오 (Mindulle Atelier)** | 창작자 개인, 영혼, 최상위 브랜드 헌법 (SSOT) | `Cormorant Garamond 700` |
-| **Tier 2** | **민들레 정원 & 디자인 시스템 (Garden & MDS)** | 신문지(Newsprint) 활판 지면 및 순수 UI 컴포넌트 | `Cormorant Garamond` + `Pretendard` |
-| **Tier 3** | **소나기 엔진 (Sonagi Engine)** | 무대 뒤 백엔드 인프라, CLI, MCP 도구체인 | `JetBrains Mono`, `Pretendard` |
+> **"민들레는 현대적인 소프트웨어 엔지니어링 공방이자,  
+> 잉크 냄새와 종이의 물성이 살아 숨 쉬는 단단한 지면, 「민들레 정원 (Mindulle Garden)」이다."**
 
-> **공식 패밀리 락업 (Official Lineage)**:  
-> `"Crafted by Mindulle Atelier • Published as Mindulle Garden • Powered by Sonagi Engine"`
+우리는 가상의 판타지 세계관이나 박물관 롤플레잉을 하지 않습니다.  
+우리는 **Everything as Code**, W3C 디자인 토큰, 견고한 TypeScript/Next.js 기반으로 실전 프로덕트를 짓는 엔지니어이자 디자이너입니다.  
+우리의 시각적 표현은 **「신문지(Newsprint) 활판 인쇄술(Letterpress)」**의 정갈함과 지적 신뢰성에 뿌리를 둡니다.
 
----
-
-## 🗞️ 85:15 조형 헌법 (The 85:15 Rule)
+### 1.2. 85:15 조형 헌법 (The 85:15 Rule)
 
 * **85% 시스템 골격**: 신문 브로드시트 그리드, 활판 인쇄술(Letterpress), 1px/2px 실선(The True 2px Stem), 갓 인쇄된 잉크 블랙(`#161616`) & 미색 신문용지(`#FBF9F5`), 클래식 세리프 활자.
 * **15% 그래픽 악센트**: 1도 보태니컬 펜 선화 에칭(싹, 씨앗, 깃털, 종결부호 ❦).
@@ -40,45 +31,76 @@ description: Mindulle Atelier와 Sonagi의 브랜드 위계, 시각 헌법, 신�
 
 ---
 
-## 3대 조형 원칙 (Three Pillars)
+## Chapter 02. 보이스 & 톤앤매너 (Voice & Tone)
 
-1. **The True 2px Stem (2px 기둥 법칙)**:
-   - 모든 메인 축, 프레임, 아이콘 선화는 서브픽셀 번짐이 없는 정확한 2.0px 솔리드 스트로크를 준수합니다.
-2. **Weathered Stone 4px/6px Radius (자연석 반경)**:
-   - 과도한 원형(Pill shape)을 배제하고, 비바람에 깎여 나간 자연석의 묵직한 질감을 전달하는 단계별 라운딩(`4px`, `6px`, `8px`, `12px`)을 적용합니다.
-3. **No Soft Shadows (소프트 섀도우 배제)**:
-   - 40px 이상의 뿌연 블러 그림자를 배제하고, 빛과 각도에 의한 단단하고 명료한 크리스프 엘리베이션만 허용합니다.
+### 2.1. 정중한 경어체 원칙 (Respectful & Grounded)
+민들레 정원의 모든 글과 UI 라벨은 **정중하고 단정한 경어체(`~합니다, ~입니다, ~습니다`)**를 기본 표준으로 삼습니다. 과장된 마케팅 클리셰를 배제하고, 직접 만들고 고민한 실증적 사실을 차분하고 다정하게 전달합니다.
 
----
-
-## 색상과 대비
-
-- 화면은 **60% 캔버스 / 30% 구조 / 10% 영혼의 포인트**로 운용합니다.
-- 밝은 화면의 기본은 `#fcf2f0`, 어두운 화면의 기본은 `#1c1412`입니다.
-- 구조는 `#47211b`, `#392d2b`, `#95817f`를 사용하고, 골드 포인트는 `#ffd166`~`#d97706` 범위에서 한 화면에 한 번만 강하게 사용합니다.
-- 본문과 배경은 WCAG AA 대비를 확인하고, 골드를 본문 텍스트 색상으로 사용하지 않습니다.
-
-## MDS-28 모티프 언어
-
-| 모티프         | 역할             | 공개 사용 기준                                         |
-| -------------- | ---------------- | ------------------------------------------------------ |
-| **Sail Arc**   | 흐름과 이동      | 2px 라운드 선, 8px 그리드, 64px 이상 반복 간격         |
-| **Seed Orbit** | 작은 시작과 도착 | 8–12px 코어, 짧은 3방향 방사선, 강한 골드는 화면당 1회 |
-| **Axis Frame** | 구조와 신뢰      | 2px 축·베이스, 4px 코너, 그림자와 그라디언트 금지      |
-
-세 모티프의 기준 시안은 [MDS-28 Figma Brand Identity Board](https://www.figma.com/design/AEoW19jmlUh3rFgzhhV1vH/Mindulle-Design-System-v0.1.0?node-id=429-3223)에서 확인할 수 있습니다. 코드 적용 규격은 [Graphic Motif System](https://github.com/mindulle/mindulle-design-system/blob/main/docs/brand-motif-system.md)을 따릅니다.
+### 2.2. 고밀도 신문 조판 헌법 (The High Information Density Law)
+우리는 2만 개의 지식 그래프(llm-wiki), W3C 디자인 토큰, 견고한 소프트웨어 아키텍처 등 방대한 지적 자산을 다룹니다. 따라서 여백만 넓고 알맹이가 없는 '여백 과잉 웹'을 거부하고, **8pt 베이스라인 그리드, 1px/2px 물리적 헤어라인, 다단 칼럼 조판**을 통해 정보의 위계와 가치가 꽉 찬 고밀도 지면을 구성합니다.
 
 ---
 
-## 인쇄와 다음 단계
+## Chapter 03. 신문 지면 조판 가이드 (Newsprint Broadsheet System)
 
-민들레 아틀리에는 디지털 화면(RGB)뿐 아니라 충무로/을지로 인쇄 공장으로 직접 발주 가능한 사전 출력(Pre-press) 공학 규격을 `@mindulle/brand-assets` 내에 통합 관리합니다.
+지면을 신문 브로드시트처럼 구성할 때 다음 5대 컴포넌트를 사용합니다:
 
-- **명함 (Business Card)**: 90x50mm (사방 3mm 도련 적용 96x56mm), 엑스트라 매트 350g/m²
-  - Front: 웜 페이퍼 라이트 모드 (K100 단색 텍스트 오버프린트)
-  - Back: 리치 블랙 (`C20 M20 Y20 K100`) + 골드 엠블럼
-- **원형 브랜드 스티커**: 지름 60mm 무광 코팅
+1. **상단 마스트헤드 (`GazetteMasthead`)**: 지면 최상단 호수/날짜 메타와 이중 헤어라인 제호.
+2. **이중 헤어라인 분할선 (`HairlineRule`)**: 1px 얇은 선과 2px 굵은 실선의 조합으로 지면 구획 분할.
+3. **2단 리드 칼럼 (`EditorialColumn`)**: 65:35 비율의 본문-사이드바 분할 조판.
+4. **드롭캡 (`DropCap`)**: 기사 첫 단락 첫 글자를 3줄 높이의 클래식 세리프로 강조.
+5. **기사 종결부호 (`EndMark ❦`)**: 본문 마지막 줄 우측에 찍히는 1도 민들레 꽃망울 인쇄 부호.
 
-자세한 자산 목록과 다운로드 경로는 [Brand Assets](./assets), 허용·금지 범위는 [Commercial Usage Rules](./commercial-usage)에서 확인합니다. 원본 파일을 변형하거나 재배포하지 말고, 승인이 필요한 경우 아래 문의 경로를 사용하세요.
+---
 
-> **문의:** 상업 협업, 공동 캠페인, 로고 변형 승인은 저장소 이슈 또는 Mindulle Atelier 브랜드 담당자에게 요청합니다.
+## Chapter 04. 마스터 심볼 & 광학 크기 규격 (Optical Sizing Matrix)
+
+축소 시 뭉개짐(Anti-aliasing blur)을 방지하기 위해 뷰포트 크기별로 독립 작도된 전용 SVG 에셋을 사용합니다.
+
+| 크기 구분 | 픽셀 규격 | 용도 및 특징 |
+| :--- | :--- | :--- |
+| **극소형 파비콘** | **16 x 16 px** | 브라우저 탭, 모바일 북마크 (2px 중심축 + 코어 단순화) |
+| **표준 파비콘** | **32 x 32 px** | 고해상도 탭, 시스템 작업표시줄 |
+| **반응형 파비콘** | **64 x 64 px** | 다크/라이트 미디어쿼리 내장 마스터 파비콘 |
+| **마스터 심볼** | **120 x 120 px** | 아틀리에 공식 마스터 심볼 (헤더/인쇄용) |
+| **가로형 락업** | **360 x 64 px** | 심볼(1.0D) + 디바이더(0.25D) + 워드마크(2.2D) |
+| **신문 마스트헤드** | **800 x 180 px** | 민들레 정원 브로드시트 신문 제호 락업 |
+
+> 📦 **벡터 에셋 다운로드**: 전체 SVG 원본 파일은 [Brand Assets 페이지](./assets)에서 내려받을 수 있습니다.
+
+---
+
+## Chapter 05. 색채 & 재질 시스템 (Color & Materiality)
+
+* **Newsprint Cream (`#FBF9F5` / dark: `#12100E`)**: 따뜻한 미색 재생 신문용지 지면.
+* **Ink Black (`#161616` / dark: `#F7EEEC`)**: 깊은 활판 인쇄 먹색 활자.
+* **Dandelion Gold (`#D97706` / dark: `#F59E0B`)**: 흑백 신문 지면 위 유일한 스팟 악센트 컬러.
+* **2% 초미세 종이 그레인**: 활자의 가독성을 100% 지키는 극저대비 종이 질감.
+
+> 🎨 **W3C 디자인 토큰 스펙**: 코드 바인딩용 토큰 변수명은 [Colors Foundation](/docs/foundations/colors)을 참고하십시오.
+
+---
+
+## Chapter 06. 프리프레스 실물 인쇄 공학 규격 (Pre-Press Engineering)
+
+* **CMYK K100 단일 먹색 원칙**: 본문 활자와 2px 실선은 4색 혼합(Rich Black) 절대 금지, `C:0 M:0 Y:0 K:100` 단일 판 인쇄로 핀 어긋남 원천 방지.
+* **종이 평량(GSM) 매핑**: 신문 소식지(45~55gsm), 에디토리얼 북클릿(80~100gsm 미색 모조지), 명함(300~350gsm 코튼지).
+* **3mm 도련(Bleed)**: 인쇄 발주 시 사방 +3mm 여백 및 폰트 아웃라인 필수.
+
+---
+
+## Chapter 07. 3-Tier 프로젝트 거버넌스 (ADR 0016)
+
+소나기·민들레 생태계는 명확한 3단계 거버넌스를 따릅니다:
+
+1. **Tier 1 [BRAND]**: `mindulle-brand` (Discord `#mindulle-brand`) — 최상위 시각 헌법 및 벡터 에셋 SSOT
+2. **Tier 2 [MDS]**: `sonagi-design-system` — `@mindulle/tokens`, `@mindulle/ui`, 컴포넌트 엔지니어링 기지
+3. **Tier 3 [APPS]**: `blog-sonagi-space`, `sonagi-portfolio` — 민들레 정원 실지면 운영
+
+---
+
+## 다음 단계 및 라이선스
+
+* **자산 다운로드**: [Brand Assets](./assets)
+* **상업적 사용 규칙**: [Commercial Usage Rules](./commercial-usage)
+* **디자인 파운데이션**: [Colors](/docs/foundations/colors) • [Typography](/docs/foundations/typography) • [Motifs](/docs/foundations/motifs)
