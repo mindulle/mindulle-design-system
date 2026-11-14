@@ -154,6 +154,12 @@ Never use `#00ffcc` outside the wordmark context.
 - **App-owned**: `Navigation/FAB` · `Overlay/BottomSheet`
 - 발행 제외는 Figma의 **Assets → Manage library**에서 해당 컴포넌트를 체크 해제해 설정합니다 (플러그인 API 미지원).
 
+**문서화 채널 우선순위**
+
+1. **Figma 컴포넌트 Description** — Assets 패널 툴팁. 모든 컴포넌트(38/38)에 필수.
+2. **문서 사이트** (`apps/docs`) — 사용 가이드·Props·예제의 정본.
+3. **대형 가이드 보드** — Button처럼 **대표(플래그십) 컴포넌트에만** 둡니다. 전 컴포넌트에 복제하지 않습니다.
+
 ## Known Gaps (Backlog)
 
 아래 항목은 구조는 갖췄으나 콘텐츠·확장이 남은 것들입니다. 이슈 트래커 없이 저장소에서 추적합니다.
