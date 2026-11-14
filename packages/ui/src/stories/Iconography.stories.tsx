@@ -8,9 +8,9 @@ const customIconNames = [
 
 function IconGallery() {
   return (
-    <div style={{ padding: '24px', fontFamily: 'var(--sng-font-sans)' }}>
-      <h2 style={{ marginBottom: '8px', color: 'var(--sng-color-text-primary)' }}>Sonagi Custom Icons</h2>
-      <p style={{ color: 'var(--sng-color-text-secondary)', marginBottom: '32px' }}>
+    <div style={{ padding: '24px', fontFamily: 'var(--mds-font-sans)' }}>
+      <h2 style={{ marginBottom: '8px', color: 'var(--mds-color-text-primary)' }}>Sonagi Custom Icons</h2>
+      <p style={{ color: 'var(--mds-color-text-secondary)', marginBottom: '32px' }}>
         이 아이콘들은 Vector Ops (Affinity Designer)에서 절차적으로 생성되어 React 컴포넌트로 자동 변환된 에셋입니다.
         Lucide 아이콘과 동일한 Props(<code>size</code>, <code>color</code>, <code>strokeWidth</code> 등)를 지원하며 충돌을 방지하기 위해 <code>Sng</code> 접두사가 붙어있습니다.
       </p>
@@ -23,11 +23,11 @@ function IconGallery() {
           return (
             <div key={name} style={{ 
               display: 'flex', flexDirection: 'column', alignItems: 'center', 
-              padding: '16px', border: '1px solid var(--sng-color-border-subtle)', 
-              borderRadius: '8px', background: 'var(--sng-color-background-surface)' 
+              padding: '16px', border: '1px solid var(--mds-color-border-subtle)', 
+              borderRadius: '8px', background: 'var(--mds-color-background-surface)' 
             }}>
-              <IconComponent size={32} color="var(--sng-color-text-primary)" strokeWidth={2} />
-              <span style={{ marginTop: '12px', fontSize: '12px', color: 'var(--sng-color-text-muted)', fontFamily: 'var(--sng-font-mono)' }}>
+              <IconComponent size={32} color="var(--mds-color-text-primary)" strokeWidth={2} />
+              <span style={{ marginTop: '12px', fontSize: '12px', color: 'var(--mds-color-text-muted)', fontFamily: 'var(--mds-font-mono)' }}>
                 {name}
               </span>
             </div>

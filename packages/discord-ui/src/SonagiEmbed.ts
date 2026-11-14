@@ -3,10 +3,10 @@ import { EmbedBuilder, EmbedData, APIEmbed } from 'discord.js';
 export type SonagiEmbedType = 'info' | 'success' | 'warning' | 'danger' | 'error';
 
 const SONAGI_COLORS = {
-  info: 0x1c2c4d,    // --sng-color-brand-primary
-  success: 0x2ea043, // --sng-color-state-success
-  warning: 0xd29922, // --sng-color-state-warning
-  danger: 0xf85149,  // --sng-color-state-danger
+  info: 0x1c2c4d,    // --mds-color-brand-primary
+  success: 0x2ea043, // --mds-color-state-success
+  warning: 0xd29922, // --mds-color-state-warning
+  danger: 0xf85149,  // --mds-color-state-danger
   error: 0xf85149,   // v1.7 compat alias
 };
 

@@ -10,10 +10,10 @@ Figma 작업물이 초기 완성 단계에 도달한 시점에서 배포 경로�
 
 ### 1. 선언된 전략 vs 실제 (ADR 0005 검증 결과)
 
-| 채널                     | ADR 0005 선언        | 2026-08-28 실측                                              |
-| ------------------------ | -------------------- | ------------------------------------------------------------ |
-| Git Submodule / Workspace | **1순위**            | 소비 사례 0건. 구현된 적 없음                                |
-| Cloudflare CDN            | **2순위**            | **작동 불가** (아래 2번)                                     |
+| 채널                      | ADR 0005 선언         | 2026-08-28 실측                                                |
+| ------------------------- | --------------------- | -------------------------------------------------------------- |
+| Git Submodule / Workspace | **1순위**             | 소비 사례 0건. 구현된 적 없음                                  |
+| Cloudflare CDN            | **2순위**             | **작동 불가** (아래 2번)                                       |
 | GitHub Packages           | 3순위 — "다소 무겁다" | **유일하게 작동. `@mindulle/tokens` 1.1.1 → 1.8.0 실 운영 중** |
 
 ADR 0005가 GitHub Packages를 3순위로 내린 근거는 "NPM 인증 토큰 발급 및 유지 비용"이었다. 그러나 `.github/workflows/release.yml`의 semantic-release 파이프라인이 `GITHUB_TOKEN`만으로 이 문제를 이미 해소했고, 실제로 tokens 8회 / ui 3회의 릴리스가 무인으로 성공했다. 즉 기각 근거 자체가 소멸했다.
@@ -79,12 +79,12 @@ design-ops 거버넌스는 `primitives.json → semantics.json → themes/*.json
 
 ### 4. 저장소 잔재를 제거한다
 
-| 대상                                                | 사유                                                              |
-| --------------------------------------------------- | ----------------------------------------------------------------- |
-| 추적 중인 `.tgz` 5개                                | `.gitignore`에 `*.tgz`가 있으나 이미 인덱스 등록됨. 구 `@sonagi` 스코프 2개 포함 |
-| `packages/tokens/tokens/primitives.json.patch`      | 어디서도 참조되지 않는 no-op diff 잔재                            |
-| `.github/workflows/debug-oidc.yml`                  | main push마다 실행되나 대상이 폐기된 `@sonagi/tokens` + npmjs.org OIDC |
-| `PR_BODY.md`                                        | 1회성 PR 본문 잔재                                                |
+| 대상                                           | 사유                                                                             |
+| ---------------------------------------------- | -------------------------------------------------------------------------------- |
+| 추적 중인 `.tgz` 5개                           | `.gitignore`에 `*.tgz`가 있으나 이미 인덱스 등록됨. 구 `@sonagi` 스코프 2개 포함 |
+| `packages/tokens/tokens/primitives.json.patch` | 어디서도 참조되지 않는 no-op diff 잔재                                           |
+| `.github/workflows/debug-oidc.yml`             | main push마다 실행되나 대상이 폐기된 `@sonagi/tokens` + npmjs.org OIDC           |
+| `PR_BODY.md`                                   | 1회성 PR 본문 잔재                                                               |
 
 ## Consequences
 
@@ -100,10 +100,10 @@ design-ops 거버넌스는 `primitives.json → semantics.json → themes/*.json
 Figma 정본은 `Sonagi Design System V3` (key `AEoW19jmlUh3rFgzhhV1vH`, lastModified 2026-08-28)이며, Foundations 보드가 스스로 "Sonagi Foundations (SSOT Live Sync)"라고 선언한다. 그런데:
 
 - `tokens/spacing.css`, `radius.css`는 이 Figma SSOT와 **1:1 일치**하지만 빌드 파이프라인과 `global.css` 어디에도 연결되지 않았다.
-- 실제 배포되는 `variables.css`는 `radius/lg`를 16px 대신 **12px**로, `radius/xl`을 24px 대신 **16px**로 내보내며, Figma에 없는 `radius/base`를 추가하고, spacing은 **완전히 다른 체계**(`--sng-spacing-{0..24}`)를 쓴다.
-- 배경색은 Figma `bg/*` ↔ 생성물 `--sng-color-background-*` ↔ 코드 참조 `--sng-color-bg-*` 로 **3중 불일치**한다.
+- 실제 배포되는 `variables.css`는 `radius/lg`를 16px 대신 **12px**로, `radius/xl`을 24px 대신 **16px**로 내보내며, Figma에 없는 `radius/base`를 추가하고, spacing은 **완전히 다른 체계**(`--mds-spacing-{0..24}`)를 쓴다.
+- 배경색은 Figma `bg/*` ↔ 생성물 `--mds-color-background-*` ↔ 코드 참조 `--mds-color-bg-*` 로 **3중 불일치**한다.
 - 결과적으로 Button은 전 사이즈에서 border-radius가 없고 md 사이즈는 padding이 없다. Modal은 radius·gap이 없고 오버레이가 불투명하다.
 
 상세 실측 결과는 `packages/tokens/AGENTS.md`의 "알려진 결함" 절에 기록했다.
 
-**이 결함의 수정은 이 ADR에 포함하지 않는다.** `--sng-radius-lg` 등은 이미 발행된 v1.8.0의 공개 API이므로 Figma 명명으로 정렬하는 작업은 **breaking change**이며, 별도 ADR + major 릴리스로 다뤄야 한다. 또한 저장소의 Figma 참조가 모두 낡은 파일(Code Connect → `1hgAgnMvqn2uCF8i45Do4x`의 스크래치 `Test Page`, ADR 0001 → 4월자 `KN6Bl6Pb4aW2KJXpBhS7rZ`)을 가리키고 있어, **정본 파일 키를 저장소에 등록하는 작업이 선행**되어야 한다.
+**이 결함의 수정은 이 ADR에 포함하지 않는다.** `--mds-radius-lg` 등은 이미 발행된 v1.8.0의 공개 API이므로 Figma 명명으로 정렬하는 작업은 **breaking change**이며, 별도 ADR + major 릴리스로 다뤄야 한다. 또한 저장소의 Figma 참조가 모두 낡은 파일(Code Connect → `1hgAgnMvqn2uCF8i45Do4x`의 스크래치 `Test Page`, ADR 0001 → 4월자 `KN6Bl6Pb4aW2KJXpBhS7rZ`)을 가리키고 있어, **정본 파일 키를 저장소에 등록하는 작업이 선행**되어야 한다.

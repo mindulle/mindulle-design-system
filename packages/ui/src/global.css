@@ -13,9 +13,9 @@
 
 /* Base Body (Storybook 환경을 위함) */
 body {
-  font-family: var(--sng-font-sans);
-  color: var(--sng-color-text-primary);
-  background-color: var(--sng-color-bg-base);
+  font-family: var(--mds-font-sans);
+  color: var(--mds-color-text-primary);
+  background-color: var(--mds-color-bg-base);
 }
 
 /* Spinner for loading state */
@@ -37,11 +37,11 @@ body {
 
 /* Card */
 .sng-card {
-  background-color: var(--sng-color-bg-surface);
-  border: 1px solid var(--sng-color-border-default);
-  border-radius: var(--sng-radius-lg);
-  box-shadow: var(--sng-shadow-raised);
-  padding: var(--sng-spacing-5);
+  background-color: var(--mds-color-bg-surface);
+  border: 1px solid var(--mds-color-border-default);
+  border-radius: var(--mds-radius-lg);
+  box-shadow: var(--mds-shadow-raised);
+  padding: var(--mds-spacing-5);
   box-sizing: border-box;
 }
 
@@ -51,143 +51,143 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--sng-font-sans);
-  font-size: var(--sng-font-size-xs);
-  font-weight: var(--sng-font-weight-medium);
+  font-family: var(--mds-font-sans);
+  font-size: var(--mds-font-size-xs);
+  font-weight: var(--mds-font-weight-medium);
   line-height: 1;
-  padding: 4px var(--sng-spacing-2);
+  padding: 4px var(--mds-spacing-2);
   white-space: nowrap;
 }
 
 /* Variants */
 .sng-badge--pill {
-  border-radius: var(--sng-radius-full);
+  border-radius: var(--mds-radius-full);
 }
 
 .sng-badge--label {
-  border-radius: var(--sng-radius-sm);
+  border-radius: var(--mds-radius-sm);
 }
 
 /* Colors */
 .sng-badge--success {
-  background-color: var(--sng-color-state-success-bg);
-  color: var(--sng-color-state-success);
+  background-color: var(--mds-color-state-success-bg);
+  color: var(--mds-color-state-success);
 }
 
 .sng-badge--warning {
-  background-color: var(--sng-color-state-warning-bg);
-  color: var(--sng-color-state-warning);
+  background-color: var(--mds-color-state-warning-bg);
+  color: var(--mds-color-state-warning);
 }
 
 .sng-badge--error,
 .sng-badge--danger {
-  background-color: var(--sng-color-state-danger-bg);
-  color: var(--sng-color-state-danger);
+  background-color: var(--mds-color-state-danger-bg);
+  color: var(--mds-color-state-danger);
 }
 
 .sng-badge--info {
-  background-color: var(--sng-color-state-info-bg);
-  color: var(--sng-color-state-info);
+  background-color: var(--mds-color-state-info-bg);
+  color: var(--mds-color-state-info);
 }
 
 /* Typography Utilities */
 .sng-text-xs {
-  font-size: var(--sng-font-size-xs);
-  line-height: var(--sng-line-height-normal);
-  letter-spacing: var(--sng-letter-spacing-wide);
+  font-size: var(--mds-font-size-xs);
+  line-height: var(--mds-line-height-normal);
+  letter-spacing: var(--mds-letter-spacing-wide);
 }
 
 .sng-text-sm {
-  font-size: var(--sng-font-size-sm);
-  line-height: var(--sng-line-height-normal);
-  letter-spacing: var(--sng-letter-spacing-normal);
+  font-size: var(--mds-font-size-sm);
+  line-height: var(--mds-line-height-normal);
+  letter-spacing: var(--mds-letter-spacing-normal);
 }
 
 .sng-text-base {
-  font-size: var(--sng-font-size-base);
-  line-height: var(--sng-line-height-normal);
-  letter-spacing: var(--sng-letter-spacing-normal);
+  font-size: var(--mds-font-size-base);
+  line-height: var(--mds-line-height-normal);
+  letter-spacing: var(--mds-letter-spacing-normal);
 }
 
 .sng-text-lg {
-  font-size: var(--sng-font-size-lg);
-  line-height: var(--sng-line-height-tight);
+  font-size: var(--mds-font-size-lg);
+  line-height: var(--mds-line-height-tight);
 }
 
 .sng-text-xl {
-  font-size: var(--sng-font-size-xl);
-  line-height: var(--sng-line-height-tight);
+  font-size: var(--mds-font-size-xl);
+  line-height: var(--mds-line-height-tight);
 }
 
 .sng-text-h1 {
-  font-size: var(--sng-font-size-4xl);
-  line-height: var(--sng-line-height-tight);
-  font-weight: var(--sng-font-weight-bold);
-  letter-spacing: var(--sng-letter-spacing-tight);
+  font-size: var(--mds-font-size-4xl);
+  line-height: var(--mds-line-height-tight);
+  font-weight: var(--mds-font-weight-bold);
+  letter-spacing: var(--mds-letter-spacing-tight);
 }
 
 .sng-text-h2 {
-  font-size: var(--sng-font-size-3xl);
-  line-height: var(--sng-line-height-tight);
-  font-weight: var(--sng-font-weight-bold);
-  letter-spacing: var(--sng-letter-spacing-tight);
+  font-size: var(--mds-font-size-3xl);
+  line-height: var(--mds-line-height-tight);
+  font-weight: var(--mds-font-weight-bold);
+  letter-spacing: var(--mds-letter-spacing-tight);
 }
 
 .sng-text-h3 {
-  font-size: var(--sng-font-size-2xl);
-  line-height: var(--sng-line-height-tight);
-  font-weight: var(--sng-font-weight-semibold);
+  font-size: var(--mds-font-size-2xl);
+  line-height: var(--mds-line-height-tight);
+  font-weight: var(--mds-font-weight-semibold);
 }
 
 .sng-text-mono {
-  font-family: var(--sng-font-mono);
+  font-family: var(--mds-font-mono);
 }
 
 .sng-text-regular {
-  font-weight: var(--sng-font-weight-regular);
+  font-weight: var(--mds-font-weight-regular);
 }
 
 .sng-text-medium {
-  font-weight: var(--sng-font-weight-medium);
+  font-weight: var(--mds-font-weight-medium);
 }
 
 .sng-text-semibold {
-  font-weight: var(--sng-font-weight-semibold);
+  font-weight: var(--mds-font-weight-semibold);
 }
 
 .sng-text-bold {
-  font-weight: var(--sng-font-weight-bold);
+  font-weight: var(--mds-font-weight-bold);
 }
 
 /* Wordmark */
 .sng-wordmark {
-  background-color: var(--sng-color-wordmark-bg);
-  padding: var(--sng-spacing-3) var(--sng-spacing-4);
+  background-color: var(--mds-color-wordmark-bg);
+  padding: var(--mds-spacing-3) var(--mds-spacing-4);
   display: inline-flex;
   align-items: center;
-  gap: var(--sng-spacing-2);
-  border-radius: var(--sng-radius-md);
+  gap: var(--mds-spacing-2);
+  border-radius: var(--mds-radius-md);
   user-select: none;
 }
 
 .sng-wordmark__text {
-  font-family: var(--sng-font-wordmark-en);
-  font-size: var(--sng-font-size-lg);
-  font-weight: var(--sng-font-weight-regular);
-  color: var(--sng-color-text-inverse);
+  font-family: var(--mds-font-wordmark-en);
+  font-size: var(--mds-font-size-lg);
+  font-weight: var(--mds-font-weight-regular);
+  color: var(--mds-color-text-inverse);
   letter-spacing: 0.1em;
 }
 
 .sng-wordmark__text--ko {
-  font-family: var(--sng-font-wordmark-ko);
-  font-size: var(--sng-font-size-base);
+  font-family: var(--mds-font-wordmark-ko);
+  font-size: var(--mds-font-size-base);
 }
 
 .sng-wordmark__dot {
   width: 6px;
   height: 6px;
-  background-color: var(--sng-color-brand-logo);
-  border-radius: var(--sng-radius-full);
+  background-color: var(--mds-color-brand-logo);
+  border-radius: var(--mds-radius-full);
 }
 
 /* AI Components */
@@ -196,16 +196,16 @@ body {
   align-items: center;
   gap: 4px;
   padding: 4px 8px;
-  font-size: var(--sng-font-size-xs);
-  font-weight: var(--sng-font-weight-medium);
-  border-radius: var(--sng-radius-sm);
-  background: linear-gradient(135deg, var(--sng-color-brand-primary), var(--sng-color-brand-logo));
-  color: var(--sng-color-bg-base);
+  font-size: var(--mds-font-size-xs);
+  font-weight: var(--mds-font-weight-medium);
+  border-radius: var(--mds-radius-sm);
+  background: linear-gradient(135deg, var(--mds-color-brand-primary), var(--mds-color-brand-logo));
+  color: var(--mds-color-bg-base);
 }
 
 .sng-ai-skeleton {
-  background-color: var(--sng-color-bg-surface);
-  border-radius: var(--sng-radius-md);
+  background-color: var(--mds-color-bg-surface);
+  border-radius: var(--mds-radius-md);
   position: relative;
   overflow: hidden;
 }
@@ -231,20 +231,20 @@ body {
 }
 
 .sng-ai-pending {
-  border: 1px dashed var(--sng-color-state-warning);
-  background-color: var(--sng-color-state-warning-bg);
+  border: 1px dashed var(--mds-color-state-warning);
+  background-color: var(--mds-color-state-warning-bg);
   padding: 16px;
-  border-radius: var(--sng-radius-md);
+  border-radius: var(--mds-radius-md);
   display: flex;
   align-items: center;
   gap: 12px;
-  color: var(--sng-color-text-primary);
+  color: var(--mds-color-text-primary);
 }
 
 .sng-ai-spinner {
   width: 16px;
   height: 16px;
-  border: 2px solid var(--sng-color-state-warning);
+  border: 2px solid var(--mds-color-state-warning);
   border-top-color: transparent;
   border-radius: 50%;
   animation: sng-spin 1s linear infinite;

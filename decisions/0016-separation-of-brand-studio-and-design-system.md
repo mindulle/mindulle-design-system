@@ -51,7 +51,7 @@
   - 블로그(`blog-sonagi-space`)의 파비콘 결함(구형 블루 십자 마크) 및 과도한 롤플레잉이 완전히 제거되고, 읽기 좋은 신문지 활판 지면으로 정렬됨.
 - **배포 및 관리**:
   - `@mindulle/brand`는 무리한 v1.0 대신 `v0.1.0`부터 차근차근 버저닝을 진행함.
-  - `@mindulle/tokens`에 신문지 시맨틱 변수 5종(`--sng-color-editorial-*`) 공식 반영.
+  - `@mindulle/tokens`에 신문지 시맨틱 변수 5종(`--mds-color-editorial-*`) 공식 반영.
 
 ---
 

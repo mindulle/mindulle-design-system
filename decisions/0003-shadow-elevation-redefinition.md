@@ -15,15 +15,15 @@
 발행된 `@mindulle/tokens`의 shadow 값:
 
 ```css
---sng-shadow-sm: 0 1px 3px rgba(8, 58, 100, 0.1);
---sng-shadow-md: 0 4px 12px rgba(8, 58, 100, 0.12);
+--mds-shadow-sm: 0 1px 3px rgba(8, 58, 100, 0.1);
+--mds-shadow-md: 0 4px 12px rgba(8, 58, 100, 0.12);
 ```
 
 DESIGN.md의 focus ring: `0 0 0 3px rgba(18,117,181,0.3)`
 
 이 rgba 값들을 hex로 역산한 결과:
 
-- `rgba(8,58,100)` = `#083a64` → ADR 0001에서 찾아낸 **깨진 `--sng-color-blue-800`** 그 자체
+- `rgba(8,58,100)` = `#083a64` → ADR 0001에서 찾아낸 **깨진 `--mds-color-blue-800`** 그 자체
 - `rgba(18,117,181)` = `#1275b5` → ADR 0001에서 명도 역전 버그로 지목한 **깨진 `blue-600`/구 `brand-primary-hover`** 그 자체
 
 즉 Shadow는 별도로 잘못 설계된 게 아니라, **이미 폐기하기로 한 깨진 blue 스케일을 그대로 재사용**하고 있었을 뿐임. 색만 오염됐을 뿐 **3단계 구조(Flat/Raised/Floating) + Focus ring 자체는 CEO-945 체크리스트에도 명시된 합리적인 설계**이므로 구조는 유지.
@@ -38,9 +38,9 @@ Figma `소나기 디자인 시스템`의 Shadow 프레임은 6단계(XS/SM/Base/
 
 | 토큰                         | 값                               | 근거                                      |
 | ---------------------------- | -------------------------------- | ----------------------------------------- |
-| `--sng-shadow-sm` (Raised)   | `0 1px 3px rgba(71,33,27,0.1)`   | 틴트 = ADR 0001 `primary/ink`(`#47211b`)  |
-| `--sng-shadow-md` (Floating) | `0 4px 12px rgba(71,33,27,0.12)` | 동일                                      |
-| `--sng-shadow-focus`         | `0 0 0 3px rgba(185,70,68,0.3)`  | 틴트 = ADR 0001 `accent-hover`(`#b94644`) |
+| `--mds-shadow-sm` (Raised)   | `0 1px 3px rgba(71,33,27,0.1)`   | 틴트 = ADR 0001 `primary/ink`(`#47211b`)  |
+| `--mds-shadow-md` (Floating) | `0 4px 12px rgba(71,33,27,0.12)` | 동일                                      |
+| `--mds-shadow-focus`         | `0 0 0 3px rgba(185,70,68,0.3)`  | 틴트 = ADR 0001 `accent-hover`(`#b94644`) |
 
 **구조**: 3단계 유지 (DESIGN.md 원안 그대로) — Figma의 6단계를 아래처럼 수렴:
 
@@ -54,7 +54,7 @@ Figma의 XS(아주 미세한 구분선)는 DESIGN.md의 "Do not use drop shadows
 
 ## Consequences
 
-- `@mindulle/tokens`의 `--sng-shadow-*` 값 교체 → ADR 0001과 같은 major 범프에 포함
+- `@mindulle/tokens`의 `--mds-shadow-*` 값 교체 → ADR 0001과 같은 major 범프에 포함
 - Figma Shadow 프레임 6단계 → 3단계로 재구성, 색조 전면 교체
 - Z-index 사다리(base 0·raised 10·dropdown 100·sticky 200·modal 300·toast 400·tooltip 500)는 색·수치 문제 없음 확인, 변경 없음
 

@@ -108,11 +108,11 @@ export const CanvasPage: React.FC<{ initialTool?: StudioTool }> = ({ initialTool
   return (
     <div className="h-screen w-full flex flex-col bg-[#060911] text-gray-100 overflow-hidden font-sans">
       {/* 01. Top Suite Header Navigation */}
-      <header className="h-16 px-4 md:px-6 bg-[#090d16] border-b-2 border-sng-border flex items-center justify-between shrink-0 z-20">
+      <header className="h-16 px-4 md:px-6 bg-[#090d16] border-b-2 border-mds-border flex items-center justify-between shrink-0 z-20">
         <div className="flex items-center gap-3 md:gap-4">
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono text-sng-muted hover:text-white border border-sng-border hover:border-gray-500 rounded-sm transition-all"
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono text-mds-muted hover:text-white border border-mds-border hover:border-gray-500 rounded-sm transition-all"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Portal</span>
@@ -120,10 +120,10 @@ export const CanvasPage: React.FC<{ initialTool?: StudioTool }> = ({ initialTool
 
           <MindulleSeal size={22} showText={false} className="hidden sm:block" />
 
-          <div className="h-5 w-px bg-sng-border hidden sm:block" />
+          <div className="h-5 w-px bg-mds-border hidden sm:block" />
 
           {/* App Switcher Tabs */}
-          <div className="flex items-center gap-1 bg-black/40 p-1 rounded-sm border border-sng-border/60">
+          <div className="flex items-center gap-1 bg-black/40 p-1 rounded-sm border border-mds-border/60">
             <button
               onClick={() => setActiveTool('draw')}
               className={`flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-sm transition-all ${
@@ -140,7 +140,7 @@ export const CanvasPage: React.FC<{ initialTool?: StudioTool }> = ({ initialTool
               onClick={() => setActiveTool('vector')}
               className={`flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-sm transition-all ${
                 activeTool === 'vector'
-                  ? 'bg-sng-dandelion text-black shadow-sm font-bold'
+                  ? 'bg-mds-dandelion text-black shadow-sm font-bold'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -152,7 +152,7 @@ export const CanvasPage: React.FC<{ initialTool?: StudioTool }> = ({ initialTool
               onClick={() => setActiveTool('photo')}
               className={`flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-sm transition-all ${
                 activeTool === 'photo'
-                  ? 'bg-sng-rain text-black shadow-sm font-bold'
+                  ? 'bg-mds-rain text-black shadow-sm font-bold'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -197,7 +197,7 @@ export const CanvasPage: React.FC<{ initialTool?: StudioTool }> = ({ initialTool
             </button>
           </div>
 
-          <span className="hidden xl:inline-block text-[11px] font-mono text-sng-muted">
+          <span className="hidden xl:inline-block text-[11px] font-mono text-mds-muted">
             • {current.category} ({current.version})
           </span>
         </div>
@@ -208,7 +208,7 @@ export const CanvasPage: React.FC<{ initialTool?: StudioTool }> = ({ initialTool
             <a
               href={current.sampleFile.path}
               download={current.sampleFile.name}
-              className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-sng-dandelion border border-sng-dandelion/50 hover:bg-sng-dandelion/10 rounded-sm transition-colors"
+              className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-mds-dandelion border border-mds-dandelion/50 hover:bg-mds-dandelion/10 rounded-sm transition-colors"
               title="Download Sample Vector AST"
             >
               <Download className="w-3.5 h-3.5" />
@@ -220,7 +220,7 @@ export const CanvasPage: React.FC<{ initialTool?: StudioTool }> = ({ initialTool
             href={current.webUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-gray-300 hover:text-white border border-sng-border hover:border-gray-500 rounded-sm transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-gray-300 hover:text-white border border-mds-border hover:border-gray-500 rounded-sm transition-colors"
           >
             <ExternalLink className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">New Tab</span>
@@ -228,7 +228,7 @@ export const CanvasPage: React.FC<{ initialTool?: StudioTool }> = ({ initialTool
 
           <button
             onClick={() => setIsFullscreen(!isFullscreen)}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-sng-rain border border-sng-rain/50 hover:bg-sng-rain/10 rounded-sm transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-mds-rain border border-mds-rain/50 hover:bg-mds-rain/10 rounded-sm transition-colors"
           >
             {isFullscreen ? (
               <>

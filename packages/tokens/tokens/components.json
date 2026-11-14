@@ -1,0 +1,65 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "Mindulle Design System — Component Tokens",
+    "description": "Tier 3 component tokens. Each value aliases a semantic token, so themes switch automatically. Mirrors the Figma 'Component' variable collection."
+  },
+  "component": {
+    "button": {
+      "bg-primary": {
+        "$value": "{semantic.light.color.brand.primary}",
+        "$type": "color"
+      },
+      "bg-primary-hover": {
+        "$value": "{semantic.light.color.brand.primary-hover}",
+        "$type": "color"
+      },
+      "text-on-primary": {
+        "$value": "{semantic.light.color.text.inverse}",
+        "$type": "color"
+      },
+      "bg-secondary": {
+        "$value": "{semantic.light.color.background.surface}",
+        "$type": "color"
+      },
+      "border-secondary": {
+        "$value": "{semantic.light.color.border.default}",
+        "$type": "color"
+      },
+      "text-secondary": {
+        "$value": "{semantic.light.color.text.primary}",
+        "$type": "color"
+      }
+    },
+    "card": {
+      "bg": {
+        "$value": "{semantic.light.color.background.surface}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{semantic.light.color.border.default}",
+        "$type": "color"
+      }
+    },
+    "input": {
+      "bg": {
+        "$value": "{semantic.light.color.background.surface}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{semantic.light.color.border.default}",
+        "$type": "color"
+      },
+      "border-focus": {
+        "$value": "{semantic.light.color.brand.primary}",
+        "$type": "color"
+      }
+    },
+    "focus": {
+      "ring": {
+        "$value": "{semantic.light.color.brand.primary}",
+        "$type": "color"
+      }
+    }
+  }
+}

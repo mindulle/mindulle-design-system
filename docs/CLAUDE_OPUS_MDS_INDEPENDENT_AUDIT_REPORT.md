@@ -47,7 +47,7 @@ _The True 2px Stem, 4px Weathered Radius, No Soft Shadows_
 #### 1) 긍정적 평가 (Strengths)
 
 - **The True 2px Stem 벡터 정합**: MDS-24에서 재설계된 `MindulleLogo` 심볼(24x24 뷰박스)의 메인 마스트(돛대)가 정확히 `strokeWidth="2"`와 `strokeLinecap="round"`로 정렬되어 있습니다. 과거 1.2px/1.5px 미세 편차로 인해 레티나 디스플레이에서 뿌옇게 번지던 안티앨리어싱 문제가 완전히 종식되었으며, 파비콘(16px/32px) 및 대형 히어로 표제어에서도 칼날 같은 선명도를 유지합니다.
-- **Weathered Stone 4px/6px 계단식 라운딩**: 토큰 시스템의 `--sng-radius-sm: 4px`, `--sng-radius-base: 6px`, `--sng-radius-md: 8px`, `--sng-radius-lg: 12px`가 과도한 원형(Pill shape) 남용을 엄격히 통제하고, 비바람에 깎여 나간 자연석의 묵직한 질감을 전달합니다.
+- **Weathered Stone 4px/6px 계단식 라운딩**: 토큰 시스템의 `--mds-radius-sm: 4px`, `--mds-radius-base: 6px`, `--mds-radius-md: 8px`, `--mds-radius-lg: 12px`가 과도한 원형(Pill shape) 남용을 엄격히 통제하고, 비바람에 깎여 나간 자연석의 묵직한 질감을 전달합니다.
 - **No Soft Shadows (소프트 섀도우 추방 및 크리스프 엘리베이션)**:
   - Flat (0): `none`
   - Raised (1): `0 2px 6px rgba(40,20,15,0.08)` (다크: `rgba(0,0,0,0.4)`)
@@ -83,11 +83,11 @@ _Primitives ➔ Semantics 2-Tier 구조, OKLCH 기반 색상 대비, Light/Dark 
   - Light 모드 Text Primary (`#1e1311`) vs Background Base (`#fcf2f0`): 대비율 **14.8:1** (WCAG AAA 통과)
   - Dark 모드 Text Primary (`#f7eeec`) vs Background Base (`#1c1412`): 대비율 **16.1:1** (WCAG AAA 통과)
   - Interactive Accent (`#d2645f`) vs Background Base: 대비율 **4.6:1** (WCAG AA 텍스트 및 인터랙션 기준 충족)
-- **CSS 변수 듀얼 네임스페이스 매핑**: `--sng-*` 레거시 변수와 신규 `--mds-*` 변수가 1:1로 상호 미러링되어 기존 포털 및 외부 프로젝트의 하위 호환성을 100% 보장합니다.
+- **CSS 변수 듀얼 네임스페이스 매핑**: `--mds-*` 레거시 변수와 신규 `--mds-*` 변수가 1:1로 상호 미러링되어 기존 포털 및 외부 프로젝트의 하위 호환성을 100% 보장합니다.
 
 #### 2) 감점 및 권고 사항 (Findings: -2점)
 
-- **포커스 링 투명도 변수화**: `--sng-shadow-focus`가 `rgba(184, 106, 4, 0.25)`로 하드코딩된 부분이 있습니다. OKLCH 컬러 스페이스를 전면 활용하여 알파 채널을 `color-mix()` 또는 시맨틱 알파 토큰으로 추출하면 고대비(High Contrast) 모드 지원 시 더욱 유연해질 것입니다.
+- **포커스 링 투명도 변수화**: `--mds-shadow-focus`가 `rgba(184, 106, 4, 0.25)`로 하드코딩된 부분이 있습니다. OKLCH 컬러 스페이스를 전면 활용하여 알파 채널을 `color-mix()` 또는 시맨틱 알파 토큰으로 추출하면 고대비(High Contrast) 모드 지원 시 더욱 유연해질 것입니다.
 
 ---
 
@@ -128,8 +128,8 @@ _Cormorant Garamond 700 ↔ Noto Serif KR / Maru Buri 간의 광학 조화_
 
 - **실측 기둥 두께(The True 2px Stem) 충족**: Cormorant Garamond는 클래식 디스플레이 서체 특성상 가로획이 매우 가늘어 한글 서체와 조합 시 영문만 왜소해 보이는 고질적 문제가 있습니다. MDS v0.1.0은 영문 Weight를 700으로 상향 고정하고 36px 이상에서 Noto Serif KR 700과 매칭함으로써, 실측 기둥 두께가 2.4px~2.8px로 형성되어 완벽한 시각적 밸런스를 달성했습니다.
 - **이원화 타이포그래피 스택 구축**:
-  - `--sng-font-cinematic-display`: 강렬한 선언문, 메인 타이틀, 관문 쇼룸 전용
-  - `--sng-font-editorial-humanist`: 긴 호흡의 아틀리에 에세이, 따뜻한 브랜드 사유 노트 전용
+  - `--mds-font-cinematic-display`: 강렬한 선언문, 메인 타이틀, 관문 쇼룸 전용
+  - `--mds-font-editorial-humanist`: 긴 호흡의 아틀리에 에세이, 따뜻한 브랜드 사유 노트 전용
   - 영문과 한글의 글리프 높이(x-height) 차이를 CSS `letter-spacing: -0.025em` 및 `line-height: 115%`로 정밀 보정하여 조판 밀도를 극대화했습니다.
 - **Figma SSOT 402:991 보드와 100% 동기화**: 피그마 텍스트 스타일과 웹 프론트엔드 스타일이 일치합니다.
 

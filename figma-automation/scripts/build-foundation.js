@@ -141,7 +141,7 @@ text(typoFrame, 48, y2, 'Font Families', 'Pretendard', 'SemiBold', 20, SECTION_H
 y2 += 40;
 text(typoFrame, 48, y2, 'Pretendard — Sans, UI 전체', 'Pretendard', 'Regular', 18, INK); y2 += 34;
 text(typoFrame, 48, y2, '에디토리얼 세리프 — Noto Serif KR, 장문 콘텐츠 전용', 'Noto Serif KR', 'Regular', 18, INK); y2 += 34;
-text(typoFrame, 48, y2, 'const token = "--sng-color-accent";  // JetBrains Mono', 'JetBrains Mono', 'Regular', 15, ACCENT);
+text(typoFrame, 48, y2, 'const token = "--mds-color-accent";  // JetBrains Mono', 'JetBrains Mono', 'Regular', 15, ACCENT);
 
 // ============ FRAME 3: Shadow System ============
 const F3_X = F2_X + F2_W + 120;

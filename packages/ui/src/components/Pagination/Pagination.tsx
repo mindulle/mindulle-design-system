@@ -66,7 +66,7 @@ export function Pagination({
 
   return (
     <nav
-      className={`flex items-center justify-center gap-sng-sm ${className}`}
+      className={`flex items-center justify-center gap-mds-sm ${className}`}
       aria-label="Pagination"
       {...props}
     >

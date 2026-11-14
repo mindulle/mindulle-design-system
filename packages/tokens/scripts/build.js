@@ -9,6 +9,7 @@ const DIST_DIR = path.join(ROOT, 'dist');
 const PRIMITIVES_SRC = path.join(TOKENS_DIR, 'primitives.json');
 const SEMANTICS_SRC = path.join(TOKENS_DIR, 'semantics.json');
 const BREAKPOINTS_SRC = path.join(TOKENS_DIR, 'breakpoints.json');
+const COMPONENTS_SRC = path.join(TOKENS_DIR, 'components.json');
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -57,7 +58,7 @@ function getCssVarName(pathArray) {
   } else if (parts[0] === 'touch') {
      parts = ['touch', ...parts.slice(1)];
   }
-  return `--sng-${parts.join('-')}`;
+  return `--mds-${parts.join('-')}`;
 }
 
 function extractTokens(node, pathArray = [], result = {}) {
@@ -84,15 +85,14 @@ function extractTokens(node, pathArray = [], result = {}) {
   return result;
 }
 
+const legacyAliasKeys = new Set();
+
 function generateCssBlock(selector, tokensDict) {
   if (Object.keys(tokensDict).length === 0) return '';
   let css = `${selector} {\n`;
   for (const [key, val] of Object.entries(tokensDict)) {
     css += `  ${key}: ${val};\n`;
-    if (key.startsWith('--sng-')) {
-      const mdsKey = key.replace('--sng-', '--mds-');
-      css += `  ${mdsKey}: var(${key});\n`;
-    }
+    if (key.startsWith('--mds-')) legacyAliasKeys.add(key);
   }
   css += `}\n\n`;
   return css;
@@ -103,7 +103,7 @@ function build() {
   const version = pkgJson.version;
   ensureDir(DIST_DIR);
   
-  let cssOutput = `/**\n * Sonagi Design System — CSS Custom Properties\n * Generated automatically from JSON tokens v${version}\n * DO NOT EDIT — regenerate with: pnpm --filter @mindulle/tokens build\n * 2-Tier architecture (primitives -> semantics); Light/Dark branch inside semantics.\n * See decisions/0010-delivery-consolidation-github-packages.md\n */\n\n`;
+  let cssOutput = `/**\n * Mindulle Design System — CSS Custom Properties\n * Generated automatically from JSON tokens v${version}\n * DO NOT EDIT — regenerate with: pnpm --filter @mindulle/tokens build\n * 2-Tier architecture (primitives -> semantics); Light/Dark branch inside semantics.\n * See decisions/0010-delivery-consolidation-github-packages.md\n */\n\n`;
   
   let flatTokens = {};
   let lightTokens = {};
@@ -137,20 +137,25 @@ function build() {
     cssOutput += `/* --- Core Typography, Layout & Elevation --- */\n`;
     cssOutput += generateCssBlock(':root', typoAndLayoutTokens);
 
-    cssOutput += `/* --- Semantic Tokens (MDS / Sonagi Core) --- */\n`;
+    cssOutput += `/* --- Semantic Tokens (MDS Core) --- */\n`;
     cssOutput += generateCssBlock(':root, [data-theme="light"], [data-theme="sonagi-core"], [data-theme="mindulle"], [data-theme="mds"]', lightTokens);
     cssOutput += generateCssBlock('[data-theme="dark"]', darkTokens);
     cssOutput += `@media (prefers-color-scheme: dark) {\n  :root:not([data-theme="light"]) {\n`;
     for (const [key, val] of Object.entries(darkTokens)) {
       cssOutput += `    ${key}: ${val};\n`;
-      if (key.startsWith('--sng-')) {
-        const mdsKey = key.replace('--sng-', '--mds-');
-        cssOutput += `    ${mdsKey}: var(${key});\n`;
-      }
+      if (key.startsWith('--mds-')) legacyAliasKeys.add(key);
     }
     cssOutput += `  }\n}\n\n`;
   }
   
+  if (fs.existsSync(COMPONENTS_SRC)) {
+    const compData = JSON.parse(fs.readFileSync(COMPONENTS_SRC, 'utf8'));
+    const compTokens = extractTokens(compData);
+    Object.assign(flatTokens, compTokens);
+    cssOutput += `/* --- Component Tokens (Tier 3) --- */\n`;
+    cssOutput += generateCssBlock(':root', compTokens);
+  }
+
   if (fs.existsSync(THEMES_DIR)) {
     const themeFiles = fs.readdirSync(THEMES_DIR).filter(f => f.endsWith('.json'));
     cssOutput += `/* --- Theme Overrides --- */\n`;
@@ -166,6 +171,14 @@ function build() {
     }
   }
   
+  if (legacyAliasKeys.size > 0) {
+    cssOutput += `/* --- Legacy aliases (deprecated: use --mds-*) --- */\n:root {\n`;
+    for (const key of [...legacyAliasKeys].sort()) {
+      cssOutput += `  ${key.replace('--mds-', '--sng-')}: var(${key});\n`;
+    }
+    cssOutput += `}\n\n`;
+  }
+
   fs.writeFileSync(path.join(DIST_DIR, 'variables.css'), cssOutput);
   fs.writeFileSync(path.join(TOKENS_DIR, 'variables.css'), cssOutput);
   console.log(`✅  Generated variables.css in both dist/ and tokens/`);
@@ -192,25 +205,25 @@ function build() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sonagi Design System - v${version}</title>
+  <title>Mindulle Design System - v${version}</title>
   <link rel="stylesheet" href="variables.css">
   <style>
-    body { font-family: var(--sng-font-sans); background: var(--sng-color-bg-base); color: var(--sng-color-text-primary); margin: 0; padding: 2rem; transition: background 0.3s, color 0.3s; }
-    h1, h2 { border-bottom: 1px solid var(--sng-color-border-default); padding-bottom: 0.5rem; }
+    body { font-family: var(--mds-font-sans); background: var(--mds-color-bg-base); color: var(--mds-color-text-primary); margin: 0; padding: 2rem; transition: background 0.3s, color 0.3s; }
+    h1, h2 { border-bottom: 1px solid var(--mds-color-border-default); padding-bottom: 0.5rem; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-    .card { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--sng-color-bg-surface); border: 1px solid var(--sng-color-border-subtle); border-radius: var(--sng-radius-lg); box-shadow: var(--sng-shadow-sm); }
-    .swatch { width: 48px; height: 48px; border-radius: var(--sng-radius-md); border: 1px solid var(--sng-color-border-default); flex-shrink: 0; }
+    .card { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--mds-color-bg-surface); border: 1px solid var(--mds-color-border-subtle); border-radius: var(--mds-radius-lg); box-shadow: var(--mds-shadow-sm); }
+    .swatch { width: 48px; height: 48px; border-radius: var(--mds-radius-md); border: 1px solid var(--mds-color-border-default); flex-shrink: 0; }
     .info { display: flex; flex-direction: column; gap: 0.25rem; }
-    code { font-family: var(--sng-font-mono); font-size: var(--sng-font-size-sm); color: var(--sng-color-text-muted); }
-    .theme-selector { margin-bottom: 2rem; padding: 1rem; background: var(--sng-color-bg-elevated); border-radius: var(--sng-radius-md); border: 1px solid var(--sng-color-border-default); }
-    select { padding: 0.5rem; font-family: var(--sng-font-sans); border-radius: var(--sng-radius-sm); border: 1px solid var(--sng-color-border-strong); }
+    code { font-family: var(--mds-font-mono); font-size: var(--mds-font-size-sm); color: var(--mds-color-text-muted); }
+    .theme-selector { margin-bottom: 2rem; padding: 1rem; background: var(--mds-color-bg-elevated); border-radius: var(--mds-radius-md); border: 1px solid var(--mds-color-border-default); }
+    select { padding: 0.5rem; font-family: var(--mds-font-sans); border-radius: var(--mds-radius-sm); border: 1px solid var(--mds-color-border-strong); }
   </style>
 </head>
 <body data-theme="light">
-  <h1>🎨 Sonagi Design System <small>v${version}</small></h1>
+  <h1>🎨 Mindulle Design System <small>v${version}</small></h1>
   <p>이 페이지는 빌드된 디자인 토큰을 확인하기 위한 프리뷰입니다. UI 컴포넌트 가이드와 시각적 요소는 공식 Storybook을 참조해 주세요.</p>
-  <p><a href="https://main--6a74ac58510f8ede8dcbbdbd.chromatic.com/" target="_blank" style="color: var(--sng-color-accent); font-weight: bold; text-decoration: none;">👉 Sonagi UI Storybook 바로가기</a></p>
-  <div style="margin: 1rem 0; padding: 1rem; background: var(--sng-color-bg-elevated); border-radius: var(--sng-radius-md); border: 1px solid var(--sng-color-border-subtle);">
+  <p><a href="https://main--6a74ac58510f8ede8dcbbdbd.chromatic.com/" target="_blank" style="color: var(--mds-color-accent); font-weight: bold; text-decoration: none;">👉 Mindulle UI Storybook 바로가기</a></p>
+  <div style="margin: 1rem 0; padding: 1rem; background: var(--mds-color-bg-elevated); border-radius: var(--mds-radius-md); border: 1px solid var(--mds-color-border-subtle);">
     <strong>패키지 설치 및 사용법:</strong>
     <code style="display: block; margin-top: 0.5rem;">pnpm install @mindulle/tokens</code>
     <code style="display: block; margin-top: 0.5rem;">import '@mindulle/tokens/css';</code>
@@ -245,8 +258,8 @@ function build() {
   
   const allTokens = { ...flatTokens };
   for (const [k, v] of Object.entries(flatTokens)) {
-    if (k.startsWith('--sng-')) {
-      allTokens[k.replace('--sng-', '--mds-')] = v;
+    if (k.startsWith('--mds-')) {
+      allTokens[k.replace('--mds-', '--sng-')] = v; // deprecated alias
     }
   }
 

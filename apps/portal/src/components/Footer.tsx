@@ -3,24 +3,24 @@ import { MindulleSeal } from './MindulleSeal';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#04060b] border-t-2 border-sng-border px-6 md:px-16 py-12">
+    <footer className="w-full bg-[#04060b] border-t-2 border-mds-border px-6 md:px-16 py-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4">
           <MindulleSeal size={44} showText={false} />
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="font-serif text-xl font-bold tracking-[0.08em] text-white">
-                MINDULLE STUDIO <span className="text-sng-dandelion font-light">.</span>
+                MINDULLE STUDIO <span className="text-mds-dandelion font-light">.</span>
               </span>
-              <span className="text-xs text-sng-muted font-mono">/ Featuring The Sonagi Tooling Suite</span>
+              <span className="text-xs text-mds-muted font-mono">/ Featuring The Sonagi Tooling Suite</span>
             </div>
-            <p className="text-xs text-sng-muted">
+            <p className="text-xs text-mds-muted">
               "겨울 끝, 민들레." — Crafted with the True 2px Stem &amp; resilient vitality.
             </p>
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-6 text-xs font-mono text-sng-muted">
+        <div className="flex flex-wrap items-center gap-6 text-xs font-mono text-mds-muted">
           <a
             href="https://github.com/mindulle"
             target="_blank"

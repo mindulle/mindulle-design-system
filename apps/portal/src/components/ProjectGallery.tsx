@@ -88,18 +88,18 @@ export const ProjectGallery: React.FC = () => {
   const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter((p) => p.category === filter);
 
   return (
-    <section id="showroom" className="py-24 px-6 md:px-16 border-b-2 border-sng-border bg-[#090d16]">
+    <section id="showroom" className="py-24 px-6 md:px-16 border-b-2 border-mds-border bg-[#090d16]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <span className="inline-block text-xs font-mono px-3 py-1 rounded-full border-2 border-sng-rain/60 bg-sng-rain/10 text-sng-rain mb-4">
+            <span className="inline-block text-xs font-mono px-3 py-1 rounded-full border-2 border-mds-rain/60 bg-mds-rain/10 text-mds-rain mb-4">
               PROVEN IMPACT &amp; CASE STUDIES
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-2">
               실전 성과 및 쇼룸 (Case Studies)
             </h2>
-            <p className="text-sng-muted text-base">
+            <p className="text-mds-muted text-base">
               소나기 도구군을 기반으로 민들레 스튜디오가 구축하고 배포한 실무 프로덕트들입니다.
             </p>
           </div>
@@ -118,8 +118,8 @@ export const ProjectGallery: React.FC = () => {
                 onClick={() => setFilter(tab.id as any)}
                 className={`text-xs font-mono px-3.5 py-1.5 rounded-sm border-2 transition-all ${
                   filter === tab.id
-                    ? 'border-sng-cyan bg-sng-cyan text-black font-bold'
-                    : 'border-sng-border text-sng-muted hover:border-gray-500 hover:text-white'
+                    ? 'border-mds-cyan bg-mds-cyan text-black font-bold'
+                    : 'border-mds-border text-mds-muted hover:border-gray-500 hover:text-white'
                 }`}
               >
                 {tab.label}
@@ -139,7 +139,7 @@ export const ProjectGallery: React.FC = () => {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
               whileHover={{ y: -4 }}
-              className="bg-[#070a12] border-2 border-sng-border hover:border-gray-400 rounded-sm p-6 flex flex-col justify-between transition-colors group"
+              className="bg-[#070a12] border-2 border-mds-border hover:border-gray-400 rounded-sm p-6 flex flex-col justify-between transition-colors group"
             >
               <div>
                 {/* Visual Thumbnail Placeholder */}
@@ -168,25 +168,25 @@ export const ProjectGallery: React.FC = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] font-mono px-2 py-0.5 border border-sng-border rounded-sm text-sng-muted bg-white/5"
+                      className="text-[10px] font-mono px-2 py-0.5 border border-mds-border rounded-sm text-mds-muted bg-white/5"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-sng-rain transition-colors">
+                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-mds-rain transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-xs font-mono text-sng-muted mb-3">{project.subtitle}</p>
+                <p className="text-xs font-mono text-mds-muted mb-3">{project.subtitle}</p>
 
-                <p className="text-sng-muted text-xs leading-relaxed mb-6">
+                <p className="text-mds-muted text-xs leading-relaxed mb-6">
                   {project.description}
                 </p>
               </div>
 
               {/* Actions */}
-              <div className="pt-4 border-t-2 border-sng-border/60 flex items-center justify-between">
+              <div className="pt-4 border-t-2 border-mds-border/60 flex items-center justify-between">
                 {project.githubUrl ? (
                   <a
                     href={project.githubUrl}

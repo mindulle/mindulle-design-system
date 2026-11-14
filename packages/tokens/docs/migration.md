@@ -1,22 +1,22 @@
 # Sonagi Design System - Migration Guide (v3.0)
 
-이 문서는 이전 버전의 토큰 시스템에서 v3.0 `--sng-` 접두사 체계 및 `data-theme` 전환 체계로 마이그레이션하기 위한 가이드라인입니다.
+이 문서는 이전 버전의 토큰 시스템에서 v3.0 `--mds-` 접두사 체계 및 `data-theme` 전환 체계로 마이그레이션하기 위한 가이드라인입니다.
 
 ---
 
-## 1. CSS Variables 접두사 마이그레이션 (`--` ➔ `--sng-`)
+## 1. CSS Variables 접두사 마이그레이션 (`--` ➔ `--mds-`)
 
-디자인 토큰 이름 충돌 및 명확한 격리를 위해 모든 CSS 변수 이름에 `--sng-` 접두사가 도입되었습니다.
+디자인 토큰 이름 충돌 및 명확한 격리를 위해 모든 CSS 변수 이름에 `--mds-` 접두사가 도입되었습니다.
 
 ### 변수명 대조표 (예시)
 
 | 이전 변수명             | 변경된 변수명               |
 | :---------------------- | :-------------------------- |
-| `--color-brand-primary` | `--sng-color-brand-primary` |
-| `--color-bg-base`       | `--sng-color-bg-base`       |
-| `--color-text-primary`  | `--sng-color-text-primary`  |
-| `--font-sans`           | `--sng-font-sans`           |
-| `--radius-base`         | `--sng-radius-base`         |
+| `--color-brand-primary` | `--mds-color-brand-primary` |
+| `--color-bg-base`       | `--mds-color-bg-base`       |
+| `--color-text-primary`  | `--mds-color-text-primary`  |
+| `--font-sans`           | `--mds-font-sans`           |
+| `--radius-base`         | `--mds-radius-base`         |
 
 ### 조치 방법
 

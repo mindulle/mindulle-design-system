@@ -8,286 +8,195 @@
   },
   "primitive": {
     "$description": "원시 색상값. 직접 사용 금지 — Semantic 토큰을 통해 참조할 것",
-    "blue": {
+    "neutral": {
       "50": {
-        "$value": "#f0f4f8",
+        "$value": "#fbfbfa",
         "$type": "color"
       },
       "100": {
-        "$value": "#d1d9e6",
+        "$value": "#f4f4f5",
         "$type": "color"
       },
       "200": {
-        "$value": "#a8dcee",
-        "$type": "color"
-      },
-      "300": {
-        "$value": "#6cc6e0",
+        "$value": "#e4e4e7",
         "$type": "color"
       },
       "400": {
-        "$value": "#3aadd1",
+        "$value": "#a1a1aa",
         "$type": "color"
       },
       "500": {
-        "$value": "#1c2c4d",
-        "$type": "color",
-        "$description": "Wild & Thin Indigo"
+        "$value": "#71717a",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "#52525b",
+        "$type": "color"
+      },
+      "900": {
+        "$value": "#18181b",
+        "$type": "color"
+      }
+    },
+    "slate": {
+      "100": {
+        "$value": "#f1f5f9",
+        "$type": "color"
+      },
+      "400": {
+        "$value": "#94a3b8",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#64748b",
+        "$type": "color"
+      }
+    },
+    "night": {
+      "950": {
+        "$value": "#12151d",
+        "$type": "color"
+      },
+      "900": {
+        "$value": "#1b202c",
+        "$type": "color"
+      },
+      "850": {
+        "$value": "#1f2635",
+        "$type": "color"
+      },
+      "800": {
+        "$value": "#242b3b",
+        "$type": "color"
+      },
+      "700": {
+        "$value": "#2c3547",
+        "$type": "color"
+      }
+    },
+    "gold": {
+      "200": {
+        "$value": "#ffd166",
+        "$type": "color"
+      },
+      "300": {
+        "$value": "#ffc837",
+        "$type": "color"
+      },
+      "400": {
+        "$value": "#e6b432",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "#b86a04",
+        "$type": "color"
+      },
+      "700": {
+        "$value": "#9e5a03",
+        "$type": "color"
+      }
+    },
+    "yellow": {
+      "500": {
+        "$value": "#eab308",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "#ca8a04",
+        "$type": "color"
+      }
+    },
+    "amber": {
+      "50": {
+        "$value": "#fdf5e5",
+        "$type": "color"
+      },
+      "400": {
+        "$value": "#e3b341",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "#d29922",
+        "$type": "color"
+      },
+      "900": {
+        "$value": "#2e2305",
+        "$type": "color"
+      }
+    },
+    "azure": {
+      "50": {
+        "$value": "#e8f1f8",
+        "$type": "color"
+      },
+      "300": {
+        "$value": "#79c0ff",
+        "$type": "color"
       },
       "600": {
         "$value": "#1275b5",
         "$type": "color"
       },
-      "700": {
-        "$value": "#0d5a94",
-        "$type": "color"
-      },
-      "800": {
-        "$value": "#083A64",
-        "$type": "color"
-      },
       "900": {
-        "$value": "#0a1128",
+        "$value": "#1c2d42",
         "$type": "color"
       }
     },
-    "accent": {
-      "rain": {
-        "$value": "#4A90E2",
-        "$type": "color",
-        "$description": "Wordmark dot, links, highlights"
-      },
-      "rain-dark": {
-        "$value": "#2a6bbf",
-        "$type": "color"
-      }
-    },
-    "wordmark": {
-      "bg": {
-        "$value": "#030508",
-        "$type": "color"
-      },
-      "dot": {
-        "$value": "#4A90E2",
-        "$type": "color"
-      }
-    },
-    "neutral": {
+    "leaf": {
       "50": {
-        "$value": "#fff8f2",
-        "$type": "color"
-      },
-      "100": {
-        "$value": "#faf9f7",
-        "$type": "color"
-      },
-      "150": {
-        "$value": "#f6f3ee",
-        "$type": "color"
-      },
-      "200": {
-        "$value": "#f0ede8",
-        "$type": "color"
-      },
-      "300": {
-        "$value": "#e6eaef",
+        "$value": "#eaf4eb",
         "$type": "color"
       },
       "400": {
-        "$value": "#c9d1d9",
-        "$type": "color"
-      },
-      "500": {
-        "$value": "#8b949e",
+        "$value": "#56d364",
         "$type": "color"
       },
       "600": {
-        "$value": "#484f58",
-        "$type": "color"
-      },
-      "700": {
-        "$value": "#30363d",
-        "$type": "color"
-      },
-      "800": {
-        "$value": "#1c2128",
-        "$type": "color"
-      },
-      "850": {
-        "$value": "#161b22",
+        "$value": "#2ea043",
         "$type": "color"
       },
       "900": {
-        "$value": "#0d1117",
+        "$value": "#132e19",
+        "$type": "color"
+      }
+    },
+    "crimson": {
+      "50": {
+        "$value": "#fde8e8",
         "$type": "color"
       },
-      "950": {
-        "$value": "#010609",
+      "400": {
+        "$value": "#f85149",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "#c83e4d",
+        "$type": "color"
+      },
+      "900": {
+        "$value": "#421818",
+        "$type": "color"
+      }
+    },
+    "stone": {
+      "500": {
+        "$value": "#6c605e",
         "$type": "color"
       }
     },
     "brand": {
       "cyan": {
         "$value": "#00ffcc",
-        "$type": "color",
-        "$description": "Neon Cyan — 로고/에셋 전용"
-      }
-    },
-    "state": {
-      "success": {
-        "$value": "#2ea043",
-        "$type": "color"
-      },
-      "warning": {
-        "$value": "#d29922",
-        "$type": "color"
-      },
-      "danger": {
-        "$value": "#f85149",
-        "$type": "color"
-      },
-      "success-light": {
-        "$value": "#d4edda",
-        "$type": "color"
-      },
-      "warning-light": {
-        "$value": "#fff3cd",
-        "$type": "color"
-      },
-      "danger-light": {
-        "$value": "#fde8e8",
-        "$type": "color"
-      },
-      "info-bg": {
-        "$value": "#e8f1f8",
-        "$type": "color"
-      },
-      "info-light": {
-        "$value": "#79c0ff",
-        "$type": "color"
-      },
-      "info-dark": {
-        "$value": "#1c2d42",
-        "$type": "color"
-      },
-      "success-dark": {
-        "$value": "#132e19",
-        "$type": "color"
-      },
-      "warning-dark": {
-        "$value": "#2e2305",
-        "$type": "color"
-      },
-      "danger-dark": {
-        "$value": "#421818",
         "$type": "color"
       }
     },
-    "burgundy": {
-      "25": {
-        "$value": "#fefaf9",
+    "base": {
+      "white": {
+        "$value": "#ffffff",
         "$type": "color"
       },
-      "50": {
-        "$value": "#fcf2f0",
-        "$type": "color"
-      },
-      "100": {
-        "$value": "#f5e5e2",
-        "$type": "color"
-      },
-      "150": {
-        "$value": "#ffc6bc",
-        "$type": "color"
-      },
-      "200": {
-        "$value": "#eeb4a9",
-        "$type": "color"
-      },
-      "250": {
-        "$value": "#f7a7a1",
-        "$type": "color"
-      },
-      "300": {
-        "$value": "#e5867f",
-        "$type": "color"
-      },
-      "400": {
-        "$value": "#d2645f",
-        "$type": "color"
-      },
-      "500": {
-        "$value": "#b44240",
-        "$type": "color"
-      },
-      "800": {
-        "$value": "#47211b",
-        "$type": "color"
-      },
-      "900": {
-        "$value": "#38130e",
-        "$type": "color"
-      }
-    },
-    "brown": {
-      "50": {
-        "$value": "#f7eeec",
-        "$type": "color"
-      },
-      "200": {
-        "$value": "#d7c5c2",
-        "$type": "color"
-      },
-      "300": {
-        "$value": "#c3b4b1",
-        "$type": "color"
-      },
-      "400": {
-        "$value": "#9d8986",
-        "$type": "color"
-      },
-      "410": {
-        "$value": "#988a88",
-        "$type": "color"
-      },
-      "450": {
-        "$value": "#95817f",
-        "$type": "color"
-      },
-      "500": {
-        "$value": "#756563",
-        "$type": "color"
-      },
-      "550": {
-        "$value": "#796966",
-        "$type": "color"
-      },
-      "600": {
-        "$value": "#614f4b",
-        "$type": "color"
-      },
-      "650": {
-        "$value": "#6c605e",
-        "$type": "color"
-      },
-      "800": {
-        "$value": "#392e2c",
-        "$type": "color"
-      },
-      "820": {
-        "$value": "#392d2b",
-        "$type": "color"
-      },
-      "850": {
-        "$value": "#2c201e",
-        "$type": "color"
-      },
-      "900": {
-        "$value": "#1e1311",
-        "$type": "color"
-      },
-      "950": {
-        "$value": "#1c1412",
+      "black": {
+        "$value": "#000000",
         "$type": "color"
       }
     }
@@ -497,6 +406,10 @@
     },
     "full": {
       "$value": "9999px",
+      "$type": "dimension"
+    },
+    "2xl": {
+      "$value": "24px",
       "$type": "dimension"
     }
   },

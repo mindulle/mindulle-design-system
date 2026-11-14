@@ -33,7 +33,7 @@
 
 ## 🎨 디자인 원칙 (Design Principles)
 
-Sonagi 디자인 시스템의 시각적 테마, 팔레트 구성, 레이아웃 규칙 및 AI 에이전트를 위한 프롬프트 가이드는 아래 문서에 상세히 정의되어 있습니다.
+민들레 디자인 시스템(MDS)의 시각적 테마, 팔레트 구성, 레이아웃 규칙 및 AI 에이전트를 위한 프롬프트 가이드는 아래 문서에 상세히 정의되어 있습니다.
 
 👉 **[DESIGN.md 읽어보기](./DESIGN.md)**
 
@@ -74,7 +74,7 @@ pnpm run storybook
 본 저장소는 **Chromatic**과 연동되어 있습니다.
 컴포넌트를 수정하고 PR을 생성하면 GitHub Actions가 자동으로 시각적 회귀 테스트(Visual Regression Test)를 수행하여, 의도치 않은 UI 깨짐 현상을 사전에 방지합니다.
 
-- **Storybook 배포 링크**: [Sonagi Design System Storybook](https://main--6a74ac58510f8ede8dcbbdbd.chromatic.com/)
+- **Storybook 배포 링크**: [Mindulle Design System Storybook](https://main--6a74ac58510f8ede8dcbbdbd.chromatic.com/)
 
 <br/>
 

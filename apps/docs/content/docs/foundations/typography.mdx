@@ -23,8 +23,8 @@ MDS 디스플레이 스케일은 다음 3대 원칙을 엄격히 강제합니다
    - 영문 대표 서체인 `Cormorant Garamond 700`의 클래식한 세리프 각도 및 스트로크 콘트라스트와 90% 이상의 시각적 조화를 이루는 한글 폰트를 매칭합니다.
    - `sonagi-graph`의 `visual_consistency_graph` 파이프라인 심사를 통해 **Noto Serif KR 700(96% 조화도)**과 **Maru Buri(휴머니스트 에디토리얼)**를 공식 확정했습니다 (평가 점수: 97/100 `PASS`).
 3. **용도별 듀얼 디스플레이 스택 분리**:
-   - **Cinematic Display (Primary)**: 볼드하고 압도적인 웅장함을 전달하는 메인 타이틀 (`--sng-font-cinematic-display`)
-   - **Editorial Humanist (Secondary)**: 아틀리에 에세이, 시적 매니페스토 및 감성적 인용문 (`--sng-font-editorial-humanist`)
+   - **Cinematic Display (Primary)**: 볼드하고 압도적인 웅장함을 전달하는 메인 타이틀 (`--mds-font-cinematic-display`)
+   - **Editorial Humanist (Secondary)**: 아틀리에 에세이, 시적 매니페스토 및 감성적 인용문 (`--mds-font-editorial-humanist`)
 
 ---
 
@@ -40,11 +40,11 @@ MDS 디스플레이 스케일은 다음 3대 원칙을 엄격히 강제합니다
 
 | 서체 역할 | CSS font-family 스택 | 토큰 변수명 | 권장 사용처 |
 | :--- | :--- | :--- | :--- |
-| **Cinematic Display** | `'Cormorant Garamond', 'Noto Serif KR', Georgia, serif` | `--sng-font-cinematic-display` | 히어로 헤드라인, 3D 쇼룸 타이틀 (≥36px) |
-| **Editorial Humanist** | `'Cormorant Garamond', 'MaruBuri', Georgia, serif` | `--sng-font-editorial-humanist` | 아틀리에 에세이, 매니페스토 명문, 인용구 |
-| **Primary Sans (UI)** | `'Pretendard', 'Inter', system-ui, sans-serif` | `--sng-font-sans` | 버튼, 폼, 테이블, 본문 레이블 (11px~18px) |
-| **Editorial Serif** | `'Noto Serif KR', 'Merriweather', Georgia, serif` | `--sng-font-serif` | 장문의 서술형 스토리텔링 본문 |
-| **Monospace (Code)** | `'JetBrains Mono', 'Fira Code', monospace` | `--sng-font-mono` | 코드 블록, 터미널, 데이터 수치 표기 |
+| **Cinematic Display** | `'Cormorant Garamond', 'Noto Serif KR', Georgia, serif` | `--mds-font-cinematic-display` | 히어로 헤드라인, 3D 쇼룸 타이틀 (≥36px) |
+| **Editorial Humanist** | `'Cormorant Garamond', 'MaruBuri', Georgia, serif` | `--mds-font-editorial-humanist` | 아틀리에 에세이, 매니페스토 명문, 인용구 |
+| **Primary Sans (UI)** | `'Pretendard', 'Inter', system-ui, sans-serif` | `--mds-font-sans` | 버튼, 폼, 테이블, 본문 레이블 (11px~18px) |
+| **Editorial Serif** | `'Noto Serif KR', 'Merriweather', Georgia, serif` | `--mds-font-serif` | 장문의 서술형 스토리텔링 본문 |
+| **Monospace (Code)** | `'JetBrains Mono', 'Fira Code', monospace` | `--mds-font-mono` | 코드 블록, 터미널, 데이터 수치 표기 |
 
 ---
 
@@ -73,7 +73,7 @@ MDS 디스플레이 스케일은 다음 3대 원칙을 엄격히 강제합니다
 
 ```css
 .hero-title {
-  font-family: var(--sng-font-cinematic-display);
+  font-family: var(--mds-font-cinematic-display);
   font-weight: 700;
   font-size: 4rem; /* 64px */
   line-height: 1.15;
@@ -81,7 +81,7 @@ MDS 디스플레이 스케일은 다음 3대 원칙을 엄격히 강제합니다
 }
 
 .essay-quote {
-  font-family: var(--sng-font-editorial-humanist);
+  font-family: var(--mds-font-editorial-humanist);
   font-size: 1.5rem; /* 24px */
   line-height: 1.4;
 }
@@ -95,7 +95,7 @@ MDS 디스플레이 스케일은 다음 3대 원칙을 엄격히 강제합니다
 - **Foundations Board**: `Mindulle Foundations (SSOT Live Sync)` (Node: `198:2974`)
 - **Specimen Card**: `node: 402:991` (`🎬 3. Cinematic Display Scale (True 2px Stem)`)
 - **Figma Local Text Styles**:
-  1. `Display / Cinematic Hero` (64px, Line height 115%, Letter spacing -2.5%)
-  2. `Display / Cinematic Section` (36px, Line height 125%, Letter spacing -2.0%)
-  3. `Display / Editorial Humanist` (36px, Line height 130%, Letter spacing -1.0%)
-  4. `Display / Editorial Quote` (24px, Line height 140%, Letter spacing 0%)
+  1. `Display/Hero` (64px, Line height 115%, Letter spacing -2.5%)
+  2. `Display/Section` (36px, Line height 125%, Letter spacing -2.0%)
+  3. `Display/Editorial` (36px, Line height 130%, Letter spacing -1.0%)
+  4. `Display/Quote` (24px, Line height 140%, Letter spacing 0%)

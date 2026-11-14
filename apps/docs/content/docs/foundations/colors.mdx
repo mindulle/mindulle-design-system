@@ -5,7 +5,7 @@ description: W3C 표준 시맨틱 색상 토큰 및 Light/Dark 듀얼 매트릭�
 
 # 색상 토큰 (Color Tokens)
 
-> 💡 **브랜드 헌법 연동**: 모든 색상 토큰은 [민들레 마스터 브랜드 북 (The Master Brand Book)](/docs/brand)의 **85:15 신문지 활판 인쇄 헌법**에 따라 운용되며, 신문지 미색 지면(`--sng-color-editorial-newsprint-bg`)과 활판 잉크 먹색(`--sng-color-editorial-ink-*`) 토큰을 기본 포함합니다.
+> 💡 **브랜드 헌법 연동**: 모든 색상 토큰은 [민들레 마스터 브랜드 북 (The Master Brand Book)](/docs/brand)의 **85:15 신문지 활판 인쇄 헌법**에 따라 운용되며, 신문지 미색 지면(`--mds-color-editorial-newsprint-bg`)과 활판 잉크 먹색(`--mds-color-editorial-ink-*`) 토큰을 기본 포함합니다.
 
 민들레 디자인 시스템은 OKLCH 기반으로 정밀 조율된 2-Tier W3C 표준 토큰 구조를 채택합니다.
 
@@ -16,13 +16,13 @@ description: W3C 표준 시맨틱 색상 토큰 및 Light/Dark 듀얼 매트릭�
 
 ## CSS 변수 직접 사용법
 
-CSS 모듈이나 인라인 스타일에서 `--sng-*` 접두사의 변수를 직접 호출할 수 있습니다:
+CSS 모듈이나 인라인 스타일에서 `--mds-*` 접두사의 변수를 직접 호출할 수 있습니다:
 
 ```css
 .my-card {
-  background-color: var(--sng-color-bg-surface);
-  color: var(--sng-color-text-primary);
-  border: 2px solid var(--sng-color-border-default);
-  border-radius: var(--sng-radius-md);
+  background-color: var(--mds-color-bg-surface);
+  color: var(--mds-color-text-primary);
+  border: 2px solid var(--mds-color-border-default);
+  border-radius: var(--mds-radius-md);
 }
 ```

@@ -1,18 +1,18 @@
 :root {
   /* Gap */
-  --sng-space-gap-xs: 4px;
-  --sng-space-gap-sm: 8px;
-  --sng-space-gap-item: 16px;
-  --sng-space-gap-group: 24px;
-  --sng-space-gap-section: 32px;
+  --mds-space-gap-xs: 4px;
+  --mds-space-gap-sm: 8px;
+  --mds-space-gap-item: 16px;
+  --mds-space-gap-group: 24px;
+  --mds-space-gap-section: 32px;
 
   /* Container Padding */
-  --sng-space-container-sm: 12px;
-  --sng-space-container-md: 16px;
-  --sng-space-container-lg: 24px;
-  --sng-space-container-page: 32px;
+  --mds-space-container-sm: 12px;
+  --mds-space-container-md: 16px;
+  --mds-space-container-lg: 24px;
+  --mds-space-container-page: 32px;
 
   /* Element Padding */
-  --sng-space-element-py: 8px;
-  --sng-space-element-px: 16px;
+  --mds-space-element-py: 8px;
+  --mds-space-element-px: 16px;
 }

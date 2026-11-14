@@ -12,8 +12,8 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          primary: 'var(--sng-color-brand-primary)',
-          accent: 'var(--sng-color-brand-accent)',
+          primary: 'var(--mds-color-brand-primary)',
+          accent: 'var(--mds-color-brand-accent)',
         },
       },
     },

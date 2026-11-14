@@ -71,7 +71,7 @@ text(48, y, 'Pretendard — Sans, UI 전체', 'Pretendard', 'Regular', 18, INK);
 y += 34;
 text(48, y, '에디토리얼 세리프 — Noto Serif KR, 장문 콘텐츠 전용', 'Noto Serif KR', 'Regular', 18, INK);
 y += 34;
-text(48, y, 'const token = "--sng-color-accent";  // JetBrains Mono', 'JetBrains Mono', 'Regular', 15, ACCENT);
+text(48, y, 'const token = "--mds-color-accent";  // JetBrains Mono', 'JetBrains Mono', 'Regular', 15, ACCENT);
 y += 40;
 
 console.log('done, total children:', page.children.length, 'final y:', y);

@@ -238,7 +238,7 @@ export function BrandShowcase() {
                   className="p-6 rounded-md flex items-center justify-center transition-transform"
                   style={{
                     backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
-                    border: '1px solid var(--sng-color-border-subtle, #e5e7eb)',
+                    border: '1px solid var(--mds-color-border-subtle, #e5e7eb)',
                     transform: `scale(${zoomLevel})`,
                   }}
                 >
@@ -266,7 +266,7 @@ export function BrandShowcase() {
                   className="p-6 rounded-md flex items-center justify-center transition-transform"
                   style={{
                     backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
-                    border: '1px solid var(--sng-color-border-subtle, #e5e7eb)',
+                    border: '1px solid var(--mds-color-border-subtle, #e5e7eb)',
                     transform: `scale(${zoomLevel})`,
                   }}
                 >
@@ -297,7 +297,7 @@ export function BrandShowcase() {
                   className="p-6 rounded-md flex items-center justify-center transition-transform"
                   style={{
                     backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
-                    border: '1px solid var(--sng-color-border-subtle, #e5e7eb)',
+                    border: '1px solid var(--mds-color-border-subtle, #e5e7eb)',
                     transform: `scale(${zoomLevel})`,
                   }}
                 >
@@ -332,7 +332,7 @@ export function BrandShowcase() {
                   className="p-6 rounded-md flex items-center justify-center transition-transform"
                   style={{
                     backgroundColor: previewTheme === 'light' ? '#FBF9F5' : '#12100E',
-                    border: '1px solid var(--sng-color-border-subtle, #e5e7eb)',
+                    border: '1px solid var(--mds-color-border-subtle, #e5e7eb)',
                     transform: `scale(${zoomLevel})`,
                   }}
                 >
@@ -379,7 +379,7 @@ export function BrandShowcase() {
                 <span className="text-[10px] font-mono uppercase tracking-wider text-amber-500 font-bold">
                   MOTIF 01 • SPROUT
                 </span>
-                <div className="p-3 text-[var(--sng-color-text-primary)]">
+                <div className="p-3 text-[var(--mds-color-text-primary)]">
                   <svg width="40" height="40" viewBox="0 0 32 32" fill="none" className="stroke-current">
                     <path
                       d="M 16 30 L 16 14 C 16 9, 23 8, 26 12 C 26 7, 19 6, 16 11 C 13 6, 6 7, 6 12 C 9 8, 16 9, 16 14"
@@ -432,7 +432,7 @@ export function BrandShowcase() {
                 <span className="text-[10px] font-mono uppercase tracking-wider text-amber-500 font-bold">
                   MOTIF 03 • PAPPUS
                 </span>
-                <div className="p-3 text-[var(--sng-color-text-primary)]">
+                <div className="p-3 text-[var(--mds-color-text-primary)]">
                   <svg width="40" height="40" viewBox="0 0 32 32" fill="none" className="stroke-current">
                     <path d="M 16 14 L 6 6 M 16 14 L 11 4 M 16 14 L 16 3 M 16 14 L 21 4 M 16 14 L 26 6" strokeWidth="1.75" strokeLinecap="round" />
                     <line x1="16" y1="14" x2="16" y2="22" strokeWidth="2" strokeLinecap="round" />

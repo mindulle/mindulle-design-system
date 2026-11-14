@@ -16,22 +16,22 @@
 
 ### 2. 실제 발행된 `@mindulle/tokens` 패키지에 깨진 primitive 스케일 존재
 
-`packages/tokens/tokens/variables.css`(v1.3.2, 이미 npm에 발행되어 `blog-sonagi-space`가 `@import '@mindulle/tokens/css'`로 프로덕션에서 직접 소비 중)의 `--sng-color-blue-*` 스케일을 확인한 결과:
+`packages/tokens/tokens/variables.css`(v1.3.2, 이미 npm에 발행되어 `blog-sonagi-space`가 `@import '@mindulle/tokens/css'`로 프로덕션에서 직접 소비 중)의 `--mds-color-blue-*` 스케일을 확인한 결과:
 
 ```css
---sng-color-blue-50: #f0f4f8; /* H~205°, 밝은 시안 계열 */
---sng-color-blue-100: #d1d9e6;
---sng-color-blue-200: #a8dcee;
---sng-color-blue-300: #6cc6e0;
---sng-color-blue-400: #3aadd1;
---sng-color-blue-500: #1c2c4d; /* 갑자기 딥 네이비로 hue 전환 */
---sng-color-blue-600: #1275b5; /* 500(L=20.6%)보다 명도가 더 높음(L=39.0%) — 단조 감소 스케일 위반 */
---sng-color-blue-700: #0d5a94;
---sng-color-blue-800: #083a64;
---sng-color-blue-900: #0a1128;
+--mds-color-blue-50: #f0f4f8; /* H~205°, 밝은 시안 계열 */
+--mds-color-blue-100: #d1d9e6;
+--mds-color-blue-200: #a8dcee;
+--mds-color-blue-300: #6cc6e0;
+--mds-color-blue-400: #3aadd1;
+--mds-color-blue-500: #1c2c4d; /* 갑자기 딥 네이비로 hue 전환 */
+--mds-color-blue-600: #1275b5; /* 500(L=20.6%)보다 명도가 더 높음(L=39.0%) — 단조 감소 스케일 위반 */
+--mds-color-blue-700: #0d5a94;
+--mds-color-blue-800: #083a64;
+--mds-color-blue-900: #0a1128;
 ```
 
-`--sng-color-brand-primary-hover: #1275b5`는 이 깨진 `blue-600`을 그대로 참조한 값이며, `brand-primary(#1c2c4d)`에서 HSL/OKLCH 등으로 수학적으로 파생된 hover 셰이드가 아니다. (hue shift −16.8°, 채도 +35.2%p — 정상적인 hover 파생이라면 hue는 거의 고정되고 명도만 이동해야 함.)
+`--mds-color-brand-primary-hover: #1275b5`는 이 깨진 `blue-600`을 그대로 참조한 값이며, `brand-primary(#1c2c4d)`에서 HSL/OKLCH 등으로 수학적으로 파생된 hover 셰이드가 아니다. (hue shift −16.8°, 채도 +35.2%p — 정상적인 hover 파생이라면 hue는 거의 고정되고 명도만 이동해야 함.)
 
 ### 3. Figma 파일이 더 오래된 별도 팔레트로 작업돼 있음
 
@@ -49,7 +49,7 @@ DESIGN.md에 명시된 조합 중 최소 2건이 실사용 시 접근성 기준 
 
 ### 5. 로고/워드마크도 이미 두 갈래로 분기되어 있어 "고정 제약"이 아님
 
-DESIGN.md·`@mindulle/tokens`(`--sng-color-brand-logo`)·`@mindulle/ui`의 `<Wordmark>` 컴포넌트는 전부 "로고 시안(`#00ffcc`)은 워드마크 전용"이라 명시하지만, 실제 **프로덕션에 배포된 SVG**(`blog-sonagi-space/public/brand/sonagi-wordmark-*.svg`, 현재 블로그 헤더에서 실사용 중)에는 `#00ffcc`가 아예 존재하지 않고 대신 `#4a90e2`(레인블루)를 도트 색으로 사용함. 즉 로고조차 문서·컴포넌트·실배포 자산이 서로 다른 버전으로 갈라져 있어, "로고 색은 고정이니 그대로 유지"라는 전제가 성립하지 않음 → 색 재정의를 완전 백지에서 시작하기로 함.
+DESIGN.md·`@mindulle/tokens`(`--mds-color-brand-logo`)·`@mindulle/ui`의 `<Wordmark>` 컴포넌트는 전부 "로고 시안(`#00ffcc`)은 워드마크 전용"이라 명시하지만, 실제 **프로덕션에 배포된 SVG**(`blog-sonagi-space/public/brand/sonagi-wordmark-*.svg`, 현재 블로그 헤더에서 실사용 중)에는 `#00ffcc`가 아예 존재하지 않고 대신 `#4a90e2`(레인블루)를 도트 색으로 사용함. 즉 로고조차 문서·컴포넌트·실배포 자산이 서로 다른 버전으로 갈라져 있어, "로고 색은 고정이니 그대로 유지"라는 전제가 성립하지 않음 → 색 재정의를 완전 백지에서 시작하기로 함.
 
 ### 결론
 
@@ -108,7 +108,7 @@ DESIGN.md·`@mindulle/tokens`(`--sng-color-brand-logo`)·`@mindulle/ui`의 `<Wor
 
 ## Consequences
 
-- `@mindulle/tokens`의 `--sng-color-*` 값 전면 교체 필요 → 이미 프로덕션에서 `@import '@mindulle/tokens/css'` 하는 `blog-sonagi-space`의 실제 화면이 바뀜 → semver **major** 범프 검토 (현재 v1.3.2 → v2.0.0 후보)
+- `@mindulle/tokens`의 `--mds-color-*` 값 전면 교체 필요 → 이미 프로덕션에서 `@import '@mindulle/tokens/css'` 하는 `blog-sonagi-space`의 실제 화면이 바뀜 → semver **major** 범프 검토 (현재 v1.3.2 → v2.0.0 후보)
 - 기존 Figma `소나기 디자인 시스템` 파일의 Color System(6개 프레임) 및 Buttons 컴포넌트(6종)는 구 팔레트(`#1991b9` 계열)를 전부 새 값으로 교체해야 함
 - Desk Analyst 테마(차가운 데이터 대시보드용)는 이번 결정의 영향을 받지 않음 — 별도로 hue 앵커를 유지/재검토할지 다음 ADR에서 다룸
 - 로고 SVG 3종(`sonagi-wordmark-master/en/ko.svg`)의 색상 정합성 작업이 후속 과제로 남음

@@ -5,7 +5,7 @@ import { MindulleSeal } from './MindulleSeal';
 
 export const Navbar: React.FC = () => {
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#090d16]/90 backdrop-blur-md border-b-2 border-sng-border px-6 md:px-16 py-3.5">
+    <header className="sticky top-0 z-50 w-full bg-[#090d16]/90 backdrop-blur-md border-b-2 border-mds-border px-6 md:px-16 py-3.5">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Brand Group */}
         <div className="flex items-center gap-3">
@@ -16,20 +16,20 @@ export const Navbar: React.FC = () => {
               className="transition-transform group-hover:rotate-12 duration-300"
             />
             <div className="flex items-baseline gap-1.5">
-              <span className="font-serif text-lg md:text-xl font-bold tracking-[0.08em] text-white group-hover:text-sng-dandelion transition-colors">
+              <span className="font-serif text-lg md:text-xl font-bold tracking-[0.08em] text-white group-hover:text-mds-dandelion transition-colors">
                 MINDULLE STUDIO
               </span>
-              <span className="text-sng-dandelion font-light">/</span>
+              <span className="text-mds-dandelion font-light">/</span>
               <span className="text-sm font-mono text-gray-300 font-medium">소나기 .</span>
             </div>
           </Link>
-          <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded-full border border-sng-dandelion/60 text-sng-dandelion bg-sng-dandelion/10 tracking-wider">
+          <span className="hidden sm:inline-block text-[10px] font-mono px-2 py-0.5 rounded-full border border-mds-dandelion/60 text-mds-dandelion bg-mds-dandelion/10 tracking-wider">
             Tooling Suite
           </span>
         </div>
 
         {/* Nav Links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-sng-muted">
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-mds-muted">
           <a href="#philosophy" className="hover:text-white transition-colors">
             Atelier Philosophy
           </a>
@@ -58,7 +58,7 @@ export const Navbar: React.FC = () => {
             href="https://draw.sonagi.space/vector/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-sng-dandelion border-2 border-sng-dandelion/60 bg-sng-dandelion/10 rounded-sm hover:bg-sng-dandelion/20 transition-all"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-mds-dandelion border-2 border-mds-dandelion/60 bg-mds-dandelion/10 rounded-sm hover:bg-mds-dandelion/20 transition-all"
             title="Open VectorCraft Canvas Studio"
           >
             <PenTool className="w-3.5 h-3.5" />
@@ -73,7 +73,7 @@ export const Navbar: React.FC = () => {
           </Link>
           <Link
             to="/catalog"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-gray-200 border-2 border-sng-border rounded-sm hover:border-gray-400 hover:bg-white/5 transition-all"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-gray-200 border-2 border-mds-border rounded-sm hover:border-gray-400 hover:bg-white/5 transition-all"
           >
             <BookOpen className="w-3.5 h-3.5" />
             Storybook
@@ -82,7 +82,7 @@ export const Navbar: React.FC = () => {
             href="https://github.com/mindulle"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-black bg-sng-rain border-2 border-sng-rain rounded-sm hover:bg-sng-rain/90 transition-all"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-black bg-mds-rain border-2 border-mds-rain rounded-sm hover:bg-mds-rain/90 transition-all"
           >
             <Github className="w-3.5 h-3.5" />
             GitHub

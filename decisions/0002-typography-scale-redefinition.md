@@ -40,27 +40,27 @@ Perfect Fourth/Major Third는 "가을 소나기(따뜻함·에디토리얼)" 방
 
 | 토큰                      | 값   | 매핑              |
 | ------------------------- | ---- | ----------------- |
-| `--sng-font-size-caption` | 11px | 캡션/메타데이터   |
-| `--sng-font-size-sm`      | 13px | Label, Body Small |
-| `--sng-font-size-base`    | 16px | Body Base         |
-| `--sng-font-size-lg`      | 19px | H6, Body Large    |
-| `--sng-font-size-xl`      | 23px | H5                |
-| `--sng-font-size-2xl`     | 28px | H4                |
-| `--sng-font-size-3xl`     | 33px | H3                |
-| `--sng-font-size-4xl`     | 40px | H2                |
-| `--sng-font-size-5xl`     | 48px | H1                |
+| `--mds-font-size-caption` | 11px | 캡션/메타데이터   |
+| `--mds-font-size-sm`      | 13px | Label, Body Small |
+| `--mds-font-size-base`    | 16px | Body Base         |
+| `--mds-font-size-lg`      | 19px | H6, Body Large    |
+| `--mds-font-size-xl`      | 23px | H5                |
+| `--mds-font-size-2xl`     | 28px | H4                |
+| `--mds-font-size-3xl`     | 33px | H3                |
+| `--mds-font-size-4xl`     | 40px | H2                |
+| `--mds-font-size-5xl`     | 48px | H1                |
 
 **Line-height 매핑** (기존 Figma가 레벨마다 임의 소수점을 썼던 것을, 실재하는 named 토큰으로 정리):
 
-- H1~H3 (큰 디스플레이 텍스트): `--sng-line-height-tight` (1.25)
-- H4~H6 (본문에 가까운 작은 헤딩): `--sng-line-height-snug` (1.375)
-- Body 전체(Large/Base/Small): `--sng-line-height-normal` (1.5) — DESIGN.md 원문 규칙("1.5 body") 그대로, Figma의 Body Large 1.75는 어떤 토큰에도 없는 값이라 제거
+- H1~H3 (큰 디스플레이 텍스트): `--mds-line-height-tight` (1.25)
+- H4~H6 (본문에 가까운 작은 헤딩): `--mds-line-height-snug` (1.375)
+- Body 전체(Large/Base/Small): `--mds-line-height-normal` (1.5) — DESIGN.md 원문 규칙("1.5 body") 그대로, Figma의 Body Large 1.75는 어떤 토큰에도 없는 값이라 제거
 
 **폰트 패밀리**: 기존 유지 — Pretendard(sans)/Noto Serif KR(serif)/JetBrains Mono(mono) 전부 이미 정확히 발행돼 있었음(재검증 완료, 변경 없음).
 
 ## Consequences
 
-- `@mindulle/tokens`의 `--sng-font-size-*` 값 전면 교체 (xs/sm/lg/xl/2xl/3xl/4xl 값 변경, 8→9단계로 재구성) → ADR 0001과 마찬가지로 semver **major** 범프에 포함
+- `@mindulle/tokens`의 `--mds-font-size-*` 값 전면 교체 (xs/sm/lg/xl/2xl/3xl/4xl 값 변경, 8→9단계로 재구성) → ADR 0001과 마찬가지로 semver **major** 범프에 포함
 - Figma `소나기 디자인 시스템` 파일의 Typography System 프레임 전면 재작업 (H1~H6, Body 3종, Line-height 재적용)
 - Noto Serif KR 실사용 샘플 섹션을 Figma에 신규 추가 필요(토큰엔 있었지만 시각적 목업이 없었음)
 - `@mindulle/ui` 컴포넌트가 구 스케일 값을 하드코딩한 곳이 있는지 별도 점검 필요(후속 이슈)

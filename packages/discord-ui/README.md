@@ -29,7 +29,7 @@ const embed = new SonagiEmbed()
 
 // 2. 상태(State) 명시적 지정
 const errorEmbed = new SonagiEmbed()
-  .setType('danger') // 빨간색(--sng-color-state-danger)이 자동 적용됨
+  .setType('danger') // 빨간색(--mds-color-state-danger)이 자동 적용됨
   .setSonagiTitle('서버 에러 발생', '🚨')
   .setQuoteDescription('데이터베이스 연결에 실패했습니다.');
 

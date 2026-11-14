@@ -45,24 +45,24 @@ function Empty() {
     <div
       style={{
         padding: 24,
-        border: '1px solid var(--sng-color-border-default)',
+        border: '1px solid var(--mds-color-border-default)',
         borderRadius: 8,
-        background: 'var(--sng-color-background-surface)',
-        color: 'var(--sng-color-text-primary)',
-        fontFamily: 'var(--sng-font-sans)',
+        background: 'var(--mds-color-background-surface)',
+        color: 'var(--mds-color-text-primary)',
+        fontFamily: 'var(--mds-font-sans)',
       }}
     >
       <h3 style={{ marginTop: 0 }}>생성된 에셋이 없습니다</h3>
-      <p style={{ color: 'var(--sng-color-text-secondary)' }}>
+      <p style={{ color: 'var(--mds-color-text-secondary)' }}>
         그래픽 에셋은 빌드 산출물이라 저장소에 커밋하지 않습니다. 아래를 실행한 뒤
         Storybook을 다시 시작하십시오.
       </p>
       <pre
         style={{
-          background: 'var(--sng-color-background-base)',
+          background: 'var(--mds-color-background-base)',
           padding: 12,
           borderRadius: 6,
-          fontFamily: 'var(--sng-font-mono)',
+          fontFamily: 'var(--mds-font-mono)',
           overflowX: 'auto',
         }}
       >
@@ -85,17 +85,17 @@ function Meta_({ manifest }: { manifest: Manifest }) {
         gap: 24,
         margin: '0 0 24px',
         padding: '12px 16px',
-        border: '1px solid var(--sng-color-border-subtle)',
+        border: '1px solid var(--mds-color-border-subtle)',
         borderRadius: 6,
-        fontFamily: 'var(--sng-font-mono)',
+        fontFamily: 'var(--mds-font-mono)',
         fontSize: 12,
-        color: 'var(--sng-color-text-muted)',
+        color: 'var(--mds-color-text-muted)',
       }}
     >
       {items.map(([k, v]) => (
         <div key={k}>
           <dt style={{ opacity: 0.7 }}>{k}</dt>
-          <dd style={{ margin: 0, color: 'var(--sng-color-text-primary)' }}>{v}</dd>
+          <dd style={{ margin: 0, color: 'var(--mds-color-text-primary)' }}>{v}</dd>
         </div>
       ))}
     </dl>
@@ -108,10 +108,10 @@ function Card({ asset }: { asset: Asset }) {
     <figure
       style={{
         margin: 0,
-        border: '1px solid var(--sng-color-border-subtle)',
+        border: '1px solid var(--mds-color-border-subtle)',
         borderRadius: 8,
         overflow: 'hidden',
-        background: 'var(--sng-color-background-surface)',
+        background: 'var(--mds-color-background-surface)',
       }}
     >
       <div
@@ -121,7 +121,7 @@ function Card({ asset }: { asset: Asset }) {
           justifyContent: 'center',
           padding: isIcon ? 32 : 0,
           minHeight: isIcon ? 120 : undefined,
-          color: 'var(--sng-color-brand-ink)',
+          color: 'var(--mds-color-brand-ink)',
         }}
       >
         <img
@@ -135,24 +135,24 @@ function Card({ asset }: { asset: Asset }) {
       <figcaption
         style={{
           padding: 12,
-          borderTop: '1px solid var(--sng-color-border-subtle)',
-          fontFamily: 'var(--sng-font-sans)',
+          borderTop: '1px solid var(--mds-color-border-subtle)',
+          fontFamily: 'var(--mds-font-sans)',
           fontSize: 13,
         }}
       >
         <div style={{ display: 'flex', gap: 8, alignItems: 'baseline', flexWrap: 'wrap' }}>
-          <strong style={{ color: 'var(--sng-color-text-primary)' }}>{asset.name}</strong>
+          <strong style={{ color: 'var(--mds-color-text-primary)' }}>{asset.name}</strong>
           {asset.theme && (
-            <span style={{ color: 'var(--sng-color-text-muted)', fontSize: 12 }}>
+            <span style={{ color: 'var(--mds-color-text-muted)', fontSize: 12 }}>
               {asset.theme}
             </span>
           )}
           <span
             style={{
               marginLeft: 'auto',
-              fontFamily: 'var(--sng-font-mono)',
+              fontFamily: 'var(--mds-font-mono)',
               fontSize: 11,
-              color: 'var(--sng-color-text-muted)',
+              color: 'var(--mds-color-text-muted)',
             }}
           >
             {asset.width}×{asset.height}
@@ -160,7 +160,7 @@ function Card({ asset }: { asset: Asset }) {
           </span>
         </div>
 
-        <p style={{ margin: '8px 0', color: 'var(--sng-color-text-secondary)', lineHeight: 1.5 }}>
+        <p style={{ margin: '8px 0', color: 'var(--mds-color-text-secondary)', lineHeight: 1.5 }}>
           {asset.usage}
         </p>
 
@@ -172,8 +172,8 @@ function Card({ asset }: { asset: Asset }) {
                 fontSize: 11,
                 padding: '2px 8px',
                 borderRadius: 999,
-                border: '1px solid var(--sng-color-border-default)',
-                color: 'var(--sng-color-text-muted)',
+                border: '1px solid var(--mds-color-border-default)',
+                color: 'var(--mds-color-text-muted)',
               }}
             >
               {RULE_LABELS[r] ?? r}
@@ -197,7 +197,7 @@ function Gallery({ category }: { category: Asset['category'] }) {
   }, []);
 
   if (failed) return <Empty />;
-  if (!manifest) return <p style={{ fontFamily: 'var(--sng-font-sans)' }}>불러오는 중…</p>;
+  if (!manifest) return <p style={{ fontFamily: 'var(--mds-font-sans)' }}>불러오는 중…</p>;
 
   const assets = manifest.assets.filter((a) => a.category === category);
   if (assets.length === 0) return <Empty />;
