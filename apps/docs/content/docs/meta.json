@@ -13,6 +13,9 @@
     "---파운데이션---",
     "foundations/colors",
     "foundations/typography",
+    "foundations/spacing",
+    "foundations/radius",
+    "foundations/elevation",
     "foundations/motifs",
     "foundations/iconography",
     "---기본 컴포넌트---",
@@ -20,6 +23,7 @@
     "components/badge",
     "components/card",
     "components/mindulle-logo",
+    "components/sonagi-logo",
     "---입력 폼---",
     "components/input",
     "components/textarea",
@@ -30,10 +34,15 @@
     "components/tabs",
     "components/accordion",
     "components/pagination",
+    "components/top-bar",
+    "components/mobile-header",
+    "components/table-of-contents",
     "---오버레이 및 표시---",
     "components/modal",
     "components/avatar",
     "components/list-item",
-    "components/hover-preview"
+    "components/hover-preview",
+    "components/toast",
+    "components/tooltip"
   ]
 }
