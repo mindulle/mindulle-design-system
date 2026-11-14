@@ -44,16 +44,16 @@ export function Button({
   } else {
     if (state === 'default') {
       if (variant === 'primary') stateClasses = 'hover:bg-brand-primary-hover active:scale-[0.98]';
-      if (variant === 'secondary') stateClasses = 'hover:bg-bg-surface hover:border-border-strong active:scale-[0.98]';
+      if (variant === 'secondary') stateClasses = 'hover:bg-bg-hover hover:border-border-strong active:bg-bg-pressed active:scale-[0.98]';
       if (variant === 'danger') stateClasses = 'hover:opacity-90 active:scale-[0.98]';
     } else if (state === 'hover') {
       if (variant === 'primary') stateClasses = 'bg-brand-primary-hover';
-      if (variant === 'secondary') stateClasses = 'bg-bg-surface border-border-strong';
+      if (variant === 'secondary') stateClasses = 'bg-bg-hover border-border-strong';
       if (variant === 'danger') stateClasses = 'opacity-90';
     } else if (state === 'active') {
       stateClasses = 'scale-[0.98]';
       if (variant === 'primary') stateClasses += ' bg-brand-primary-hover';
-      if (variant === 'secondary') stateClasses += ' bg-bg-surface border-border-strong';
+      if (variant === 'secondary') stateClasses += ' bg-bg-pressed border-border-strong';
       if (variant === 'danger') stateClasses += ' opacity-90';
     }
   }

@@ -55,6 +55,14 @@
             "$value": "{primitive.base.white}",
             "$type": "color",
             "$description": "가장 높이 떠 있는 2단계 플로팅 영역 (모달 팝업, 툴팁, 드롭다운 메뉴)"
+          },
+          "hover": {
+            "$value": "{primitive.neutral.100}",
+            "$type": "color"
+          },
+          "pressed": {
+            "$value": "{primitive.neutral.200}",
+            "$type": "color"
           }
         },
         "text": {
@@ -201,6 +209,14 @@
             "$value": "{primitive.night.800}",
             "$type": "color",
             "$description": "가장 높이 떠 있는 2단계 플로팅 영역 (모달 팝업, 툴팁, 드롭다운 메뉴)"
+          },
+          "hover": {
+            "$value": "{primitive.night.800}",
+            "$type": "color"
+          },
+          "pressed": {
+            "$value": "{primitive.night.700}",
+            "$type": "color"
           }
         },
         "text": {

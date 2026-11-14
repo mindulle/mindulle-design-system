@@ -1,6 +1,6 @@
 /**
  * Mindulle Design System — CSS Custom Properties
- * Generated automatically from JSON tokens v1.17.0
+ * Generated automatically from JSON tokens v1.18.0
  * DO NOT EDIT — regenerate with: pnpm --filter @mindulle/tokens build
  * 2-Tier architecture (primitives -> semantics); Light/Dark branch inside semantics.
  * See decisions/0010-delivery-consolidation-github-packages.md
@@ -129,7 +129,7 @@
   --mds-opacity-hover: 0.08;
   --mds-opacity-pressed: 0.12;
   --mds-opacity-disabled: 0.4;
-  --mds-opacity-overlay: 0.6;
+  --mds-opacity-overlay: 0.4;
 }
 
 /* --- Responsive Breakpoints & Touch Target Tokens --- */
@@ -257,6 +257,8 @@
   --mds-color-background-base: var(--mds-primitive-neutral-50);
   --mds-color-background-surface: var(--mds-primitive-base-white);
   --mds-color-background-elevated: var(--mds-primitive-base-white);
+  --mds-color-background-hover: var(--mds-primitive-neutral-100);
+  --mds-color-background-pressed: var(--mds-primitive-neutral-200);
   --mds-color-text-primary: var(--mds-primitive-neutral-900);
   --mds-color-text-secondary: var(--mds-primitive-neutral-600);
   --mds-color-text-muted: var(--mds-primitive-neutral-500);
@@ -291,6 +293,8 @@
   --mds-color-background-base: var(--mds-primitive-night-950);
   --mds-color-background-surface: var(--mds-primitive-night-900);
   --mds-color-background-elevated: var(--mds-primitive-night-800);
+  --mds-color-background-hover: var(--mds-primitive-night-800);
+  --mds-color-background-pressed: var(--mds-primitive-night-700);
   --mds-color-text-primary: var(--mds-primitive-slate-100);
   --mds-color-text-secondary: var(--mds-primitive-slate-400);
   --mds-color-text-muted: var(--mds-primitive-slate-500);
@@ -326,6 +330,8 @@
     --mds-color-background-base: var(--mds-primitive-night-950);
     --mds-color-background-surface: var(--mds-primitive-night-900);
     --mds-color-background-elevated: var(--mds-primitive-night-800);
+    --mds-color-background-hover: var(--mds-primitive-night-800);
+    --mds-color-background-pressed: var(--mds-primitive-night-700);
     --mds-color-text-primary: var(--mds-primitive-slate-100);
     --mds-color-text-secondary: var(--mds-primitive-slate-400);
     --mds-color-text-muted: var(--mds-primitive-slate-500);
@@ -442,6 +448,8 @@
   --sng-breakpoint-tablet-max-width: var(--mds-breakpoint-tablet-max-width);
   --sng-color-background-base: var(--mds-color-background-base);
   --sng-color-background-elevated: var(--mds-color-background-elevated);
+  --sng-color-background-hover: var(--mds-color-background-hover);
+  --sng-color-background-pressed: var(--mds-color-background-pressed);
   --sng-color-background-surface: var(--mds-color-background-surface);
   --sng-color-border-default: var(--mds-color-border-default);
   --sng-color-border-strong: var(--mds-color-border-strong);

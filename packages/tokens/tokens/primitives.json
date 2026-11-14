@@ -551,7 +551,7 @@
       "$type": "number"
     },
     "overlay": {
-      "$value": 0.6,
+      "$value": 0.4,
       "$type": "number"
     }
   }
