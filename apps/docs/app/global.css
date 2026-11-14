@@ -9,6 +9,7 @@
   --color-bg-elevated: var(--mds-color-background-elevated);
   --color-bg-hover: var(--mds-color-background-hover);
   --color-bg-pressed: var(--mds-color-background-pressed);
+  --opacity-mds-overlay: var(--mds-opacity-overlay);
   --color-brand-primary: var(--mds-color-brand-primary);
   --color-brand-primary-hover: var(--mds-color-brand-primary-hover);
   --color-brand-accent: var(--mds-color-brand-accent);
