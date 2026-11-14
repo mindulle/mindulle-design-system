@@ -177,9 +177,9 @@ export function BrandShowcase() {
                     <line x1="16" y1="14" x2="5.5" y2="8.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
                     <line x1="16" y1="14" x2="26.5" y2="8.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
                     <path d="M 5.5 8.5 Q 16 1.8 26.5 8.5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeDasharray="1.5 2" opacity="0.65" />
-                    <circle cx="16" cy="14" r="1.5" fill={!isDark ? '#D97706' : '#F59E0B'} />
+                    <circle cx="16" cy="14" r="1.5" fill={!isDark ? '#9E5A03' : '#FFC837'} />
                     <line x1="16" y1="14" x2="16" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M 16 22.5 C 14.2 24.5, 14.2 28, 16 29.5 C 17.8 28, 17.8 24.5, 16 22.5 Z" fill={!isDark ? '#D97706' : '#F59E0B'} />
+                    <path d="M 16 22.5 C 14.2 24.5, 14.2 28, 16 29.5 C 17.8 28, 17.8 24.5, 16 22.5 Z" fill={!isDark ? '#9E5A03' : '#FFC837'} />
                   </svg>
                   <h2
                     className="text-xl sm:text-3xl md:text-4xl font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase break-keep"
@@ -261,7 +261,7 @@ export function BrandShowcase() {
                       <line x1="8" y1="7.5" x2="13" y2="3.5" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
                       <path d="M 3 3.5 Q 8 1.5 13 3.5" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1" strokeLinecap="round" strokeDasharray="1.5 1.5" opacity="0.75" />
                       <line x1="8" y1="7.5" x2="8" y2="12" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
-                      <path d="M 8 11.5 C 6.8 12.8, 6.8 14.5, 8 15.2 C 9.2 14.5, 9.2 12.8, 8 11.5 Z" fill={!isDark ? '#D97706' : '#F59E0B'} />
+                      <path d="M 8 11.5 C 6.8 12.8, 6.8 14.5, 8 15.2 C 9.2 14.5, 9.2 12.8, 8 11.5 Z" fill={!isDark ? '#9E5A03' : '#FFC837'} />
                     </svg>
                   </div>
                 </div>
@@ -290,9 +290,9 @@ export function BrandShowcase() {
                       <line x1="16" y1="14" x2="5.5" y2="8.5" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
                       <line x1="16" y1="14" x2="26.5" y2="8.5" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
                       <path d="M 5.5 8.5 Q 16 1.8 26.5 8.5" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1.25" strokeLinecap="round" strokeDasharray="1.5 2" opacity="0.65" />
-                      <circle cx="16" cy="14" r="1.5" fill={!isDark ? '#D97706' : '#F59E0B'} />
+                      <circle cx="16" cy="14" r="1.5" fill={!isDark ? '#9E5A03' : '#FFC837'} />
                       <line x1="16" y1="14" x2="16" y2="23" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
-                      <path d="M 16 22.5 C 14.2 24.5, 14.2 28, 16 29.5 C 17.8 28, 17.8 24.5, 16 22.5 Z" fill={!isDark ? '#D97706' : '#F59E0B'} />
+                      <path d="M 16 22.5 C 14.2 24.5, 14.2 28, 16 29.5 C 17.8 28, 17.8 24.5, 16 22.5 Z" fill={!isDark ? '#9E5A03' : '#FFC837'} />
                     </svg>
                   </div>
                 </div>
@@ -315,7 +315,7 @@ export function BrandShowcase() {
                     style={{ transform: `scale(${zoomLevel})` }}
                   >
                     <svg width="36" height="36" viewBox="0 0 64 64" fill="none">
-                      <circle cx="32" cy="18" r="15" fill={!isDark ? '#D97706' : '#F59E0B'} opacity="0.14" />
+                      <circle cx="32" cy="18" r="15" fill={!isDark ? '#9E5A03' : '#FFC837'} opacity="0.14" />
                       <line x1="32" y1="28" x2="32" y2="6" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
                       <line x1="32" y1="28" x2="21" y2="9" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
                       <line x1="32" y1="28" x2="43" y2="9" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
@@ -324,9 +324,9 @@ export function BrandShowcase() {
                       <line x1="32" y1="28" x2="7" y2="25" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
                       <line x1="32" y1="28" x2="57" y2="25" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1.75" strokeLinecap="round" />
                       <path d="M 7 25 Q 32 3 57 25" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1.25" strokeLinecap="round" strokeDasharray="2 3" opacity="0.6" />
-                      <circle cx="32" cy="28" r="2.5" fill={!isDark ? '#D97706' : '#F59E0B'} />
+                      <circle cx="32" cy="28" r="2.5" fill={!isDark ? '#9E5A03' : '#FFC837'} />
                       <line x1="32" y1="28" x2="32" y2="47" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="2.5" strokeLinecap="round" />
-                      <path d="M 32 46 C 28.5 50, 28.5 56.5, 32 59.5 C 35.5 56.5, 35.5 50, 32 46 Z" fill={!isDark ? '#D97706' : '#F59E0B'} />
+                      <path d="M 32 46 C 28.5 50, 28.5 56.5, 32 59.5 C 35.5 56.5, 35.5 50, 32 46 Z" fill={!isDark ? '#9E5A03' : '#FFC837'} />
                       <circle cx="32" cy="52" r="1.5" fill="#FFFFFF" opacity="0.4" />
                     </svg>
                   </div>
@@ -350,7 +350,7 @@ export function BrandShowcase() {
                     style={{ transform: `scale(${zoomLevel})` }}
                   >
                     <svg width="36" height="36" viewBox="0 0 120 120" fill="none">
-                      <circle cx="60" cy="34" r="28" fill={!isDark ? '#D97706' : '#F59E0B'} opacity="0.12" />
+                      <circle cx="60" cy="34" r="28" fill={!isDark ? '#9E5A03' : '#FFC837'} opacity="0.12" />
                       <line x1="60" y1="52" x2="60" y2="12" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="2.2" strokeLinecap="round" />
                       <line x1="60" y1="52" x2="39" y2="18" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
                       <line x1="60" y1="52" x2="81" y2="18" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="2" strokeLinecap="round" />
@@ -359,9 +359,9 @@ export function BrandShowcase() {
                       <line x1="60" y1="52" x2="13" y2="48" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1.8" strokeLinecap="round" />
                       <line x1="60" y1="52" x2="107" y2="48" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1.8" strokeLinecap="round" />
                       <path d="M 13 48 Q 60 8 107 48" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2.5 3.5" opacity="0.55" />
-                      <circle cx="60" cy="52" r="3.5" fill={!isDark ? '#D97706' : '#F59E0B'} />
+                      <circle cx="60" cy="52" r="3.5" fill={!isDark ? '#9E5A03' : '#FFC837'} />
                       <line x1="60" y1="52" x2="60" y2="87" stroke={!isDark ? '#161616' : '#F7EEEC'} strokeWidth="2.5" strokeLinecap="round" />
-                      <path d="M 60 86 C 53.5 93, 53.5 106, 60 112 C 66.5 106, 66.5 93, 60 86 Z" fill={!isDark ? '#D97706' : '#F59E0B'} />
+                      <path d="M 60 86 C 53.5 93, 53.5 106, 60 112 C 66.5 106, 66.5 93, 60 86 Z" fill={!isDark ? '#9E5A03' : '#FFC837'} />
                       <circle cx="60" cy="98" r="3" fill="#FFFFFF" opacity="0.35" />
                     </svg>
                   </div>
@@ -427,7 +427,7 @@ export function BrandShowcase() {
                 <span className="text-[10px] font-mono uppercase tracking-wider text-brand-primary font-bold">
                   MOTIF 02 • SEED
                 </span>
-                <div className="p-3" style={{ color: !isDark ? '#D97706' : '#F59E0B' }}>
+                <div className="p-3" style={{ color: !isDark ? '#9E5A03' : '#FFC837' }}>
                   <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
                     <circle cx="16" cy="16" r="3.5" fill="currentColor" />
                     <line x1="16" y1="10" x2="16" y2="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -461,7 +461,7 @@ export function BrandShowcase() {
                   <svg width="40" height="40" viewBox="0 0 32 32" fill="none" stroke="currentColor">
                     <path d="M 16 14 L 6 6 M 16 14 L 11 4 M 16 14 L 16 3 M 16 14 L 21 4 M 16 14 L 26 6" strokeWidth="1.75" strokeLinecap="round" />
                     <line x1="16" y1="14" x2="16" y2="22" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M 16 22 C 14.5 24, 14.5 27, 16 29 C 17.5 27, 17.5 24, 16 22 Z" fill={!isDark ? '#D97706' : '#F59E0B'} stroke="none" />
+                    <path d="M 16 22 C 14.5 24, 14.5 27, 16 29 C 17.5 27, 17.5 24, 16 22 Z" fill={!isDark ? '#9E5A03' : '#FFC837'} stroke="none" />
                   </svg>
                 </div>
                 <div>
@@ -486,7 +486,7 @@ export function BrandShowcase() {
                 <span className="text-[10px] font-mono uppercase tracking-wider text-brand-primary font-bold">
                   MOTIF 04 • END MARK
                 </span>
-                <div className="p-3" style={{ color: !isDark ? '#D97706' : '#F59E0B' }}>
+                <div className="p-3" style={{ color: !isDark ? '#9E5A03' : '#FFC837' }}>
                   <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
                     <circle cx="12" cy="11" r="2.5" />
                     <path d="M 10 11 C 6 10, 4 14, 8 16 C 10 17, 11 14, 10 11 Z" />
@@ -545,7 +545,7 @@ export function BrandShowcase() {
                 </h4>
                 <ul className="text-xs text-fd-muted-foreground space-y-1.5 list-disc list-inside break-keep">
                   <li>지면 구석에 작고 단정하게 얹히는 1도 선화 에칭</li>
-                  <li>생명력을 밝히는 단 하나의 앰버 골드 (#D97706 / #F59E0B)</li>
+                  <li>생명력을 밝히는 단 하나의 앰버 골드 (#9E5A03 / #FFC837)</li>
                   <li>비바람에 깎여 나간 4px / 6px 자연석 라운딩</li>
                   <li>기사 본문 종결부호 ❦</li>
                   <li>가독성을 지키는 2% 초미세 종이 그레인</li>
