@@ -18,6 +18,16 @@
   --color-text-muted: var(--mds-color-text-muted);
   --color-text-disabled: var(--mds-color-text-disabled);
   --color-text-inverse: var(--mds-color-text-inverse);
+  --color-state-info: var(--mds-color-state-info);
+  --color-state-info-bg: var(--mds-color-state-info-bg);
+  --color-state-success: var(--mds-color-state-success);
+  --color-state-success-bg: var(--mds-color-state-success-bg);
+  --color-state-warning: var(--mds-color-state-warning);
+  --color-state-warning-bg: var(--mds-color-state-warning-bg);
+  --color-state-danger: var(--mds-color-state-danger);
+  --color-state-danger-bg: var(--mds-color-state-danger-bg);
+  --color-state-error: var(--mds-color-state-error);
+  --color-state-error-bg: var(--mds-color-state-error-bg);
   --spacing-mds-gap-sm: var(--mds-space-gap-sm);
   --spacing-mds-gap-group: var(--mds-space-gap-group);
   --spacing-mds-element-px: var(--mds-space-element-px);
