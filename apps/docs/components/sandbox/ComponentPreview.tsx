@@ -304,7 +304,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
                 excerpt: 'The True 2px Stem과 4px Weathered Radius가 적용된 공식 포털입니다.',
               })}
             >
-              <span className="font-semibold text-amber-500 underline decoration-1 underline-offset-2">
+              <span className="font-semibold text-brand-primary underline decoration-1 underline-offset-2">
                 MDS 공식 문서 포털
               </span>
             </HoverPreview>
@@ -435,7 +435,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
             <button
               onClick={() => setSandboxTheme('light')}
               className={`px-2 py-0.5 rounded text-[11px] font-medium ${
-                sandboxTheme === 'light' ? 'bg-amber-500/20 text-amber-600 font-bold' : 'opacity-60'
+                sandboxTheme === 'light' ? 'bg-brand-primary/15 text-brand-primary font-bold' : 'opacity-60'
               }`}
             >
               Light
@@ -443,7 +443,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
             <button
               onClick={() => setSandboxTheme('dark')}
               className={`px-2 py-0.5 rounded text-[11px] font-medium ${
-                sandboxTheme === 'dark' ? 'bg-amber-500/20 text-amber-400 font-bold' : 'opacity-60'
+                sandboxTheme === 'dark' ? 'bg-brand-primary/15 text-brand-primary font-bold' : 'opacity-60'
               }`}
             >
               Dark
@@ -489,7 +489,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
                 key={v}
                 onClick={() => setVariant(v)}
                 className={`px-2 py-0.5 rounded border ${
-                  variant === v ? 'border-amber-500 bg-amber-500/10 text-amber-500 font-bold' : 'border-fd-border'
+                  variant === v ? 'border-brand-primary bg-brand-primary/10 text-brand-primary font-bold' : 'border-fd-border'
                 }`}
               >
                 {v}
@@ -504,7 +504,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
                 key={s}
                 onClick={() => setSize(s)}
                 className={`px-2 py-0.5 rounded border ${
-                  size === s ? 'border-amber-500 bg-amber-500/10 text-amber-500 font-bold' : 'border-fd-border'
+                  size === s ? 'border-brand-primary bg-brand-primary/10 text-brand-primary font-bold' : 'border-fd-border'
                 }`}
               >
                 {s}
@@ -533,7 +533,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
                 key={v}
                 onClick={() => setVariant(v)}
                 className={`px-2 py-0.5 rounded border ${
-                  variant === v ? 'border-amber-500 bg-amber-500/10 text-amber-500 font-bold' : 'border-fd-border'
+                  variant === v ? 'border-brand-primary bg-brand-primary/10 text-brand-primary font-bold' : 'border-fd-border'
                 }`}
               >
                 {v === 'primary' ? 'pill' : 'label'}
@@ -548,7 +548,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
                 key={c}
                 onClick={() => setColor(c)}
                 className={`px-2 py-0.5 rounded border ${
-                  color === c ? 'border-amber-500 bg-amber-500/10 text-amber-500 font-bold' : 'border-fd-border'
+                  color === c ? 'border-brand-primary bg-brand-primary/10 text-brand-primary font-bold' : 'border-fd-border'
                 }`}
               >
                 {c}
@@ -567,7 +567,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
                 key={c}
                 onClick={() => setColor(c)}
                 className={`px-2 py-0.5 rounded border ${
-                  color === c ? 'border-amber-500 bg-amber-500/10 text-amber-500 font-bold' : 'border-fd-border'
+                  color === c ? 'border-brand-primary bg-brand-primary/10 text-brand-primary font-bold' : 'border-fd-border'
                 }`}
               >
                 {c}

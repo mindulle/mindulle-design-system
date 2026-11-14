@@ -8,7 +8,7 @@ export const baseOptions: BaseLayoutProps = {
       <span className="flex items-center gap-2 font-semibold tracking-tight text-sm py-1">
         <MindulleLogo size={22} />
         <span>민들레 디자인 시스템</span>
-        <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 font-bold">
+        <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20 font-bold">
           v0.1.0
         </span>
       </span>

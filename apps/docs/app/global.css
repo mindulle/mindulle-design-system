@@ -50,7 +50,7 @@
 :root {
   --color-fd-background: #fbfbfa;
   --color-fd-foreground: #18181b;
-  --color-fd-primary: #b86a04;
+  --color-fd-primary: #9e5a03;
   --color-fd-primary-foreground: #ffffff;
   --color-fd-muted: #f4f4f5;
   --color-fd-muted-foreground: #71717a;
@@ -281,14 +281,14 @@ body {
 /* Hover State */
 :is([id*='sidebar'], aside.fd-sidebar) button[aria-expanded]:hover,
 :is([id*='sidebar'], aside.fd-sidebar) a:hover {
-  background-color: rgba(255, 200, 55, 0.08) !important;
+  background-color: color-mix(in srgb, var(--mds-color-brand-primary) 8%, transparent) !important;
   color: var(--color-fd-foreground) !important;
 }
 
 /* Active Item (Currently Selected Page) */
 :is([id*='sidebar'], aside.fd-sidebar) a[data-active='true'] {
-  background-color: rgba(255, 200, 55, 0.14) !important;
-  color: #ffc837 !important;
+  background-color: color-mix(in srgb, var(--mds-color-brand-primary) 12%, transparent) !important;
+  color: var(--mds-color-brand-primary) !important;
   font-weight: 600 !important;
 }
 
@@ -303,7 +303,7 @@ body {
 }
 
 #nd-toc a[data-active='true'] {
-  color: #ffc837 !important;
+  color: var(--mds-color-brand-primary) !important;
   font-weight: 600 !important;
 }
 

@@ -26,8 +26,8 @@ import {
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
-  index: <Rocket className="size-4 text-amber-500" />,
-  colors: <Palette className="size-4 text-amber-500" />,
+  index: <Rocket className="size-4 text-brand-primary" />,
+  colors: <Palette className="size-4 text-brand-primary" />,
   button: <MousePointerClick className="size-4" />,
   badge: <Tag className="size-4" />,
   card: <Square className="size-4" />,
@@ -43,7 +43,7 @@ const iconMap: Record<string, React.ReactNode> = {
   avatar: <User className="size-4" />,
   'list-item': <List className="size-4" />,
   'hover-preview': <Eye className="size-4" />,
-  'mindulle-logo': <Flame className="size-4 text-amber-500" />,
+  'mindulle-logo': <Flame className="size-4 text-brand-primary" />,
 };
 
 function enrichTreeWithIcons(node: any): any {
@@ -61,9 +61,9 @@ function enrichTreeWithIcons(node: any): any {
   } else if (enriched.type === 'folder') {
     const isFoundations = enriched.name?.toLowerCase().includes('파운데이션') || enriched.name?.toLowerCase().includes('foundations');
     enriched.icon = isFoundations ? (
-      <Palette className="size-4 text-amber-500" />
+      <Palette className="size-4 text-brand-primary" />
     ) : (
-      <Boxes className="size-4 text-amber-500" />
+      <Boxes className="size-4 text-brand-primary" />
     );
 
     if (enriched.children) {

@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href="https://hangeul.pstatic.net/hangeul_style/css/maru-buri.css"
         />
       </head>
-      <body className="flex flex-col min-h-screen bg-fd-background text-fd-foreground antialiased selection:bg-amber-400 selection:text-black">
+      <body className="flex flex-col min-h-screen bg-fd-background text-fd-foreground antialiased selection:bg-brand-primary selection:text-text-inverse">
         <RootProvider>{children}</RootProvider>
       </body>
     </html>
