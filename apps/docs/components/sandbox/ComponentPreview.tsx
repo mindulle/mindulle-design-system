@@ -18,6 +18,12 @@ import {
   ListItem,
   HoverPreview,
   MindulleLogo,
+  Toast,
+  Tooltip,
+  TopBar,
+  MobileHeader,
+  TableOfContents,
+  SonagiLogo,
 } from '@mindulle/ui';
 
 interface ComponentPreviewProps {
@@ -40,6 +46,9 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
   const [radioValue, setRadioValue] = useState('option-1');
   const [activeTabItem, setActiveTabItem] = useState('tab-1');
   const [currentPage, setCurrentPage] = useState(2);
+  const [toastOpen, setToastOpen] = useState(true);
+  const [tocActive, setTocActive] = useState('colors');
+  const [topBarSticky, setTopBarSticky] = useState(false);
 
   const getCodeSnippet = () => {
     switch (name) {
@@ -75,6 +84,18 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
         return `<HoverPreview\n  slug="mds-docs"\n  href="https://design.sonagi.space"\n  fetchNote={async (slug) => ({\n    title: '민들레 공식 문서 포털',\n    excerpt: '16종 컴포넌트 실시간 프리뷰와 W3C 토큰 매트릭스'\n  })}\n>\n  MDS 공식 문서 포털\n</HoverPreview>`;
       case 'MindulleLogo':
         return `<div className="flex items-center gap-6">\n  <MindulleLogo size={40} />\n  <MindulleLogo size={56} withBackground />\n</div>`;
+      case 'Toast':
+        return `<Toast\n  title="저장 완료"\n  description="변경 사항이 반영되었습니다."\n  type="${color}"\n  onClose={() => setOpen(false)}\n/>`;
+      case 'Tooltip':
+        return `<Tooltip content="검색" position="top">\n  <button aria-label="검색">검색</button>\n</Tooltip>`;
+      case 'TopBar':
+        return `<TopBar\n  brand={<MindulleLogo height={28} />}\n  nav={<>\n    <a href="/docs">Docs</a>\n    <a href="/blog">Blog</a>\n  </>}\n  actions={<span>Theme</span>}\n/>`;
+      case 'MobileHeader':
+        return `<MobileHeader\n  title="민들레 정원"\n  onMenuClick={() => setDrawerOpen(true)}\n/>`;
+      case 'TableOfContents':
+        return `<TableOfContents\n  items={[\n    { id: 'philosophy', label: '1. 디자인 철학' },\n    { id: 'colors', label: '2. 색상 시스템' },\n  ]}\n  activeId="${tocActive}"\n/>`;
+      case 'SonagiLogo':
+        return `<SonagiLogo height={28} />`;
       default:
         return `<${name} />`;
     }
@@ -297,6 +318,81 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
             <MindulleLogo size={56} withBackground />
           </div>
         );
+      case 'Toast':
+        return (
+          <div className="w-full max-w-md">
+            {toastOpen ? (
+              <Toast
+                title="저장 완료"
+                description="변경 사항이 반영되었습니다."
+                type={color}
+                onClose={() => setToastOpen(false)}
+              />
+            ) : (
+              <Button size="sm" onClick={() => setToastOpen(true)}>
+                토스트 다시 열기
+              </Button>
+            )}
+          </div>
+        );
+      case 'Tooltip':
+        return (
+          <Tooltip content="검색" position="top">
+            <button
+              type="button"
+              aria-label="검색"
+              className="px-3 py-2 rounded-md border border-border-default bg-bg-surface text-text-primary text-sm"
+            >
+              검색 (호버)
+            </button>
+          </Tooltip>
+        );
+      case 'TopBar':
+        return (
+          <div className={`w-full ${topBarSticky ? 'h-64 overflow-auto' : ''}`}>
+            <div className="w-full max-w-3xl mx-auto">
+              <TopBar
+                sticky={topBarSticky}
+                brand={<MindulleLogo size={24} />}
+                nav={
+                  <>
+                    <a className="text-sm text-text-secondary hover:text-text-primary" href="#docs">Docs</a>
+                    <a className="text-sm text-text-secondary hover:text-text-primary" href="#components">Components</a>
+                  </>
+                }
+                actions={<span className="text-xs text-text-muted">Theme</span>}
+              />
+            </div>
+          </div>
+        );
+      case 'MobileHeader':
+        return (
+          <div className="w-[390px] max-w-full">
+            <MobileHeader title="민들레 정원" onMenuClick={() => undefined} />
+          </div>
+        );
+      case 'TableOfContents':
+        return (
+          <div className="w-[260px]">
+            <TableOfContents
+              items={[
+                { id: 'philosophy', label: '1. 디자인 철학' },
+                { id: 'colors', label: '2. 색상 시스템' },
+                { id: 'typography', label: '3. 타이포그래피' },
+                { id: 'components', label: '4. 컴포넌트', depth: 1 },
+              ]}
+              activeId={tocActive}
+              onSelect={setTocActive}
+            />
+          </div>
+        );
+      case 'SonagiLogo':
+        return (
+          <div className="flex items-center gap-6">
+            <SonagiLogo height={28} />
+            <SonagiLogo height={40} />
+          </div>
+        );
       default:
         return (
           <div className="text-sm text-fd-muted-foreground">
@@ -459,6 +555,34 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
               </button>
             ))}
           </div>
+        </div>
+      )}
+
+      {name === 'Toast' && (
+        <div className="border-t-2 border-fd-border bg-fd-muted/20 px-4 py-3 flex flex-wrap items-center gap-6 text-xs">
+          <div className="flex items-center gap-2">
+            <span className="font-semibold text-fd-muted-foreground">Type:</span>
+            {(['info', 'success', 'warning', 'danger'] as const).map((c) => (
+              <button
+                key={c}
+                onClick={() => setColor(c)}
+                className={`px-2 py-0.5 rounded border ${
+                  color === c ? 'border-amber-500 bg-amber-500/10 text-amber-500 font-bold' : 'border-fd-border'
+                }`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {name === 'TopBar' && (
+        <div className="border-t-2 border-fd-border bg-fd-muted/20 px-4 py-3 flex items-center gap-6 text-xs">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" checked={topBarSticky} onChange={(e) => setTopBarSticky(e.target.checked)} className="rounded" />
+            <span className="font-semibold">sticky 테스트</span>
+          </label>
         </div>
       )}
 
