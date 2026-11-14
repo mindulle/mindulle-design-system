@@ -246,7 +246,7 @@ export function BrandShowcase() {
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
                 <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
                   <span className="font-bold text-amber-600 dark:text-amber-400 whitespace-nowrap">16 × 16 px</span>
-                  <span className="text-fd-muted-foreground break-keep">극소형 탭</span>
+                  <span className="text-fd-muted-foreground whitespace-nowrap shrink-0">극소형 탭</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
                   style={{ backgroundColor: !isDark ? '#FBF9F5' : '#12100E' }}
@@ -274,7 +274,7 @@ export function BrandShowcase() {
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
                 <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
                   <span className="font-bold text-amber-600 dark:text-amber-400 whitespace-nowrap">32 × 32 px</span>
-                  <span className="text-fd-muted-foreground break-keep">표준 파비콘</span>
+                  <span className="text-fd-muted-foreground whitespace-nowrap shrink-0">표준 파비콘</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
                   style={{ backgroundColor: !isDark ? '#FBF9F5' : '#12100E' }}
@@ -305,7 +305,7 @@ export function BrandShowcase() {
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
                 <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
                   <span className="font-bold text-amber-600 dark:text-amber-400 whitespace-nowrap">64 × 64 px</span>
-                  <span className="text-fd-muted-foreground break-keep">반응형 마스터</span>
+                  <span className="text-fd-muted-foreground whitespace-nowrap shrink-0">반응형 마스터</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
                   style={{ backgroundColor: !isDark ? '#FBF9F5' : '#12100E' }}
@@ -340,7 +340,7 @@ export function BrandShowcase() {
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
                 <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
                   <span className="font-bold text-amber-600 dark:text-amber-400 whitespace-nowrap">120 × 120 px</span>
-                  <span className="text-fd-muted-foreground break-keep">마스터 심볼</span>
+                  <span className="text-fd-muted-foreground whitespace-nowrap shrink-0">마스터 심볼</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
                   style={{ backgroundColor: !isDark ? '#FBF9F5' : '#12100E' }}
