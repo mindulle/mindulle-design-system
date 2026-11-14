@@ -22,7 +22,7 @@ export function Button({
   
   const sizeClasses = {
     sm: 'text-xs px-3 py-1.5 rounded-sm',
-    md: 'text-sm px-mds-element-px py-mds-element-py rounded-base',
+    md: 'text-sm px-mds-element-px py-mds-element-py rounded-md',
     lg: 'text-base px-5 py-3 rounded-md',
   };
 
