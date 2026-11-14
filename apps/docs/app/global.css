@@ -3,7 +3,7 @@
 @import 'fumadocs-ui/css/preset.css';
 @import '@mindulle/tokens/css';
 
-@theme {
+@theme inline {
   --color-bg-base: var(--mds-color-background-base);
   --color-bg-surface: var(--mds-color-background-surface);
   --color-bg-elevated: var(--mds-color-background-elevated);
