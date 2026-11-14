@@ -1,11 +1,38 @@
-@import '@mindulle/ui/css' layer(ui);
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 @import '@mindulle/tokens/css';
 
+@theme {
+  --color-bg-base: var(--mds-color-background-base);
+  --color-bg-surface: var(--mds-color-background-surface);
+  --color-bg-elevated: var(--mds-color-background-elevated);
+  --color-brand-primary: var(--mds-color-brand-primary);
+  --color-brand-primary-hover: var(--mds-color-brand-primary-hover);
+  --color-brand-accent: var(--mds-color-brand-accent);
+  --color-border-default: var(--mds-color-border-default);
+  --color-border-subtle: var(--mds-color-border-subtle);
+  --color-border-strong: var(--mds-color-border-strong);
+  --color-text-primary: var(--mds-color-text-primary);
+  --color-text-secondary: var(--mds-color-text-secondary);
+  --color-text-muted: var(--mds-color-text-muted);
+  --color-text-disabled: var(--mds-color-text-disabled);
+  --color-text-inverse: var(--mds-color-text-inverse);
+  --spacing-mds-gap-sm: var(--mds-space-gap-sm);
+  --spacing-mds-gap-group: var(--mds-space-gap-group);
+  --spacing-mds-element-px: var(--mds-space-element-px);
+  --spacing-mds-element-py: var(--mds-space-element-py);
+  --spacing-mds-container-lg: var(--mds-space-container-lg);
+  --radius-base: var(--mds-radius-base);
+  --radius-md: var(--mds-radius-md);
+  --radius-lg: var(--mds-radius-lg);
+  --radius-xl: var(--mds-radius-xl);
+  --font-sans: var(--mds-font-sans);
+}
+
 @source '../node_modules/fumadocs-ui/dist/**/*.js';
-@source '../../packages/ui/src/**/*.{ts,tsx}';
+@source '../../../packages/ui/src/**/*.{ts,tsx}';
+@source '../../../packages/icons/src/**/*.{ts,tsx}';
 
 :root {
   --color-fd-background: #fbfbfa;
