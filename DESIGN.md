@@ -139,6 +139,21 @@ Never use `#00ffcc` outside the wordmark context.
 - 금지: `editorial/ink-primary`처럼 **역할이 같은 두 번째 토큰 이름**을 만들지 않습니다.
 - 정의: `packages/tokens/tokens/surfaces.json` (`paper/ink/spot`은 Primitive)
 
+## Component Classification & Publishing Policy
+
+컴포넌트는 3분류로만 운용하고, **발행 여부를 분류로 결정**합니다.
+
+| 분류                | 위치                                      | 라이브러리 발행 | 코드             |
+| ------------------- | ----------------------------------------- | --------------- | ---------------- |
+| **Core Components** | 각 컴포넌트 페이지                        | ✅ 발행         | `@mindulle/ui`   |
+| **Patterns**        | `📦 Patterns & App-owned (Not Published)` | ❌ 미발행       | 없음 (조합 예시) |
+| **App-owned**       | `📦 Patterns & App-owned (Not Published)` | ❌ 미발행       | 앱 내부 구현     |
+
+- **Core**: Button · Badge · Input · Textarea · Select · Checkbox · Radio · Avatar · Card · Modal · Toast · Tooltip · Accordion · Tabs · List Item · Pagination · HoverPreview · `Navigation/{TopBar, Mobile-Header, TableOfContents}`
+- **Patterns**: `Templates/Login-Form`
+- **App-owned**: `Navigation/FAB` · `Overlay/BottomSheet`
+- 발행 제외는 Figma의 **Assets → Manage library**에서 해당 컴포넌트를 체크 해제해 설정합니다 (플러그인 API 미지원).
+
 ## Component Stylings
 
 - **Buttons:** `border-radius: 8px` (`--mds-radius-md`). Primary = gold amber fill (`--mds-color-brand-primary`) + white label, hover `--mds-color-brand-primary-hover`. Secondary = 1px border (`--mds-color-border-default`) with transparent fill. Ghost = transparent. Danger = error fill (`--mds-color-state-danger`). Padding: `10px 20px`, label 14px/600, min touch height 44px.
