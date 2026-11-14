@@ -47,3 +47,5 @@ jobs:
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: packages/ui
+          onlyChanged: true        # TurboSnap: 변경된 스토리만 스냅샷
+          exitOnceUploaded: true
