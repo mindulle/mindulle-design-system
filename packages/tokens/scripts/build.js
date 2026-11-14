@@ -10,6 +10,8 @@ const PRIMITIVES_SRC = path.join(TOKENS_DIR, 'primitives.json');
 const SEMANTICS_SRC = path.join(TOKENS_DIR, 'semantics.json');
 const BREAKPOINTS_SRC = path.join(TOKENS_DIR, 'breakpoints.json');
 const COMPONENTS_SRC = path.join(TOKENS_DIR, 'components.json');
+const SURFACES_SRC = path.join(TOKENS_DIR, 'surfaces.json');
+const SPACE_SRC = path.join(TOKENS_DIR, 'space.json');
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -127,6 +129,14 @@ function build() {
     cssOutput += generateCssBlock(':root', bpTokens);
   }
   
+  if (fs.existsSync(SPACE_SRC)) {
+    const spaceData = JSON.parse(fs.readFileSync(SPACE_SRC, 'utf8'));
+    const spaceTokens = extractTokens(spaceData);
+    Object.assign(flatTokens, spaceTokens);
+    cssOutput += `/* --- Semantic Spacing --- */\n`;
+    cssOutput += generateCssBlock(':root', spaceTokens);
+  }
+
   if (fs.existsSync(SEMANTICS_SRC)) {
     const semData = JSON.parse(fs.readFileSync(SEMANTICS_SRC, 'utf8'));
     lightTokens = extractTokens({ semantic: { light: semData.semantic?.light || {} }, shadow: { light: semData.shadow?.light || {} }});
@@ -154,6 +164,28 @@ function build() {
     Object.assign(flatTokens, compTokens);
     cssOutput += `/* --- Component Tokens (Tier 3) --- */\n`;
     cssOutput += generateCssBlock(':root', compTokens);
+  }
+
+  if (fs.existsSync(SURFACES_SRC)) {
+    const surfData = JSON.parse(fs.readFileSync(SURFACES_SRC, 'utf8'));
+    for (const [name, cfg] of Object.entries(surfData.surface || {})) {
+      if (cfg.light) {
+        const lt = extractTokens({ semantic: { light: cfg.light } });
+        cssOutput += `/* --- Surface Scope: ${name} (light) --- */\n`;
+        cssOutput += generateCssBlock(`[data-surface="${name}"]`, lt);
+      }
+      if (cfg.dark) {
+        const dt = extractTokens({ semantic: { dark: cfg.dark } });
+        cssOutput += `/* --- Surface Scope: ${name} (dark) --- */\n`;
+        cssOutput += generateCssBlock(`[data-theme="dark"] [data-surface="${name}"], [data-theme="dark"][data-surface="${name}"]`, dt);
+        cssOutput += `@media (prefers-color-scheme: dark) {\n  [data-surface="${name}"]:not([data-theme="light"]) {\n`;
+        for (const [k, v] of Object.entries(dt)) {
+          cssOutput += `    ${k}: ${v};\n`;
+          if (k.startsWith('--mds-')) legacyAliasKeys.add(k);
+        }
+        cssOutput += `  }\n}\n\n`;
+      }
+    }
   }
 
   if (fs.existsSync(THEMES_DIR)) {

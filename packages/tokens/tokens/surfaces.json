@@ -1,0 +1,155 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "MDS Surface Scopes",
+    "description": "Scoped semantic remaps. Apply data-surface=\"<name>\" to swap surface values without introducing parallel token names."
+  },
+  "surface": {
+    "editorial": {
+      "light": {
+        "color": {
+          "background": {
+            "base": {
+              "$value": "{primitive.paper.50}",
+              "$type": "color"
+            },
+            "surface": {
+              "$value": "{primitive.paper.50}",
+              "$type": "color"
+            },
+            "elevated": {
+              "$value": "{primitive.paper.50}",
+              "$type": "color"
+            }
+          },
+          "text": {
+            "primary": {
+              "$value": "{primitive.ink.900}",
+              "$type": "color"
+            },
+            "secondary": {
+              "$value": "{primitive.ink.600}",
+              "$type": "color"
+            },
+            "muted": {
+              "$value": "{primitive.ink.600}",
+              "$type": "color"
+            },
+            "disabled": {
+              "$value": "{primitive.ink.200}",
+              "$type": "color"
+            },
+            "inverse": {
+              "$value": "{primitive.paper.50}",
+              "$type": "color"
+            }
+          },
+          "border": {
+            "default": {
+              "$value": "{primitive.ink.200}",
+              "$type": "color"
+            },
+            "subtle": {
+              "$value": "{primitive.ink.200}",
+              "$type": "color"
+            },
+            "strong": {
+              "$value": "{primitive.ink.900}",
+              "$type": "color"
+            }
+          },
+          "brand": {
+            "primary": {
+              "$value": "{primitive.spot.600}",
+              "$type": "color"
+            },
+            "primary-hover": {
+              "$value": "{primitive.spot.700}",
+              "$type": "color"
+            },
+            "accent": {
+              "$value": "{primitive.spot.600}",
+              "$type": "color"
+            },
+            "accent-hover": {
+              "$value": "{primitive.spot.700}",
+              "$type": "color"
+            }
+          }
+        }
+      },
+      "dark": {
+        "color": {
+          "background": {
+            "base": {
+              "$value": "{primitive.paper.950}",
+              "$type": "color"
+            },
+            "surface": {
+              "$value": "{primitive.paper.950}",
+              "$type": "color"
+            },
+            "elevated": {
+              "$value": "{primitive.paper.950}",
+              "$type": "color"
+            }
+          },
+          "text": {
+            "primary": {
+              "$value": "{primitive.ink.100}",
+              "$type": "color"
+            },
+            "secondary": {
+              "$value": "{primitive.ink.300}",
+              "$type": "color"
+            },
+            "muted": {
+              "$value": "{primitive.ink.300}",
+              "$type": "color"
+            },
+            "disabled": {
+              "$value": "{primitive.ink.800}",
+              "$type": "color"
+            },
+            "inverse": {
+              "$value": "{primitive.paper.950}",
+              "$type": "color"
+            }
+          },
+          "border": {
+            "default": {
+              "$value": "{primitive.ink.800}",
+              "$type": "color"
+            },
+            "subtle": {
+              "$value": "{primitive.ink.800}",
+              "$type": "color"
+            },
+            "strong": {
+              "$value": "{primitive.ink.100}",
+              "$type": "color"
+            }
+          },
+          "brand": {
+            "primary": {
+              "$value": "{primitive.spot.500}",
+              "$type": "color"
+            },
+            "primary-hover": {
+              "$value": "{primitive.spot.600}",
+              "$type": "color"
+            },
+            "accent": {
+              "$value": "{primitive.spot.500}",
+              "$type": "color"
+            },
+            "accent-hover": {
+              "$value": "{primitive.spot.600}",
+              "$type": "color"
+            }
+          }
+        }
+      }
+    }
+  }
+}

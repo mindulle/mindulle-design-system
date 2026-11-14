@@ -113,15 +113,31 @@ Never use `#00ffcc` outside the wordmark context.
 
 토큰은 3계층으로만 운용합니다. 컴포넌트 코드는 **Tier 3만** 참조합니다.
 
-| Tier             | 컬렉션 (Figma)           | CSS 프리픽스        | 예시                                                   |
-| ---------------- | ------------------------ | ------------------- | ------------------------------------------------------ |
-| **1. Primitive** | `Color Primitives`       | `--mds-primitive-*` | `gold/600` `#b86a04`, `night/950` `#12151d`            |
-| **2. Semantic**  | `Colors` (Light/Dark)    | `--mds-color-*`     | `brand/primary` → `gold/600`, `bg/base` → `neutral/50` |
-| **3. Component** | `Component` (Light/Dark) | `--mds-component-*` | `button/bg-primary` → `brand/primary`                  |
+| Tier             | 컬렉션 (Figma)           | CSS 프리픽스        | 예시                                                           |
+| ---------------- | ------------------------ | ------------------- | -------------------------------------------------------------- |
+| **1. Primitive** | `Color Primitives`       | `--mds-primitive-*` | `gold/600` `#b86a04`, `night/950` `#12151d`                    |
+| **2. Semantic**  | `Colors` (Light/Dark)    | `--mds-color-*`     | `brand/primary` → `gold/600`, `background/base` → `neutral/50` |
+| **3. Component** | `Component` (Light/Dark) | `--mds-component-*` | `button/bg-primary` → `brand/primary`                          |
 
 - Semantic은 반드시 Primitive를 alias하고, Component는 반드시 Semantic을 alias합니다. `raw hex`는 Primitive에서만 허용됩니다.
 - 현재 Component 토큰: `button/{bg-primary, bg-primary-hover, text-on-primary, bg-secondary, border-secondary, text-secondary}`, `card/{bg, border}`, `input/{bg, border, border-focus}`, `focus/ring`
 - 코드 정의: `packages/tokens/tokens/components.json`
+
+### 표면 스코프 (Surface Scope)
+
+특정 표면(신문지 지면 등)에서 색을 통째로 갈아끼울 때는 **별도 토큰 이름을 만들지 않고** `data-surface` 스코프로 시맨틱 값을 재매핑합니다.
+
+```html
+<section data-surface="editorial">…</section>
+```
+
+| 스코프      | 재매핑                                                                          |
+| ----------- | ------------------------------------------------------------------------------- |
+| `editorial` | `background/*` → `paper/*`, `text/*`·`border/*` → `ink/*`, `brand/*` → `spot/*` |
+
+- 컴포넌트는 언제나 `background/*`·`text/*`만 사용합니다. 표면이 바뀌면 스코프가 값을 바꿉니다.
+- 금지: `editorial/ink-primary`처럼 **역할이 같은 두 번째 토큰 이름**을 만들지 않습니다.
+- 정의: `packages/tokens/tokens/surfaces.json` (`paper/ink/spot`은 Primitive)
 
 ## Component Stylings
 

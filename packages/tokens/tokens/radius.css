@@ -1,9 +1,0 @@
-:root {
-  /* Corner Radius */
-  --mds-radius-none: 0px;
-  --mds-radius-sm: 4px;
-  --mds-radius-md: 8px;
-  --mds-radius-lg: 16px;
-  --mds-radius-xl: 24px;
-  --mds-radius-full: 9999px;
-}

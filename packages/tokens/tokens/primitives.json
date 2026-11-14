@@ -199,6 +199,56 @@
         "$value": "#000000",
         "$type": "color"
       }
+    },
+    "paper": {
+      "50": {
+        "$value": "#FBF9F5",
+        "$type": "color"
+      },
+      "950": {
+        "$value": "#12100E",
+        "$type": "color"
+      }
+    },
+    "ink": {
+      "100": {
+        "$value": "#F7EEEC",
+        "$type": "color"
+      },
+      "200": {
+        "$value": "#D6D3CD",
+        "$type": "color"
+      },
+      "300": {
+        "$value": "#A8A29E",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "#57534E",
+        "$type": "color"
+      },
+      "800": {
+        "$value": "#383431",
+        "$type": "color"
+      },
+      "900": {
+        "$value": "#161616",
+        "$type": "color"
+      }
+    },
+    "spot": {
+      "500": {
+        "$value": "#F59E0B",
+        "$type": "color"
+      },
+      "600": {
+        "$value": "#D97706",
+        "$type": "color"
+      },
+      "700": {
+        "$value": "#B45309",
+        "$type": "color"
+      }
     }
   },
   "typography": {
@@ -484,6 +534,24 @@
     },
     "tooltip": {
       "$value": "500",
+      "$type": "number"
+    }
+  },
+  "opacity": {
+    "hover": {
+      "$value": 0.08,
+      "$type": "number"
+    },
+    "pressed": {
+      "$value": 0.12,
+      "$type": "number"
+    },
+    "disabled": {
+      "$value": 0.4,
+      "$type": "number"
+    },
+    "overlay": {
+      "$value": 0.6,
       "$type": "number"
     }
   }

@@ -5,7 +5,7 @@ description: W3C 표준 시맨틱 색상 토큰 및 Light/Dark 듀얼 매트릭�
 
 # 색상 토큰 (Color Tokens)
 
-> 💡 **브랜드 헌법 연동**: 모든 색상 토큰은 [민들레 마스터 브랜드 북 (The Master Brand Book)](/docs/brand)의 **85:15 신문지 활판 인쇄 헌법**에 따라 운용되며, 신문지 미색 지면(`--mds-color-editorial-newsprint-bg`)과 활판 잉크 먹색(`--mds-color-editorial-ink-*`) 토큰을 기본 포함합니다.
+> 💡 **브랜드 헌법 연동**: 모든 색상 토큰은 [민들레 마스터 브랜드 북 (The Master Brand Book)](/docs/brand)의 **85:15 신문지 활판 인쇄 헌법**에 따라 운용됩니다. 신문지 지면은 별도 토큰 세트가 아니라 **표면 스코프**로 구현합니다 — `data-surface="editorial"`을 적용하면 `background/*`·`text/*`·`border/*`·`brand/*` 값이 종이·잉크 팔레트로 재매핑됩니다.
 
 민들레 디자인 시스템은 OKLCH 기반으로 정밀 조율된 2-Tier W3C 표준 토큰 구조를 채택합니다.
 
