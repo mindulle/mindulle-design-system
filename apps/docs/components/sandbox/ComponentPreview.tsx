@@ -274,9 +274,9 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
       case 'Avatar':
         return (
           <div className="flex items-center gap-6">
-            <Avatar size="sm" initials="MD" />
-            <Avatar size="md" initials="SO" />
-            <Avatar size="lg" initials="DS" />
+            <Avatar size="sm" initials="MD" style={{ borderColor: 'var(--mds-color-border-strong)' }} />
+            <Avatar size="md" initials="SO" style={{ borderColor: 'var(--mds-color-border-strong)' }} />
+            <Avatar size="lg" initials="DS" style={{ borderColor: 'var(--mds-color-border-strong)' }} />
           </div>
         );
       case 'ListItem':
