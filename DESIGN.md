@@ -160,9 +160,9 @@ Never use `#00ffcc` outside the wordmark context.
 
 - **문서 누락 6종**: `Toast` · `Tooltip` · `SonagiLogo` · `TopBar` · `MobileHeader` · `TableOfContents` — `apps/docs/content/docs/components/`에 페이지 없음
 - **Component 토큰 확장**: 현재 `button/card/input/focus` 12개뿐. `badge`, `tabs`, `modal`, `toast` 추가 검토
-- **레거시 아이콘**: `packages/icons`에 `Sng*Icon` 9종이 `Mds*Icon`과 공존 — SonagiLogo와 동일 방식으로 정리
-- **컴포넌트 메타데이터**: `Accordion/Item`(2) · `Toast`(4) · `Tooltip`(2) 상태 variant 보강, 세트 Description 채우기
 - **Figma 감사 재측정**: MCP 감사 캐시가 옛 스냅샷을 반환 — 플러그인 재시작 후 재측정 필요
+
+> 레거시 아이콘(`Sng*Icon`)과 컴포넌트 메타데이터는 Plane 이슈 `a40c81ec` · `9b889cce`에서 추적합니다.
 
 ## Component Stylings
 
