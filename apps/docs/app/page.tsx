@@ -18,7 +18,7 @@ import { MotifShowcase } from '@/components/landing/MotifShowcase';
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-fd-background text-fd-foreground selection:bg-amber-400 selection:text-black">
+    <div className="flex flex-col min-h-screen bg-fd-background text-fd-foreground selection:bg-brand-primary selection:text-text-inverse">
       {/* ───────────────────────────────────────────────────────────── */}
       {/* Top Header Navigation */}
       {/* ───────────────────────────────────────────────────────────── */}
@@ -26,11 +26,11 @@ export default function HomePage() {
         {/* Brand identity */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <MindulleLogo size={28} />
-          <span className="font-bold text-base sm:text-lg tracking-tight group-hover:text-amber-500 transition-colors">
+          <span className="font-bold text-base sm:text-lg tracking-tight group-hover:text-brand-primary transition-colors">
             <span className="inline sm:hidden">민들레 MDS</span>
             <span className="hidden sm:inline">민들레 디자인 시스템</span>
           </span>
-          <span className="hidden md:inline-flex text-[10px] uppercase font-mono font-bold px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20">
+          <span className="hidden md:inline-flex text-[10px] uppercase font-mono font-bold px-1.5 py-0.5 rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20">
             v0.1.0
           </span>
         </Link>
@@ -39,14 +39,14 @@ export default function HomePage() {
         <div className="flex items-center gap-2.5 sm:gap-4">
           <Link
             href="/docs/portfolio"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-sm border border-fd-border hover:border-amber-500/60 text-fd-foreground hover:bg-fd-card transition-all"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-sm border border-fd-border hover:border-brand-primary/60 text-fd-foreground hover:bg-fd-card transition-all"
           >
-            <Flame className="size-3.5 text-amber-500" />
+            <Flame className="size-3.5 text-brand-primary" />
             <span>케이스 스터디</span>
           </Link>
           <Link
             href="/docs"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs sm:text-sm font-semibold rounded-sm bg-amber-500/10 text-amber-500 hover:bg-amber-500 hover:text-black border border-amber-500/20 transition-all"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs sm:text-sm font-semibold rounded-sm bg-brand-primary/10 text-brand-primary hover:bg-brand-primary hover:text-text-inverse border border-brand-primary/20 transition-all"
           >
             <BookOpen className="size-3.5" />
             <span>실무 문서 보기</span>
@@ -67,10 +67,10 @@ export default function HomePage() {
       {/* ───────────────────────────────────────────────────────────── */}
       <main className="relative flex-1 max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-20 flex flex-col items-center text-center justify-center overflow-hidden">
         {/* Subtle Ambient Radial Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[680px] h-[320px] sm:h-[480px] bg-gradient-to-b from-amber-500/15 via-amber-500/5 to-transparent blur-3xl rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[680px] h-[320px] sm:h-[480px] bg-gradient-to-b from-brand-primary/15 via-brand-primary/5 to-transparent blur-3xl rounded-full pointer-events-none -z-10" />
 
         {/* Slogan pill badge */}
-        <div className="mb-6 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-500 text-xs font-semibold tracking-wide shadow-sm">
+        <div className="mb-6 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-semibold tracking-wide shadow-sm">
           <Sparkles className="size-3.5" />
           <span className="font-editorial">겨울 끝, 민들레.</span>
           <span className="opacity-40">|</span>
@@ -80,7 +80,7 @@ export default function HomePage() {
         {/* Main Heading (Korean Cinematic Display) */}
         <h1 className="font-cinematic text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight break-keep leading-[1.25] sm:leading-[1.18] max-w-4xl">
           실무를 위한 단단하고 정갈한 <br className="hidden sm:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-[#b86a04] to-amber-600 dark:from-brand-primary dark:via-amber-300 dark:to-yellow-400">
             민들레 디자인 시스템
           </span>
         </h1>
@@ -93,8 +93,8 @@ export default function HomePage() {
 
         {/* Quick terminal install snippet */}
         <div className="mb-8 inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-sm border-2 border-fd-border bg-fd-card/90 backdrop-blur-sm font-mono text-[11px] sm:text-sm text-fd-foreground shadow-sm max-w-full overflow-x-auto whitespace-nowrap">
-          <Terminal className="size-3.5 sm:size-4 text-amber-500 shrink-0" />
-          <span className="select-all tracking-tight font-medium text-amber-500/90">$</span>
+          <Terminal className="size-3.5 sm:size-4 text-brand-primary shrink-0" />
+          <span className="select-all tracking-tight font-medium text-brand-primary/90">$</span>
           <span className="select-all">pnpm add @mindulle/tokens @mindulle/ui</span>
         </div>
 
@@ -104,7 +104,7 @@ export default function HomePage() {
             <Button
               size="lg"
               variant="primary"
-              className="w-full sm:w-auto justify-center gap-2 text-sm sm:text-base font-bold shadow-lg shadow-amber-500/20"
+              className="w-full sm:w-auto justify-center gap-2 text-sm sm:text-base font-bold shadow-lg shadow-brand-primary/20"
             >
               <span>실무 문서 시작하기 (Docs)</span>
               <ArrowRight className="size-4" />
@@ -118,7 +118,7 @@ export default function HomePage() {
                 variant="secondary"
                 className="w-full sm:w-auto justify-center gap-1.5 text-xs sm:text-sm"
               >
-                <FileText className="size-4 text-amber-500 shrink-0" />
+                <FileText className="size-4 text-brand-primary shrink-0" />
                 <span>케이스 스터디</span>
               </Button>
             </Link>
@@ -128,7 +128,7 @@ export default function HomePage() {
                 variant="secondary"
                 className="w-full sm:w-auto justify-center gap-1.5 text-xs sm:text-sm"
               >
-                <Palette className="size-4 text-amber-500 shrink-0" />
+                <Palette className="size-4 text-brand-primary shrink-0" />
                 <span>토큰 매트릭스</span>
               </Button>
             </Link>
@@ -145,7 +145,7 @@ export default function HomePage() {
         {/* ───────────────────────────────────────────────────────────── */}
         <div className="w-full mt-12 pt-6">
           <div className="mb-6 flex flex-col items-center text-center">
-            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-amber-500 mb-1">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-brand-primary mb-1">
               DESIGN CONSTITUTION
             </span>
             <h2 className="font-cinematic text-2xl sm:text-3xl font-bold tracking-tight">
@@ -155,12 +155,12 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-left w-full">
             {/* 01 */}
-            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card/80 backdrop-blur-sm hover:border-amber-500/60 transition-all duration-200">
+            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card/80 backdrop-blur-sm hover:border-brand-primary/60 transition-all duration-200">
               <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-xs font-bold text-amber-500">
+                <span className="font-mono text-xs font-bold text-brand-primary">
                   01 / STEM &amp; LINE
                 </span>
-                <Shield className="size-4 text-amber-500/70" />
+                <Shield className="size-4 text-brand-primary/70" />
               </div>
               <h3 className="text-lg font-bold mb-2">The True 2px Stem</h3>
               <p className="text-sm text-fd-muted-foreground leading-relaxed break-keep">
@@ -170,10 +170,10 @@ export default function HomePage() {
             </div>
 
             {/* 02 */}
-            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card/80 backdrop-blur-sm hover:border-amber-500/60 transition-all duration-200">
+            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card/80 backdrop-blur-sm hover:border-brand-primary/60 transition-all duration-200">
               <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-xs font-bold text-amber-500">02 / RADIUS</span>
-                <Layers className="size-4 text-amber-500/70" />
+                <span className="font-mono text-xs font-bold text-brand-primary">02 / RADIUS</span>
+                <Layers className="size-4 text-brand-primary/70" />
               </div>
               <h3 className="text-lg font-bold mb-2">4px Weathered Radius</h3>
               <p className="text-sm text-fd-muted-foreground leading-relaxed break-keep">
@@ -183,10 +183,10 @@ export default function HomePage() {
             </div>
 
             {/* 03 */}
-            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card/80 backdrop-blur-sm hover:border-amber-500/60 transition-all duration-200">
+            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card/80 backdrop-blur-sm hover:border-brand-primary/60 transition-all duration-200">
               <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-xs font-bold text-amber-500">03 / DUAL MATRIX</span>
-                <Palette className="size-4 text-amber-500/70" />
+                <span className="font-mono text-xs font-bold text-brand-primary">03 / DUAL MATRIX</span>
+                <Palette className="size-4 text-brand-primary/70" />
               </div>
               <h3 className="text-lg font-bold mb-2">W3C Light &amp; Dark</h3>
               <p className="text-sm text-fd-muted-foreground leading-relaxed break-keep">
@@ -207,7 +207,7 @@ export default function HomePage() {
         {/* ───────────────────────────────────────────────────────────── */}
         <div className="w-full mt-8 p-5 sm:p-6 rounded-sm border-2 border-fd-border bg-fd-card/60 backdrop-blur-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
           <div className="flex flex-col">
-            <span className="font-mono text-[10px] font-bold text-amber-500 tracking-wider uppercase mb-0.5">
+            <span className="font-mono text-[10px] font-bold text-brand-primary tracking-wider uppercase mb-0.5">
               EXPERIENCE
             </span>
             <span className="font-serif font-bold text-base sm:text-lg text-fd-foreground">
@@ -219,10 +219,10 @@ export default function HomePage() {
           </div>
           <Link
             href="/exhibition/"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-sm border border-fd-border hover:border-amber-500 text-xs font-mono font-bold text-fd-foreground transition-all shrink-0"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-sm border border-fd-border hover:border-brand-primary text-xs font-mono font-bold text-fd-foreground transition-all shrink-0"
           >
             <span>전시장 입장하기</span>
-            <ExternalLink className="size-3.5 text-amber-500" />
+            <ExternalLink className="size-3.5 text-brand-primary" />
           </Link>
         </div>
       </main>
@@ -233,16 +233,16 @@ export default function HomePage() {
       <footer className="border-t-2 border-fd-border py-8 px-6 text-center text-xs text-fd-muted-foreground flex flex-col sm:flex-row items-center justify-between max-w-5xl mx-auto w-full gap-4">
         <div>© 2026 Mindulle Design System (MDS v0.1.0) • Crafted by Mindulle Atelier</div>
         <div className="flex items-center gap-4">
-          <Link href="/docs" className="hover:text-amber-500 transition-colors">
+          <Link href="/docs" className="hover:text-brand-primary transition-colors">
             공식 실무 문서
           </Link>
-          <Link href="/docs/portfolio" className="hover:text-amber-500 transition-colors">
+          <Link href="/docs/portfolio" className="hover:text-brand-primary transition-colors">
             포트폴리오
           </Link>
-          <Link href="/docs/brand" className="hover:text-amber-500 transition-colors">
+          <Link href="/docs/brand" className="hover:text-brand-primary transition-colors">
             브랜드 가이드
           </Link>
-          <Link href="/exhibition/" className="hover:text-amber-500 transition-colors">
+          <Link href="/exhibition/" className="hover:text-brand-primary transition-colors">
             3D 쇼룸
           </Link>
         </div>

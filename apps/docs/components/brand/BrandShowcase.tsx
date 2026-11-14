@@ -30,7 +30,7 @@ export function BrandShowcase() {
                 : 'text-fd-muted-foreground hover:text-fd-foreground'
             }`}
           >
-            <Newspaper size={14} className="text-amber-500 shrink-0" />
+            <Newspaper size={14} className="text-brand-primary shrink-0" />
             <span>신문 마스트헤드</span>
           </button>
 
@@ -42,7 +42,7 @@ export function BrandShowcase() {
                 : 'text-fd-muted-foreground hover:text-fd-foreground'
             }`}
           >
-            <ZoomIn size={14} className="text-amber-500 shrink-0" />
+            <ZoomIn size={14} className="text-brand-primary shrink-0" />
             <span>광학 크기 매트릭스</span>
           </button>
 
@@ -54,7 +54,7 @@ export function BrandShowcase() {
                 : 'text-fd-muted-foreground hover:text-fd-foreground'
             }`}
           >
-            <Feather size={14} className="text-amber-500 shrink-0" />
+            <Feather size={14} className="text-brand-primary shrink-0" />
             <span>1도 선화 에칭 4종</span>
           </button>
 
@@ -66,7 +66,7 @@ export function BrandShowcase() {
                 : 'text-fd-muted-foreground hover:text-fd-foreground'
             }`}
           >
-            <Sparkles size={14} className="text-amber-500 shrink-0" />
+            <Sparkles size={14} className="text-brand-primary shrink-0" />
             <span>85:15 조형 헌법</span>
           </button>
         </div>
@@ -77,7 +77,7 @@ export function BrandShowcase() {
             <button
               onClick={() => setPreviewTheme('light')}
               className={`px-2.5 py-1 rounded-md font-medium transition-colors break-keep ${
-                !isDark ? 'bg-amber-500/10 text-amber-600 font-bold' : 'text-fd-muted-foreground'
+                !isDark ? 'bg-brand-primary/15 text-brand-primary font-bold' : 'text-fd-muted-foreground'
               }`}
             >
               미색 신문지
@@ -85,7 +85,7 @@ export function BrandShowcase() {
             <button
               onClick={() => setPreviewTheme('dark')}
               className={`px-2.5 py-1 rounded-md font-medium transition-colors break-keep ${
-                isDark ? 'bg-amber-500/20 text-amber-400 font-bold' : 'text-fd-muted-foreground'
+                isDark ? 'bg-brand-primary/15 text-brand-primary font-bold' : 'text-fd-muted-foreground'
               }`}
             >
               아카이벌 다크
@@ -108,7 +108,7 @@ export function BrandShowcase() {
                     'masthead-code'
                   )
                 }
-                className="inline-flex items-center gap-1 text-xs hover:text-amber-500 transition-colors break-keep shrink-0"
+                className="inline-flex items-center gap-1 text-xs hover:text-brand-primary transition-colors break-keep shrink-0"
               >
                 {copiedText === 'masthead-code' ? (
                   <>
@@ -231,7 +231,7 @@ export function BrandShowcase() {
                     onClick={() => setZoomLevel(scale)}
                     className={`px-2 py-1 text-xs font-mono rounded border transition-colors whitespace-nowrap ${
                       zoomLevel === scale
-                        ? 'bg-amber-500/10 border-amber-500/40 text-amber-600 dark:text-amber-400 font-bold'
+                        ? 'bg-brand-primary/10 border-brand-primary/40 text-brand-primary font-bold'
                         : 'border-fd-border text-fd-muted-foreground hover:bg-fd-accent'
                     }`}
                   >
@@ -245,7 +245,7 @@ export function BrandShowcase() {
               {/* 16px Favicon */}
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
                 <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
-                  <span className="font-bold text-amber-600 dark:text-amber-400 whitespace-nowrap">16px</span>
+                  <span className="font-bold text-brand-primary whitespace-nowrap">16px</span>
                   <span className="text-[10px] text-fd-muted-foreground whitespace-nowrap shrink-0">극소형 탭</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
@@ -273,7 +273,7 @@ export function BrandShowcase() {
               {/* 32px Favicon */}
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
                 <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
-                  <span className="font-bold text-amber-600 dark:text-amber-400 whitespace-nowrap">32px</span>
+                  <span className="font-bold text-brand-primary whitespace-nowrap">32px</span>
                   <span className="text-[10px] text-fd-muted-foreground whitespace-nowrap shrink-0">표준 파비콘</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
@@ -304,7 +304,7 @@ export function BrandShowcase() {
               {/* 64px Responsive Favicon */}
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
                 <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
-                  <span className="font-bold text-amber-600 dark:text-amber-400 whitespace-nowrap">64px</span>
+                  <span className="font-bold text-brand-primary whitespace-nowrap">64px</span>
                   <span className="text-[10px] text-fd-muted-foreground whitespace-nowrap shrink-0">반응형 마스터</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
@@ -339,7 +339,7 @@ export function BrandShowcase() {
               {/* 120px Master Emblem */}
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
                 <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
-                  <span className="font-bold text-amber-600 dark:text-amber-400 whitespace-nowrap">120px</span>
+                  <span className="font-bold text-brand-primary whitespace-nowrap">120px</span>
                   <span className="text-[10px] text-fd-muted-foreground whitespace-nowrap shrink-0">마스터 심볼</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
@@ -391,7 +391,7 @@ export function BrandShowcase() {
                   color: !isDark ? '#161616' : '#F7EEEC',
                 }}
               >
-                <span className="text-[10px] font-mono uppercase tracking-wider text-amber-600 dark:text-amber-400 font-bold">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-brand-primary font-bold">
                   MOTIF 01 • SPROUT
                 </span>
                 <div className="p-3">
@@ -424,7 +424,7 @@ export function BrandShowcase() {
                   color: !isDark ? '#161616' : '#F7EEEC',
                 }}
               >
-                <span className="text-[10px] font-mono uppercase tracking-wider text-amber-600 dark:text-amber-400 font-bold">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-brand-primary font-bold">
                   MOTIF 02 • SEED
                 </span>
                 <div className="p-3" style={{ color: !isDark ? '#D97706' : '#F59E0B' }}>
@@ -454,7 +454,7 @@ export function BrandShowcase() {
                   color: !isDark ? '#161616' : '#F7EEEC',
                 }}
               >
-                <span className="text-[10px] font-mono uppercase tracking-wider text-amber-600 dark:text-amber-400 font-bold">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-brand-primary font-bold">
                   MOTIF 03 • PAPPUS
                 </span>
                 <div className="p-3">
@@ -483,7 +483,7 @@ export function BrandShowcase() {
                   color: !isDark ? '#161616' : '#F7EEEC',
                 }}
               >
-                <span className="text-[10px] font-mono uppercase tracking-wider text-amber-600 dark:text-amber-400 font-bold">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-brand-primary font-bold">
                   MOTIF 04 • END MARK
                 </span>
                 <div className="p-3" style={{ color: !isDark ? '#D97706' : '#F59E0B' }}>
@@ -514,11 +514,11 @@ export function BrandShowcase() {
             <div className="space-y-2">
               <div className="flex flex-wrap justify-between gap-2 text-xs font-mono">
                 <span className="font-bold text-fd-foreground break-keep">85% 신문 조판 그리드 &amp; 활판 인쇄</span>
-                <span className="font-bold text-amber-600 dark:text-amber-400 break-keep">15% 1도 보태니컬 에칭</span>
+                <span className="font-bold text-brand-primary break-keep">15% 1도 보태니컬 에칭</span>
               </div>
               <div className="w-full h-4 rounded-full overflow-hidden flex border border-fd-border">
                 <div className="h-full bg-stone-800 dark:bg-stone-200" style={{ width: '85%' }} />
-                <div className="h-full bg-amber-500" style={{ width: '15%' }} />
+                <div className="h-full bg-brand-primary" style={{ width: '15%' }} />
               </div>
             </div>
 
@@ -539,8 +539,8 @@ export function BrandShowcase() {
               </div>
 
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background space-y-2">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-2 break-keep">
-                  <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
+                <h4 className="text-xs font-bold uppercase tracking-wider text-brand-primary flex items-center gap-2 break-keep">
+                  <span className="w-2 h-2 rounded-full bg-brand-primary shrink-0" />
                   <span>15% 그래픽 악센트 (Vitality Accent)</span>
                 </h4>
                 <ul className="text-xs text-fd-muted-foreground space-y-1.5 list-disc list-inside break-keep">

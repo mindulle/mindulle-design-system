@@ -34,17 +34,17 @@ export function InteractiveShowcase() {
       {/* Top Header Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b-2 border-fd-border bg-fd-muted/40 px-5 py-3.5 gap-3">
         <div className="flex items-center gap-2">
-          <Sliders className="size-4 text-amber-500" />
+          <Sliders className="size-4 text-brand-primary" />
           <span className="font-mono text-xs font-bold tracking-wider uppercase text-fd-foreground">
             MDS Live Component Playground
           </span>
-          <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 font-bold">
+          <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20 font-bold">
             Interactive
           </span>
         </div>
         <button
           onClick={handleCopy}
-          className="self-start sm:self-auto inline-flex items-center gap-1.5 text-xs font-mono font-medium px-2.5 py-1 rounded bg-fd-background border border-fd-border hover:border-amber-500 transition-colors"
+          className="self-start sm:self-auto inline-flex items-center gap-1.5 text-xs font-mono font-medium px-2.5 py-1 rounded bg-fd-background border border-fd-border hover:border-brand-primary transition-colors"
         >
           {copied ? (
             <Check className="size-3.5 text-green-500" />
@@ -70,7 +70,7 @@ export function InteractiveShowcase() {
                   onClick={() => setButtonVariant(v)}
                   className={`text-xs py-1.5 px-2 rounded-sm font-medium border transition-colors capitalize ${
                     buttonVariant === v
-                      ? 'bg-amber-500/15 border-amber-500 text-amber-500 font-bold'
+                      ? 'bg-brand-primary/15 border-brand-primary text-brand-primary font-bold'
                       : 'border-fd-border hover:bg-fd-muted/50 text-fd-muted-foreground'
                   }`}
                 >
@@ -91,7 +91,7 @@ export function InteractiveShowcase() {
                   onClick={() => setButtonSize(s)}
                   className={`text-xs py-1.5 px-2 rounded-sm font-medium border transition-colors uppercase ${
                     buttonSize === s
-                      ? 'bg-amber-500/15 border-amber-500 text-amber-500 font-bold'
+                      ? 'bg-brand-primary/15 border-brand-primary text-brand-primary font-bold'
                       : 'border-fd-border hover:bg-fd-muted/50 text-fd-muted-foreground'
                   }`}
                 >
@@ -112,7 +112,7 @@ export function InteractiveShowcase() {
                   onClick={() => setBadgeColor(c)}
                   className={`text-xs py-1 px-2 rounded-sm font-medium border transition-colors uppercase ${
                     badgeColor === c
-                      ? 'bg-amber-500/15 border-amber-500 text-amber-500 font-bold'
+                      ? 'bg-brand-primary/15 border-brand-primary text-brand-primary font-bold'
                       : 'border-fd-border hover:bg-fd-muted/50 text-fd-muted-foreground'
                   }`}
                 >
@@ -130,7 +130,7 @@ export function InteractiveShowcase() {
               type="text"
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              className="w-full text-xs p-2 rounded-sm border-2 border-fd-border bg-fd-card text-fd-foreground focus:outline-none focus:border-amber-500 font-medium"
+              className="w-full text-xs p-2 rounded-sm border-2 border-fd-border bg-fd-card text-fd-foreground focus:outline-none focus:border-brand-primary font-medium"
             />
           </div>
         </div>
@@ -164,7 +164,7 @@ export function InteractiveShowcase() {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   placeholder="텍스트를 입력하세요"
-                  className="!bg-fd-background !text-fd-foreground !border-2 !border-fd-border font-medium focus:!border-amber-500"
+                  className="!bg-fd-background !text-fd-foreground !border-2 !border-fd-border font-medium focus:!border-brand-primary"
                 />
               </div>
 
@@ -192,7 +192,7 @@ export function InteractiveShowcase() {
           {/* Under-the-hood spec bar */}
           <div className="p-3 rounded-sm border border-fd-border bg-fd-muted/30 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-fd-muted-foreground">
             <div className="flex items-center gap-2">
-              <Shield className="size-3.5 text-amber-500" />
+              <Shield className="size-3.5 text-brand-primary" />
               <span>
                 Stroke: <strong>2.0px Solid</strong>
               </span>
@@ -201,7 +201,7 @@ export function InteractiveShowcase() {
                 Radius: <strong>4px/6px Weathered</strong>
               </span>
             </div>
-            <div className="text-amber-500 font-bold">WCAG AAA COMPLIANT</div>
+            <div className="text-brand-primary font-bold">WCAG AAA COMPLIANT</div>
           </div>
         </div>
       </div>

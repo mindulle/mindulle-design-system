@@ -40,7 +40,7 @@ export function IconGalleryViewer() {
           placeholder="아이콘 이름 또는 용도 검색..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full h-10 pl-9 pr-4 rounded-md border border-fd-border bg-fd-secondary/30 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+          className="w-full h-10 pl-9 pr-4 rounded-md border border-fd-border bg-fd-secondary/30 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary/30"
         />
         <Search className="absolute left-3 top-2.5 size-4 text-fd-muted-foreground" />
       </div>
@@ -57,7 +57,7 @@ export function IconGalleryViewer() {
               key={icon.name}
               type="button"
               onClick={() => handleCopy(icon.name)}
-              className="flex flex-col items-center p-4 rounded-lg border border-fd-border bg-fd-card hover:border-amber-500/50 hover:bg-fd-accent/20 transition-all text-left group relative"
+              className="flex flex-col items-center p-4 rounded-lg border border-fd-border bg-fd-card hover:border-brand-primary/50 hover:bg-fd-accent/20 transition-all text-left group relative"
             >
               <div className="p-3 rounded-md bg-fd-muted/30 mb-2 group-hover:scale-110 transition-transform">
                 <IconComponent size={28} className="text-fd-foreground" strokeWidth={2} />

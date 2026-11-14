@@ -14,7 +14,7 @@ const colorTokens: TokenItem[] = [
   {
     name: 'Brand Primary',
     cssVar: '--mds-color-brand-primary',
-    lightValue: '#b86a04',
+    lightValue: '#9e5a03',
     darkValue: '#ffc837',
     description: '민들레 브랜드 핵심 액션 (앰버 골드 / 골드)',
   },
@@ -87,7 +87,7 @@ export function ColorMatrix() {
             Light / Dark 모드 1:1 페어링 및 클릭 시 CSS 변수 즉시 복사
           </p>
         </div>
-        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-500/10 text-amber-500 border border-amber-500/20 font-bold">
+        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20 font-bold">
           SSOT
         </span>
       </div>
@@ -112,7 +112,7 @@ export function ColorMatrix() {
                     {t.description}
                   </div>
                 </td>
-                <td className="px-4 py-3 font-mono text-amber-500">{t.cssVar}</td>
+                <td className="px-4 py-3 font-mono text-brand-primary">{t.cssVar}</td>
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-2">
                     <span
