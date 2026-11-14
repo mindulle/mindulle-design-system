@@ -2,7 +2,6 @@
 @import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
 @import '@mindulle/tokens/css';
-@import '@mindulle/ui/css';
 
 @source '../node_modules/fumadocs-ui/dist/**/*.js';
 @source '../../packages/ui/src/**/*.{ts,tsx}';
@@ -52,6 +51,13 @@
 nav.fd-nav,
 aside.fd-sidebar {
   border-width: 2px !important;
+}
+
+/* 데스크톱에서 서브내비(중복 타이틀) 숨김 */
+@media (min-width: 1024px) {
+  #nd-subnav {
+    display: none !important;
+  }
 }
 
 body {

@@ -44,7 +44,7 @@ export function InteractiveShowcase() {
         </div>
         <button
           onClick={handleCopy}
-          className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-2.5 py-1 rounded bg-fd-background border border-fd-border hover:border-amber-500 transition-colors"
+          className="self-start sm:self-auto inline-flex items-center gap-1.5 text-xs font-mono font-medium px-2.5 py-1 rounded bg-fd-background border border-fd-border hover:border-amber-500 transition-colors"
         >
           {copied ? (
             <Check className="size-3.5 text-green-500" />
