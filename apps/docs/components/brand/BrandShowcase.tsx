@@ -196,7 +196,7 @@ export function BrandShowcase() {
                 </p>
                 <p
                   className="text-xs sm:text-sm italic tracking-normal mt-1 break-keep"
-                  style={{ fontFamily: 'Georgia, serif', color: !isDark ? '#78716C' : '#A8A29E' }}
+                  style={{ fontFamily: 'Georgia, serif', color: !isDark ? '#78716C' : '#C4BDB5' }}
                 >
                   &ldquo;돌 틈에 단단히 뿌리내리고, 가볍게 사유하는 정원사의 지면&rdquo;
                 </p>
@@ -509,41 +509,79 @@ export function BrandShowcase() {
 
         {/* TAB 4: 85:15 Visual Constitution */}
         {activeTab === 'constitution' && (
-          <div className="space-y-6">
+          <div
+            className={`space-y-6 rounded-lg border p-5 transition-colors ${
+              !isDark
+                ? 'bg-[#FBF9F5] border-[#D6D3CD] text-[#161616]'
+                : 'bg-[#12100E] border-[#383431] text-[#F7EEEC]'
+            }`}
+          >
             {/* Visual Bar Breakdown */}
             <div className="space-y-2">
               <div className="flex flex-wrap justify-between gap-2 text-xs font-mono">
-                <span className="font-bold text-fd-foreground break-keep">85% 신문 조판 그리드 &amp; 활판 인쇄</span>
-                <span className="font-bold text-brand-primary break-keep">15% 1도 보태니컬 에칭</span>
+                <span className={`font-bold break-keep ${!isDark ? 'text-[#161616]' : 'text-[#F7EEEC]'}`}>
+                  85% 신문 조판 그리드 &amp; 활판 인쇄
+                </span>
+                <span className={`font-bold break-keep ${!isDark ? 'text-[#9E5A03]' : 'text-[#FFC837]'}`}>
+                  15% 1도 보태니컬 에칭
+                </span>
               </div>
-              <div className="w-full h-4 rounded-full overflow-hidden flex border border-fd-border">
-                <div className="h-full bg-stone-800 dark:bg-stone-200" style={{ width: '85%' }} />
-                <div className="h-full bg-brand-primary" style={{ width: '15%' }} />
+              <div
+                className={`w-full h-4 rounded-full overflow-hidden flex border ${
+                  !isDark ? 'border-[#D6D3CD]' : 'border-[#383431]'
+                }`}
+              >
+                <div className={!isDark ? 'h-full bg-[#161616]' : 'h-full bg-[#E7E0D8]'} style={{ width: '85%' }} />
+                <div className={!isDark ? 'h-full bg-[#9E5A03]' : 'h-full bg-[#FFC837]'} style={{ width: '15%' }} />
               </div>
             </div>
 
             {/* Constitution Details Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 rounded-lg border border-fd-border bg-fd-background space-y-2">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-fd-foreground flex items-center gap-2 break-keep">
-                  <span className="w-2 h-2 rounded-full bg-stone-800 dark:bg-stone-200 shrink-0" />
+              <div
+                className={`p-4 rounded-lg border space-y-2 ${
+                  !isDark ? 'bg-white border-[#D6D3CD]' : 'bg-[#1A1715] border-[#383431]'
+                }`}
+              >
+                <h4
+                  className={`text-xs font-bold uppercase tracking-wider flex items-center gap-2 break-keep ${
+                    !isDark ? 'text-[#161616]' : 'text-[#F7EEEC]'
+                  }`}
+                >
+                  <span className={`w-2 h-2 rounded-full shrink-0 ${!isDark ? 'bg-[#161616]' : 'bg-[#E7E0D8]'}`} />
                   <span>85% 시스템 골격 (System Grid)</span>
                 </h4>
-                <ul className="text-xs text-fd-muted-foreground space-y-1.5 list-disc list-inside break-keep">
+                <ul
+                  className={`text-xs space-y-1.5 list-disc list-inside break-keep ${
+                    !isDark ? 'text-[#57534E]' : 'text-[#D6CEC4]'
+                  }`}
+                >
                   <li>The True 2px Stem (정직한 2.0px 중심축 및 경계선)</li>
                   <li>1px / 2px 물리적 헤어라인 분할선</li>
-                  <li>따뜻한 미색 재생 신문용지 (#FBF9F5)</li>
-                  <li>깊은 활판 인쇄 먹색 활자 (#161616)</li>
+                  <li>따뜻한 미색 재생 신문용지 (#FBF9F5 / dark: #12100E)</li>
+                  <li>깊은 활판 인쇄 먹색 활자 (#161616 / dark: #F7EEEC)</li>
                   <li>Cormorant Garamond 700 클래식 세리프 활자</li>
                 </ul>
               </div>
 
-              <div className="p-4 rounded-lg border border-fd-border bg-fd-background space-y-2">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-brand-primary flex items-center gap-2 break-keep">
-                  <span className="w-2 h-2 rounded-full bg-brand-primary shrink-0" />
+              <div
+                className={`p-4 rounded-lg border space-y-2 ${
+                  !isDark ? 'bg-white border-[#D6D3CD]' : 'bg-[#1A1715] border-[#383431]'
+                }`}
+              >
+                <h4
+                  className={`text-xs font-bold uppercase tracking-wider flex items-center gap-2 break-keep ${
+                    !isDark ? 'text-[#9E5A03]' : 'text-[#FFC837]'
+                  }`}
+                >
+                  <span className={`w-2 h-2 rounded-full shrink-0 ${!isDark ? 'bg-[#9E5A03]' : 'bg-[#FFC837]'}`} />
                   <span>15% 그래픽 악센트 (Vitality Accent)</span>
                 </h4>
-                <ul className="text-xs text-fd-muted-foreground space-y-1.5 list-disc list-inside break-keep">
+                <ul
+                  className={`text-xs space-y-1.5 list-disc list-inside break-keep ${
+                    !isDark ? 'text-[#57534E]' : 'text-[#D6CEC4]'
+                  }`}
+                >
                   <li>지면 구석에 작고 단정하게 얹히는 1도 선화 에칭</li>
                   <li>생명력을 밝히는 단 하나의 앰버 골드 (#9E5A03 / #FFC837)</li>
                   <li>비바람에 깎여 나간 4px / 6px 자연석 라운딩</li>

@@ -148,10 +148,10 @@ body {
   height: 180px;
   right: -44px;
   bottom: -64px;
-  border: 2px solid var(--mds-color-brand-accent);
+  border: 2px solid var(--mds-color-brand-primary);
   border-radius: 58% 42% 60% 40%;
   transform: rotate(-24deg);
-  opacity: 0.45;
+  opacity: 0.72;
 }
 
 .mds-motif-card--seed::after {
@@ -188,6 +188,8 @@ body {
 .mds-motif-card p {
   color: var(--color-fd-muted-foreground);
   font-size: 0.85rem;
+  padding-right: 3.5rem;
+  word-break: keep-all;
 }
 
 .mds-empty-state {
@@ -226,7 +228,8 @@ body {
 }
 
 .mds-case-study-table table {
-  min-width: 720px;
+  width: 100%;
+  min-width: 0;
   margin: 0;
 }
 
