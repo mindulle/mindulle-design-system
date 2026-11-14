@@ -154,6 +154,16 @@ Never use `#00ffcc` outside the wordmark context.
 - **App-owned**: `Navigation/FAB` · `Overlay/BottomSheet`
 - 발행 제외는 Figma의 **Assets → Manage library**에서 해당 컴포넌트를 체크 해제해 설정합니다 (플러그인 API 미지원).
 
+## Known Gaps (Backlog)
+
+아래 항목은 구조는 갖췄으나 콘텐츠·확장이 남은 것들입니다. 이슈 트래커 없이 저장소에서 추적합니다.
+
+- **문서 누락 6종**: `Toast` · `Tooltip` · `SonagiLogo` · `TopBar` · `MobileHeader` · `TableOfContents` — `apps/docs/content/docs/components/`에 페이지 없음
+- **Component 토큰 확장**: 현재 `button/card/input/focus` 12개뿐. `badge`, `tabs`, `modal`, `toast` 추가 검토
+- **레거시 아이콘**: `packages/icons`에 `Sng*Icon` 9종이 `Mds*Icon`과 공존 — SonagiLogo와 동일 방식으로 정리
+- **컴포넌트 메타데이터**: `Accordion/Item`(2) · `Toast`(4) · `Tooltip`(2) 상태 variant 보강, 세트 Description 채우기
+- **Figma 감사 재측정**: MCP 감사 캐시가 옛 스냅샷을 반환 — 플러그인 재시작 후 재측정 필요
+
 ## Component Stylings
 
 - **Buttons:** `border-radius: 8px` (`--mds-radius-md`). Primary = gold amber fill (`--mds-color-brand-primary`) + white label, hover `--mds-color-brand-primary-hover`. Secondary = 1px border (`--mds-color-border-default`) with transparent fill. Ghost = transparent. Danger = error fill (`--mds-color-state-danger`). Padding: `10px 20px`, label 14px/600, min touch height 44px.
