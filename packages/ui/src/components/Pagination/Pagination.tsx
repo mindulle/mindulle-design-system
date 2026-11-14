@@ -77,7 +77,7 @@ export function Pagination({
         className={`${navBtnBase} ${
           currentPage === 1
             ? 'cursor-not-allowed border-border-subtle bg-bg-base text-text-disabled'
-            : 'border-border-default bg-bg-base text-text-secondary hover:bg-bg-surface hover:text-text-primary'
+            : 'border-border-default bg-bg-base text-text-secondary hover:bg-bg-hover hover:text-text-primary'
         }`}
         aria-label="Previous Page"
       >
@@ -107,7 +107,7 @@ export function Pagination({
             className={`${navBtnBase} ${
               isActive
                 ? 'border-brand-primary bg-brand-primary text-text-inverse hover:bg-brand-primary-hover'
-                : 'border-border-default bg-bg-base text-text-secondary hover:bg-bg-surface hover:text-text-primary'
+                : 'border-border-default bg-bg-base text-text-secondary hover:bg-bg-hover hover:text-text-primary'
             }`}
             aria-label={`Page ${pageNumber}`}
             aria-current={isActive ? 'page' : undefined}
@@ -124,7 +124,7 @@ export function Pagination({
         className={`${navBtnBase} ${
           currentPage === totalPages
             ? 'cursor-not-allowed border-border-subtle bg-bg-base text-text-disabled'
-            : 'border-border-default bg-bg-base text-text-secondary hover:bg-bg-surface hover:text-text-primary'
+            : 'border-border-default bg-bg-base text-text-secondary hover:bg-bg-hover hover:text-text-primary'
         }`}
         aria-label="Next Page"
       >

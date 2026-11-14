@@ -33,7 +33,7 @@ const Item = React.forwardRef<HTMLDivElement, AccordionItemProps>(
         {/* Header */}
         <button
           type="button"
-          className="flex flex-row justify-between items-center w-full px-4 py-4 bg-transparent hover:bg-bg-surface transition-colors duration-150"
+          className="flex flex-row justify-between items-center w-full px-4 py-4 bg-transparent hover:bg-bg-hover transition-colors duration-150"
           onClick={() => setIsExpanded(!isExpanded)}
         >
           <span className="text-text-primary text-base font-semibold">{title}</span>

@@ -15,7 +15,7 @@ export const ListItem = React.forwardRef<HTMLDivElement, ListItemProps>(
       <div
         ref={ref}
         className={`flex items-center gap-4 w-full p-3 rounded-lg transition-colors duration-200 ${
-          isInteractive ? 'cursor-pointer hover:bg-bg-surface active:bg-bg-elevated' : ''
+          isInteractive ? 'cursor-pointer hover:bg-bg-hover active:bg-bg-pressed' : ''
         } ${className}`}
         {...props}
       >

@@ -45,7 +45,7 @@ export function MobileHeader({
             type="button"
             onClick={onMenuClick}
             aria-label={menuLabel}
-            className="inline-flex items-center justify-center w-10 h-10 rounded-md text-text-primary hover:bg-bg-base transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-md text-text-primary hover:bg-bg-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />

@@ -41,7 +41,7 @@ export function Modal({
             <h3 className="text-lg font-semibold text-text-primary">{title}</h3>
             <button
               onClick={onClose}
-                className="rounded-md p-mds-element-py text-text-muted hover:bg-bg-surface hover:text-text-primary focus:outline-none focus:ring-2 focus:ring-accent"
+                className="rounded-md p-mds-element-py text-text-muted hover:bg-bg-hover hover:text-text-primary focus:outline-none focus:ring-2 focus:ring-accent"
               aria-label="Close modal"
             >
               ✕
