@@ -16,13 +16,14 @@ describe('Token Build Output Verification', () => {
     expect(cssContent).toContain('[data-theme="dark"]');
     expect(cssContent).toContain('[data-theme="light"]');
 
-    // 필수 토큰 존재 여부 (--mds- 및 --mds- 듀얼 지원)
-    expect(cssContent).toContain('--mds-color-brand-primary');
+    // 필수 토큰 존재 여부 (의미론적 계층)
     expect(cssContent).toContain('--mds-color-brand-primary');
     expect(cssContent).toContain('--mds-font-sans');
-    expect(cssContent).toContain('--mds-font-sans');
     expect(cssContent).toContain('--mds-spacing-4');
-    expect(cssContent).toContain('--mds-spacing-4');
+    expect(cssContent).toContain('--mds-space-gap-item');
+    expect(cssContent).toContain('--mds-opacity-hover');
+    expect(cssContent).toContain('--mds-component-button-bg-primary');
+    expect(cssContent).toContain('[data-surface="editorial"]');
   });
 
   it('should generate a valid CJS export (index.js)', async () => {
@@ -32,10 +33,9 @@ describe('Token Build Output Verification', () => {
     const { tokens } = await import(cjsPath);
     expect(tokens).toBeDefined();
     expect(typeof tokens).toBe('object');
-    expect(tokens['--mds-primitive-blue-500']).toBeDefined();
-    expect(tokens['--mds-primitive-blue-500']).toBeDefined();
+    expect(tokens['--mds-primitive-gold-600']).toBeDefined();
     expect(tokens['--mds-color-text-primary']).toBeDefined();
-    expect(tokens['--mds-color-text-primary']).toBeDefined();
+    expect(tokens['--mds-space-gap-item']).toBeDefined();
   });
 
   it('should generate a valid ESM export (index.mjs)', () => {
