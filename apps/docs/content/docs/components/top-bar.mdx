@@ -1,0 +1,51 @@
+---
+title: 상단 바 (TopBar)
+description: 데스크톱 공통 헤더 — 브랜드·내비게이션·액션 3분할
+---
+
+# 상단 바 (TopBar)
+
+데스크톱 사이트의 공통 헤더입니다. 높이 **64px**, 좌우 패딩 **24px**, 3개 슬롯으로 구성됩니다.
+
+```tsx
+import { TopBar, MindulleLogo } from '@mindulle/ui';
+
+<TopBar
+  brand={<MindulleLogo height={28} />}
+  nav={
+    <>
+      <a href="/docs">Docs</a>
+      <a href="/blog">Blog</a>
+    </>
+  }
+  actions={<ThemeToggle />}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `brand` | `ReactNode` | — | 좌측 브랜드 슬롯 (로고) |
+| `nav` | `ReactNode` | — | 중앙 내비게이션 슬롯 |
+| `actions` | `ReactNode` | — | 우측 액션 슬롯 (테마 토글·검색·GitHub) |
+| `sticky` | `boolean` | `true` | 스크롤 시 상단 고정 여부 |
+
+## 구조
+
+| 영역 | 정렬 | 비고 |
+| :--- | :--- | :--- |
+| 브랜드 | 좌측 고정 | 로고 높이 28px 권장 |
+| 내비게이션 | 중앙, `flex-1` | 링크 간격 32px |
+| 액션 | 우측 고정 | 간격 8px |
+
+## 토큰
+
+- 배경: `--mds-color-background-surface`
+- 하단 보더: `--mds-color-border-default` (1px)
+- 로고 높이: 28px
+
+## 사용 규칙
+
+- 슬롯에는 **네비게이션 링크 또는 액션만** 넣습니다. 배너·공지는 헤더 아래 별도 영역을 사용합니다.
+- 모바일(640px 미만)에서는 `MobileHeader`로 교체합니다.

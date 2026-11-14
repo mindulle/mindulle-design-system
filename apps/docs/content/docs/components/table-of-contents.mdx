@@ -1,0 +1,50 @@
+---
+title: 목차 (TableOfContents)
+description: 문헌형 문서의 섹션 목차 — 활성 항목을 골드로 강조
+---
+
+# 목차 (TableOfContents)
+
+긴 글·문서 페이지의 섹션 이동을 돕는 목차 카드입니다. 활성 항목은 **골드 보더 + 골드 텍스트**로 표시됩니다.
+
+```tsx
+import { TableOfContents } from '@mindulle/ui';
+
+const items = [
+  { id: 'philosophy', label: '1. 디자인 철학' },
+  { id: 'colors', label: '2. 색상 시스템' },
+  { id: 'components', label: '4. 컴포넌트', depth: 1 },
+];
+
+<TableOfContents items={items} activeId="colors" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `items` | `TocItem[]` | — | 목차 항목 |
+| `activeId` | `string` | — | 현재 활성 항목 id |
+| `onSelect` | `(id: string) => void` | — | 항목 클릭 콜백 |
+| `title` | `string` | `'Table of Contents'` | 카드 제목 |
+
+**TocItem**
+
+| Field | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `id` | `string` | — | 앵커 대상 id |
+| `label` | `string` | — | 표시 텍스트 |
+| `depth` | `number` | `0` | 들여쓰기 단계 (12px 단위) |
+
+## 토큰
+
+- 카드 배경: `--mds-color-background-surface`
+- 보더: `--mds-color-border-default`, 곡률 `--mds-radius-lg` (12px)
+- 활성: `--mds-color-brand-primary` (보더 2px + 텍스트)
+- 비활성 텍스트: `--mds-color-text-secondary`
+
+## 사용 규칙
+
+- 항목은 실제 `<h2>`/`<h3>` 구조와 1:1로 맞춥니다.
+- 스크롤 위치에 따른 `activeId` 갱신은 **앱에서 계산**해 주입합니다 (컴포넌트는 표시 전용).
+- 항목이 3개 미만이면 목차를 생략합니다.

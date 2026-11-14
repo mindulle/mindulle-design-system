@@ -1,0 +1,34 @@
+---
+title: 곡률 (Radius)
+description: 4px 모듈러 곡률 스케일과 컴포넌트별 적용 규칙
+---
+
+# 곡률 (Radius)
+
+곡률은 **4px 계단**으로만 사용합니다. 컴포넌트는 아래 매핑된 토큰만 참조합니다.
+
+| 토큰 | 값 | 주 사용처 |
+| :--- | ---: | :--- |
+| `--mds-radius-none` | 0 | 풀블리드 영역 |
+| `--mds-radius-sm` | 4px | 칩·태그 (각진 라벨) |
+| `--mds-radius-base` | 6px | Badge · Label |
+| `--mds-radius-md` | 8px | **Button · Input · Select** |
+| `--mds-radius-lg` | 12px | **Card** · 목차(TOC) |
+| `--mds-radius-xl` | 16px | **Modal** · TOC 컨테이너 |
+| `--mds-radius-2xl` | 24px | 대형 패널 |
+| `--mds-radius-full` | 9999px | Pill · Avatar |
+
+## 사용 규칙
+
+- **Button은 `md`(8px) 고정**입니다. 알약형(`full`) 버튼은 사용하지 않습니다.
+- Badge는 `variant="pill"`에서만 `full`, 카테고리 라벨은 `base`(6px)를 씁니다.
+- 중첩 카드에서 안쪽 곡률은 바깥보다 **작거나 같게** 유지합니다.
+- 임의 값(예: 5px, 10px)을 만들지 않습니다.
+
+## CSS
+
+```css
+.card { border-radius: var(--mds-radius-lg); }
+.input { border-radius: var(--mds-radius-md); }
+.badge { border-radius: var(--mds-radius-base); }
+```

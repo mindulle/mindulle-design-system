@@ -1,0 +1,35 @@
+---
+title: 툴팁 (Tooltip)
+description: 요소 위에 짧은 설명을 띄우는 호버 도움말
+---
+
+# 툴팁 (Tooltip)
+
+아이콘 버튼처럼 **텍스트 없이 의미가 불분명한 요소**에 짧은 설명을 붙입니다.
+
+```tsx
+import { Tooltip } from '@mindulle/ui';
+
+<Tooltip content="검색" position="top">
+  <button aria-label="검색">🔍</button>
+</Tooltip>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `content` | `ReactNode` | — | 툴팁 본문 |
+| `position` | `'top' \| 'bottom' \| 'left' \| 'right'` | `'top'` | 표시 방향 |
+| `children` | `ReactNode` | — | 트리거 요소 |
+
+## 토큰
+
+- 배경/텍스트: `--mds-color-text-primary` / `--mds-color-background-base` (반전 조합)
+- 곡률: `--mds-radius-md` (8px)
+
+## 사용 규칙
+
+- **호버 전용 정보**만 담습니다. 클릭·포커스로만 필요한 정보는 다른 패턴(팝오버·도움말 텍스트)을 사용합니다.
+- 문장은 1줄(약 20자) 이내로 유지합니다.
+- 툴팁에 버튼이나 링크를 넣지 않습니다 (접근 불가).

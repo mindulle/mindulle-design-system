@@ -1,0 +1,39 @@
+---
+title: 모바일 헤더 (MobileHeader)
+description: 모바일 공통 헤더 — 타이틀과 메뉴 버튼
+---
+
+# 모바일 헤더 (MobileHeader)
+
+모바일 화면의 공통 헤더입니다. 높이 **56px**, 좌우 패딩 **16px**, 좌측 타이틀 + 우측 메뉴 버튼 구조입니다.
+
+```tsx
+import { MobileHeader } from '@mindulle/ui';
+
+<MobileHeader
+  title="민들레 정원"
+  onMenuClick={() => setDrawerOpen(true)}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `title` | `ReactNode` | — | 좌측 브랜드/페이지 타이틀 |
+| `onMenuClick` | `() => void` | — | 메뉴 버튼 클릭 핸들러 (없으면 버튼 미표시) |
+| `menuLabel` | `string` | `'메뉴 열기'` | 메뉴 버튼 접근성 라벨 |
+| `actions` | `ReactNode` | — | 메뉴 버튼 앞 추가 액션 슬롯 |
+
+## 토큰
+
+- 배경: `--mds-color-background-surface`
+- 하단 보더: `--mds-color-border-default`
+- 아이콘 색: `--mds-color-text-primary`
+- 터치 타깃: 40×40px, 포커스 링 2px
+
+## 사용 규칙
+
+- 드로어/시트의 **열림 상태는 부모에서 관리**합니다 (컴포넌트는 표시만 담당).
+- 타이틀은 한 줄로 제한하고 넘치면 말줄임 처리합니다.
+- 신문지 표면(에디토리얼)에서는 `paper/ink` 프리미티브로 색이 재매핑됩니다.

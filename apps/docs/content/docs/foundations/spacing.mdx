@@ -1,0 +1,34 @@
+---
+title: 간격 (Spacing)
+description: 4px 기반 간격 스케일과 의미 기반 스페이싱 토큰
+---
+
+# 간격 (Spacing)
+
+모든 간격은 **4px 배수** 스케일에서 파생됩니다. 숫자 스케일(`--mds-spacing-N`)을 직접 쓰기보다 **역할 토큰**(`--mds-space-*`)을 우선 사용합니다.
+
+## 의미 토큰
+
+| 토큰 | 값 | 용도 |
+| :--- | ---: | :--- |
+| `--mds-space-gap-xs` | 4px | 아이콘-텍스트 등 미세 간격 |
+| `--mds-space-gap-sm` | 8px | 인라인 요소 간 |
+| `--mds-space-gap-item` | 16px | 리스트 항목 간 |
+| `--mds-space-gap-group` | 24px | 그룹 간 |
+| `--mds-space-gap-section` | 32px | 섹션 간 |
+| `--mds-space-container-sm` | 12px | 좁은 컨테이너 패딩 |
+| `--mds-space-container-md` | 16px | 기본 컨테이너 패딩 |
+| `--mds-space-container-lg` | 24px | 넓은 컨테이너 패딩 |
+| `--mds-space-container-page` | 32px | 페이지 좌우 여백 |
+| `--mds-space-element-py` | 8px | 요소 상하 패딩 |
+| `--mds-space-element-px` | 16px | 요소 좌우 패딩 |
+
+## 숫자 스케일
+
+`--mds-spacing-0` · `1(4px)` · `2(8px)` · `3(12px)` · `4(16px)` · `5(20px)` · `6(24px)` · `8(32px)` · `10(40px)` · `12(48px)` · `16(64px)` · `20(80px)` · `24(96px)`
+
+## 사용 규칙
+
+- 임의 값(예: `13px`, `27px`)을 만들지 않습니다. 스케일에서 가장 가까운 값으로 스냅합니다.
+- 여백은 **레이아웃 간격(gap)**으로 해결하고, 요소마다 margin을 흩뿌리지 않습니다.
+- 섹션 간격은 데스크톱 32px, 모바일 24px를 기본으로 합니다.

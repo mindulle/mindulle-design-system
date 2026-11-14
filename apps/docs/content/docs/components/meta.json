@@ -16,6 +16,12 @@
     "avatar",
     "list-item",
     "hover-preview",
-    "mindulle-logo"
+    "mindulle-logo",
+    "toast",
+    "tooltip",
+    "top-bar",
+    "mobile-header",
+    "table-of-contents",
+    "sonagi-logo"
   ]
 }
