@@ -164,8 +164,6 @@ Never use `#00ffcc` outside the wordmark context.
 
 아래 항목은 구조는 갖췄으나 콘텐츠·확장이 남은 것들입니다. 이슈 트래커 없이 저장소에서 추적합니다.
 
-- **문서 누락 6종**: `Toast` · `Tooltip` · `SonagiLogo` · `TopBar` · `MobileHeader` · `TableOfContents` — `apps/docs/content/docs/components/`에 페이지 없음
-- **Foundation 문서 누락**: `Spacing` · `Radius` · `Elevation` 전용 페이지 없음 (현재 colors/typography/iconography/motifs만 존재)
 - **Component 토큰 확장**: 현재 `button/card/input/focus` 12개뿐. `badge`, `tabs`, `modal`, `toast` 추가 검토
 - **Figma 감사 재측정**: MCP 감사 캐시가 옛 스냅샷을 반환 — 플러그인 재시작 후 재측정 필요
 
