@@ -27,7 +27,7 @@ Built for Korean-first products that run at the intersection of analytics and ed
 
 ## Visual Theme & Atmosphere
 
-Quiet depth. The brand lives in a warm **gold amber** (`#b86a04`) that sits on neutral paper (`#fbfbfa`) and pure-white surfaces. A brighter yellow (`#eab308`) is the single emphasis accent — one per screen. The cyan logo dot (`#00ffcc`) is reserved for the wordmark only — never used as a UI accent. Typography is Pretendard-first with Inter fallback; Korean and Latin share the same optical weight.
+Quiet depth. The brand lives in a warm **gold amber** (`#9e5a03`) that sits on neutral paper (`#fbfbfa`) and pure-white surfaces. A brighter yellow (`#eab308`) is the single emphasis accent — one per screen. The cyan logo dot (`#00ffcc`) is reserved for the wordmark only — never used as a UI accent. Typography is Pretendard-first with Inter fallback; Korean and Latin share the same optical weight.
 
 ## Color Palette & Roles
 
@@ -36,8 +36,8 @@ Quiet depth. The brand lives in a warm **gold amber** (`#b86a04`) that sits on n
 - **Background base:** `#fbfbfa` — neutral paper, the page floor
 - **Surface:** `#ffffff` — cards, panels, input forms
 - **Elevated:** `#ffffff` — modals, popovers, tooltips
-- **Brand primary:** `#b86a04` — gold amber, main CTA fill, active elements
-- **Brand primary hover:** `#9e5a03`
+- **Brand primary:** `#9e5a03` — gold amber, main CTA fill, active elements
+- **Brand primary hover:** `#824902`
 - **Accent:** `#eab308` — links, focused borders, interactive highlights; one accent per screen
 - **Accent hover:** `#ca8a04`
 - **Logo cyan:** `#00ffcc` — wordmark dot only; never used as UI color
@@ -47,8 +47,8 @@ Quiet depth. The brand lives in a warm **gold amber** (`#b86a04`) that sits on n
 - **Text disabled:** `#a1a1aa`
 - **Border default:** `#e4e4e7`
 - **Border subtle:** `#f4f4f5`
-- **Border strong:** `#b86a04`
-- **Success:** `#2ea043` (`#eaf4eb` bg) / **Warning:** `#d29922` (`#fdf5e5` bg) / **Danger (Error):** `#c83e4d` (`#fde8e8` bg) / **Info:** `#1275b5` (`#e8f1f8` bg)
+- **Border strong:** `#9e5a03`
+- **Success:** `#1b7a2e` (`#eaf4eb` bg) / **Warning:** `#855b00` (`#fdf5e5` bg) / **Danger (Error):** `#b02a37` (`#fde8e8` bg) / **Info:** `#0f659c` (`#e8f1f8` bg)
 
 **Dark mode** (`[data-theme="dark"]` or `prefers-color-scheme: dark`)
 
@@ -115,8 +115,8 @@ Never use `#00ffcc` outside the wordmark context.
 
 | Tier             | 컬렉션 (Figma)           | CSS 프리픽스        | 예시                                                           |
 | ---------------- | ------------------------ | ------------------- | -------------------------------------------------------------- |
-| **1. Primitive** | `Color Primitives`       | `--mds-primitive-*` | `gold/600` `#b86a04`, `night/950` `#12151d`                    |
-| **2. Semantic**  | `Colors` (Light/Dark)    | `--mds-color-*`     | `brand/primary` → `gold/600`, `background/base` → `neutral/50` |
+| **1. Primitive** | `Color Primitives`       | `--mds-primitive-*` | `gold/700` `#9e5a03`, `night/950` `#12151d`                    |
+| **2. Semantic**  | `Colors` (Light/Dark)    | `--mds-color-*`     | `brand/primary` → `gold/700`, `background/base` → `neutral/50` |
 | **3. Component** | `Component` (Light/Dark) | `--mds-component-*` | `button/bg-primary` → `brand/primary`                          |
 
 - Semantic은 반드시 Primitive를 alias하고, Component는 반드시 Semantic을 alias합니다. `raw hex`는 Primitive에서만 허용됩니다.
