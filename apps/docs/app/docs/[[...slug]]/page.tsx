@@ -12,6 +12,7 @@ import { ColorMatrix } from '@/components/tokens/ColorMatrix';
 import { TypographySpecimen } from '@/components/tokens/TypographySpecimen';
 import { IconGalleryViewer } from '@/components/tokens/IconGalleryViewer';
 import { BrandShowcase } from '@/components/brand/BrandShowcase';
+import { BrandAssetsGallery } from '@/components/brand/BrandAssetsGallery';
 
 interface PageProps {
   params: Promise<{ slug?: string[] }>;
@@ -39,6 +40,7 @@ export default async function Page({ params }: PageProps) {
               TypographySpecimen,
               IconGalleryViewer,
               BrandShowcase,
+              BrandAssetsGallery,
             } as any
           }
         />
