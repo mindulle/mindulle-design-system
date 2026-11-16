@@ -1,5 +1,11 @@
 ## [1.10.1](https://github.com/mindulle/sonagi-design-system/compare/ui-v1.10.0...ui-v1.10.1) (2026-08-31)
 
+## 2.1.1
+
+### Patch Changes
+
+- 1b41713: useActiveSection: 첫 항목을 기본 활성으로 두고, 문서 끝에서 마지막 섹션을 활성으로 표시합니다.
+
 ## 2.1.0
 
 ### Minor Changes
