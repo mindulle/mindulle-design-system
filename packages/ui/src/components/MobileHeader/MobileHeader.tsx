@@ -8,6 +8,8 @@ export interface MobileHeaderProps extends Omit<React.HTMLAttributes<HTMLElement
   onMenuClick?: () => void;
   /** 메뉴 버튼 접근성 라벨 */
   menuLabel?: string;
+  /** 모바일 메뉴 열림 상태 (미지정 시 aria-expanded 미렌더) */
+  menuExpanded?: boolean;
   /** 우측 추가 액션 슬롯 */
   actions?: React.ReactNode;
 }
@@ -20,6 +22,7 @@ export function MobileHeader({
   title,
   onMenuClick,
   menuLabel = '메뉴 열기',
+  menuExpanded,
   actions,
   className = '',
   ...props
@@ -45,6 +48,7 @@ export function MobileHeader({
             type="button"
             onClick={onMenuClick}
             aria-label={menuLabel}
+            aria-expanded={menuExpanded}
             className="inline-flex items-center justify-center w-10 h-10 rounded-md text-text-primary hover:bg-bg-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">

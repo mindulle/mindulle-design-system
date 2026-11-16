@@ -45,3 +45,7 @@ export { MobileHeader } from './components/MobileHeader/MobileHeader';
 export type { MobileHeaderProps } from './components/MobileHeader/MobileHeader';
 export { TableOfContents } from './components/TableOfContents/TableOfContents';
 export type { TableOfContentsProps, TocItem } from './components/TableOfContents/TableOfContents';
+
+// Hooks
+export { useActiveSection } from './hooks/useActiveSection';
+export type { UseActiveSectionOptions } from './hooks/useActiveSection';
