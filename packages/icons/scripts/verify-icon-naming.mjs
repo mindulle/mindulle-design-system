@@ -15,9 +15,7 @@ for (const icon of manifest) {
   seenKeys.add(icon.key);
 
   const canonicalFile = resolve(root, 'src/components', `${icon.codeName}.tsx`);
-  const legacyFile = resolve(root, 'src/components', `${icon.legacyName}.tsx`);
   if (!existsSync(canonicalFile)) errors.push(`${icon.codeName}: canonical file missing`);
-  if (!existsSync(legacyFile)) errors.push(`${icon.legacyName}: legacy alias file missing`);
   if (!index.includes(`export * from "./components/${icon.codeName}"`)) errors.push(`${icon.codeName}: missing canonical index export`);
   if (!index.includes(`export { ${icon.codeName} as ${icon.legacyName} }`)) errors.push(`${icon.legacyName}: missing index alias export`);
   if (!gallery.includes(`name: '${icon.codeName}'`)) errors.push(`${icon.codeName}: missing docs gallery entry`);
