@@ -1,6 +1,6 @@
 {
   "name": "@mindulle/ui",
-  "version": "1.16.1",
+  "version": "2.0.0",
   "description": "Sonagi Design System — UI Components",
   "license": "MIT",
   "type": "module",
@@ -46,7 +46,7 @@
     "directory": "packages/ui"
   },
   "peerDependencies": {
-    "@mindulle/tokens": "^1.15.0",
+    "@mindulle/tokens": "^1.19.0",
     "react": ">=18",
     "react-dom": ">=18"
   },

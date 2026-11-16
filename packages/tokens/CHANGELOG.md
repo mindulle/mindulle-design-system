@@ -1,5 +1,11 @@
 ## [1.13.1](https://github.com/mindulle/sonagi-design-system/compare/tokens-v1.13.0...tokens-v1.13.1) (2026-08-31)
 
+## 1.19.0
+
+### Minor Changes
+
+- 66a0065: Update light-mode brand primary (`#9e5a03`) and semantic state tokens to meet WCAG AA contrast requirements, and align docs light-mode accent styling.
+
 ## 1.14.0
 
 ### Minor Changes
