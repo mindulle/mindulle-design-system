@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "description": "Sonagi Internal Token Sync Figma Plugin",
-  "scripts": {}
+  "scripts": {},
+  "devDependencies": {
+    "ws": "^8.23.0"
+  }
 }
