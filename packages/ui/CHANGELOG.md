@@ -1,5 +1,11 @@
 ## [1.10.1](https://github.com/mindulle/sonagi-design-system/compare/ui-v1.10.0...ui-v1.10.1) (2026-08-31)
 
+## 2.1.0
+
+### Minor Changes
+
+- 8d85d1a: `useActiveSection` 스크롤 스파이 훅을 추가하고 `MobileHeader`에 `menuExpanded` prop을 지원합니다.
+
 ## 2.0.0
 
 ### Major Changes
