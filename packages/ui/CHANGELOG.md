@@ -17,6 +17,7 @@
 ### Major Changes
 
 - c7c5434: Removed domain-specific legacy components (TopBar, MobileNav, TableOfContents) to restore UI library isolation.
+  - **정정 노트 (MDS-40)**: 위 항목과 달리 `TopBar`와 `TableOfContents`는 제거되지 않았으며 `@mindulle/ui` 2.x에서도 계속 export됩니다. 실제 breaking change는 레거시 `MobileNav`가 `MobileHeader`로 대체·정규화된 점입니다.
 
 ### Patch Changes
 
