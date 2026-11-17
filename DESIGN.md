@@ -200,6 +200,8 @@ Never use `#00ffcc` outside the wordmark context.
 - Whitespace is the primary separator. Dividers (`1px`, `--mds-color-border-subtle`) only between structurally unrelated blocks.
 - Do not nest cards inside cards.
 
+**문서 사이트(`apps/docs`)는 페이지 조립 계약을 따릅니다** — 아키타입 4종(Landing/Quickstart · Component Spec · Foundation Reference · Guide/Policy)과 섹션 순서는 `apps/docs/PAGE-ARCHETYPES.md`가 정본입니다.
+
 ## Depth & Elevation
 
 Three levels:
