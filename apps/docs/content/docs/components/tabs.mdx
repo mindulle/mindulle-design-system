@@ -9,7 +9,42 @@ description: 동일한 컨텍스트 내에서 콘텐츠 영역을 전환하는 �
 
 <ComponentPreview name="Tabs" />
 
-## 사용 예제
+## Props 명세
+
+**Tabs.Container**
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `children` | `React.ReactNode` | — | `Tabs.Item` 목록 |
+| `className` | `string` | `''` | 추가 Tailwind 유틸리티 클래스 |
+
+**Tabs.Item**
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `isActive` | `boolean` | `false` | 현재 선택된 활성 탭 여부 |
+| `children` | `React.ReactNode` | — | 탭 라벨 콘텐츠 |
+| `className` | `string` | `''` | 추가 Tailwind 유틸리티 클래스 |
+
+## 상태·사이즈
+
+| 축 | 값 | 비고 |
+| :--- | :--- | :--- |
+| `variant` | 해당 없음 | 단일 필(Surface 하이라이트) 스타일 고정 |
+| `size` | 해당 없음 | 패딩 `px-4 py-2`, 폰트 `text-sm`, 간격 `gap-6` 단일 규격 고정 |
+| `state` | `default` \| `active` \| `hover` \| `focus-visible` | `isActive` 시 `text-brand-primary`·`bg-bg-surface`, 포커스 시 2px 링 표시 |
+
+## 토큰
+
+- 활성 텍스트: `--mds-color-brand-primary`
+- 활성 배경: `--mds-color-bg-surface`
+- 비활성 텍스트: `--mds-color-text-secondary` (호버 시 `--mds-color-text-primary`)
+- 호버 배경: `--mds-color-bg-elevated`
+- 포커스 링: `--mds-color-brand-primary`
+
+## 사용 규칙
+
+- **동일한 위계의 뷰 전환**에만 사용합니다. 페이지 간 이동(라우팅)에는 `TopBar`나 링크 내비게이션을 사용합니다.
 
 ```tsx
 import { Tabs } from '@mindulle/ui';
@@ -29,3 +64,7 @@ export function TabExample() {
   );
 }
 ```
+
+## 접근성
+
+- 각 탭은 `<button type="button">`으로 제공되며 `focus-visible:ring-2` 포커스 링을 표시합니다. 스크린 리더 지원을 위해 컨테이너에 `role="tablist"`, 항목에 `role="tab"`과 `aria-selected={isActive}`를 함께 지정하는 것을 권장합니다.
