@@ -16,3 +16,7 @@ MDS 인풋 컴포넌트는 The True 2px Stem 경계선과 포커스 링, 에러 
 | `error` | `boolean` | `false` | 유효성 검사 에러 상태 여부 |
 | `disabled` | `boolean` | `false` | 입력 비활성화 여부 |
 | `placeholder` | `string` | — | 힌트 텍스트 |
+
+## 접근성
+
+- 네이티브 `<input>`을 사용하며 오류 상태 시 `aria-invalid`로 상태를 전달하고, 키보드 포커스 시 `focus-visible:ring-2` 포커스 링이 노출됩니다. `<label htmlFor>` 또는 `aria-label` 연결이 필요합니다.

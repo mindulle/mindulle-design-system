@@ -39,3 +39,7 @@ import { MobileHeader } from '@mindulle/ui';
 - 드로어/시트의 **열림 상태는 부모에서 관리**합니다 (컴포넌트는 표시만 담당).
 - 타이틀은 한 줄로 제한하고 넘치면 말줄임 처리합니다.
 - 신문지 표면(에디토리얼)에서는 `paper/ink` 프리미티브로 색이 재매핑됩니다.
+
+## 접근성
+
+- 시맨틱 `<header>`와 메뉴 `<button type="button">`으로 구성되며 `aria-label={menuLabel}`·`aria-expanded={menuExpanded}`를 전달하고, 키보드 포커스 시 `focus-visible:ring-2` 포커스 링이 노출됩니다.

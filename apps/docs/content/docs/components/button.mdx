@@ -18,3 +18,7 @@ description: 사용자의 액션을 유도하는 인터랙티브 버튼 컴포�
 | `state` | `'default' \| 'hover' \| 'active' \| 'disabled'` | `'default'` | 강제 시각 상태 주입 (스토리북용) |
 | `disabled` | `boolean` | `false` | 클릭 비활성화 여부 |
 | `children` | `React.ReactNode` | — | 버튼 내부 라벨 텍스트 |
+
+## 접근성
+
+- 네이티브 `<button>` 요소로 `Tab` 포커스 이동과 `Enter`/`Space` 실행을 지원하며, 키보드 포커스 시 `focus-visible:ring-2` 포커스 링이 노출됩니다. 아이콘만 있는 버튼에는 `aria-label`을 필수로 제공합니다.

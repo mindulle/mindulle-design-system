@@ -43,3 +43,7 @@ import { MindulleLogo, SonagiLogo } from '@mindulle/ui';
 // 레거시 호환
 <SonagiLogo height={28} />
 ```
+
+## 접근성
+
+- `<svg>` 브랜드 심볼이므로 단독 로고 링크 안에서는 부모 `<a>`에 `aria-label`을 두고 심볼에는 `aria-hidden="true"`를 지정합니다. 비인터랙티브 심볼이므로 키보드·포커스 동작은 해당 없습니다.

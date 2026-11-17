@@ -17,3 +17,7 @@ description: 링크나 텍스트 위에 마우스를 올렸을 때 위키 노트
 | `slug` | `string` | — | 대상 노트 식별자 (slug) |
 | `fetchNote` | `(slug: string) => Promise<{ title: string; excerpt: string }>` | — | 비동기 요약 페처 함수 |
 | `href` | `string` | — | 클릭 시 이동할 링크 URL |
+
+## 접근성
+
+- 프리뷰 팝오버에 `role="tooltip"`을 적용하며 호버 및 포커스 트리거를 지원합니다. 키보드 사용자도 접근할 수 있도록 프리뷰 안에만 의존하는 필수 액션은 배치하지 않습니다.

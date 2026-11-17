@@ -35,3 +35,7 @@ import { SonagiLogo } from '@mindulle/ui';
 
 - 신규 코드에서 **import 금지** (ESLint 규칙 추가 예정)
 - 문서·브랜드 자산에서도 소나기 표기는 인프라/엔진 문맥으로만 사용합니다.
+
+## 접근성
+
+- `<svg>` 브랜드 워드마크이므로 링크 내부에서는 부모 `<a>`에 `aria-label`을 두고 SVG에는 `aria-hidden="true"`를 권장합니다. 비인터랙티브 심볼이므로 키보드·포커스 동작은 해당 없습니다.
