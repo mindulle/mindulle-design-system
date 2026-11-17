@@ -1,18 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
+import { Button } from '@mindulle/ui';
 
 /**
- * MDS-39 F-Plan Option A Full-Width Workbench:
- * 1px Monoline 3-Column Spec Workbench + <=15% Corner Botanical Dandelion Spot.
+ * MDS-51 Carbon-Density 2:1 Asymmetric Modular Workbench:
+ * Left 2/3 (Typography & Real-Scale UI Specimen) + Right 1/3 (<=15% Botanical Monoline Spot).
  */
 export function HeroVisual() {
   return (
     <div
-      className="relative w-full rounded-sm border border-fd-border bg-fd-card p-5 sm:p-6 text-left"
-      aria-label="Mindulle Design System F-Plan Full-Width Monoline Workbench"
+      className="relative w-full rounded-sm border border-fd-border bg-fd-card p-6 sm:p-7 text-left"
+      aria-label="Mindulle Design System 2:1 Asymmetric Editorial Specimen Workbench"
     >
       {/* Top Workbench Chrome */}
-      <div className="flex items-center justify-between border-b border-fd-border pb-3 mb-5">
+      <div className="flex items-center justify-between border-b border-fd-border pb-3.5 mb-5">
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-1.5">
             <span className="size-2 rounded-full border border-fd-foreground/60" />
@@ -20,117 +21,132 @@ export function HeroVisual() {
             <span className="size-2 rounded-full border border-brand-primary" />
           </div>
           <span className="font-mono text-[10px] tracking-widest uppercase text-fd-muted-foreground ml-2">
-            WORKBENCH · 1PX MONOLINE EDITORIAL
+            WORKBENCH · EDITORIAL SPECIMEN
           </span>
         </div>
         <span className="font-mono text-[10px] tracking-widest uppercase text-brand-primary">
-          MDS-39 · F-PLAN
+          MDS-51 · 2:1 MODULAR
         </span>
       </div>
 
-      {/* 3-Column Full-Width Spec Workbench + <=15% Corner Dandelion Spot */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
-        {/* Col 1: Semantic Tokens */}
-        <div className="md:col-span-4 rounded-sm border border-fd-border p-4 flex flex-col justify-between gap-3">
-          <div className="flex items-center justify-between">
-            <span className="font-mono text-[10px] font-semibold text-brand-primary">
-              01 · SEMANTIC TOKENS
+      {/* 2:1 Asymmetric Modular Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-stretch">
+        {/* Left 2/3: Typography & Real-Scale UI Specimen */}
+        <div className="md:col-span-8 rounded-sm border border-fd-border bg-fd-background/50 p-6 sm:p-8 flex flex-col justify-between gap-8">
+          <div className="flex items-center justify-between gap-4">
+            <span className="font-mono text-[11px] font-semibold tracking-wider text-brand-primary">
+              01 · TYPOGRAPHY &amp; UI SPECIMEN
             </span>
-            <span className="font-mono text-[10px] text-fd-muted-foreground">W3C DTCG</span>
+            <span className="font-mono text-[11px] text-fd-muted-foreground">
+              W3C DTCG · REACT 19
+            </span>
           </div>
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center justify-between border border-fd-border rounded-sm px-2.5 py-1.5 font-mono text-[10px]">
-              <span className="text-fd-foreground">--mds-bg-base</span>
-              <span className="text-fd-muted-foreground">#fbfbfa / #12151d</span>
+
+          {/* Block A: Editorial Type & Hairline Token Specimen */}
+          <div className="border-b border-fd-border pb-6 flex flex-col gap-3">
+            <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2">
+              <span className="font-cinematic text-4xl sm:text-5xl font-bold tracking-tight text-fd-foreground leading-none">
+                가Aa
+              </span>
+              <span className="font-editorial text-base sm:text-lg text-fd-muted-foreground break-keep">
+                한국어 에디토리얼 조판과 1px 모노라인
+              </span>
             </div>
-            <div className="flex items-center justify-between border border-brand-primary/50 rounded-sm px-2.5 py-1.5 font-mono text-[10px]">
-              <span className="text-brand-primary">--mds-brand</span>
-              <span className="text-fd-muted-foreground">#9e5a03 / #ffc837</span>
+            <p className="font-mono text-[11px] text-fd-muted-foreground">
+              Display 64px · Body 16px (1.65) · --mds-bg-base · --mds-brand-primary
+            </p>
+          </div>
+
+          {/* Block B: Real-Scale UI Primitives on Open Space */}
+          <div className="flex flex-wrap items-center justify-between gap-6">
+            <div className="flex flex-wrap items-center gap-3">
+              <Link href="/docs/components/button">
+                <Button size="md" variant="primary" className="font-semibold">
+                  Primary Action
+                </Button>
+              </Link>
+              <Link href="/docs/foundations/colors">
+                <Button size="md" variant="secondary">
+                  Semantic Tokens
+                </Button>
+              </Link>
             </div>
+
+            <nav
+              aria-label="Specimen preview tabs"
+              className="flex items-center gap-5 font-mono text-xs"
+            >
+              <Link
+                href="/docs"
+                className="border-b-2 border-brand-primary pb-1.5 font-semibold text-brand-primary"
+              >
+                Overview
+              </Link>
+              <Link
+                href="/docs/foundations/colors"
+                className="pb-1.5 text-fd-muted-foreground hover:text-fd-foreground transition-colors"
+              >
+                Tokens
+              </Link>
+              <Link
+                href="/docs/components/button"
+                className="pb-1.5 text-fd-muted-foreground hover:text-fd-foreground transition-colors"
+              >
+                A11y
+              </Link>
+            </nav>
           </div>
         </div>
 
-        {/* Col 2: 22 UI Primitives Wireframe */}
-        <div className="md:col-span-5 rounded-sm border border-fd-border p-4 flex flex-col justify-between gap-3">
+        {/* Right 1/3: <=15% Botanical Monoline Spot */}
+        <div className="md:col-span-4 rounded-sm border border-fd-border bg-fd-background/50 p-6 sm:p-8 flex flex-col justify-between gap-6">
           <div className="flex items-center justify-between">
-            <span className="font-mono text-[10px] font-semibold text-fd-foreground">
-              02 · 22 REACT 19 COMPONENTS
+            <span className="font-mono text-[11px] font-semibold text-fd-foreground">
+              02 · MOTIF
             </span>
-            <span className="font-mono text-[10px] text-fd-muted-foreground">A11Y · ARIA</span>
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            <div className="border border-brand-primary/70 rounded-sm px-2 py-2 text-center font-mono text-[10px] text-brand-primary">
-              Button
-            </div>
-            <div className="border border-fd-border rounded-sm px-2 py-2 text-center font-mono text-[10px] text-fd-foreground">
-              Card
-            </div>
-            <div className="border border-fd-border rounded-sm px-2 py-2 text-center font-mono text-[10px] text-fd-foreground">
-              Tabs
-            </div>
-          </div>
-          <div className="h-1.5 w-full border-b border-fd-foreground/20" />
-        </div>
-
-        {/* Col 3: <=15% Botanical Monoline Spot + Quick Links */}
-        <div className="md:col-span-3 rounded-sm border border-fd-border p-4 flex items-center justify-between gap-3">
-          <div className="flex flex-col gap-1.5 min-w-0">
-            <span className="font-mono text-[10px] font-semibold text-fd-foreground">
-              03 · MOTIF
-            </span>
-            <span className="font-mono text-[10px] text-fd-muted-foreground leading-snug">
-              85:15 Rule
-              <br />
-              1px Spot
-            </span>
+            <span className="font-mono text-[11px] text-brand-primary">85:15 RULE</span>
           </div>
 
-          <svg
-            viewBox="0 0 90 110"
-            className="w-[72px] h-auto shrink-0 text-fd-foreground"
-            fill="none"
-            aria-hidden="true"
-          >
-            <g strokeLinecap="round" strokeLinejoin="round" strokeWidth="1">
-              <path d="M 46 102 C 44 82, 47 64, 50 46" stroke="currentColor" />
-              <path
-                d="M 46 102 C 36 96, 30 90, 26 82 C 34 86, 40 94, 46 102 Z"
-                stroke="currentColor"
-              />
-              <circle cx="50" cy="42" r="4" className="stroke-brand-primary" />
-              <line x1="50" y1="38" x2="50" y2="16" stroke="currentColor" />
-              <path d="M 46 20 L 50 16 L 54 20" stroke="currentColor" />
-              <line x1="53" y1="39" x2="69" y2="23" stroke="currentColor" />
-              <line x1="54" y1="42" x2="76" y2="42" stroke="currentColor" />
-              <line x1="53" y1="45" x2="69" y2="61" stroke="currentColor" />
-              <line x1="47" y1="45" x2="31" y2="61" stroke="currentColor" />
-              <line x1="46" y1="42" x2="24" y2="42" stroke="currentColor" />
-              <line x1="47" y1="39" x2="31" y2="23" stroke="currentColor" />
-              <g className="stroke-brand-primary">
-                <line x1="28" y1="14" x2="22" y2="20" />
-                <circle cx="21" cy="21" r="1.2" />
+          <div className="flex items-center justify-center py-3">
+            <svg
+              viewBox="0 0 90 110"
+              className="w-[116px] sm:w-[132px] h-auto text-fd-foreground"
+              fill="none"
+              aria-hidden="true"
+            >
+              <g strokeLinecap="round" strokeLinejoin="round" strokeWidth="1">
+                <path d="M 46 102 C 44 82, 47 64, 50 46" stroke="currentColor" />
+                <path
+                  d="M 46 102 C 36 96, 30 90, 26 82 C 34 86, 40 94, 46 102 Z"
+                  stroke="currentColor"
+                />
+                <circle cx="50" cy="42" r="4" className="stroke-brand-primary" />
+                <line x1="50" y1="38" x2="50" y2="16" stroke="currentColor" />
+                <path d="M 46 20 L 50 16 L 54 20" stroke="currentColor" />
+                <line x1="53" y1="39" x2="69" y2="23" stroke="currentColor" />
+                <line x1="54" y1="42" x2="76" y2="42" stroke="currentColor" />
+                <line x1="53" y1="45" x2="69" y2="61" stroke="currentColor" />
+                <line x1="47" y1="45" x2="31" y2="61" stroke="currentColor" />
+                <line x1="46" y1="42" x2="24" y2="42" stroke="currentColor" />
+                <line x1="47" y1="39" x2="31" y2="23" stroke="currentColor" />
+                <g className="stroke-brand-primary">
+                  <line x1="28" y1="14" x2="22" y2="20" />
+                  <circle cx="21" cy="21" r="1.2" />
+                </g>
               </g>
-            </g>
-          </svg>
-        </div>
-      </div>
+            </svg>
+          </div>
 
-      {/* Bottom 4-Column Quick Links Strip */}
-      <div className="mt-4 pt-3 border-t border-fd-border grid grid-cols-2 sm:grid-cols-4 gap-2">
-        {[
-          { label: '01 · Tokens', href: '/docs/foundations/colors' },
-          { label: '02 · 22 UI', href: '/docs/components/button' },
-          { label: '03 · Brand', href: '/docs/brand' },
-          { label: '04 · Visual QA', href: '/docs/portfolio/visual-qa' },
-        ].map((item) => (
-          <Link
-            key={item.label}
-            href={item.href}
-            className="rounded-sm border border-fd-border px-3 py-2 text-center font-mono text-[10px] text-fd-muted-foreground hover:border-brand-primary hover:text-brand-primary transition-colors"
-          >
-            {item.label}
-          </Link>
-        ))}
+          <div className="flex items-center justify-between border-t border-fd-border pt-3.5 font-mono text-[11px]">
+            <span className="text-fd-muted-foreground">1px Monoline</span>
+            <Link
+              href="/docs/brand"
+              className="font-medium text-brand-primary hover:underline"
+            >
+              /docs/brand →
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

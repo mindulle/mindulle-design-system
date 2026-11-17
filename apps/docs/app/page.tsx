@@ -57,16 +57,16 @@ export default function HomePage() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-5xl mx-auto w-full px-5 sm:px-8 py-10 sm:py-14 flex flex-col">
-        {/* Hero Section: Option A — Top Compact Copy Band + Full-Width Workbench */}
-        <section className="flex flex-col gap-8 pb-12 border-b border-fd-border">
+      <main className="flex-1 max-w-5xl mx-auto w-full px-5 sm:px-8 py-10 sm:py-14 lg:py-16 flex flex-col">
+        {/* Hero Section: MDS-51 — Carbon 64px Editorial Breathing + 2:1 Modular Workbench */}
+        <section className="flex flex-col gap-10 lg:gap-12 pb-14 lg:pb-16 border-b border-fd-border">
           {/* Top Compact Band */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
             <div className="lg:col-span-7 flex flex-col items-start text-left">
               <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-brand-primary mb-2.5">
                 MDS v0.1.0 · W3C DTCG · REACT 19
               </span>
-              <h1 className="font-cinematic text-3xl sm:text-5xl font-bold tracking-tight break-keep leading-[1.15] text-fd-foreground">
+              <h1 className="font-cinematic text-4xl sm:text-5xl lg:text-[64px] font-bold tracking-tight break-keep leading-[1.08] text-fd-foreground">
                 겨울 끝, 민들레
                 <br />
                 실무용 디자인 시스템
