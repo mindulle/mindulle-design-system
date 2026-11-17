@@ -3,39 +3,33 @@ import { MindulleLogo, Button } from '@mindulle/ui';
 import {
   ArrowRight,
   BookOpen,
-  Sparkles,
   Palette,
-  Boxes,
   Shield,
   Layers,
   Terminal,
   ExternalLink,
   Flame,
-  FileText,
 } from 'lucide-react';
 import { InteractiveShowcase } from '@/components/landing/InteractiveShowcase';
 import { MotifShowcase } from '@/components/landing/MotifShowcase';
+import { HeroVisual } from '@/components/landing/HeroVisual';
 
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-fd-background text-fd-foreground selection:bg-brand-primary selection:text-text-inverse">
-      {/* ───────────────────────────────────────────────────────────── */}
       {/* Top Header Navigation */}
-      {/* ───────────────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 border-b-2 border-fd-border bg-fd-background/85 backdrop-blur-md px-4 sm:px-8 py-3.5 flex items-center justify-between">
-        {/* Brand identity */}
+      <header className="sticky top-0 z-50 border-b-2 border-fd-border bg-fd-background/90 backdrop-blur-md px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 group">
           <MindulleLogo size={28} />
           <span className="font-bold text-base sm:text-lg tracking-tight group-hover:text-brand-primary transition-colors">
             <span className="inline sm:hidden">민들레 MDS</span>
             <span className="hidden sm:inline">민들레 디자인 시스템</span>
           </span>
-          <span className="hidden md:inline-flex text-[10px] uppercase font-mono font-bold px-1.5 py-0.5 rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20">
+          <span className="hidden md:inline-flex text-[10px] uppercase font-mono font-bold px-1.5 py-0.5 rounded-sm border border-brand-primary/40 text-brand-primary">
             v0.1.0
           </span>
         </Link>
 
-        {/* Right actions */}
         <div className="flex items-center gap-2.5 sm:gap-4">
           <Link
             href="/docs/portfolio"
@@ -46,10 +40,10 @@ export default function HomePage() {
           </Link>
           <Link
             href="/docs"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs sm:text-sm font-semibold rounded-sm bg-brand-primary/10 text-brand-primary hover:bg-brand-primary hover:text-text-inverse border border-brand-primary/20 transition-all"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs sm:text-sm font-semibold rounded-sm border border-brand-primary/40 text-brand-primary hover:bg-brand-primary hover:text-text-inverse transition-all"
           >
             <BookOpen className="size-3.5" />
-            <span>실무 문서 보기</span>
+            <span>실무 문서</span>
           </Link>
           <Link
             href="https://github.com/mindulle/mindulle-design-system"
@@ -62,87 +56,59 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* ───────────────────────────────────────────────────────────── */}
-      {/* Hero Section */}
-      {/* ───────────────────────────────────────────────────────────── */}
-      <main className="relative flex-1 max-w-5xl mx-auto px-5 sm:px-8 py-16 sm:py-20 flex flex-col items-center text-center justify-center overflow-hidden">
-        {/* Subtle Ambient Radial Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[680px] h-[320px] sm:h-[480px] bg-gradient-to-b from-brand-primary/15 via-brand-primary/5 to-transparent blur-3xl rounded-full pointer-events-none -z-10" />
+      {/* Main Content */}
+      <main className="flex-1 max-w-5xl mx-auto w-full px-5 sm:px-8 py-12 sm:py-16 flex flex-col">
+        {/* Hero Section: F-Plan Split Hero (Left Copy + Right Monoline Wireframe Visual) */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center pb-12 border-b border-fd-border">
+          {/* Hero Left: Copy + Install + <= 2 CTAs */}
+          <div className="lg:col-span-6 flex flex-col items-start text-left">
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-brand-primary mb-3">
+              MDS v0.1.0 · W3C DTCG · REACT 19
+            </span>
 
-        {/* Slogan pill badge */}
-        <div className="mb-6 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-semibold tracking-wide shadow-sm">
-          <Sparkles className="size-3.5" />
-          <span className="font-editorial">겨울 끝, 민들레.</span>
-          <span className="opacity-40">|</span>
-          <span className="font-mono text-[11px] opacity-90">The True 2px Stem 헌법</span>
-        </div>
+            <h1 className="font-cinematic text-4xl sm:text-5xl font-bold tracking-tight break-keep leading-[1.15] text-fd-foreground">
+              겨울 끝, 민들레
+              <br />
+              실무용 디자인 시스템
+            </h1>
 
-        {/* Main Heading (Korean Cinematic Display) */}
-        <h1 className="font-cinematic text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight break-keep leading-[1.25] sm:leading-[1.18] max-w-4xl">
-          실무를 위한 단단하고 정갈한 <br className="hidden sm:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-[#b86a04] to-amber-600 dark:from-brand-primary dark:via-amber-300 dark:to-yellow-400">
-            민들레 디자인 시스템
-          </span>
-        </h1>
+            <p className="font-editorial text-sm sm:text-base text-fd-muted-foreground mt-4 mb-6 leading-relaxed break-keep max-w-lg">
+              W3C 시맨틱 토큰과 22종 React 19 컴포넌트로 구성한 한국어 에디토리얼 UI 시스템입니다.
+            </p>
 
-        {/* Description text with break-keep */}
-        <p className="font-editorial max-w-2xl text-sm sm:text-base md:text-lg text-fd-muted-foreground mt-4 mb-7 sm:mb-9 leading-relaxed break-keep font-medium">
-          The True 2px Stem과 4px Weathered Radius 헌법으로 조형된 16종 UI 컴포넌트, W3C 시맨틱 토큰
-          매트릭스, 그리고 감각적인 에디토리얼 브랜드 언어.
-        </p>
+            {/* Quick install snippet */}
+            <div className="mb-6 inline-flex items-center gap-2 px-3.5 py-2 rounded-sm border border-fd-border bg-fd-card font-mono text-xs text-fd-foreground max-w-full overflow-x-auto whitespace-nowrap">
+              <Terminal className="size-3.5 text-brand-primary shrink-0" />
+              <span className="text-brand-primary">$</span>
+              <span className="select-all">pnpm add @mindulle/tokens @mindulle/ui</span>
+            </div>
 
-        {/* Quick terminal install snippet */}
-        <div className="mb-8 inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-sm border-2 border-fd-border bg-fd-card/90 backdrop-blur-sm font-mono text-[11px] sm:text-sm text-fd-foreground shadow-sm max-w-full overflow-x-auto whitespace-nowrap">
-          <Terminal className="size-3.5 sm:size-4 text-brand-primary shrink-0" />
-          <span className="select-all tracking-tight font-medium text-brand-primary/90">$</span>
-          <span className="select-all">pnpm add @mindulle/tokens @mindulle/ui</span>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="w-full max-w-md flex flex-col sm:max-w-none sm:w-auto sm:flex-row sm:items-center sm:justify-center gap-3 sm:gap-4">
-          <Link href="/docs" className="w-full sm:w-auto">
-            <Button
-              size="lg"
-              variant="primary"
-              className="w-full sm:w-auto justify-center gap-2 text-sm sm:text-base font-bold shadow-lg shadow-brand-primary/20"
-            >
-              <span>실무 문서 시작하기 (Docs)</span>
-              <ArrowRight className="size-4" />
-            </Button>
-          </Link>
-
-          <div className="grid grid-cols-2 gap-2.5 w-full sm:w-auto sm:flex sm:flex-row sm:gap-4">
-            <Link href="/docs/portfolio" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="w-full sm:w-auto justify-center gap-1.5 text-xs sm:text-sm"
-              >
-                <FileText className="size-4 text-brand-primary shrink-0" />
-                <span>케이스 스터디</span>
-              </Button>
-            </Link>
-            <Link href="/docs/foundations/colors" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="w-full sm:w-auto justify-center gap-1.5 text-xs sm:text-sm"
-              >
-                <Palette className="size-4 text-brand-primary shrink-0" />
-                <span>토큰 매트릭스</span>
-              </Button>
-            </Link>
+            {/* <= 2 CTAs (MDS-39 Copy Spec) */}
+            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+              <Link href="/docs">
+                <Button size="lg" variant="primary" className="gap-2 font-bold">
+                  <span>Quickstart</span>
+                  <ArrowRight className="size-4" />
+                </Button>
+              </Link>
+              <Link href="/docs/components/button">
+                <Button size="lg" variant="secondary" className="gap-2">
+                  <span>22 Components</span>
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
 
-        {/* ───────────────────────────────────────────────────────────── */}
+          {/* Hero Right: F-Plan Monoline UI Wireframe + Dandelion */}
+          <div className="lg:col-span-6">
+            <HeroVisual />
+          </div>
+        </section>
+
         {/* Interactive Component Live Playground */}
-        {/* ───────────────────────────────────────────────────────────── */}
         <InteractiveShowcase />
 
-        {/* ───────────────────────────────────────────────────────────── */}
         {/* 3 Pillars of MDS Constitution */}
-        {/* ───────────────────────────────────────────────────────────── */}
         <div className="w-full mt-12 pt-6">
           <div className="mb-6 flex flex-col items-center text-center">
             <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-brand-primary mb-1">
@@ -154,8 +120,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-left w-full">
-            {/* 01 */}
-            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card/80 backdrop-blur-sm hover:border-brand-primary/60 transition-all duration-200">
+            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card hover:border-brand-primary/60 transition-colors duration-200">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-xs font-bold text-brand-primary">
                   01 / STEM &amp; LINE
@@ -169,8 +134,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* 02 */}
-            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card/80 backdrop-blur-sm hover:border-brand-primary/60 transition-all duration-200">
+            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card hover:border-brand-primary/60 transition-colors duration-200">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-xs font-bold text-brand-primary">02 / RADIUS</span>
                 <Layers className="size-4 text-brand-primary/70" />
@@ -182,8 +146,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* 03 */}
-            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card/80 backdrop-blur-sm hover:border-brand-primary/60 transition-all duration-200">
+            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card hover:border-brand-primary/60 transition-colors duration-200">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-xs font-bold text-brand-primary">03 / DUAL MATRIX</span>
                 <Palette className="size-4 text-brand-primary/70" />
@@ -197,15 +160,11 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* ───────────────────────────────────────────────────────────── */}
         {/* MDS-28 Graphic Motif Showcase */}
-        {/* ───────────────────────────────────────────────────────────── */}
         <MotifShowcase />
 
-        {/* ───────────────────────────────────────────────────────────── */}
         {/* 3D Exhibition Showroom Banner */}
-        {/* ───────────────────────────────────────────────────────────── */}
-        <div className="w-full mt-8 p-5 sm:p-6 rounded-sm border-2 border-fd-border bg-fd-card/60 backdrop-blur-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+        <div className="w-full mt-8 p-5 sm:p-6 rounded-sm border-2 border-fd-border bg-fd-card flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
           <div className="flex flex-col">
             <span className="font-mono text-[10px] font-bold text-brand-primary tracking-wider uppercase mb-0.5">
               EXPERIENCE
@@ -227,9 +186,7 @@ export default function HomePage() {
         </div>
       </main>
 
-      {/* ───────────────────────────────────────────────────────────── */}
       {/* Footer */}
-      {/* ───────────────────────────────────────────────────────────── */}
       <footer className="border-t-2 border-fd-border py-8 px-6 text-center text-xs text-fd-muted-foreground flex flex-col sm:flex-row items-center justify-between max-w-5xl mx-auto w-full gap-4">
         <div>© 2026 Mindulle Design System (MDS v0.1.0) • Crafted by Mindulle Atelier</div>
         <div className="flex items-center gap-4">
