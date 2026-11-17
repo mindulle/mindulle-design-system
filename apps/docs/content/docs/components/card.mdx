@@ -8,3 +8,49 @@ description: 관련 정보를 시각적으로 그룹화하는 단단한 컨테�
 The True 2px Stem 경계선과 4px Weathered Radius 곡률로 면을 분할하는 기본 컨테이너입니다.
 
 <ComponentPreview name="Card" />
+
+## Props 명세
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `elevation` | `'flat' \| 'raised' \| 'floating'` | `'raised'` | 카드의 그림자 높이 단계 |
+| `clickable` | `boolean` | `false` | 클릭 가능한 인터랙티브 호버·액티브 스타일 활성화 |
+| `children` | `React.ReactNode` | — | 카드 내부 콘텐츠 |
+| `className` | `string` | `''` | 추가 Tailwind 유틸리티 클래스 |
+
+## 상태·사이즈
+
+| 축 | 값 | 비고 |
+| :--- | :--- | :--- |
+| `variant` (`elevation`) | `'flat'` \| `'raised'` \| `'floating'` | 기본값 `'raised'`, 평면(`flat`)·부유(`floating`) 단계 선택 |
+| `size` | 해당 없음 | 패딩 `20px`(`p-5`), 내부 간격 `12px`(`gap-3`), 곡률 `rounded-lg` 단일 규격 고정 |
+| `state` (`clickable`) | `default` \| `hover` \| `active` | `clickable={true}`일 때 호버 시 `-translate-y-0.5` 및 `shadow-md` 전환 |
+
+## 토큰
+
+- 배경: `--mds-color-bg-surface`
+- 보더: `--mds-color-border-default`
+- 곡률: `--mds-radius-lg`
+- 그림자: `--mds-shadow-sm` (`raised`), `--mds-shadow-md` (`floating` / `clickable` hover)
+
+## 사용 규칙
+
+- 하나의 카드에는 **하나의 주제나 엔티티**만 담습니다. 카드 안에 또 다른 카드를 중첩하지 않습니다.
+- 이동이나 실행이 목적이 아닌 단순 정보 그룹에 `clickable={true}`를 켜지 않습니다.
+
+```tsx
+import { Card } from '@mindulle/ui';
+
+export function CardExample() {
+  return (
+    <Card elevation="raised" clickable>
+      <h3 className="text-base font-semibold">디자인 토큰</h3>
+      <p className="text-sm text-text-secondary">W3C DTCG 기반 시맨틱 토큰</p>
+    </Card>
+  );
+}
+```
+
+## 접근성
+
+- `Card` 자체는 `<div>` 컨테이너이므로 `clickable={true}`를 사용할 때는 내부에 시맨틱 `<a href>`/`<button>`을 두거나 `role="button"`, `tabIndex={0}`, `Enter`/`Space` 키보드 핸들러와 포커스 링을 함께 제공합니다.

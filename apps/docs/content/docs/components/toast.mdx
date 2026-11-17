@@ -7,20 +7,9 @@ description: 짧은 피드백을 화면 모서리에 띄우는 비차단 알림 
 
 작업 결과나 시스템 상태를 **잠깐** 알려주는 비차단(非遮斷) 알림입니다. 사용자의 흐름을 멈추지 않아야 할 때 사용합니다.
 
-```tsx
-import { Toast } from '@mindulle/ui';
-
-<Toast
-  title="저장 완료"
-  description="변경 사항이 반영되었습니다."
-  type="success"
-  onClose={() => setOpen(false)}
-/>
-```
-
 <ComponentPreview name="Toast" />
 
-## Props
+## Props 명세
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
@@ -28,6 +17,14 @@ import { Toast } from '@mindulle/ui';
 | `description` | `string` | — | 보조 설명 |
 | `type` | `'info' \| 'success' \| 'warning' \| 'danger'` | `'info'` | 상태 색상 |
 | `onClose` | `() => void` | — | 닫기 버튼 핸들러 (없으면 닫기 버튼 미표시) |
+
+## 상태·사이즈
+
+| 축 | 값 | 비고 |
+| :--- | :--- | :--- |
+| `variant` (`type`) | `'info'` \| `'success'` \| `'warning'` \| `'danger'` | 4종 상태 토큰에 따라 보더·인디케이터 색상 전환 |
+| `size` | 해당 없음 | 최대 너비 `max-w-sm`, 패딩 `16px`(`p-4`), 곡률 `rounded-xl` 단일 규격 |
+| `state` | `default` \| `closable` | `onClose` 전달 여부에 따라 닫기 버튼 표시 |
 
 ## 토큰
 
@@ -41,3 +38,14 @@ import { Toast } from '@mindulle/ui';
 - **자동 닫힘 타이머는 앱 레이어**에서 제어합니다 (컴포넌트는 표현만 담당).
 - 같은 화면에 3개 이상 쌓지 않습니다. 반복 알림은 배지나 인라인 메시지로 대체합니다.
 - 사용자의 확인이 필요한 오류는 토스트 대신 **Modal**을 사용합니다.
+
+```tsx
+import { Toast } from '@mindulle/ui';
+
+<Toast
+  title="저장 완료"
+  description="변경 사항이 반영되었습니다."
+  type="success"
+  onClose={() => setOpen(false)}
+/>
+```
