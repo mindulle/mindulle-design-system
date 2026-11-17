@@ -2,122 +2,131 @@ import React from 'react';
 import Link from 'next/link';
 
 /**
- * MDS-39 F-Plan Hero Graphic:
- * 1px Monoline UI Wireframe + Pure 1px Botanical Dandelion Line Art.
- * Uses semantic tokens so Light (#FBF9F5 / #161616 / #D97706) & Dark modes adapt automatically.
+ * MDS-39 F-Plan Option A Full-Width Workbench:
+ * 1px Monoline 3-Column Spec Workbench + <=15% Corner Botanical Dandelion Spot.
  */
 export function HeroVisual() {
   return (
     <div
-      className="relative w-full rounded-sm border border-fd-border bg-fd-card p-5 text-left"
-      aria-label="Mindulle Design System F-Plan Monoline UI Wireframe"
+      className="relative w-full rounded-sm border border-fd-border bg-fd-card p-5 sm:p-6 text-left"
+      aria-label="Mindulle Design System F-Plan Full-Width Monoline Workbench"
     >
-      {/* Top Wireframe Chrome */}
-      <div className="flex items-center justify-between border-b border-fd-border pb-3 mb-4">
-        <div className="flex items-center gap-1.5">
-          <span className="size-2 rounded-full border border-fd-foreground/60" />
-          <span className="size-2 rounded-full border border-fd-foreground/60" />
-          <span className="size-2 rounded-full border border-brand-primary" />
+      {/* Top Workbench Chrome */}
+      <div className="flex items-center justify-between border-b border-fd-border pb-3 mb-5">
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
+            <span className="size-2 rounded-full border border-fd-foreground/60" />
+            <span className="size-2 rounded-full border border-fd-foreground/60" />
+            <span className="size-2 rounded-full border border-brand-primary" />
+          </div>
+          <span className="font-mono text-[10px] tracking-widest uppercase text-fd-muted-foreground ml-2">
+            WORKBENCH · 1PX MONOLINE EDITORIAL
+          </span>
         </div>
-        <span className="font-mono text-[10px] tracking-widest uppercase text-fd-muted-foreground">
+        <span className="font-mono text-[10px] tracking-widest uppercase text-brand-primary">
           MDS-39 · F-PLAN
         </span>
       </div>
 
-      {/* Split Wireframe Body: Left Token Stack + Right 1px Monoline Dandelion */}
-      <div className="grid grid-cols-12 gap-4 items-center">
-        <div className="col-span-7 flex flex-col gap-2.5">
-          <div className="rounded-sm border border-fd-border p-3">
-            <div className="font-mono text-[10px] text-brand-primary mb-1">01 · TOKENS</div>
-            <div className="h-1.5 w-4/5 border-b border-fd-foreground/30 mb-1.5" />
-            <div className="h-1.5 w-3/5 border-b border-fd-foreground/20" />
+      {/* 3-Column Full-Width Spec Workbench + <=15% Corner Dandelion Spot */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+        {/* Col 1: Semantic Tokens */}
+        <div className="md:col-span-4 rounded-sm border border-fd-border p-4 flex flex-col justify-between gap-3">
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[10px] font-semibold text-brand-primary">
+              01 · SEMANTIC TOKENS
+            </span>
+            <span className="font-mono text-[10px] text-fd-muted-foreground">W3C DTCG</span>
           </div>
-          <div className="rounded-sm border border-fd-border p-3">
-            <div className="font-mono text-[10px] text-fd-muted-foreground mb-1">02 · 22 COMPONENTS</div>
-            <div className="h-1.5 w-11/12 border-b border-fd-foreground/30 mb-1.5" />
-            <div className="h-1.5 w-2/3 border-b border-fd-foreground/20" />
-          </div>
-          <div className="rounded-sm border border-brand-primary/60 p-3">
-            <div className="font-mono text-[10px] text-brand-primary mb-1">03 · 1PX MONOLINE</div>
-            <div className="h-1.5 w-3/4 border-b border-brand-primary/50" />
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center justify-between border border-fd-border rounded-sm px-2.5 py-1.5 font-mono text-[10px]">
+              <span className="text-fd-foreground">--mds-bg-base</span>
+              <span className="text-fd-muted-foreground">#fbfbfa / #12151d</span>
+            </div>
+            <div className="flex items-center justify-between border border-brand-primary/50 rounded-sm px-2.5 py-1.5 font-mono text-[10px]">
+              <span className="text-brand-primary">--mds-brand</span>
+              <span className="text-fd-muted-foreground">#9e5a03 / #ffc837</span>
+            </div>
           </div>
         </div>
 
-        {/* Pure 1px Botanical Monoline Dandelion */}
-        <div className="col-span-5 flex items-center justify-center">
+        {/* Col 2: 22 UI Primitives Wireframe */}
+        <div className="md:col-span-5 rounded-sm border border-fd-border p-4 flex flex-col justify-between gap-3">
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[10px] font-semibold text-fd-foreground">
+              02 · 22 REACT 19 COMPONENTS
+            </span>
+            <span className="font-mono text-[10px] text-fd-muted-foreground">A11Y · ARIA</span>
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            <div className="border border-brand-primary/70 rounded-sm px-2 py-2 text-center font-mono text-[10px] text-brand-primary">
+              Button
+            </div>
+            <div className="border border-fd-border rounded-sm px-2 py-2 text-center font-mono text-[10px] text-fd-foreground">
+              Card
+            </div>
+            <div className="border border-fd-border rounded-sm px-2 py-2 text-center font-mono text-[10px] text-fd-foreground">
+              Tabs
+            </div>
+          </div>
+          <div className="h-1.5 w-full border-b border-fd-foreground/20" />
+        </div>
+
+        {/* Col 3: <=15% Botanical Monoline Spot + Quick Links */}
+        <div className="md:col-span-3 rounded-sm border border-fd-border p-4 flex items-center justify-between gap-3">
+          <div className="flex flex-col gap-1.5 min-w-0">
+            <span className="font-mono text-[10px] font-semibold text-fd-foreground">
+              03 · MOTIF
+            </span>
+            <span className="font-mono text-[10px] text-fd-muted-foreground leading-snug">
+              85:15 Rule
+              <br />
+              1px Spot
+            </span>
+          </div>
+
           <svg
-            viewBox="0 0 140 180"
-            className="w-full max-w-[140px] h-auto text-fd-foreground"
+            viewBox="0 0 90 110"
+            className="w-[72px] h-auto shrink-0 text-fd-foreground"
             fill="none"
             aria-hidden="true"
           >
             <g strokeLinecap="round" strokeLinejoin="round" strokeWidth="1">
-              {/* Stem & basal leaves */}
+              <path d="M 46 102 C 44 82, 47 64, 50 46" stroke="currentColor" />
               <path
-                d="M 70 166 C 68 134, 72 108, 76 78"
+                d="M 46 102 C 36 96, 30 90, 26 82 C 34 86, 40 94, 46 102 Z"
                 stroke="currentColor"
               />
-              <path
-                d="M 70 166 C 54 156, 44 146, 38 134 C 50 140, 60 152, 70 166 Z"
-                stroke="currentColor"
-              />
-              <path
-                d="M 70 166 C 84 158, 96 148, 102 136 C 90 144, 80 154, 70 166 Z"
-                stroke="currentColor"
-              />
-
-              {/* Gold Seed Center (<= 15% accent) */}
-              <circle cx="76" cy="74" r="5" className="stroke-brand-primary" />
-
-              {/* Radial Pappus Rays */}
-              <line x1="76" y1="69" x2="76" y2="34" stroke="currentColor" />
-              <path d="M 70 39 L 76 34 L 82 39" stroke="currentColor" />
-
-              <line x1="79" y1="70" x2="103" y2="45" stroke="currentColor" />
-              <path d="M 96 45 L 103 45 L 103 52" stroke="currentColor" />
-
-              <line x1="81" y1="74" x2="116" y2="74" stroke="currentColor" />
-              <path d="M 111 68 L 116 74 L 111 80" stroke="currentColor" />
-
-              <line x1="79" y1="78" x2="103" y2="103" stroke="currentColor" />
-              <path d="M 103 96 L 103 103 L 96 103" stroke="currentColor" />
-
-              <line x1="73" y1="78" x2="49" y2="103" stroke="currentColor" />
-              <path d="M 56 103 L 49 103 L 49 96" stroke="currentColor" />
-
-              <line x1="71" y1="74" x2="36" y2="74" stroke="currentColor" />
-              <path d="M 41 80 L 36 74 L 41 68" stroke="currentColor" />
-
-              <line x1="73" y1="70" x2="49" y2="45" stroke="currentColor" />
-              <path d="M 49 52 L 49 45 L 56 45" stroke="currentColor" />
-
-              {/* Drifting Golden Seeds */}
+              <circle cx="50" cy="42" r="4" className="stroke-brand-primary" />
+              <line x1="50" y1="38" x2="50" y2="16" stroke="currentColor" />
+              <path d="M 46 20 L 50 16 L 54 20" stroke="currentColor" />
+              <line x1="53" y1="39" x2="69" y2="23" stroke="currentColor" />
+              <line x1="54" y1="42" x2="76" y2="42" stroke="currentColor" />
+              <line x1="53" y1="45" x2="69" y2="61" stroke="currentColor" />
+              <line x1="47" y1="45" x2="31" y2="61" stroke="currentColor" />
+              <line x1="46" y1="42" x2="24" y2="42" stroke="currentColor" />
+              <line x1="47" y1="39" x2="31" y2="23" stroke="currentColor" />
               <g className="stroke-brand-primary">
-                <line x1="44" y1="28" x2="35" y2="37" />
-                <path d="M 39 25 L 44 28 L 47 33" />
-                <circle cx="34" cy="38" r="1.4" />
-
-                <line x1="112" y1="26" x2="104" y2="35" />
-                <path d="M 107 23 L 112 26 L 115 31" />
-                <circle cx="103" cy="36" r="1.4" />
+                <line x1="28" y1="14" x2="22" y2="20" />
+                <circle cx="21" cy="21" r="1.2" />
               </g>
             </g>
           </svg>
         </div>
       </div>
 
-      {/* Bottom 4-Card Quick Links */}
-      <div className="mt-4 pt-3 border-t border-fd-border grid grid-cols-4 gap-2">
+      {/* Bottom 4-Column Quick Links Strip */}
+      <div className="mt-4 pt-3 border-t border-fd-border grid grid-cols-2 sm:grid-cols-4 gap-2">
         {[
-          { label: 'Tokens', href: '/docs/foundations/colors' },
-          { label: '22 UI', href: '/docs/components/button' },
-          { label: 'Brand', href: '/docs/brand' },
-          { label: 'Visual QA', href: '/docs/portfolio/visual-qa' },
+          { label: '01 · Tokens', href: '/docs/foundations/colors' },
+          { label: '02 · 22 UI', href: '/docs/components/button' },
+          { label: '03 · Brand', href: '/docs/brand' },
+          { label: '04 · Visual QA', href: '/docs/portfolio/visual-qa' },
         ].map((item) => (
           <Link
             key={item.label}
             href={item.href}
-            className="rounded-sm border border-fd-border px-2 py-2 text-center font-mono text-[10px] text-fd-muted-foreground hover:border-brand-primary hover:text-brand-primary transition-colors"
+            className="rounded-sm border border-fd-border px-3 py-2 text-center font-mono text-[10px] text-fd-muted-foreground hover:border-brand-primary hover:text-brand-primary transition-colors"
           >
             {item.label}
           </Link>

@@ -57,52 +57,50 @@ export default function HomePage() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-5xl mx-auto w-full px-5 sm:px-8 py-12 sm:py-16 flex flex-col">
-        {/* Hero Section: F-Plan Split Hero (Left Copy + Right Monoline Wireframe Visual) */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center pb-12 border-b border-fd-border">
-          {/* Hero Left: Copy + Install + <= 2 CTAs */}
-          <div className="lg:col-span-6 flex flex-col items-start text-left">
-            <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-brand-primary mb-3">
-              MDS v0.1.0 · W3C DTCG · REACT 19
-            </span>
-
-            <h1 className="font-cinematic text-4xl sm:text-5xl font-bold tracking-tight break-keep leading-[1.15] text-fd-foreground">
-              겨울 끝, 민들레
-              <br />
-              실무용 디자인 시스템
-            </h1>
-
-            <p className="font-editorial text-sm sm:text-base text-fd-muted-foreground mt-4 mb-6 leading-relaxed break-keep max-w-lg">
-              W3C 시맨틱 토큰과 22종 React 19 컴포넌트로 구성한 한국어 에디토리얼 UI 시스템입니다.
-            </p>
-
-            {/* Quick install snippet */}
-            <div className="mb-6 inline-flex items-center gap-2 px-3.5 py-2 rounded-sm border border-fd-border bg-fd-card font-mono text-xs text-fd-foreground max-w-full overflow-x-auto whitespace-nowrap">
-              <Terminal className="size-3.5 text-brand-primary shrink-0" />
-              <span className="text-brand-primary">$</span>
-              <span className="select-all">pnpm add @mindulle/tokens @mindulle/ui</span>
+      <main className="flex-1 max-w-5xl mx-auto w-full px-5 sm:px-8 py-10 sm:py-14 flex flex-col">
+        {/* Hero Section: Option A — Top Compact Copy Band + Full-Width Workbench */}
+        <section className="flex flex-col gap-8 pb-12 border-b border-fd-border">
+          {/* Top Compact Band */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+            <div className="lg:col-span-7 flex flex-col items-start text-left">
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-brand-primary mb-2.5">
+                MDS v0.1.0 · W3C DTCG · REACT 19
+              </span>
+              <h1 className="font-cinematic text-3xl sm:text-5xl font-bold tracking-tight break-keep leading-[1.15] text-fd-foreground">
+                겨울 끝, 민들레
+                <br />
+                실무용 디자인 시스템
+              </h1>
+              <p className="font-editorial text-sm sm:text-base text-fd-muted-foreground mt-3 leading-relaxed break-keep max-w-xl">
+                W3C 시맨틱 토큰과 22종 React 19 컴포넌트로 구성한 한국어 에디토리얼 UI 시스템입니다.
+              </p>
             </div>
 
-            {/* <= 2 CTAs (MDS-39 Copy Spec) */}
-            <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
-              <Link href="/docs">
-                <Button size="lg" variant="primary" className="gap-2 font-bold">
-                  <span>Quickstart</span>
-                  <ArrowRight className="size-4" />
-                </Button>
-              </Link>
-              <Link href="/docs/components/button">
-                <Button size="lg" variant="secondary" className="gap-2">
-                  <span>22 Components</span>
-                </Button>
-              </Link>
+            <div className="lg:col-span-5 flex flex-col items-start lg:items-end gap-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-sm border border-fd-border bg-fd-card font-mono text-xs text-fd-foreground max-w-full overflow-x-auto whitespace-nowrap">
+                <Terminal className="size-3.5 text-brand-primary shrink-0" />
+                <span className="text-brand-primary">$</span>
+                <span className="select-all">pnpm add @mindulle/tokens @mindulle/ui</span>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3">
+                <Link href="/docs">
+                  <Button size="lg" variant="primary" className="gap-2 font-bold">
+                    <span>Quickstart</span>
+                    <ArrowRight className="size-4" />
+                  </Button>
+                </Link>
+                <Link href="/docs/components/button">
+                  <Button size="lg" variant="secondary" className="gap-2">
+                    <span>22 Components</span>
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* Hero Right: F-Plan Monoline UI Wireframe + Dandelion */}
-          <div className="lg:col-span-6">
-            <HeroVisual />
-          </div>
+          {/* Full-Width 1px Monoline Workbench */}
+          <HeroVisual />
         </section>
 
         {/* Interactive Component Live Playground */}
