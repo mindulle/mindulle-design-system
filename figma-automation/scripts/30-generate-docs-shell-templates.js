@@ -65,13 +65,17 @@ return new Promise(async (resolve) => {
       bgSurface: reqVar("background/surface"),
       bgElevated: reqVar("background/elevated"),
       borderSubtle: reqVar("border/subtle"),
+      borderDefault: reqVar("border/default"),
       borderStrong: reqVar("border/strong"),
       textPrimary: reqVar("text/primary"),
+      textSecondary: reqVar("text/secondary"),
       textMuted: reqVar("text/muted"),
       textInverse: reqVar("text/inverse"),
       brandPrimary: reqVar("brand/primary"),
       brandAccent: reqVar("brand/accent"),
       stateSuccess: reqVar("state/success"),
+      stateSuccessBg: reqVar("state/success-bg"),
+      stateWarningBg: reqVar("state/warning-bg"),
       radiusSm: radiusCollection ? varByName.get("radius/sm") : null,
       radiusFull: radiusCollection ? varByName.get("radius/full") : null,
     };
@@ -214,16 +218,16 @@ return new Promise(async (resolve) => {
       const txt = figma.createText();
       txt.textAutoResize = "WIDTH_AND_HEIGHT";
       if (variant === "gold") {
-        badge.fills = bindPaint(V.brandAccent, 0.12);
-        badge.strokes = bindPaint(V.brandAccent, 0.3);
+        badge.fills = bindPaint(V.stateWarningBg);
+        badge.strokes = bindPaint(V.brandAccent);
         badge.strokeWeight = 1;
         txt.fontName = F.uiSemi;
         txt.characters = text;
         txt.fontSize = 11;
         txt.fills = bindPaint(V.brandPrimary);
       } else if (variant === "green") {
-        badge.fills = bindPaint(V.stateSuccess, 0.12);
-        badge.strokes = bindPaint(V.stateSuccess, 0.3);
+        badge.fills = bindPaint(V.stateSuccessBg);
+        badge.strokes = bindPaint(V.stateSuccess);
         badge.strokeWeight = 1;
         txt.fontName = F.mono;
         txt.characters = text;
@@ -236,7 +240,7 @@ return new Promise(async (resolve) => {
         txt.fontName = F.mono;
         txt.characters = text;
         txt.fontSize = 11;
-        txt.fills = bindPaint(V.textMuted);
+        txt.fills = bindPaint(V.textSecondary);
       }
       badge.appendChild(txt);
       return badge;
@@ -305,7 +309,7 @@ return new Promise(async (resolve) => {
     sTxt.characters = "문서 및 컴포넌트 검색...";
     sTxt.fontSize = 12;
     sTxt.textAutoResize = "WIDTH_AND_HEIGHT";
-    sTxt.fills = bindPaint(V.textMuted);
+    sTxt.fills = bindPaint(V.textSecondary);
     searchTrigger.appendChild(sTxt);
     const kbd = figma.createText();
     kbd.fontName = F.mono;
@@ -322,7 +326,7 @@ return new Promise(async (resolve) => {
       link.characters = label;
       link.fontSize = 13;
       link.textAutoResize = "WIDTH_AND_HEIGHT";
-      link.fills = bindPaint(label === "문서" ? V.textPrimary : V.textMuted);
+      link.fills = bindPaint(label === "문서" ? V.textPrimary : V.textSecondary);
       gnbRight.appendChild(link);
     });
     gnb.appendChild(gnbRight);
@@ -345,8 +349,8 @@ return new Promise(async (resolve) => {
     heroPill.paddingTop = 6;
     heroPill.paddingBottom = 6;
     bindRadius(heroPill, V.radiusFull, 999);
-    heroPill.fills = bindPaint(V.brandAccent, 0.1);
-    heroPill.strokes = bindPaint(V.brandAccent, 0.3);
+    heroPill.fills = bindPaint(V.stateWarningBg);
+    heroPill.strokes = bindPaint(V.brandAccent);
     heroPill.strokeWeight = 1;
     const hpTxt = figma.createText();
     hpTxt.fontName = F.uiBold;
@@ -375,7 +379,7 @@ return new Promise(async (resolve) => {
     heroSub.fontSize = 17;
     heroSub.lineHeight = { value: 150, unit: "PERCENT" };
     heroSub.textAlignHorizontal = "CENTER";
-    heroSub.fills = bindPaint(V.textMuted);
+    heroSub.fills = bindPaint(V.textSecondary);
     heroSection.appendChild(heroSub);
     heroSub.layoutAlign = "STRETCH";
     heroSub.textAutoResize = "HEIGHT";
@@ -408,7 +412,7 @@ return new Promise(async (resolve) => {
     btnSec.paddingBottom = 12;
     bindRadius(btnSec, V.radiusSm, 4);
     btnSec.fills = bindPaint(V.bgSurface);
-    btnSec.strokes = bindPaint(V.borderStrong);
+    btnSec.strokes = bindPaint(V.borderDefault);
     btnSec.strokeWeight = 2; // True 2px Stem
     const btnSecTxt = figma.createText();
     btnSecTxt.fontName = F.uiSemi;
@@ -511,7 +515,7 @@ return new Promise(async (resolve) => {
       card.paddingBottom = 24;
       bindRadius(card, V.radiusSm, 4);
       card.fills = bindPaint(V.bgSurface);
-      card.strokes = bindPaint(V.borderStrong);
+      card.strokes = bindPaint(V.borderDefault);
       card.strokeWeight = 2; // True 2px Stem
 
       card.appendChild(createPillBadge(c.tag, "neutral"));
@@ -539,7 +543,7 @@ return new Promise(async (resolve) => {
       cDesc.characters = c.desc;
       cDesc.fontSize = 13;
       cDesc.lineHeight = { value: 150, unit: "PERCENT" };
-      cDesc.fills = bindPaint(V.textMuted);
+      cDesc.fills = bindPaint(V.textSecondary);
       card.appendChild(cDesc);
       cDesc.layoutAlign = "STRETCH";
       cDesc.textAutoResize = "HEIGHT";
@@ -600,7 +604,7 @@ return new Promise(async (resolve) => {
     vGh.characters = "GitHub";
     vGh.fontSize = 12;
     vGh.textAutoResize = "WIDTH_AND_HEIGHT";
-    vGh.fills = bindPaint(V.textMuted);
+    vGh.fills = bindPaint(V.textSecondary);
     vRight.appendChild(vGh);
     vGnb.appendChild(vRight);
 
@@ -689,7 +693,7 @@ return new Promise(async (resolve) => {
         itemTxt.fontName = isActive ? F.uiBold : F.uiReg;
         itemTxt.characters = item;
         itemTxt.fontSize = 13;
-        itemTxt.fills = bindPaint(isActive ? V.brandPrimary : V.textMuted);
+        itemTxt.fills = bindPaint(isActive ? V.brandPrimary : V.textSecondary);
         itemRow.appendChild(itemTxt);
         itemTxt.layoutGrow = 1;
         itemTxt.textAutoResize = "HEIGHT";
@@ -742,7 +746,7 @@ return new Promise(async (resolve) => {
     artLead.characters = "민들레 디자인 시스템은 정갈한 분석(Analytics)과 시적 에디토리얼(Editorial)의 만남을 지향합니다. 본문에는 고해상도 Pretendard/Inter를, 전시 및 헤드라인에는 한국어 시네마틱 디스플레이 서체 헌법을 강제합니다.";
     artLead.fontSize = 15;
     artLead.lineHeight = { value: 160, unit: "PERCENT" };
-    artLead.fills = bindPaint(V.textMuted);
+    artLead.fills = bindPaint(V.textSecondary);
     artHead.appendChild(artLead);
     artLead.layoutAlign = "STRETCH";
     artLead.textAutoResize = "HEIGHT";
@@ -772,7 +776,7 @@ return new Promise(async (resolve) => {
     vbDesc.fontName = F.uiReg;
     vbDesc.characters = "Cormorant Garamond 700 ↔ Noto Serif KR 700 광학 일치도 96% & 2px True Stem 헌법 준수";
     vbDesc.fontSize = 12;
-    vbDesc.fills = bindPaint(V.textMuted);
+    vbDesc.fills = bindPaint(V.textSecondary);
     vbLeft.appendChild(vbTitle);
     vbLeft.appendChild(vbDesc);
     vbTitle.layoutAlign = "STRETCH";
@@ -792,7 +796,7 @@ return new Promise(async (resolve) => {
     specCard1.paddingBottom = 24;
     bindRadius(specCard1, V.radiusSm, 4);
     specCard1.fills = bindPaint(V.bgSurface);
-    specCard1.strokes = bindPaint(V.borderStrong);
+    specCard1.strokes = bindPaint(V.borderDefault);
     specCard1.strokeWeight = 2; // True 2px Stem
     articlePane.appendChild(specCard1);
     specCard1.layoutAlign = "STRETCH";
@@ -822,7 +826,7 @@ return new Promise(async (resolve) => {
     sc1En.characters = "SOVEREIGN CINEMATIC ARCHITECTURE • TRUE 2PX STEM";
     sc1En.fontSize = 13;
     sc1En.letterSpacing = { value: 15, unit: "PERCENT" };
-    sc1En.fills = bindPaint(V.textMuted);
+    sc1En.fills = bindPaint(V.textSecondary);
     specCard1.appendChild(sc1En);
     sc1En.layoutAlign = "STRETCH";
     sc1En.textAutoResize = "HEIGHT";
@@ -845,7 +849,7 @@ return new Promise(async (resolve) => {
     cbTitle.fontName = F.mono;
     cbTitle.characters = "/* CSS 변수 직접 호출 예시 */";
     cbTitle.fontSize = 11;
-    cbTitle.fills = bindPaint(V.textMuted);
+    cbTitle.fills = bindPaint(V.textSecondary);
     const cbCode = figma.createText();
     cbCode.fontName = F.mono;
     cbCode.characters = "font-family: var(--mds-font-cinematic-display), 'Cormorant Garamond', 'Noto Serif KR', Georgia, serif;\nfont-weight: 700;\nletter-spacing: -0.025em;";
@@ -880,7 +884,7 @@ return new Promise(async (resolve) => {
     tocHeader.fontName = F.mono;
     tocHeader.characters = "ON THIS PAGE";
     tocHeader.fontSize = 11;
-    tocHeader.fills = bindPaint(V.textMuted);
+    tocHeader.fills = bindPaint(V.textSecondary);
     toc.appendChild(tocHeader);
     tocHeader.layoutAlign = "STRETCH";
     tocHeader.textAutoResize = "HEIGHT";
@@ -908,7 +912,7 @@ return new Promise(async (resolve) => {
       tTxt.fontName = t.active ? F.uiBold : F.uiReg;
       tTxt.characters = t.label;
       tTxt.fontSize = 12;
-      tTxt.fills = bindPaint(t.active ? V.brandPrimary : V.textMuted);
+      tTxt.fills = bindPaint(t.active ? V.brandPrimary : V.textSecondary);
       tRow.appendChild(tTxt);
       tTxt.layoutGrow = 1;
       tTxt.textAutoResize = "HEIGHT";
