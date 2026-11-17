@@ -26,18 +26,9 @@ export function SonagiLogo({
       style={style}
       {...props}
     >
-      <defs>
-        {/* 중앙을 관통하는 수평 스텐실 컷 마스크 */}
-        <mask id="sng-stencil-mask">
-          <rect width="800" height="280" fill="white" />
-          <rect x="0" y="138" width="800" height="4" fill="black" />
-        </mask>
-      </defs>
-
-      {/* 메인 텍스트 그룹 */}
+      {/* 메인 텍스트 그룹 (에디토리얼 워드마크, Tier 3 전용) */}
       <g
         fill="currentColor"
-        mask="url(#sng-stencil-mask)"
         style={{ color: 'var(--mds-color-text-primary, currentColor)' }}
       >
         {/* S */}
@@ -54,9 +45,9 @@ export function SonagiLogo({
         <path d="m 609.43,185 q -1.17,0 -1.95,-0.78 -0.78,-0.78 -0.78,-1.95 v -76.96 q 0,-1.17 0.78,-1.95 0.78,-0.78 1.95,-0.78 1.17,0 1.95,0.78 0.78,0.78 0.78,1.95 v 76.96 q 0,1.17 -0.78,1.95 -0.78,0.78 -1.95,0.78 z" />
       </g>
 
-      {/* 브랜드 시안 도트 포인트 */}
+      {/* 민들레 골드 스팟 악센트 */}
       <path
-        style={{ fill: 'var(--mds-color-brand-logo, #00ffcc)' }}
+        style={{ fill: 'var(--mds-color-brand-primary, #ffd166)' }}
         d="m 614,76 a 6,6 0 0 1 -6,6 6,6 0 0 1 -6,-6 6,6 0 0 1 6,-6 6,6 0 0 1 6,6 z"
       />
     </svg>

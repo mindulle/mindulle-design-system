@@ -1,12 +1,15 @@
 ---
 title: 소나기 로고 (SonagiLogo)
-description: 레거시 브랜드 로고 — 신규 사용 금지, MindulleLogo 사용
+description: Tier 3(도구·인프라) 전용 에디토리얼 워드마크
 icon: Droplets
 ---
 
 # 소나기 로고 (SonagiLogo)
 
-**레거시 컴포넌트입니다.** 2026년 브랜드 재정립(ADR 0013) 이전 로고로, 호환성을 위해서만 유지합니다. 신규 화면에는 [`MindulleLogo`](/docs/components/mindulle-logo)를 사용하세요.
+**Tier 3(도구·인프라) 전용 워드마크입니다.** 브랜드 바이블 3-Tier 위계에 따라 대외 지면·블로그(Tier 1/2)에는 [`MindulleLogo`](/docs/components/mindulle-logo)와 `MINDULLE` 제호를 사용하고, `SonagiLogo`는 백엔드 엔진·CLI·개발 도구 문맥에서만 사용합니다.
+
+- 중앙 스텐실 절개 마스크를 제거한 에디토리얼 워드마크
+- 형광 민트(`#00ffcc`) 스팟을 제거하고 민들레 골드(`--mds-color-brand-primary`) 스팟 악센트로 통일
 
 ```tsx
 import { SonagiLogo } from '@mindulle/ui';
@@ -22,20 +25,10 @@ import { SonagiLogo } from '@mindulle/ui';
 | :--- | :--- | :--- | :--- |
 | `height` | `number` | `28` | 로고 높이(px) |
 
-## 마이그레이션
+## 사용 위계 (3-Tier Policy)
 
-```diff
-- import { SonagiLogo } from '@mindulle/ui';
-+ import { MindulleLogo } from '@mindulle/ui';
-
-- <SonagiLogo height={28} />
-+ <MindulleLogo size={28} />
-```
-
-## 정책
-
-- 신규 코드에서 **import 금지** (ESLint 규칙 추가 예정)
-- 문서·브랜드 자산에서도 소나기 표기는 인프라/엔진 문맥으로만 사용합니다.
+- **Tier 1 / 2 (스튜디오·블로그 등 대외 지면)**: [`MindulleLogo`](/docs/components/mindulle-logo) 사용
+- **Tier 3 (엔진·도구·인프라)**: `SonagiLogo` 사용
 
 ## 접근성
 
