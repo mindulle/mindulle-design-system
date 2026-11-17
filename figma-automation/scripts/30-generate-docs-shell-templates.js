@@ -14,6 +14,9 @@
  */
 
 return new Promise(async (resolve) => {
+  let createdPage = null;
+  let createdSection = null;
+  let succeeded = false;
   try {
     console.log("🚀 [MDS] Starting Docs Shell Templates generation (ADR 0014 SSOT, Variable-bound)...");
 
@@ -120,6 +123,7 @@ return new Promise(async (resolve) => {
     if (!page) {
       page = figma.createPage();
       page.name = "📖 Docs Shell Templates";
+      createdPage = page;
     }
     await figma.setCurrentPageAsync(page);
 
@@ -128,6 +132,7 @@ return new Promise(async (resolve) => {
       section.remove();
     }
     section = figma.createSection();
+    createdSection = section;
     section.name = "MDS Docs Shell Templates (ADR 0014 SSOT)";
     section.x = 0;
     section.y = 0;
@@ -948,6 +953,7 @@ return new Promise(async (resolve) => {
       if (card.height > 1200) throw new Error(`[Sanity Failed] 카드 높이가 ${card.height}px로 비정상 폭주했습니다!`);
     }
 
+    succeeded = true;
     console.log("✅ [MDS] Successfully generated Docs Shell 2-Screen Templates!");
     resolve({
       status: "SUCCESS",
@@ -967,5 +973,18 @@ return new Promise(async (resolve) => {
   } catch (err) {
     console.error("❌ Error generating Docs Shell Templates:", err);
     resolve({ status: "ERROR", error: String(err) });
+  } finally {
+    if (!succeeded) {
+      if (createdSection) {
+        try {
+          createdSection.remove();
+        } catch (_) {}
+      }
+      if (createdPage) {
+        try {
+          createdPage.remove();
+        } catch (_) {}
+      }
+    }
   }
 });
