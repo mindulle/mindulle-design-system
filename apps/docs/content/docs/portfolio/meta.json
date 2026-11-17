@@ -1,4 +1,8 @@
 {
   "title": "포트폴리오",
-  "pages": ["index", "visual-qa"]
+  "pages": [
+    "index",
+    "visual-qa"
+  ],
+  "icon": "Briefcase"
 }
