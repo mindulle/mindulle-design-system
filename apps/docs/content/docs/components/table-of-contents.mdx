@@ -7,21 +7,9 @@ description: 문헌형 문서의 섹션 목차 — 활성 항목을 골드로 �
 
 긴 글·문서 페이지의 섹션 이동을 돕는 목차 카드입니다. 활성 항목은 **골드 보더 + 골드 텍스트**로 표시됩니다.
 
-```tsx
-import { TableOfContents } from '@mindulle/ui';
-
-const items = [
-  { id: 'philosophy', label: '1. 디자인 철학' },
-  { id: 'colors', label: '2. 색상 시스템' },
-  { id: 'components', label: '4. 컴포넌트', depth: 1 },
-];
-
-<TableOfContents items={items} activeId="colors" />
-```
-
 <ComponentPreview name="TableOfContents" />
 
-## Props
+## Props 명세
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
@@ -38,6 +26,14 @@ const items = [
 | `label` | `string` | — | 표시 텍스트 |
 | `depth` | `number` | `0` | 들여쓰기 단계 (12px 단위) |
 
+## 상태·사이즈
+
+| 축 | 값 | 비고 |
+| :--- | :--- | :--- |
+| `variant` | 해당 없음 | 단일 문헌형 목차 카드 스타일 고정 |
+| `size` | 해당 없음 | 카드 패딩 `16px`(`p-4`), 곡률 `12px`, `depth`별 `12px` 들여쓰기 고정 |
+| `state` | `default` \| `active` | `item.id === activeId`일 때 골드 보더 + 골드 텍스트 + `aria-current="location"` |
+
 ## 토큰
 
 - 카드 배경: `--mds-color-background-surface`
@@ -50,3 +46,15 @@ const items = [
 - 항목은 실제 `<h2>`/`<h3>` 구조와 1:1로 맞춥니다.
 - 스크롤 위치에 따른 `activeId` 갱신은 **앱에서 계산**해 주입합니다 (컴포넌트는 표시 전용).
 - 항목이 3개 미만이면 목차를 생략합니다.
+
+```tsx
+import { TableOfContents } from '@mindulle/ui';
+
+const items = [
+  { id: 'philosophy', label: '1. 디자인 철학' },
+  { id: 'colors', label: '2. 색상 시스템' },
+  { id: 'components', label: '4. 컴포넌트', depth: 1 },
+];
+
+<TableOfContents items={items} activeId="colors" />
+```

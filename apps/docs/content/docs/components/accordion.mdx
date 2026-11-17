@@ -9,7 +9,43 @@ The True 2px Stem 경계선과 4px 모듈러 곡률이 적용된 접이식 컴�
 
 <ComponentPreview name="Accordion" />
 
-## 사용 예제
+## Props 명세
+
+**Accordion.Container**
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `children` | `React.ReactNode` | — | `Accordion.Item` 목록 |
+| `className` | `string` | `''` | 추가 Tailwind 유틸리티 클래스 |
+
+**Accordion.Item**
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `title` | `string` | — | 헤더 버튼에 표시되는 항목 제목 |
+| `defaultExpanded` | `boolean` | `false` | 초기 펼침 여부 |
+| `children` | `React.ReactNode` | — | 펼쳐졌을 때 표시되는 본문 콘텐츠 |
+| `className` | `string` | `''` | 추가 Tailwind 유틸리티 클래스 |
+
+## 상태·사이즈
+
+| 축 | 값 | 비고 |
+| :--- | :--- | :--- |
+| `variant` | 해당 없음 | 단일 리스트 + 하단 구분선 구조 고정 |
+| `size` | 해당 없음 | 헤더 패딩 `16px`(`px-4 py-4`), 본문 `14px` 단일 규격 고정 |
+| `state` | `collapsed` \| `expanded` \| `hover` | 클릭 시 펼침/접힘 토글(`−` / `+`), 호버 시 `bg-bg-hover` 적용 |
+
+## 토큰
+
+- 헤더 텍스트: `--mds-color-text-primary`
+- 본문 텍스트: `--mds-color-text-secondary`
+- 아이콘(`+`/`−`): `--mds-color-text-muted`
+- 호버 배경: `--mds-color-bg-hover`
+- 하단 구분선: `--mds-color-border-subtle`
+
+## 사용 규칙
+
+- FAQ·보조 스펙처럼 **선택적으로 펼쳐보는 정보**에만 사용합니다. 핵심 탐색이나 필수 입력 폼을 아코디언 안에 숨기지 않습니다.
 
 ```tsx
 import { Accordion } from '@mindulle/ui';
@@ -27,3 +63,7 @@ export function AccordionExample() {
   );
 }
 ```
+
+## 접근성
+
+- 각 항목 헤더는 네이티브 `<button type="button">`으로 렌더링되어 `Enter`/`Space` 키보드 토글을 지원하며, 펼침 상태 전달을 위해 `aria-expanded` 연동을 권장합니다.

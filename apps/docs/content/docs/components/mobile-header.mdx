@@ -7,25 +7,25 @@ description: 모바일 공통 헤더 — 타이틀과 메뉴 버튼
 
 모바일 화면의 공통 헤더입니다. 높이 **56px**, 좌우 패딩 **16px**, 좌측 타이틀 + 우측 메뉴 버튼 구조입니다.
 
-```tsx
-import { MobileHeader } from '@mindulle/ui';
-
-<MobileHeader
-  title="민들레 정원"
-  onMenuClick={() => setDrawerOpen(true)}
-/>
-```
-
 <ComponentPreview name="MobileHeader" />
 
-## Props
+## Props 명세
 
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | `title` | `ReactNode` | — | 좌측 브랜드/페이지 타이틀 |
 | `onMenuClick` | `() => void` | — | 메뉴 버튼 클릭 핸들러 (없으면 버튼 미표시) |
 | `menuLabel` | `string` | `'메뉴 열기'` | 메뉴 버튼 접근성 라벨 |
+| `menuExpanded` | `boolean` | — | 모바일 메뉴 열림 상태 (`aria-expanded` 전달) |
 | `actions` | `ReactNode` | — | 메뉴 버튼 앞 추가 액션 슬롯 |
+
+## 상태·사이즈
+
+| 축 | 값 | 비고 |
+| :--- | :--- | :--- |
+| `variant` | 해당 없음 | 단일 상단 바 레이아웃 고정 |
+| `size` | 해당 없음 | 높이 `56px`(`h-14`), 좌우 패딩 `16px`(`px-4`), 메뉴 버튼 `40×40px` 단일 규격 |
+| `state` | `default` \| `hover` \| `menuExpanded` | 메뉴 버튼 호버 시 `bg-bg-hover`, 열림 상태는 `menuExpanded`로 전달 |
 
 ## 토큰
 
@@ -39,3 +39,12 @@ import { MobileHeader } from '@mindulle/ui';
 - 드로어/시트의 **열림 상태는 부모에서 관리**합니다 (컴포넌트는 표시만 담당).
 - 타이틀은 한 줄로 제한하고 넘치면 말줄임 처리합니다.
 - 신문지 표면(에디토리얼)에서는 `paper/ink` 프리미티브로 색이 재매핑됩니다.
+
+```tsx
+import { MobileHeader } from '@mindulle/ui';
+
+<MobileHeader
+  title="민들레 정원"
+  onMenuClick={() => setDrawerOpen(true)}
+/>
+```

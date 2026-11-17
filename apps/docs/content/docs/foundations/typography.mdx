@@ -5,50 +5,25 @@ description: 한국어 시네마틱 디스플레이 서체와 2px True Stem 헌�
 
 # 타이포그래피 (Typography)
 
-> 💡 **브랜드 헌법 연동**: 모든 타이포그래피 스케일은 [민들레 마스터 브랜드 북 (The Master Brand Book)](/docs/brand)의 **신문지 활판 인쇄 조판 가이드**에 따라 운용되며, 영문 `Cormorant Garamond`와 국문 `Noto Serif KR / 마루 부리`의 에디토리얼 세리프 조판을 기본으로 지원합니다.
+민들레 디자인 시스템(MDS)은 **"정갈한 분석(Analytics)과 시적 에디토리얼(Editorial)"**의 만남을 지향합니다. 본문과 UI 요소에는 높은 가독성의 `Pretendard / Inter` 고딕 스택을 채택하고, 히어로 선언문과 전시관·인용부에는 영문 `Cormorant Garamond`와 국문 `Noto Serif KR / MaruBuri` 기반의 한국어 시네마틱 디스플레이 스택을 적용합니다.
 
-민들레 디자인 시스템(MDS)은 "<strong>정갈한 분석(Analytics)과 시적 에디토리얼(Editorial)</strong>"의 만남을 지향합니다.
-본문과 UI 요소에는 높은 가독성의 `Pretendard / Inter` 고딕 스택을 채택하고, 히어로 선언문과 전시관, 철학 인용부에는 독자적인 **한국어 시네마틱 디스플레이 서체 스택**을 적용합니다.
+## 토큰 표
 
----
+| 토큰 | 값 | 용도 |
+| :--- | :--- | :--- |
+| `--mds-font-cinematic-display` | `'Cormorant Garamond', 'Noto Serif KR', Georgia, serif` | 히어로 헤드라인, 3D 쇼룸 타이틀 (≥36px) |
+| `--mds-font-editorial-humanist` | `'Cormorant Garamond', 'MaruBuri', Georgia, serif` | 아틀리에 에세이, 매니페스토, 인용구 |
+| `--mds-font-sans` | `'Pretendard', 'Inter', system-ui, sans-serif` | 버튼, 폼, 테이블, 본문 레이블 (11px~18px) |
+| `--mds-font-serif` | `'Noto Serif KR', 'Merriweather', Georgia, serif` | 장문의 서술형 스토리텔링 본문 |
+| `--mds-font-mono` | `'JetBrains Mono', 'Fira Code', monospace` | 코드 블록, 터미널, 데이터 수치 표기 |
 
-## 🏛️ 디스플레이 서체 헌법 (The Display Constitution)
+## 시각 표본
 
-MDS 디스플레이 스케일은 다음 3대 원칙을 엄격히 강제합니다:
-
-1. **2px True Stem (최소 기둥 두께 수호)**:
-   - 디스플레이 폰트 크기(≥36px)에서 세로 기둥의 실측 두께가 **최소 2px(실측 2.4px~2.8px)** 이상이어야 합니다.
-   - 고해상도 레티나 디스플레이 및 다크모드에서 세리프 헤어라인이 1px 미만으로 증발하는 현상을 방지합니다.
-2. **Cormorant Garamond 광학 일치도 (Optical Harmony)**:
-   - 영문 대표 서체인 `Cormorant Garamond 700`의 클래식한 세리프 각도 및 스트로크 콘트라스트와 90% 이상의 시각적 조화를 이루는 한글 폰트를 매칭합니다.
-   - `sonagi-graph`의 `visual_consistency_graph` 파이프라인 심사를 통해 **Noto Serif KR 700(96% 조화도)**과 **Maru Buri(휴머니스트 에디토리얼)**를 공식 확정했습니다 (평가 점수: 97/100 `PASS`).
-3. **용도별 듀얼 디스플레이 스택 분리**:
-   - **Cinematic Display (Primary)**: 볼드하고 압도적인 웅장함을 전달하는 메인 타이틀 (`--mds-font-cinematic-display`)
-   - **Editorial Humanist (Secondary)**: 아틀리에 에세이, 시적 매니페스토 및 감성적 인용문 (`--mds-font-editorial-humanist`)
-
----
-
-## 🎬 4대 디스플레이 스케일 표본 (Live Specimen)
-
-아래는 Figma SSOT 정본(`node: 402:991`)과 1:1로 동기화된 라이브 인터랙티브 타이포그래피 표본입니다:
+아래는 Figma SSOT 정본(`node: 402:991`)과 1:1로 동기화된 라이브 인터랙티브 타이포그래피 표본입니다.
 
 <TypographySpecimen />
 
----
-
-## 📐 서체 패밀리 스택 정의
-
-| 서체 역할 | CSS font-family 스택 | 토큰 변수명 | 권장 사용처 |
-| :--- | :--- | :--- | :--- |
-| **Cinematic Display** | `'Cormorant Garamond', 'Noto Serif KR', Georgia, serif` | `--mds-font-cinematic-display` | 히어로 헤드라인, 3D 쇼룸 타이틀 (≥36px) |
-| **Editorial Humanist** | `'Cormorant Garamond', 'MaruBuri', Georgia, serif` | `--mds-font-editorial-humanist` | 아틀리에 에세이, 매니페스토 명문, 인용구 |
-| **Primary Sans (UI)** | `'Pretendard', 'Inter', system-ui, sans-serif` | `--mds-font-sans` | 버튼, 폼, 테이블, 본문 레이블 (11px~18px) |
-| **Editorial Serif** | `'Noto Serif KR', 'Merriweather', Georgia, serif` | `--mds-font-serif` | 장문의 서술형 스토리텔링 본문 |
-| **Monospace (Code)** | `'JetBrains Mono', 'Fira Code', monospace` | `--mds-font-mono` | 코드 블록, 터미널, 데이터 수치 표기 |
-
----
-
-## 💻 코드 사용법
+## 코드 사용법
 
 ### 1. Tailwind CSS 유틸리티 클래스
 
@@ -87,15 +62,13 @@ MDS 디스플레이 스케일은 다음 3대 원칙을 엄격히 강제합니다
 }
 ```
 
----
+## 사용 규칙
 
-## 🎨 Figma SSOT 동기화 현황
+1. **2px True Stem (최소 기둥 두께 수호)**: 디스플레이 폰트 크기(≥36px)에서 세로 기둥의 실측 두께가 최소 2px(2.4px~2.8px) 이상이어야 합니다.
+2. **Cormorant Garamond 광학 일치도**: `Noto Serif KR 700`(96% 조화도)과 `MaruBuri`를 공식 한글 매칭 서체로 사용합니다.
+3. **용도별 스택 분리**: 세리프 디스플레이 스택은 히어로·제목·인용부에만 사용하고, **일반 UI 본문·폼·테이블에는 세리프나 모노스페이스 서체를 쓰지 않습니다**(`--mds-font-sans` 고정).
 
-- **Figma File**: `Mindulle Design System v0.1.0` (Key: `AEoW19jmlUh3rFgzhhV1vH`)
-- **Foundations Board**: `Mindulle Foundations (SSOT Live Sync)` (Node: `198:2974`)
-- **Specimen Card**: `node: 402:991` (`🎬 3. Cinematic Display Scale (True 2px Stem)`)
-- **Figma Local Text Styles**:
-  1. `Display/Hero` (64px, Line height 115%, Letter spacing -2.5%)
-  2. `Display/Section` (36px, Line height 125%, Letter spacing -2.0%)
-  3. `Display/Editorial` (36px, Line height 130%, Letter spacing -1.0%)
-  4. `Display/Quote` (24px, Line height 140%, Letter spacing 0%)
+### Figma SSOT 동기화 현황
+
+- **Figma File**: `Mindulle Design System v0.1.0` (`AEoW19jmlUh3rFgzhhV1vH`) · Foundations Board (`198:2974`) · Specimen Card (`402:991`)
+- **Local Text Styles**: `Display/Hero` (64px, 115%, -2.5%), `Display/Section` (36px, 125%, -2.0%), `Display/Editorial` (36px, 130%, -1.0%), `Display/Quote` (24px, 140%, 0%)
