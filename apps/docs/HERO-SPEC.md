@@ -21,3 +21,7 @@
 ## 3. 색상·선화 문법
 
 - **1px Monoline Editorial**: `#FBF9F5` 바탕 · `#161616` `1px` 균일 선화 · `#D97706` 골드 악센트 15% 이하 (시맨틱 토큰 `--color-fd-*`, `--mds-color-brand-primary` 기반 라이트/다크 자동 대응)
+
+
+## 아키타입 연계
+- 본 히어로 규격은 [매체별 아키타입 가이드](./content/docs/brand/publication-archetypes.mdx)의 **매거진(Magazine)** 아키타입 구현 기준을 따릅니다.
