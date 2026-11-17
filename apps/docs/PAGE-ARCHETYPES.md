@@ -126,3 +126,24 @@ Figma `📖 Docs Shell Templates`(Section `497:162`)의 2개 대표 시안과 �
 | **Right Table of Contents (TOC)** | `300px` (시안 `ON THIS PAGE`) | `apps/docs/app/docs/[[...slug]]/page.tsx`, `apps/docs/app/global.css` | `DocsPage` `toc` prop, `#nd-toc a[data-active='true']` |
 | **Landing Home (Hero + Trinity Cards)** | `1440×1320` (`497:163`) | `apps/docs/app/page.tsx`, `apps/docs/components/landing/*` | Hero CTA + `mds-motif-grid` / 3대 조형 헌법 카드 |
 | **테마·색상 변수** | `Colors` 컬렉션 `Dark` 모드 (`31:1`) | `apps/docs/app/global.css` | `.dark` `--color-fd-*` ↔ `--mds-color-*` 동기화 |
+
+---
+
+## 6. 대표 4페이지 시각 회귀 (Visual Regression · MDS-47)
+
+아키타입별 대표 4페이지를 **라이트/다크 2모드(총 8컷, 1440×900)**로 캡처해 픽셀 회귀를 검증합니다.
+
+| 아키타입 | 대표 페이지 | 라우트 |
+| --- | --- | --- |
+| A (`landing`) | `index.mdx` | `/docs` |
+| B (`component`) | `components/button.mdx` | `/docs/components/button` |
+| C (`foundation`) | `foundations/colors.mdx` | `/docs/foundations/colors` |
+| D (`guide`) | `brand/index.mdx` | `/docs/brand` |
+
+### 실행 및 베이스라인 갱신 절차
+
+1. **사전 빌드**: `pnpm --filter @mindulle/docs build` (`apps/docs/out` 정적 산출물 생성)
+2. **회귀 검증**: `pnpm --filter @mindulle/docs test:visual` (허용 오차 기본 `0.5%`, 초과 시 `tests/visual-diffs/`에 실제 캡처 저장)
+3. **의도된 diff 발생 시 베이스라인 갱신**:
+   - `--mds-*` 토큰 변경, 셸 레이아웃 조정, 대표 페이지 문구 수정 등 의도된 시각 변경인 경우 `pnpm --filter @mindulle/docs test:visual:update`로 `tests/visual-baselines/*.png`를 갱신합니다.
+   - 갱신된 PNG와 함께 PR 본문에 **변경 사유(토큰/셸 변경 항목)**를 명시해 커밋합니다.
