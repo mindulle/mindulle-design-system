@@ -108,6 +108,21 @@ Props는 전용 컴포넌트 없이 **마크다운 표**로 씁니다. 표 열 �
 
 1. **새 페이지**: 아키타입을 먼저 고르고 해당 순서를 그대로 씁니다. 맞지 않으면 예외 사유를 PR에 적습니다.
 2. **새 블록**: MDX 인라인 HTML 금지 → `components/`에 컴포넌트 추가 → `page.tsx` 등록 → 이 문서의 인벤토리 갱신.
-3. **Figma 범위**: Docs Shell 2장(레이아웃·사이드바) + Component Page 1장까지만 시안화합니다. 페이지별 목업은 만들지 않습니다.
+3. **Figma 범위 (하이브리드 C안 — MDS-50 확정)**: Figma 정본(`AEoW19jmlUh3rFgzhhV1vH` / `📖 Docs Shell Templates`)에는 Docs Shell 2장(01 Landing Home, 02 Documentation Viewer) + Component Page만 유지합니다. 페이지별 MDX 목업은 금지하며, 실제 조립·배포 정본은 `apps/docs`(FumaDocs) 코드가 담당합니다. 토큰(`--mds-*`)이나 레이아웃 셸이 바뀌면 아래 매핑표와 대표 4페이지 시각 회귀를 함께 점검합니다.
 4. **토큰**: `--mds-*` 외 색·간격 사용 금지. 새 값이 필요하면 토큰에 먼저 추가합니다.
 5. **검증**: 아키타입별 대표 페이지 1장씩만 시각 회귀 대상으로 삼습니다 (`index`, `components/button`, `foundations/colors`, `brand/index`).
+
+---
+
+## 5. 셸 영역 ↔ `apps/docs` 코드 매핑
+
+Figma `📖 Docs Shell Templates`(Section `497:162`)의 2개 대표 시안과 실제 FumaDocs 코드 구현 간 1:1 대응표입니다.
+
+| 셸 영역 | Figma 시안 규격 | `apps/docs` 코드 위치 | 구현·토큰 비고 |
+| --- | --- | --- | --- |
+| **GNB / Global Header** | `1440×64` (랜딩) / `1440×56` (뷰어), `2px` 하단 보더 | `apps/docs/app/layout.config.tsx`, `apps/docs/app/global.css` | `baseOptions.nav` (`MindulleLogo`, `v0.1.0` 배지, `githubUrl`), `nav.fd-nav { border-width: 2px }` |
+| **Left Navigation Sidebar** | `260px` (시안) / `240px` (FumaDocs 기본 사이드바), `2px` 우측 보더 | `apps/docs/app/docs/layout.tsx`, `apps/docs/app/global.css` | `DocsLayout` + `enrichTreeWithIcons`, `aside.fd-sidebar { border-width: 2px }` |
+| **Center Article Pane** | `880px` (시안, 좌우 패딩 `48px`) / FumaDocs 본문 `max-width` | `apps/docs/app/docs/[[...slug]]/page.tsx`, `apps/docs/app/global.css` | `DocsPage` + `DocsBody`, `.prose` 타이포·수직 리듬·`.font-cinematic` |
+| **Right Table of Contents (TOC)** | `300px` (시안 `ON THIS PAGE`) | `apps/docs/app/docs/[[...slug]]/page.tsx`, `apps/docs/app/global.css` | `DocsPage` `toc` prop, `#nd-toc a[data-active='true']` |
+| **Landing Home (Hero + Trinity Cards)** | `1440×1320` (`497:163`) | `apps/docs/app/page.tsx`, `apps/docs/components/landing/*` | Hero CTA + `mds-motif-grid` / 3대 조형 헌법 카드 |
+| **테마·색상 변수** | `Colors` 컬렉션 `Dark` 모드 (`31:1`) | `apps/docs/app/global.css` | `.dark` `--color-fd-*` ↔ `--mds-color-*` 동기화 |
