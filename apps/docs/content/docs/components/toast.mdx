@@ -11,20 +11,20 @@ description: 짧은 피드백을 화면 모서리에 띄우는 비차단 알림 
 
 ## Props 명세
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `title` | `string` | — | 알림 제목 (필수) |
-| `description` | `string` | — | 보조 설명 |
-| `type` | `'info' \| 'success' \| 'warning' \| 'danger'` | `'info'` | 상태 색상 |
-| `onClose` | `() => void` | — | 닫기 버튼 핸들러 (없으면 닫기 버튼 미표시) |
+| Prop          | Type                                           | Default  | Description                                |
+| :------------ | :--------------------------------------------- | :------- | :----------------------------------------- |
+| `title`       | `string`                                       | —        | 알림 제목 (필수)                           |
+| `description` | `string`                                       | —        | 보조 설명                                  |
+| `type`        | `'info' \| 'success' \| 'warning' \| 'danger'` | `'info'` | 상태 색상                                  |
+| `onClose`     | `() => void`                                   | —        | 닫기 버튼 핸들러 (없으면 닫기 버튼 미표시) |
 
 ## 상태·사이즈
 
-| 축 | 값 | 비고 |
-| :--- | :--- | :--- |
-| `variant` (`type`) | `'info'` \| `'success'` \| `'warning'` \| `'danger'` | 4종 상태 토큰에 따라 보더·인디케이터 색상 전환 |
-| `size` | 해당 없음 | 최대 너비 `max-w-sm`, 패딩 `16px`(`p-4`), 곡률 `rounded-xl` 단일 규격 |
-| `state` | `default` \| `closable` | `onClose` 전달 여부에 따라 닫기 버튼 표시 |
+| 축                 | 값                                                   | 비고                                                                  |
+| :----------------- | :--------------------------------------------------- | :-------------------------------------------------------------------- |
+| `variant` (`type`) | `'info'` \| `'success'` \| `'warning'` \| `'danger'` | 4종 상태 토큰에 따라 보더·인디케이터 색상 전환                        |
+| `size`             | 해당 없음                                            | 최대 너비 `max-w-sm`, 패딩 `16px`(`p-4`), 곡률 `rounded-xl` 단일 규격 |
+| `state`            | `default` \| `closable`                              | `onClose` 전달 여부에 따라 닫기 버튼 표시                             |
 
 ## 토큰
 
@@ -47,5 +47,9 @@ import { Toast } from '@mindulle/ui';
   description="변경 사항이 반영되었습니다."
   type="success"
   onClose={() => setOpen(false)}
-/>
+/>;
 ```
+
+## 접근성
+
+- 비차단 알림이므로 긴급도에 따라 `role="status"`(`aria-live="polite"`) 또는 `role="alert"` 지정을 권장하며, `onClose` 전달 시 닫기 `<button>`으로 `Enter`/`Space` 닫기를 지원합니다.

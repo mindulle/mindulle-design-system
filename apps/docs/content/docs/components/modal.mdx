@@ -17,3 +17,7 @@ description: 화면 최상단에 레이어를 띄워 중요한 상호작용을 �
 | `onClose` | `() => void` | — | 닫기 이벤트 핸들러 |
 | `title` | `string` | — | 모달 헤더 제목 |
 | `children` | `React.ReactNode` | — | 모달 내부 본문 콘텐츠 |
+
+## 접근성
+
+- `role="dialog"` 및 `aria-modal="true"`를 적용하며 닫기 버튼에 `aria-label`과 `focus:ring-2` 포커스 링을 제공합니다. 열림 상태에서는 포커스 이동·트랩과 `Escape` 키 닫기 처리를 함께 연결합니다.

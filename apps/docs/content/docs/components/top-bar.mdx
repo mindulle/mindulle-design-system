@@ -11,20 +11,20 @@ description: 데스크톱 공통 헤더 — 브랜드·내비게이션·액션 3
 
 ## Props 명세
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `brand` | `ReactNode` | — | 좌측 브랜드 슬롯 (로고) |
-| `nav` | `ReactNode` | — | 중앙 내비게이션 슬롯 |
-| `actions` | `ReactNode` | — | 우측 액션 슬롯 (테마 토글·검색·GitHub) |
-| `sticky` | `boolean` | `true` | 스크롤 시 상단 고정 여부 |
+| Prop      | Type        | Default | Description                            |
+| :-------- | :---------- | :------ | :------------------------------------- |
+| `brand`   | `ReactNode` | —       | 좌측 브랜드 슬롯 (로고)                |
+| `nav`     | `ReactNode` | —       | 중앙 내비게이션 슬롯                   |
+| `actions` | `ReactNode` | —       | 우측 액션 슬롯 (테마 토글·검색·GitHub) |
+| `sticky`  | `boolean`   | `true`  | 스크롤 시 상단 고정 여부               |
 
 ## 상태·사이즈
 
-| 축 | 값 | 비고 |
-| :--- | :--- | :--- |
-| `variant` | 해당 없음 | 브랜드·내비게이션·액션 3분할 고정 |
-| `size` | 해당 없음 | 높이 `64px`(`h-16`), 좌우 패딩 `24px`(`px-6`) 단일 데스크톱 규격 |
-| `state` | `sticky=true` \| `sticky=false` | `sticky` 활성 시 `sticky top-0 z-40 backdrop-blur-md` 적용 |
+| 축        | 값                              | 비고                                                             |
+| :-------- | :------------------------------ | :--------------------------------------------------------------- |
+| `variant` | 해당 없음                       | 브랜드·내비게이션·액션 3분할 고정                                |
+| `size`    | 해당 없음                       | 높이 `64px`(`h-16`), 좌우 패딩 `24px`(`px-6`) 단일 데스크톱 규격 |
+| `state`   | `sticky=true` \| `sticky=false` | `sticky` 활성 시 `sticky top-0 z-40 backdrop-blur-md` 적용       |
 
 ## 토큰
 
@@ -39,11 +39,11 @@ description: 데스크톱 공통 헤더 — 브랜드·내비게이션·액션 3
 
 ### 슬롯 구조
 
-| 영역 | 정렬 | 비고 |
-| :--- | :--- | :--- |
-| 브랜드 | 좌측 고정 | 로고 높이 28px 권장 |
-| 내비게이션 | 중앙, `flex-1` | 링크 간격 32px |
-| 액션 | 우측 고정 | 간격 8px |
+| 영역       | 정렬           | 비고                |
+| :--------- | :------------- | :------------------ |
+| 브랜드     | 좌측 고정      | 로고 높이 28px 권장 |
+| 내비게이션 | 중앙, `flex-1` | 링크 간격 32px      |
+| 액션       | 우측 고정      | 간격 8px            |
 
 ```tsx
 import { TopBar, MindulleLogo } from '@mindulle/ui';
@@ -57,5 +57,9 @@ import { TopBar, MindulleLogo } from '@mindulle/ui';
     </>
   }
   actions={<ThemeToggle />}
-/>
+/>;
 ```
+
+## 접근성
+
+- 시맨틱 `<header>`와 중앙 `<nav aria-label="주요 메뉴">` 랜드마크를 제공하며, 내부 링크와 버튼의 `Tab` 포커스 이동은 좌→우 DOM 순서를 따릅니다.

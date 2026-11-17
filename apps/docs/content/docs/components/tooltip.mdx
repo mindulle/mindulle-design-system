@@ -11,19 +11,19 @@ description: 요소 위에 짧은 설명을 띄우는 호버 도움말
 
 ## Props 명세
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `content` | `ReactNode` | — | 툴팁 본문 |
-| `position` | `'top' \| 'bottom' \| 'left' \| 'right'` | `'top'` | 표시 방향 |
-| `children` | `ReactNode` | — | 트리거 요소 |
+| Prop       | Type                                     | Default | Description |
+| :--------- | :--------------------------------------- | :------ | :---------- |
+| `content`  | `ReactNode`                              | —       | 툴팁 본문   |
+| `position` | `'top' \| 'bottom' \| 'left' \| 'right'` | `'top'` | 표시 방향   |
+| `children` | `ReactNode`                              | —       | 트리거 요소 |
 
 ## 상태·사이즈
 
-| 축 | 값 | 비고 |
-| :--- | :--- | :--- |
-| `variant` (`position`) | `'top'` \| `'bottom'` \| `'left'` \| `'right'` | 트리거 기준 4방향 꼬리(Caret) 및 배치 전환 |
-| `size` | 해당 없음 | 패딩 `px-3 py-1.5`, `text-xs`, 한 줄(`whitespace-nowrap`) 단일 규격 |
-| `state` | `hidden` \| `hover` | 기본 숨김(`opacity-0 invisible`), 트리거 호버 시 노출(`opacity-100 visible`) |
+| 축                     | 값                                             | 비고                                                                         |
+| :--------------------- | :--------------------------------------------- | :--------------------------------------------------------------------------- |
+| `variant` (`position`) | `'top'` \| `'bottom'` \| `'left'` \| `'right'` | 트리거 기준 4방향 꼬리(Caret) 및 배치 전환                                   |
+| `size`                 | 해당 없음                                      | 패딩 `px-3 py-1.5`, `text-xs`, 한 줄(`whitespace-nowrap`) 단일 규격          |
+| `state`                | `hidden` \| `hover`                            | 기본 숨김(`opacity-0 invisible`), 트리거 호버 시 노출(`opacity-100 visible`) |
 
 ## 토큰
 
@@ -41,5 +41,9 @@ import { Tooltip } from '@mindulle/ui';
 
 <Tooltip content="검색" position="top">
   <button aria-label="검색">🔍</button>
-</Tooltip>
+</Tooltip>;
 ```
+
+## 접근성
+
+- 현재 `group-hover` 기반 호버 전용으로 동작하므로 키보드 포커스 사용자에게도 정보가 필요할 경우 트리거에 `aria-label`이나 인라인 도움말 텍스트를 병행합니다.

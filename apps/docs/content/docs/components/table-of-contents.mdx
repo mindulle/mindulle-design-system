@@ -11,28 +11,28 @@ description: 문헌형 문서의 섹션 목차 — 활성 항목을 골드로 �
 
 ## Props 명세
 
-| Prop | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `items` | `TocItem[]` | — | 목차 항목 |
-| `activeId` | `string` | — | 현재 활성 항목 id |
-| `onSelect` | `(id: string) => void` | — | 항목 클릭 콜백 |
-| `title` | `string` | `'Table of Contents'` | 카드 제목 |
+| Prop       | Type                   | Default               | Description       |
+| :--------- | :--------------------- | :-------------------- | :---------------- |
+| `items`    | `TocItem[]`            | —                     | 목차 항목         |
+| `activeId` | `string`               | —                     | 현재 활성 항목 id |
+| `onSelect` | `(id: string) => void` | —                     | 항목 클릭 콜백    |
+| `title`    | `string`               | `'Table of Contents'` | 카드 제목         |
 
 **TocItem**
 
-| Field | Type | Default | Description |
-| :--- | :--- | :--- | :--- |
-| `id` | `string` | — | 앵커 대상 id |
-| `label` | `string` | — | 표시 텍스트 |
-| `depth` | `number` | `0` | 들여쓰기 단계 (12px 단위) |
+| Field   | Type     | Default | Description               |
+| :------ | :------- | :------ | :------------------------ |
+| `id`    | `string` | —       | 앵커 대상 id              |
+| `label` | `string` | —       | 표시 텍스트               |
+| `depth` | `number` | `0`     | 들여쓰기 단계 (12px 단위) |
 
 ## 상태·사이즈
 
-| 축 | 값 | 비고 |
-| :--- | :--- | :--- |
-| `variant` | 해당 없음 | 단일 문헌형 목차 카드 스타일 고정 |
-| `size` | 해당 없음 | 카드 패딩 `16px`(`p-4`), 곡률 `12px`, `depth`별 `12px` 들여쓰기 고정 |
-| `state` | `default` \| `active` | `item.id === activeId`일 때 골드 보더 + 골드 텍스트 + `aria-current="location"` |
+| 축        | 값                    | 비고                                                                            |
+| :-------- | :-------------------- | :------------------------------------------------------------------------------ |
+| `variant` | 해당 없음             | 단일 문헌형 목차 카드 스타일 고정                                               |
+| `size`    | 해당 없음             | 카드 패딩 `16px`(`p-4`), 곡률 `12px`, `depth`별 `12px` 들여쓰기 고정            |
+| `state`   | `default` \| `active` | `item.id === activeId`일 때 골드 보더 + 골드 텍스트 + `aria-current="location"` |
 
 ## 토큰
 
@@ -56,5 +56,9 @@ const items = [
   { id: 'components', label: '4. 컴포넌트', depth: 1 },
 ];
 
-<TableOfContents items={items} activeId="colors" />
+<TableOfContents items={items} activeId="colors" />;
 ```
+
+## 접근성
+
+- `<nav aria-label="목차">` 랜드마크와 활성 항목의 `aria-current="location"`을 기본 제공하며, `Tab`과 `Enter` 키로 섹션 앵커 이동을 지원합니다.
