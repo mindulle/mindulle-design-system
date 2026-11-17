@@ -18,7 +18,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-fd-background text-fd-foreground selection:bg-brand-primary selection:text-text-inverse">
       {/* Top Header Navigation */}
-      <header className="sticky top-0 z-50 border-b-2 border-fd-border bg-fd-background/90 backdrop-blur-md px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      <header className="sticky top-0 z-50 border-b border-fd-border bg-fd-background/90 backdrop-blur-md px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 group">
           <MindulleLogo size={28} />
           <span className="font-bold text-base sm:text-lg tracking-tight group-hover:text-brand-primary transition-colors">
@@ -106,63 +106,71 @@ export default function HomePage() {
         {/* Interactive Component Live Playground */}
         <InteractiveShowcase />
 
-        {/* 3 Pillars of MDS Constitution */}
-        <div className="w-full mt-12 pt-6">
-          <div className="mb-6 flex flex-col items-center text-center">
-            <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-brand-primary mb-1">
-              DESIGN CONSTITUTION
-            </span>
-            <h2 className="font-cinematic text-2xl sm:text-3xl font-bold tracking-tight">
-              민들레 3대 조형 헌법
-            </h2>
+        {/* 3 Pillars of MDS Constitution — Editorial Index Strip */}
+        <section className="w-full mt-14 pt-8 border-t border-fd-border">
+          <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+            <div className="flex flex-col items-start text-left">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-brand-primary mb-1">
+                DESIGN CONSTITUTION
+              </span>
+              <h2 className="font-cinematic text-2xl sm:text-3xl font-bold tracking-tight">
+                민들레 3대 조형 헌법
+              </h2>
+            </div>
+            <Link
+              href="/docs/brand/publication-archetypes"
+              className="font-mono text-xs text-fd-muted-foreground hover:text-brand-primary transition-colors"
+            >
+              매체별 아키타입 가이드 →
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-left w-full">
-            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card hover:border-brand-primary/60 transition-colors duration-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 border-y border-fd-border divide-y md:divide-y-0 md:divide-x divide-fd-border text-left w-full">
+            <div className="py-6 md:pr-6">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-xs font-bold text-brand-primary">
                   01 / STEM &amp; LINE
                 </span>
-                <Shield className="size-4 text-brand-primary/70" />
+                <Shield className="size-3.5 text-brand-primary/70" />
               </div>
-              <h3 className="text-lg font-bold mb-2">The True 2px Stem</h3>
+              <h3 className="font-cinematic text-xl font-bold mb-2">The True 2px Stem</h3>
               <p className="text-sm text-fd-muted-foreground leading-relaxed break-keep">
                 뿌연 블러 그림자를 배제하고, 비바람에도 꺾이지 않는 자아를 지켜내는 선명한 2.0px
                 솔리드 스트로크.
               </p>
             </div>
 
-            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card hover:border-brand-primary/60 transition-colors duration-200">
+            <div className="py-6 md:px-6">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-xs font-bold text-brand-primary">02 / RADIUS</span>
-                <Layers className="size-4 text-brand-primary/70" />
+                <Layers className="size-3.5 text-brand-primary/70" />
               </div>
-              <h3 className="text-lg font-bold mb-2">4px Weathered Radius</h3>
+              <h3 className="font-cinematic text-xl font-bold mb-2">4px Weathered Radius</h3>
               <p className="text-sm text-fd-muted-foreground leading-relaxed break-keep">
                 과도한 알약(Pill)이나 인위적 직각이 아닌, 척박한 환경을 견뎌내며 자연스럽게 마모된
                 4px 모듈러 곡률.
               </p>
             </div>
 
-            <div className="p-6 rounded-sm border-2 border-fd-border bg-fd-card hover:border-brand-primary/60 transition-colors duration-200">
+            <div className="py-6 md:pl-6">
               <div className="flex items-center justify-between mb-3">
                 <span className="font-mono text-xs font-bold text-brand-primary">03 / DUAL MATRIX</span>
-                <Palette className="size-4 text-brand-primary/70" />
+                <Palette className="size-3.5 text-brand-primary/70" />
               </div>
-              <h3 className="text-lg font-bold mb-2">W3C Light &amp; Dark</h3>
+              <h3 className="font-cinematic text-xl font-bold mb-2">W3C Light &amp; Dark</h3>
               <p className="text-sm text-fd-muted-foreground leading-relaxed break-keep">
                 회색돌 다크(#12151d)와 민들레 골드(#ffc837)를 품은 단일 SSOT 토큰 매트릭스 및 실시간
                 코드 연동.
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* MDS-28 Graphic Motif Showcase */}
         <MotifShowcase />
 
         {/* 3D Exhibition Showroom Banner */}
-        <div className="w-full mt-8 p-5 sm:p-6 rounded-sm border-2 border-fd-border bg-fd-card flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+        <div className="w-full mt-8 p-5 sm:p-6 rounded-sm border border-fd-border bg-fd-card flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
           <div className="flex flex-col">
             <span className="font-mono text-[10px] font-bold text-brand-primary tracking-wider uppercase mb-0.5">
               EXPERIENCE
@@ -185,7 +193,7 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t-2 border-fd-border py-8 px-6 text-center text-xs text-fd-muted-foreground flex flex-col sm:flex-row items-center justify-between max-w-5xl mx-auto w-full gap-4">
+      <footer className="border-t border-fd-border py-8 px-6 text-center text-xs text-fd-muted-foreground flex flex-col sm:flex-row items-center justify-between max-w-5xl mx-auto w-full gap-4">
         <div>© 2026 Mindulle Design System (MDS v0.1.0) • Crafted by Mindulle Atelier</div>
         <div className="flex items-center gap-4">
           <Link href="/docs" className="hover:text-brand-primary transition-colors">
