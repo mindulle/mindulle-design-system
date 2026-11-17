@@ -7,7 +7,9 @@
     "dev": "fumadocs-mdx && next dev --port 3010",
     "build": "fumadocs-mdx && next build",
     "start": "npx --yes serve out -p 3010",
-    "lint": "fumadocs-mdx && tsc --noEmit"
+    "lint": "fumadocs-mdx && tsc --noEmit",
+    "test:visual": "node scripts/visual-regression.mjs",
+    "test:visual:update": "UPDATE_BASELINES=1 node scripts/visual-regression.mjs"
   },
   "dependencies": {
     "@mindulle/icons": "workspace:*",
