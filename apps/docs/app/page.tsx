@@ -294,10 +294,10 @@ export default function HomePage() {
                 PL. 03
               </span>
               <div className="flex gap-1" aria-label="Semantic color swatches">
-                <i className="w-5 h-[42px] block bg-[var(--mds-primitive-neutral-900)]" />
-                <i className="w-5 h-[42px] block bg-[var(--mds-primitive-gold-700)]" />
-                <i className="w-5 h-[42px] block bg-[var(--mds-primitive-yellow-500)]" />
-                <i className="w-5 h-[42px] block bg-[var(--mds-primitive-neutral-500)]" />
+                <i className="w-5 h-[42px] block border border-[var(--color-fd-border)] bg-[var(--mds-primitive-neutral-900)]" />
+                <i className="w-5 h-[42px] block border border-[var(--color-fd-border)] bg-[var(--mds-primitive-gold-700)]" />
+                <i className="w-5 h-[42px] block border border-[var(--color-fd-border)] bg-[var(--mds-primitive-yellow-500)]" />
+                <i className="w-5 h-[42px] block border border-[var(--color-fd-border)] bg-[var(--mds-primitive-neutral-500)]" />
               </div>
             </div>
             <div className="px-3 py-[11px] pb-[13px]">

@@ -406,6 +406,13 @@ h1[data-card-title] {
     padding-bottom: 4rem !important;
   }
 
+  .prose table {
+    display: block !important;
+    overflow-x: auto !important;
+    max-width: 100% !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .prose h2 {
     margin-top: 3rem !important;
     margin-bottom: 1rem !important;

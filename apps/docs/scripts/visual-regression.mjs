@@ -14,10 +14,19 @@ const UPDATE = process.env.UPDATE_BASELINES === '1' || process.argv.includes('--
 const MAX_DIFF_RATIO = Number(process.env.VISUAL_MAX_DIFF_RATIO ?? '0.005');
 
 const TARGET_PAGES = [
+  { name: 'specimen-cover', route: '/' },
+  { name: 'specimen-rules', route: '/rules' },
+  { name: 'specimen-plates', route: '/plates' },
+  { name: 'specimen-errata', route: '/errata' },
   { name: 'archetype-a-landing', route: '/docs' },
   { name: 'archetype-b-component-button', route: '/docs/components/button' },
   { name: 'archetype-c-foundation-colors', route: '/docs/foundations/colors' },
   { name: 'archetype-d-guide-brand', route: '/docs/brand' },
+];
+
+const VIEWPORTS = [
+  { name: 'desktop', width: 1440, height: 900 },
+  { name: 'mobile', width: 390, height: 844 },
 ];
 
 const THEMES = ['light', 'dark'];
@@ -47,6 +56,16 @@ function loadPlaywright() {
     }
   }
   return require('playwright');
+}
+
+function findChromiumExecutable() {
+  const candidates = [
+    process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH,
+    '/usr/bin/chromium',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/google-chrome',
+  ].filter(Boolean);
+  return candidates.find((p) => fs.existsSync(p));
 }
 
 function resolveStaticFile(urlPath) {
@@ -146,55 +165,72 @@ async function main() {
   fs.mkdirSync(BASELINE_DIR, { recursive: true });
   const { chromium } = loadPlaywright();
   const { server, baseUrl } = await startStaticServer();
-  const browser = await chromium.launch({ headless: true });
+  const executablePath = findChromiumExecutable();
+  const browser = await chromium.launch({
+    headless: true,
+    ...(executablePath ? { executablePath } : {}),
+    args: ['--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage'],
+    env: {
+      ...process.env,
+      HOME: process.env.HOME && process.env.HOME !== '/' ? process.env.HOME : '/tmp',
+      XDG_CONFIG_HOME: process.env.XDG_CONFIG_HOME || '/tmp/xdg',
+      XDG_CACHE_HOME: process.env.XDG_CACHE_HOME || '/tmp/xdg-cache',
+    },
+  });
 
   let failures = 0;
   try {
-    const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
-    const page = await context.newPage();
+    for (const vp of VIEWPORTS) {
+      const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
+      const page = await context.newPage();
 
-    for (const target of TARGET_PAGES) {
-      for (const theme of THEMES) {
-        await page.addInitScript((t) => {
-          localStorage.setItem('theme', t);
-        }, theme);
+      for (const target of TARGET_PAGES) {
+        for (const theme of THEMES) {
+          await page.addInitScript((t) => {
+            localStorage.setItem('theme', t);
+          }, theme);
 
-        await page.goto(`${baseUrl}${target.route}`, { waitUntil: 'networkidle' });
-        await page.evaluate(async (t) => {
-          document.documentElement.classList.toggle('dark', t === 'dark');
-          document.documentElement.dataset.theme = t;
-          await document.fonts.ready;
-        }, theme);
+          await page.goto(`${baseUrl}${target.route}`, { waitUntil: 'networkidle' });
+          await page.evaluate(async (t) => {
+            document.documentElement.classList.toggle('dark', t === 'dark');
+            document.documentElement.classList.toggle('light', t === 'light');
+            document.documentElement.dataset.theme = t;
+            document.documentElement.style.colorScheme = t;
+            await document.fonts.ready;
+          }, theme);
 
-        const filename = `${target.name}-${theme}.png`;
-        const baselinePath = path.join(BASELINE_DIR, filename);
-        const currentBuf = await page.screenshot({ fullPage: true });
+          const filename = `${target.name}-${vp.name}-${theme}.png`;
+          const baselinePath = path.join(BASELINE_DIR, filename);
+          const currentBuf = await page.screenshot({ fullPage: true });
 
-        if (UPDATE) {
-          fs.writeFileSync(baselinePath, currentBuf);
-          console.log(`[UPDATED] ${filename}`);
-          continue;
-        }
+          if (UPDATE) {
+            fs.writeFileSync(baselinePath, currentBuf);
+            console.log(`[UPDATED] ${filename}`);
+            continue;
+          }
 
-        if (!fs.existsSync(baselinePath)) {
-          console.error(`[MISSING BASELINE] ${filename} (run "pnpm --filter @mindulle/docs test:visual:update")`);
-          failures++;
-          continue;
-        }
+          if (!fs.existsSync(baselinePath)) {
+            console.error(`[MISSING BASELINE] ${filename} (run "pnpm --filter @mindulle/docs test:visual:update")`);
+            failures++;
+            continue;
+          }
 
-        const baselineBuf = fs.readFileSync(baselinePath);
-        const result = await comparePngBuffers(page, baselineBuf, currentBuf);
-        const pct = (result.diffRatio * 100).toFixed(3);
+          const baselineBuf = fs.readFileSync(baselinePath);
+          const result = await comparePngBuffers(page, baselineBuf, currentBuf);
+          const pct = (result.diffRatio * 100).toFixed(3);
 
-        if (result.sizeMismatch || result.diffRatio > MAX_DIFF_RATIO) {
-          fs.mkdirSync(DIFF_DIR, { recursive: true });
-          fs.writeFileSync(path.join(DIFF_DIR, filename), currentBuf);
-          console.error(`[FAIL] ${filename} — diff=${pct}% (max ${(MAX_DIFF_RATIO * 100).toFixed(2)}%)`);
-          failures++;
-        } else {
-          console.log(`[PASS] ${filename} — diff=${pct}%`);
+          if (result.sizeMismatch || result.diffRatio > MAX_DIFF_RATIO) {
+            fs.mkdirSync(DIFF_DIR, { recursive: true });
+            fs.writeFileSync(path.join(DIFF_DIR, filename), currentBuf);
+            console.error(`[FAIL] ${filename} — diff=${pct}% (max ${(MAX_DIFF_RATIO * 100).toFixed(2)}%)`);
+            failures++;
+          } else {
+            console.log(`[PASS] ${filename} — diff=${pct}%`);
+          }
         }
       }
+
+      await context.close();
     }
   } finally {
     await browser.close();
