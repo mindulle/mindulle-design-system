@@ -63,3 +63,11 @@ Sail Arc draw ────────────────┐
                               ├─ Seed settle → next scene
 Axis remains                  ┘
 ```
+
+## 5. 확정 그래픽 스타일 규격 (MDS-39 · 1px Monoline Editorial)
+
+> 상세 의사결정: [ADR 0017](../decisions/0017-hero-and-graphic-asset-style-mds39.md) · 화이트보드 시안: `https://draw.sonagi.space/?file=mindulle-design-system-architecture` (6번 페이지)
+
+- **공통 문법:** `#FBF9F5` 바탕, `#161616` `1px` 균일 선화, `#D97706` 골드 악센트 15% 이하 (면 채우기·그림자·설계도 점선/라벨 제외)
+- **블로그 (`blog-sonagi-space`) — G-clean:** 모던 매거진 지면 + 순수 `1px` 보태니컬 모노라인 민들레 (`https://cdn.sonagi.space/assets/tldraw_assets/mds39-g-clean-blog.svg`)
+- **디자인 시스템 (`apps/docs` · MDS-39 Upwork 히어로) — F안:** 모노라인 UI 와이어프레임 + 민들레 선화 (`https://cdn.sonagi.space/assets/tldraw_assets/mds39-f-plan-hero.svg`)
