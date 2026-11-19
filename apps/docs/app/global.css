@@ -429,3 +429,30 @@ h1[data-card-title] {
     margin-bottom: 2rem !important;
   }
 }
+
+/* ==========================================================================
+   MDS-56 Periodical (MINDULLE SPECIMEN) Tokens & Accessibility
+   ========================================================================== */
+:root {
+  --mds-color-text-secondary: #52525b;
+  --mds-color-brand-primary: #9e5a03;
+  --mds-color-brand-accent: #eab308;
+}
+
+.dark {
+  --mds-color-text-secondary: #cbd5e1;
+  --mds-color-text-muted: #94a3b8;
+  --mds-color-brand-primary: #ffc837;
+  --mds-color-brand-accent: #ffd166;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
