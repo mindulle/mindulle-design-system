@@ -6,7 +6,7 @@ icon: MousePointerClick
 
 # 버튼 (Button)
 
-버튼 컴포넌트는 The True 2px Stem 경계선과 3단계 사이즈 스케일을 제공합니다.
+버튼 컴포넌트는 The True 2px Stem 경계선과 3단계 사이즈 스케일을 제공합니다. `primary`는 화면에서 유일한 채움면을 담당하고, `secondary`는 되돌릴 수 있는 보조 행동을 나타냅니다.
 
 <ComponentPreview name="Button" defaultProps={{ variant: 'primary', size: 'md' }} />
 
@@ -20,6 +20,15 @@ icon: MousePointerClick
 | `disabled` | `boolean` | `false` | 클릭 비활성화 여부 |
 | `children` | `React.ReactNode` | — | 버튼 내부 라벨 텍스트 |
 
+## 사용 규칙 (Do / Don't)
+
+- **Do**: 한 화면 또는 한 모달의 핵심 완료 행동에만 `variant="primary"`를 1회 사용하고, 취소·보조 행동은 `secondary`로 짝지으세요.
+- **Don't**: 페이지 이동 링크를 `<Button>`으로 감싸지 말고(`<a>`/`<Link>` 사용), 카드 그림자나 `8px` 이상 둥근 모서리를 임의로 덮어쓰지 마세요.
+
 ## 접근성
 
 - 네이티브 `<button>` 요소로 `Tab` 포커스 이동과 `Enter`/`Space` 실행을 지원하며, 키보드 포커스 시 `focus-visible:ring-2` 포커스 링이 노출됩니다. 아이콘만 있는 버튼에는 `aria-label`을 필수로 제공합니다.
+
+## 변경 이력
+
+- **ED. 04 (`v0.1.0`)**: `MDS-38` 컴포넌트 문서 표준 템플릿(사용 규칙·변경 이력) 적용 및 `/plates` `PL. 01–02` 도판 연동
