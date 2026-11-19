@@ -22,8 +22,8 @@ const docsFrontmatterSchema = {
       const base = await frontmatterSchema['~standard'].validate(value);
       if (base.issues) return base;
 
-      const data = base.value as Record<string, unknown>;
-      const archetype = data.archetype;
+      const raw = value && typeof value === 'object' ? (value as Record<string, unknown>) : {};
+      const archetype = raw.archetype;
       if (typeof archetype !== 'string' || !(ARCHETYPES as readonly string[]).includes(archetype)) {
         return {
           issues: [
@@ -35,7 +35,7 @@ const docsFrontmatterSchema = {
         };
       }
 
-      return { value: data as DocFrontmatter };
+      return { value: { ...(base.value as BaseFrontmatter), archetype: archetype as DocArchetype } };
     },
   },
 };
