@@ -1,215 +1,380 @@
 import Link from 'next/link';
-import { MindulleLogo, Button } from '@mindulle/ui';
-import {
-  ArrowRight,
-  BookOpen,
-  Palette,
-  Shield,
-  Layers,
-  Terminal,
-  ExternalLink,
-  Flame,
-} from 'lucide-react';
-import { InteractiveShowcase } from '@/components/landing/InteractiveShowcase';
-import { MotifShowcase } from '@/components/landing/MotifShowcase';
-import { HeroVisual } from '@/components/landing/HeroVisual';
+import { Button } from '@mindulle/ui';
+import { SpecimenShell } from '@/components/specimen/SpecimenShell';
+import { InstrumentWorkbench } from '@/components/specimen/InstrumentWorkbench';
+
+const SECTION_INDEX = [
+  { n: '01', t: 'The three laws', d: '왜 2px·4px·이중 매트릭스인가', href: '#laws' },
+  { n: '02', t: 'Specimen plates', d: '라이브 빌드에서 렌더한 도판', href: '#plates' },
+  { n: '03', t: 'Instrument', d: '값을 직접 바꾸는 작업대', href: '#instrument' },
+  { n: '04', t: 'Errata', d: '결정과 번복의 기록', href: '#errata' },
+  { n: '05', t: 'Colophon', d: '서체·스택·기여자', href: '#colophon' },
+];
+
+const ERRATA_HIGHLIGHTS = [
+  {
+    id: 'ADR-0001',
+    date: '2026-08',
+    title: '색상 체계 재정의 — 웜 스톤 & 앰버 골드',
+    note: '단일 액센트 원칙을 위해 보조 브라운과 버밀리온 실험안을 폐기하고 #9e5a03 단일 브랜드 축으로 수렴했다.',
+  },
+  {
+    id: 'ADR-0003',
+    date: '2026-08',
+    title: '블러 그림자 폐기 및 2px 획 도입',
+    note: '다크 표면(#12151d)에서 유실되는 소프트 섀도우를 제거하고 솔리드 보더 위계로 대체했다.',
+  },
+  {
+    id: 'ADR-0016',
+    date: '2026-11',
+    title: '브랜드 스튜디오와 디자인 시스템의 분리',
+    note: '문서 사이트(design.sonagi.space)는 제품이 아니라 매거진 아키타입 간행물(MINDULLE SPECIMEN)로 재정의했다.',
+  },
+];
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-fd-background text-fd-foreground selection:bg-brand-primary selection:text-text-inverse">
-      {/* Top Header Navigation */}
-      <header className="sticky top-0 z-50 border-b border-fd-border bg-fd-background/90 backdrop-blur-md px-4 sm:px-8 py-3.5 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <MindulleLogo size={28} />
-          <span className="font-bold text-base sm:text-lg tracking-tight group-hover:text-brand-primary transition-colors">
-            <span className="inline sm:hidden">민들레 MDS</span>
-            <span className="hidden sm:inline">민들레 디자인 시스템</span>
-          </span>
-          <span className="hidden md:inline-flex text-[10px] uppercase font-mono font-bold px-1.5 py-0.5 rounded-sm border border-brand-primary/40 text-brand-primary">
-            v0.1.0
-          </span>
-        </Link>
-
-        <div className="flex items-center gap-2.5 sm:gap-4">
-          <Link
-            href="/docs/portfolio"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-sm border border-fd-border hover:border-brand-primary/60 text-fd-foreground hover:bg-fd-card transition-all"
-          >
-            <Flame className="size-3.5 text-brand-primary" />
-            <span>케이스 스터디</span>
-          </Link>
-          <Link
-            href="/docs"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs sm:text-sm font-semibold rounded-sm border border-brand-primary/40 text-brand-primary hover:bg-brand-primary hover:text-text-inverse transition-all"
-          >
-            <BookOpen className="size-3.5" />
-            <span>실무 문서</span>
-          </Link>
-          <Link
-            href="https://github.com/mindulle/mindulle-design-system"
-            target="_blank"
-            rel="noreferrer"
-            className="text-xs sm:text-sm font-medium text-fd-muted-foreground hover:text-fd-foreground transition-colors p-1"
-          >
-            GitHub
-          </Link>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="flex-1 max-w-5xl mx-auto w-full px-5 sm:px-8 py-10 sm:py-14 lg:py-16 flex flex-col">
-        {/* Hero Section: MDS-51 — Carbon 64px Editorial Breathing + 2:1 Modular Workbench */}
-        <section className="flex flex-col gap-10 lg:gap-12 pb-14 lg:pb-16 border-b border-fd-border">
-          {/* Top Compact Band */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
-            <div className="lg:col-span-7 flex flex-col items-start text-left">
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-widest text-brand-primary mb-2.5">
-                MDS v0.1.0 · W3C DTCG · REACT 19
-              </span>
-              <h1 className="font-cinematic text-4xl sm:text-5xl lg:text-[64px] font-bold tracking-tight break-keep leading-[1.08] text-fd-foreground">
-                겨울 끝, 민들레
-                <br />
-                실무용 디자인 시스템
-              </h1>
-              <p className="font-editorial text-sm sm:text-base text-fd-muted-foreground mt-3 leading-relaxed break-keep max-w-xl">
-                W3C 시맨틱 토큰과 22종 React 19 컴포넌트로 구성한 한국어 에디토리얼 UI 시스템입니다.
-              </p>
-            </div>
-
-            <div className="lg:col-span-5 flex flex-col items-start lg:items-end gap-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-sm border border-fd-border bg-fd-card font-mono text-xs text-fd-foreground max-w-full overflow-x-auto whitespace-nowrap">
-                <Terminal className="size-3.5 text-brand-primary shrink-0" />
-                <span className="text-brand-primary">$</span>
-                <span className="select-all">pnpm add @mindulle/tokens @mindulle/ui</span>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-3">
-                <Link href="/docs">
-                  <Button size="lg" variant="primary" className="gap-2 font-bold">
-                    <span>Quickstart</span>
-                    <ArrowRight className="size-4" />
-                  </Button>
-                </Link>
-                <Link href="/docs/components/button">
-                  <Button size="lg" variant="secondary" className="gap-2">
-                    <span>22 Components</span>
-                  </Button>
-                </Link>
-              </div>
-            </div>
+    <SpecimenShell active="specimen">
+      {/* Cover: asymmetric title + 2:1 specimen field */}
+      <section className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-[54px] py-9 sm:py-[38px] pb-10 items-end">
+        <div className="pb-1.5 text-left">
+          <div className="font-mono text-[10.5px] tracking-[0.2em] uppercase text-[var(--mds-color-brand-primary)] mb-5">
+            A specimen of one design system
           </div>
-
-          {/* Full-Width 1px Monoline Workbench */}
-          <HeroVisual />
-        </section>
-
-        {/* Interactive Component Live Playground */}
-        <InteractiveShowcase />
-
-        {/* 3 Pillars of MDS Constitution — Editorial Index Strip */}
-        <section className="w-full mt-14 pt-8 border-t border-fd-border">
-          <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
-            <div className="flex flex-col items-start text-left">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-brand-primary mb-1">
-                DESIGN CONSTITUTION
-              </span>
-              <h2 className="font-cinematic text-2xl sm:text-3xl font-bold tracking-tight">
-                민들레 3대 조형 헌법
-              </h2>
+          <h1 className="font-cinematic font-normal text-5xl sm:text-[64px] lg:text-[78px] leading-[0.94] tracking-[-0.03em] text-[var(--color-fd-foreground)] m-0 mb-[18px]">
+            Mindulle
+            <br />
+            <em className="italic text-[var(--mds-color-brand-primary)]">Specimen</em>
+          </h1>
+          <p className="text-[15.5px] leading-[1.72] text-[var(--mds-color-text-secondary)] max-w-[38ch] m-0 mb-[26px] break-keep text-left [hyphens:none]">
+            세 개의 조형 법칙, 스물두 개의 컴포넌트, 하나의 서체 계열. 이 문서는 시스템을
+            설명하지 않고 전시합니다.
+          </p>
+          <dl className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-6 gap-y-4 font-mono text-[10.5px] tracking-[0.08em] text-[var(--color-fd-muted-foreground)] border-t border-[var(--color-fd-border)] pt-3.5 max-w-[420px] m-0">
+            <div>
+              <dt className="font-normal">LAWS</dt>
+              <dd className="m-0 mt-1 text-[12px] font-semibold tracking-[0.02em] text-[var(--color-fd-foreground)]">
+                03
+              </dd>
             </div>
+            <div>
+              <dt className="font-normal">COMPONENTS</dt>
+              <dd className="m-0 mt-1 text-[12px] font-semibold tracking-[0.02em] text-[var(--color-fd-foreground)]">
+                22
+              </dd>
+            </div>
+            <div>
+              <dt className="font-normal">TOKENS</dt>
+              <dd className="m-0 mt-1 text-[12px] font-semibold tracking-[0.02em] text-[var(--color-fd-foreground)]">
+                184
+              </dd>
+            </div>
+            <div>
+              <dt className="font-normal">BASELINE</dt>
+              <dd className="m-0 mt-1 text-[12px] font-semibold tracking-[0.02em] text-[var(--color-fd-foreground)]">
+                6px
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/* Specimen field (2:1 ratio per Magazine archetype) */}
+        <div
+          aria-label="SPECIMEN 01 — TYPE & SURFACE"
+          className="bg-[var(--color-fd-muted)] border border-[var(--color-fd-border)] sm:aspect-[2/1] relative flex flex-col justify-center px-6 py-10 sm:px-10 sm:py-0"
+        >
+          <span className="sm:absolute sm:top-3 sm:left-3.5 font-mono text-[9.5px] tracking-[0.12em] text-[var(--color-fd-muted-foreground)] mb-4 sm:mb-0">
+            SPECIMEN 01 — TYPE &amp; SURFACE
+          </span>
+          <span
+            aria-hidden="true"
+            className="hidden sm:block absolute top-[10px] right-[10px] w-[14px] h-[14px] border-t border-r border-[var(--mds-color-brand-primary)]"
+          />
+          <span
+            aria-hidden="true"
+            className="hidden sm:block absolute bottom-[10px] right-[10px] w-[14px] h-[14px] border-b border-r border-[var(--mds-color-brand-primary)]"
+          />
+
+          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 py-3.5 border-b border-[var(--color-fd-border)]">
+            <span className="font-cinematic text-4xl sm:text-[56px] leading-none tracking-[-0.02em]">
+              획
+            </span>
+            <span className="font-cinematic text-2xl sm:text-[34px] leading-none tracking-[-0.01em]">
+              2px
+            </span>
+            <span className="font-mono text-[13px] text-[var(--mds-color-text-secondary)]">
+              stem · solid · no gradient
+            </span>
+          </div>
+          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 py-3.5 border-b border-[var(--color-fd-border)]">
+            <span className="font-cinematic text-2xl sm:text-[34px] leading-none tracking-[-0.01em]">
+              곡률 4px
+            </span>
+            <span className="font-mono text-[13px] text-[var(--mds-color-text-secondary)]">
+              radius · weathered · 1x legible
+            </span>
+          </div>
+          <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 py-3.5">
+            <span className="text-[18px] sm:text-[21px] font-medium">Primary action</span>
+            <span className="text-[18px] sm:text-[21px] font-medium text-[var(--mds-color-brand-primary)]">
+              Amber #9e5a03
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Section index: horizontal, no leaders */}
+      <nav
+        aria-label="Edition 04 contents"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 border-y border-[var(--color-fd-border)] divide-y sm:divide-y-0 sm:divide-x divide-[var(--color-fd-border)]"
+      >
+        {SECTION_INDEX.map((item) => (
+          <a
+            key={item.n}
+            href={item.href}
+            className="py-[18px] sm:px-5 lg:first:pl-0 lg:last:pr-0 no-underline text-inherit hover:bg-[var(--color-fd-muted)]/60 transition-colors block"
+          >
+            <span className="font-mono text-[10px] text-[var(--mds-color-brand-primary)] tracking-[0.1em] block mb-[9px]">
+              {item.n}
+            </span>
+            <span className="text-[14.5px] font-semibold block mb-[5px] text-[var(--color-fd-foreground)]">
+              {item.t}
+            </span>
+            <span className="text-[12px] text-[var(--color-fd-muted-foreground)] leading-[1.5] break-keep block">
+              {item.d}
+            </span>
+          </a>
+        ))}
+      </nav>
+
+      {/* Feature Essay: big statement + specification rail */}
+      <section
+        id="laws"
+        aria-labelledby="law-01-heading"
+        className="grid grid-cols-1 lg:grid-cols-[1.6fr_0.9fr] gap-10 lg:gap-[56px] py-10 sm:py-[44px] pb-[38px] border-b border-[var(--color-fd-border)] text-left"
+      >
+        <div>
+          <div className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-[var(--mds-color-brand-primary)] mb-4">
+            Law 01 — the stem
+          </div>
+          <h2
+            id="law-01-heading"
+            className="font-cinematic font-normal text-3xl sm:text-[44px] leading-[1.14] tracking-[-0.02em] m-0 mb-[22px] break-keep text-[var(--color-fd-foreground)]"
+          >
+            획은 <em className="italic">2px</em>이다, 뼈가 얇아서
+          </h2>
+          <p className="text-[16px] leading-[1.75] text-[var(--color-fd-foreground)] max-w-[44ch] m-0 mb-4 break-keep text-left [hyphens:none]">
+            <strong className="font-semibold">1px는 사라진다.</strong> 밝기 60%의 노트북에서
+            사라지고, 검토용 덱에 들어가며 한 번 더 사라진다. 3px는 우리가 고르지 않은 목소리로
+            말한다.
+          </p>
+          <div className="text-[14px] leading-[1.8] text-[var(--mds-color-text-secondary)] max-w-[46ch] break-keep text-left [hyphens:none] space-y-3">
+            <p className="m-0">
+              그래서 선의 두께를 먼저 고정했다. 피그마에서 코드로, 코드에서 프로젝터로 옮겨가는
+              동안 형태를 유지하는 값은 2px뿐이었다. 나머지 결정도 같은 기준을 따랐다 — 작업이
+              우리 손을 떠난 뒤에도 읽히는가.
+            </p>
+            <p className="m-0">
+              곡률이 4px인 이유도 같다. 1x로 렌더링했을 때 의도적으로 보이는 가장 작은 부드러움이다.
+              규칙은 문서가 아니라 토큰에 산다. 산문으로만 존재하는 규칙은 다음 개발자가 선의를
+              가지고 어기는 규칙이다.
+            </p>
+          </div>
+          <div className="mt-6">
             <Link
-              href="/docs/brand/publication-archetypes"
-              className="font-mono text-xs text-fd-muted-foreground hover:text-brand-primary transition-colors"
+              href="/rules"
+              className="font-mono text-[11px] tracking-[0.08em] uppercase text-[var(--mds-color-brand-primary)] underline underline-offset-4 hover:text-[var(--color-fd-foreground)]"
             >
-              매체별 아키타입 가이드 →
+              Read all 5 essays in Rules →
             </Link>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 border-y border-fd-border divide-y md:divide-y-0 md:divide-x divide-fd-border text-left w-full">
-            <div className="py-6 md:pr-6">
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-xs font-bold text-brand-primary">
-                  01 / STEM &amp; LINE
-                </span>
-                <Shield className="size-3.5 text-brand-primary/70" />
-              </div>
-              <h3 className="font-cinematic text-xl font-bold mb-2">The True 2px Stem</h3>
-              <p className="text-sm text-fd-muted-foreground leading-relaxed break-keep">
-                뿌연 블러 그림자를 배제하고, 비바람에도 꺾이지 않는 자아를 지켜내는 선명한 2.0px
-                솔리드 스트로크.
-              </p>
+        <aside className="border-t lg:border-t-0 lg:border-l border-[var(--color-fd-border)] pt-6 lg:pt-0 lg:pl-[26px]">
+          <div className="font-mono text-[9.5px] tracking-[0.16em] uppercase text-[var(--color-fd-muted-foreground)] mb-3">
+            Specification
+          </div>
+          <dl className="m-0 mb-[26px]">
+            <dt className="text-[12px] text-[var(--color-fd-muted-foreground)] mb-[3px]">Stem</dt>
+            <dd className="m-0 mb-[14px] font-mono text-[13px] text-[var(--color-fd-foreground)]">
+              2px solid
+            </dd>
+            <dt className="text-[12px] text-[var(--color-fd-muted-foreground)] mb-[3px]">
+              Radius
+            </dt>
+            <dd className="m-0 mb-[14px] font-mono text-[13px] text-[var(--color-fd-foreground)]">
+              4px weathered
+            </dd>
+            <dt className="text-[12px] text-[var(--color-fd-muted-foreground)] mb-[3px]">
+              Baseline
+            </dt>
+            <dd className="m-0 mb-[14px] font-mono text-[13px] text-[var(--color-fd-foreground)]">
+              6px
+            </dd>
+            <dt className="text-[12px] text-[var(--color-fd-muted-foreground)] mb-[3px]">
+              Accent
+            </dt>
+            <dd className="m-0 mb-[14px] font-mono text-[13px] text-[var(--color-fd-foreground)]">
+              one per screen
+            </dd>
+          </dl>
+          <div className="font-mono text-[9.5px] tracking-[0.16em] uppercase text-[var(--color-fd-muted-foreground)] mb-3">
+            From the editor
+          </div>
+          <blockquote className="font-cinematic text-[21px] leading-[1.55] italic m-0 text-[var(--color-fd-foreground)] break-keep">
+            “시스템은 그리는 것이 아니다. 지켜보지 않아도 남는 것이다.”
+            <cite className="block mt-2.5 font-mono text-[10px] not-italic tracking-[0.1em] text-[var(--color-fd-muted-foreground)]">
+              편집자의 글
+            </cite>
+          </blockquote>
+        </aside>
+      </section>
+
+      {/* Specimen Plates: catalogue row with 2px divider */}
+      <section
+        id="plates"
+        aria-labelledby="plates-heading"
+        className="py-[38px] pb-[30px] border-b border-[var(--color-fd-border)] text-left"
+      >
+        <div className="flex flex-wrap justify-between items-baseline gap-2 mb-[22px]">
+          <h3 id="plates-heading" className="text-[15px] font-semibold m-0">
+            Specimen plates
+          </h3>
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[10px] tracking-[0.08em] text-[var(--color-fd-muted-foreground)]">
+              PL. 01–04 · rendered from the live build
+            </span>
+            <Link
+              href="/plates"
+              className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-[var(--mds-color-brand-primary)] underline underline-offset-4"
+            >
+              All Plates →
+            </Link>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px] bg-[var(--color-fd-border)] border border-[var(--color-fd-border)]">
+          <div className="bg-[var(--color-fd-background)]">
+            <div className="bg-[var(--color-fd-muted)] h-[150px] grid place-items-center relative">
+              <span className="absolute top-[9px] left-[10px] font-mono text-[9px] text-[var(--color-fd-muted-foreground)] tracking-[0.1em]">
+                PL. 01
+              </span>
+              <Button variant="primary" size="md">
+                Primary action
+              </Button>
             </div>
-
-            <div className="py-6 md:px-6">
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-xs font-bold text-brand-primary">02 / RADIUS</span>
-                <Layers className="size-3.5 text-brand-primary/70" />
-              </div>
-              <h3 className="font-cinematic text-xl font-bold mb-2">4px Weathered Radius</h3>
-              <p className="text-sm text-fd-muted-foreground leading-relaxed break-keep">
-                과도한 알약(Pill)이나 인위적 직각이 아닌, 척박한 환경을 견뎌내며 자연스럽게 마모된
-                4px 모듈러 곡률.
-              </p>
-            </div>
-
-            <div className="py-6 md:pl-6">
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-xs font-bold text-brand-primary">03 / DUAL MATRIX</span>
-                <Palette className="size-3.5 text-brand-primary/70" />
-              </div>
-              <h3 className="font-cinematic text-xl font-bold mb-2">W3C Light &amp; Dark</h3>
-              <p className="text-sm text-fd-muted-foreground leading-relaxed break-keep">
-                회색돌 다크(#12151d)와 민들레 골드(#ffc837)를 품은 단일 SSOT 토큰 매트릭스 및 실시간
-                코드 연동.
-              </p>
+            <div className="px-3 py-[11px] pb-[13px]">
+              <b className="block text-[12.5px] font-semibold mb-[3px]">유일한 채움면</b>
+              <span className="font-mono text-[9.5px] text-[var(--color-fd-muted-foreground)] tracking-[0.04em]">
+                radius 4 · ink on paper
+              </span>
             </div>
           </div>
-        </section>
 
-        {/* MDS-28 Graphic Motif Showcase */}
-        <MotifShowcase />
+          <div className="bg-[var(--color-fd-background)]">
+            <div className="bg-[var(--color-fd-muted)] h-[150px] grid place-items-center relative">
+              <span className="absolute top-[9px] left-[10px] font-mono text-[9px] text-[var(--color-fd-muted-foreground)] tracking-[0.1em]">
+                PL. 02
+              </span>
+              <Button variant="secondary" size="md">
+                Secondary
+              </Button>
+            </div>
+            <div className="px-3 py-[11px] pb-[13px]">
+              <b className="block text-[12.5px] font-semibold mb-[3px]">되돌릴 수 있는 행동</b>
+              <span className="font-mono text-[9.5px] text-[var(--color-fd-muted-foreground)] tracking-[0.04em]">
+                2px stem · no fill
+              </span>
+            </div>
+          </div>
 
-        {/* 3D Exhibition Showroom Banner */}
-        <div className="w-full mt-8 p-5 sm:p-6 rounded-sm border border-fd-border bg-fd-card flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
-          <div className="flex flex-col">
-            <span className="font-mono text-[10px] font-bold text-brand-primary tracking-wider uppercase mb-0.5">
-              EXPERIENCE
+          <div className="bg-[var(--color-fd-background)]">
+            <div className="bg-[var(--color-fd-muted)] h-[150px] grid place-items-center relative">
+              <span className="absolute top-[9px] left-[10px] font-mono text-[9px] text-[var(--color-fd-muted-foreground)] tracking-[0.1em]">
+                PL. 03
+              </span>
+              <div className="flex gap-1" aria-label="Semantic color swatches">
+                <i className="w-5 h-[42px] block bg-[var(--mds-primitive-neutral-900)]" />
+                <i className="w-5 h-[42px] block bg-[var(--mds-primitive-gold-700)]" />
+                <i className="w-5 h-[42px] block bg-[var(--mds-primitive-yellow-500)]" />
+                <i className="w-5 h-[42px] block bg-[var(--mds-primitive-neutral-500)]" />
+              </div>
+            </div>
+            <div className="px-3 py-[11px] pb-[13px]">
+              <b className="block text-[12.5px] font-semibold mb-[3px]">네 개의 의미 역할</b>
+              <span className="font-mono text-[9.5px] text-[var(--color-fd-muted-foreground)] tracking-[0.04em]">
+                ink · brand · accent · muted
+              </span>
+            </div>
+          </div>
+
+          <div className="bg-[var(--color-fd-background)]">
+            <div className="bg-[var(--color-fd-muted)] h-[150px] grid place-items-center relative">
+              <span className="absolute top-[9px] left-[10px] font-mono text-[9px] text-[var(--color-fd-muted-foreground)] tracking-[0.1em]">
+                PL. 04
+              </span>
+              <span className="font-cinematic text-[28px] leading-none">가Aa</span>
+            </div>
+            <div className="px-3 py-[11px] pb-[13px]">
+              <b className="block text-[12.5px] font-semibold mb-[3px]">전시 64 / 본문 14</b>
+              <span className="font-mono text-[9.5px] text-[var(--color-fd-muted-foreground)] tracking-[0.04em]">
+                serif display · sans UI
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Instrument: Live Component & Token Workbench */}
+      <InstrumentWorkbench />
+
+      {/* Errata: Architectural Decisions Summary */}
+      <section
+        id="errata"
+        aria-labelledby="errata-heading"
+        className="py-10 text-left"
+      >
+        <div className="flex flex-wrap justify-between items-baseline gap-2 mb-6">
+          <div>
+            <span className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-[var(--mds-color-brand-primary)] block mb-1.5">
+              04 · Errata
             </span>
-            <span className="font-serif font-bold text-base sm:text-lg text-fd-foreground">
-              3D 시네마틱 쇼룸 &amp; 5대 전시장
-            </span>
-            <span className="text-xs text-fd-muted-foreground mt-0.5">
-              실시간 WebGL 셰이더 물방울과 인터랙티브 런웨이
-            </span>
+            <h3 id="errata-heading" className="text-[15px] font-semibold m-0">
+              결정과 번복의 기록
+            </h3>
           </div>
           <Link
-            href="/exhibition/"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-sm border border-fd-border hover:border-brand-primary text-xs font-mono font-bold text-fd-foreground transition-all shrink-0"
+            href="/errata"
+            className="font-mono text-[10.5px] tracking-[0.08em] uppercase text-[var(--mds-color-brand-primary)] underline underline-offset-4"
           >
-            <span>전시장 입장하기</span>
-            <ExternalLink className="size-3.5 text-brand-primary" />
+            Full Errata Ledger →
           </Link>
         </div>
-      </main>
 
-      {/* Footer */}
-      <footer className="border-t border-fd-border py-8 px-6 text-center text-xs text-fd-muted-foreground flex flex-col sm:flex-row items-center justify-between max-w-5xl mx-auto w-full gap-4">
-        <div>© 2026 Mindulle Design System (MDS v0.1.0) • Crafted by Mindulle Atelier</div>
-        <div className="flex items-center gap-4">
-          <Link href="/docs" className="hover:text-brand-primary transition-colors">
-            공식 실무 문서
-          </Link>
-          <Link href="/docs/portfolio" className="hover:text-brand-primary transition-colors">
-            포트폴리오
-          </Link>
-          <Link href="/docs/brand" className="hover:text-brand-primary transition-colors">
-            브랜드 가이드
-          </Link>
-          <Link href="/exhibition/" className="hover:text-brand-primary transition-colors">
-            3D 쇼룸
-          </Link>
+        <div className="divide-y divide-[var(--color-fd-border)] border-y border-[var(--color-fd-border)]">
+          {ERRATA_HIGHLIGHTS.map((item) => (
+            <div
+              key={item.id}
+              className="py-4 grid grid-cols-1 md:grid-cols-[140px_1fr] gap-2 md:gap-6 items-baseline"
+            >
+              <div className="font-mono text-[11px] text-[var(--color-fd-muted-foreground)]">
+                <span className="text-[var(--mds-color-brand-primary)] font-semibold">
+                  {item.id}
+                </span>{' '}
+                · {item.date}
+              </div>
+              <div>
+                <div className="text-[14px] font-semibold text-[var(--color-fd-foreground)] mb-1">
+                  {item.title}
+                </div>
+                <p className="text-[13px] leading-[1.7] text-[var(--mds-color-text-secondary)] m-0 break-keep">
+                  {item.note}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-      </footer>
-    </div>
+      </section>
+    </SpecimenShell>
   );
 }
