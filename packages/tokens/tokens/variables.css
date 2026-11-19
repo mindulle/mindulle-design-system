@@ -1,6 +1,6 @@
 /**
  * Mindulle Design System — CSS Custom Properties
- * Generated automatically from JSON tokens v1.18.0
+ * Generated automatically from JSON tokens v1.19.0
  * DO NOT EDIT — regenerate with: pnpm --filter @mindulle/tokens build
  * 2-Tier architecture (primitives -> semantics); Light/Dark branch inside semantics.
  * See decisions/0010-delivery-consolidation-github-packages.md
@@ -310,7 +310,7 @@
   --mds-color-state-success-bg: var(--mds-primitive-leaf-900);
   --mds-color-state-warning: var(--mds-primitive-amber-50);
   --mds-color-state-warning-bg: var(--mds-primitive-amber-900);
-  --mds-color-state-danger: var(--mds-primitive-crimson-600);
+  --mds-color-state-danger: var(--mds-primitive-crimson-50);
   --mds-color-state-danger-bg: var(--mds-primitive-crimson-900);
   --mds-color-state-error: var(--mds-color-state-danger);
   --mds-color-state-error-bg: var(--mds-color-state-danger-bg);
@@ -347,7 +347,7 @@
     --mds-color-state-success-bg: var(--mds-primitive-leaf-900);
     --mds-color-state-warning: var(--mds-primitive-amber-50);
     --mds-color-state-warning-bg: var(--mds-primitive-amber-900);
-    --mds-color-state-danger: var(--mds-primitive-crimson-600);
+    --mds-color-state-danger: var(--mds-primitive-crimson-50);
     --mds-color-state-danger-bg: var(--mds-primitive-crimson-900);
     --mds-color-state-error: var(--mds-color-state-danger);
     --mds-color-state-error-bg: var(--mds-color-state-danger-bg);
