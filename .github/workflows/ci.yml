@@ -65,3 +65,7 @@ jobs:
 
       - name: Test
         run: pnpm run test
+
+      - name: Visual Regression (Docs)
+        continue-on-error: true
+        run: pnpm --filter @mindulle/docs test:visual

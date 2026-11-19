@@ -58,13 +58,15 @@ function loadPlaywright() {
   return require('playwright');
 }
 
-function findChromiumExecutable() {
-  const candidates = [
-    process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH,
-    '/usr/bin/chromium',
-    '/usr/bin/chromium-browser',
-    '/usr/bin/google-chrome',
-  ].filter(Boolean);
+function findChromiumExecutable(chromium) {
+  if (process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH && fs.existsSync(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH)) {
+    return process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
+  }
+  try {
+    const bundled = chromium.executablePath();
+    if (bundled && fs.existsSync(bundled)) return undefined;
+  } catch {}
+  const candidates = ['/usr/bin/chromium', '/usr/bin/chromium-browser', '/usr/bin/google-chrome'];
   return candidates.find((p) => fs.existsSync(p));
 }
 
@@ -165,7 +167,7 @@ async function main() {
   fs.mkdirSync(BASELINE_DIR, { recursive: true });
   const { chromium } = loadPlaywright();
   const { server, baseUrl } = await startStaticServer();
-  const executablePath = findChromiumExecutable();
+  const executablePath = findChromiumExecutable(chromium);
   const browser = await chromium.launch({
     headless: true,
     ...(executablePath ? { executablePath } : {}),
