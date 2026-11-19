@@ -94,13 +94,13 @@ export function TypographySpecimen() {
   return (
     <div className="not-prose my-8 space-y-6">
       {/* Top Banner: sonagi-graph Visual Consistency Validation */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 rounded-sm border-2 border-fd-border bg-fd-card/60 backdrop-blur-sm">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 rounded-[4px] border-2 border-fd-border bg-fd-card/60">
         <div className="flex items-center gap-2.5">
           <ShieldCheck className="size-5 text-brand-primary shrink-0" />
           <div>
             <div className="flex items-center gap-2">
               <span className="font-bold text-sm">Visual Consistency Graph 검증 통과</span>
-              <span className="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+              <span className="px-2 py-0.5 text-xs font-mono font-bold rounded bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
                 SCORE 97/100 PASS
               </span>
             </div>
@@ -109,7 +109,7 @@ export function TypographySpecimen() {
             </p>
           </div>
         </div>
-        <span className="text-[11px] font-mono text-fd-muted-foreground self-end sm:self-center">
+        <span className="text-xs font-mono text-fd-muted-foreground self-end sm:self-center">
           Figma Local Style 4종 SSOT 동기화 완료
         </span>
       </div>
@@ -119,7 +119,7 @@ export function TypographySpecimen() {
         {typographyScales.map((scale) => (
           <div
             key={scale.id}
-            className="p-5 sm:p-6 rounded-sm border-2 border-fd-border bg-fd-card hover:border-brand-primary/50 transition-all duration-200"
+            className="p-5 sm:p-6 rounded-[4px] border-2 border-fd-border bg-fd-card hover:border-brand-primary/50 transition-all duration-200"
           >
             {/* Header info row */}
             <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-fd-border/70">
@@ -127,22 +127,22 @@ export function TypographySpecimen() {
                 <span className="font-mono text-xs font-bold text-brand-primary">
                   {scale.name}
                 </span>
-                <span className="px-2 py-0.5 text-[10px] font-mono rounded bg-fd-muted text-fd-muted-foreground border border-fd-border">
+                <span className="px-2 py-0.5 text-xs font-mono rounded bg-fd-muted text-fd-muted-foreground border border-fd-border">
                   {scale.fontSize}
                 </span>
-                <span className="hidden sm:inline-flex px-2 py-0.5 text-[10px] font-mono rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20">
+                <span className="hidden sm:inline-flex px-2 py-0.5 text-xs font-mono rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20">
                   {scale.stemMetric}
                 </span>
               </div>
 
               <div className="flex items-center gap-2">
-                <code className="text-[11px] font-mono px-2 py-1 rounded bg-fd-muted text-fd-foreground border border-fd-border">
+                <code className="text-xs font-mono px-2 py-1 rounded bg-fd-muted text-fd-foreground border border-fd-border">
                   var({scale.cssVar})
                 </code>
                 <button
                   type="button"
                   onClick={() => handleCopy(scale.id, scale.cssVar)}
-                  className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-sm border border-fd-border hover:border-brand-primary hover:text-brand-primary transition-colors"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold rounded-[4px] border border-fd-border hover:border-brand-primary hover:text-brand-primary transition-colors"
                   title="CSS font-family 복사"
                 >
                   {copiedId === scale.id ? (
@@ -181,7 +181,7 @@ export function TypographySpecimen() {
             {/* Footer description & metrics */}
             <div className="mt-4 pt-3 border-t border-fd-border/50 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-fd-muted-foreground gap-2">
               <p>{scale.description}</p>
-              <span className="font-mono text-[11px] shrink-0 text-brand-primary/80">
+              <span className="font-mono text-xs shrink-0 text-brand-primary/80">
                 {scale.fontStack}
               </span>
             </div>

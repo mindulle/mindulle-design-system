@@ -281,7 +281,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
         );
       case 'ListItem':
         return (
-          <div className="w-full max-w-md border-2 border-fd-border rounded-md overflow-hidden bg-bg-surface">
+          <div className="w-full max-w-md border-2 border-fd-border rounded-[4px] overflow-hidden bg-bg-surface">
             <ListItem
               title="민들레 스튜디오 코어 패키지"
               description="@mindulle/tokens 및 @mindulle/ui 배포본"
@@ -341,7 +341,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
             <button
               type="button"
               aria-label="검색"
-              className="px-3 py-2 rounded-md border border-border-default bg-bg-surface text-text-primary text-sm"
+              className="px-3 py-2 rounded-[4px] border border-border-default bg-bg-surface text-text-primary text-sm"
             >
               검색 (호버)
             </button>
@@ -403,7 +403,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
   };
 
   return (
-    <div className="not-prose my-6 rounded-md border-2 border-fd-border bg-fd-card overflow-hidden">
+    <div className="not-prose my-6 rounded-[4px] border-2 border-fd-border bg-fd-card overflow-hidden">
       {/* Top Header / Bar */}
       <div className="flex items-center justify-between border-b-2 border-fd-border bg-fd-muted/50 px-4 py-2 text-xs">
         <div className="flex items-center gap-2">
@@ -411,7 +411,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
             onClick={() => setActiveTab('preview')}
             className={`px-3 py-1 font-semibold rounded ${
               activeTab === 'preview'
-                ? 'bg-fd-background text-fd-foreground shadow-sm border border-fd-border'
+                ? 'bg-fd-background text-fd-foreground border border-fd-border'
                 : 'text-fd-muted-foreground hover:text-fd-foreground'
             }`}
           >
@@ -421,7 +421,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
             onClick={() => setActiveTab('code')}
             className={`px-3 py-1 font-semibold rounded ${
               activeTab === 'code'
-                ? 'bg-fd-background text-fd-foreground shadow-sm border border-fd-border'
+                ? 'bg-fd-background text-fd-foreground border border-fd-border'
                 : 'text-fd-muted-foreground hover:text-fd-foreground'
             }`}
           >
@@ -434,7 +434,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
           <div className="flex items-center rounded border border-fd-border bg-fd-background p-0.5">
             <button
               onClick={() => setSandboxTheme('light')}
-              className={`px-2 py-0.5 rounded text-[11px] font-medium ${
+              className={`px-2 py-0.5 rounded text-xs font-medium ${
                 sandboxTheme === 'light' ? 'bg-brand-primary/15 text-brand-primary font-bold' : 'opacity-60'
               }`}
             >
@@ -442,7 +442,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
             </button>
             <button
               onClick={() => setSandboxTheme('dark')}
-              className={`px-2 py-0.5 rounded text-[11px] font-medium ${
+              className={`px-2 py-0.5 rounded text-xs font-medium ${
                 sandboxTheme === 'dark' ? 'bg-brand-primary/15 text-brand-primary font-bold' : 'opacity-60'
               }`}
             >
