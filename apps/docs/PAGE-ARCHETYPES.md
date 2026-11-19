@@ -78,14 +78,14 @@ Props는 전용 컴포넌트 없이 **마크다운 표**로 씁니다. 표 열 �
 
 ---
 
-## 3. 기존 페이지 분류 (35장)
+## 3. 기존 페이지 분류 (36장)
 
 | 아키타입 | 페이지                                                                                                        | 수  |
 | -------- | ------------------------------------------------------------------------------------------------------------- | --- |
 | A        | `index`                                                                                                       | 1   |
 | B        | `components/*` 전체                                                                                           | 22  |
 | C        | `foundations/colors`, `elevation`, `iconography`, `motifs`, `radius`, `spacing`, `typography`, `brand/assets` | 8   |
-| D        | `brand/index`, `brand/commercial-usage`, `portfolio/index`, `portfolio/visual-qa`                             | 4   |
+| D        | `brand/index`, `brand/commercial-usage`, `brand/publication-archetypes`, `portfolio/index`, `portfolio/visual-qa` | 5   |
 
 ### 정규화가 필요한 페이지
 
