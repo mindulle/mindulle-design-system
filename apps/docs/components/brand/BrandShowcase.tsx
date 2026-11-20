@@ -128,8 +128,8 @@ export function BrandShowcase() {
             <div
               className={`w-full min-h-[210px] rounded-lg border transition-all p-6 sm:p-8 flex flex-col items-center justify-center overflow-hidden ${
                 !isDark
-                  ? 'bg-[#FBF9F5] border-[#D6D3CD] text-[#161616]'
-                  : 'bg-[#12100E] border-[#383431] text-[#F7EEEC]'
+                  ? 'bg-paper border-paper-line text-ink'
+                  : 'bg-ink-deep border-ink-soft text-paper-soft'
               }`}
               style={{
                 boxShadow: '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
@@ -512,27 +512,27 @@ export function BrandShowcase() {
           <div
             className={`space-y-6 rounded-lg border p-5 transition-colors ${
               !isDark
-                ? 'bg-[#FBF9F5] border-[#D6D3CD] text-[#161616]'
-                : 'bg-[#12100E] border-[#383431] text-[#F7EEEC]'
+                ? 'bg-paper border-paper-line text-ink'
+                : 'bg-ink-deep border-ink-soft text-paper-soft'
             }`}
           >
             {/* Visual Bar Breakdown */}
             <div className="space-y-2">
               <div className="flex flex-wrap justify-between gap-2 text-xs font-mono">
-                <span className={`font-bold break-keep ${!isDark ? 'text-[#161616]' : 'text-[#F7EEEC]'}`}>
+                <span className={`font-bold break-keep ${!isDark ? 'text-ink' : 'text-paper-soft'}`}>
                   85% 신문 조판 그리드 &amp; 활판 인쇄
                 </span>
-                <span className={`font-bold break-keep ${!isDark ? 'text-[#9E5A03]' : 'text-[#FFC837]'}`}>
+                <span className={`font-bold break-keep ${!isDark ? 'text-brand-primary' : 'text-brand-primary'}`}>
                   15% 1도 보태니컬 에칭
                 </span>
               </div>
               <div
                 className={`w-full h-4 rounded-full overflow-hidden flex border ${
-                  !isDark ? 'border-[#D6D3CD]' : 'border-[#383431]'
+                  !isDark ? 'border-paper-line' : 'border-ink-soft'
                 }`}
               >
-                <div className={!isDark ? 'h-full bg-[#161616]' : 'h-full bg-[#E7E0D8]'} style={{ width: '85%' }} />
-                <div className={!isDark ? 'h-full bg-[#9E5A03]' : 'h-full bg-[#FFC837]'} style={{ width: '15%' }} />
+                <div className={!isDark ? 'h-full bg-ink' : 'h-full bg-ink-inverse'} style={{ width: '85%' }} />
+                <div className={!isDark ? 'h-full bg-brand-primary' : 'h-full bg-brand-primary'} style={{ width: '15%' }} />
               </div>
             </div>
 
@@ -540,20 +540,20 @@ export function BrandShowcase() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div
                 className={`p-4 rounded-lg border space-y-2 ${
-                  !isDark ? 'bg-white border-[#D6D3CD]' : 'bg-[#1A1715] border-[#383431]'
+                  !isDark ? 'bg-white border-paper-line' : 'bg-ink-panel border-ink-soft'
                 }`}
               >
                 <h4
                   className={`text-xs font-bold uppercase tracking-wider flex items-center gap-2 break-keep ${
-                    !isDark ? 'text-[#161616]' : 'text-[#F7EEEC]'
+                    !isDark ? 'text-ink' : 'text-paper-soft'
                   }`}
                 >
-                  <span className={`w-2 h-2 rounded-full shrink-0 ${!isDark ? 'bg-[#161616]' : 'bg-[#E7E0D8]'}`} />
+                  <span className={`w-2 h-2 rounded-full shrink-0 ${!isDark ? 'bg-ink' : 'bg-ink-inverse'}`} />
                   <span>85% 시스템 골격 (System Grid)</span>
                 </h4>
                 <ul
                   className={`text-xs space-y-1.5 list-disc list-inside break-keep ${
-                    !isDark ? 'text-[#57534E]' : 'text-[#D6CEC4]'
+                    !isDark ? 'text-ink-muted' : 'text-paper-line-dark'
                   }`}
                 >
                   <li>The True 2px Stem (정직한 2.0px 중심축 및 경계선)</li>
@@ -566,20 +566,20 @@ export function BrandShowcase() {
 
               <div
                 className={`p-4 rounded-lg border space-y-2 ${
-                  !isDark ? 'bg-white border-[#D6D3CD]' : 'bg-[#1A1715] border-[#383431]'
+                  !isDark ? 'bg-white border-paper-line' : 'bg-ink-panel border-ink-soft'
                 }`}
               >
                 <h4
                   className={`text-xs font-bold uppercase tracking-wider flex items-center gap-2 break-keep ${
-                    !isDark ? 'text-[#9E5A03]' : 'text-[#FFC837]'
+                    !isDark ? 'text-brand-primary' : 'text-brand-primary'
                   }`}
                 >
-                  <span className={`w-2 h-2 rounded-full shrink-0 ${!isDark ? 'bg-[#9E5A03]' : 'bg-[#FFC837]'}`} />
+                  <span className={`w-2 h-2 rounded-full shrink-0 ${!isDark ? 'bg-brand-primary' : 'bg-brand-primary'}`} />
                   <span>15% 그래픽 악센트 (Vitality Accent)</span>
                 </h4>
                 <ul
                   className={`text-xs space-y-1.5 list-disc list-inside break-keep ${
-                    !isDark ? 'text-[#57534E]' : 'text-[#D6CEC4]'
+                    !isDark ? 'text-ink-muted' : 'text-paper-line-dark'
                   }`}
                 >
                   <li>지면 구석에 작고 단정하게 얹히는 1도 선화 에칭</li>

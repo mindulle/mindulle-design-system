@@ -95,7 +95,7 @@ export function BrandAssetsGallery() {
             onClick={() => setPreviewTheme('light')}
             className={`px-2.5 py-1 rounded-md font-medium transition-colors break-keep ${
               !isDark
-                ? 'bg-[#9E5A03]/10 text-[#9E5A03] font-bold'
+                ? 'bg-brand-primary/10 text-brand-primary font-bold'
                 : 'text-fd-muted-foreground hover:text-fd-foreground'
             }`}
           >
@@ -106,7 +106,7 @@ export function BrandAssetsGallery() {
             onClick={() => setPreviewTheme('dark')}
             className={`px-2.5 py-1 rounded-md font-medium transition-colors break-keep ${
               isDark
-                ? 'bg-[#FFC837]/20 text-[#FFC837] font-bold'
+                ? 'bg-brand-primary/20 text-brand-primary font-bold'
                 : 'text-fd-muted-foreground hover:text-fd-foreground'
             }`}
           >
@@ -117,9 +117,9 @@ export function BrandAssetsGallery() {
         <a
           href="/brand-assets/mindulle-brand-kit-v0.1.0.zip"
           download="mindulle-brand-kit-v0.1.0.zip"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold border border-fd-border bg-fd-background text-fd-foreground hover:border-[#9E5A03] dark:hover:border-[#FFC837] transition-colors break-keep"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold border border-fd-border bg-fd-background text-fd-foreground hover:border-brand-primary transition-colors break-keep"
         >
-          <Package size={14} className="shrink-0 text-[#9E5A03] dark:text-[#FFC837]" />
+          <Package size={14} className="shrink-0 text-brand-primary dark:text-brand-primary" />
           <span>전체 브랜드 킷 (.zip)</span>
           <Download size={12} className="shrink-0 opacity-75" />
         </a>
@@ -154,7 +154,7 @@ export function BrandAssetsGallery() {
                     isSocial
                       ? 'w-full h-full'
                       : isDark && asset.id !== 'master-seal'
-                        ? 'bg-[#FBF9F5] p-3 rounded-lg border border-[#D6D3CD]'
+                        ? 'bg-paper p-3 rounded-lg border border-paper-line'
                         : 'w-full h-full'
                   }`}
                 >

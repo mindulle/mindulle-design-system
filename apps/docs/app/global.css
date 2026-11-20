@@ -41,6 +41,19 @@
   --radius-lg: var(--mds-radius-lg);
   --radius-xl: var(--mds-radius-xl);
   --font-sans: var(--mds-font-sans);
+  /* brand-book paper/ink palette: defined once here, used as utilities in the
+     brand specimens instead of inline hex classes (L-011) */
+  --color-paper: #fbf9f5;
+  --color-paper-line: #d6d3cd;
+  --color-paper-soft: #f7eeec;
+  --color-ink: #161616;
+  --color-ink-soft: #383431;
+  --color-ink-deep: #12100e;
+  --color-ink-panel: #1a1715;
+  --color-ink-inverse: #e7e0d8;
+  --color-ink-muted: #57534e;
+  --color-ink-on-dark: #f1f5f9;
+  --color-paper-line-dark: #d6cec4;
   --tracking-tight: var(--mds-letter-spacing-tight);
   --tracking-wide: var(--mds-letter-spacing-wide);
   --tracking-wider: var(--mds-letter-spacing-wider);

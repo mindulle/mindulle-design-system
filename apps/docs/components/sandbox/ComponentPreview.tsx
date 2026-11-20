@@ -468,13 +468,13 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
         <div
           data-theme={sandboxTheme}
           className={`min-h-[200px] flex items-center justify-center p-8 transition-colors ${
-            sandboxTheme === 'dark' ? 'bg-[#12151d] text-[#f1f5f9]' : 'bg-[#fbfbfa] text-[#18181b]'
+            sandboxTheme === 'dark' ? 'bg-night-950 text-ink-on-dark' : 'bg-bg-base text-ink'
           }`}
         >
           {renderComponent()}
         </div>
       ) : (
-        <div className="p-4 bg-[#12151d] text-emerald-400 font-mono text-xs overflow-x-auto leading-relaxed border-t border-fd-border">
+        <div className="p-4 bg-night-950 text-emerald-400 font-mono text-xs overflow-x-auto leading-relaxed border-t border-fd-border">
           <pre>{getCodeSnippet()}</pre>
         </div>
       )}
