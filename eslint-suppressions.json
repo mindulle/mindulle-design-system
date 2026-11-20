@@ -1,7 +1,7 @@
 {
   "apps/docs/app/errata/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 22
+      "count": 21
     }
   },
   "apps/docs/app/layout.config.tsx": {
@@ -11,17 +11,17 @@
   },
   "apps/docs/app/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 152
+      "count": 130
     }
   },
   "apps/docs/app/plates/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 12
+      "count": 11
     }
   },
   "apps/docs/app/rules/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 37
+      "count": 34
     }
   },
   "apps/docs/components/brand/BrandAssetsGallery.tsx": {
@@ -66,12 +66,12 @@
   },
   "apps/docs/components/specimen/PlatesCatalogue.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 79
+      "count": 69
     }
   },
   "apps/docs/components/specimen/SpecimenShell.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 52
+      "count": 47
     }
   },
   "apps/docs/components/tokens/ColorMatrix.tsx": {
