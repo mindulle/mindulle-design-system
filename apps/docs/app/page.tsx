@@ -195,23 +195,23 @@ export default function HomePage() {
             Specification
           </div>
           <dl className="m-0 mb-[26px]">
-            <dt className="text-xs-tight text-fd-muted-foreground mb-[3px]">Stem</dt>
+            <dt className="text-xs-tight text-fd-muted-foreground mb-1">Stem</dt>
             <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
               2px solid
             </dd>
-            <dt className="text-xs-tight text-fd-muted-foreground mb-[3px]">
+            <dt className="text-xs-tight text-fd-muted-foreground mb-1">
               Radius
             </dt>
             <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
               4px weathered
             </dd>
-            <dt className="text-xs-tight text-fd-muted-foreground mb-[3px]">
+            <dt className="text-xs-tight text-fd-muted-foreground mb-1">
               Baseline
             </dt>
             <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
               6px
             </dd>
-            <dt className="text-xs-tight text-fd-muted-foreground mb-[3px]">
+            <dt className="text-xs-tight text-fd-muted-foreground mb-1">
               Accent
             </dt>
             <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
@@ -264,7 +264,7 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
-              <b className="block text-xs-tight font-semibold mb-[3px]">유일한 채움면</b>
+              <b className="block text-xs-tight font-semibold mb-1">유일한 채움면</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 radius 4 · ink on paper
               </span>
@@ -281,7 +281,7 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
-              <b className="block text-xs-tight font-semibold mb-[3px]">되돌릴 수 있는 행동</b>
+              <b className="block text-xs-tight font-semibold mb-1">되돌릴 수 있는 행동</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 2px stem · no fill
               </span>
@@ -301,7 +301,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
-              <b className="block text-xs-tight font-semibold mb-[3px]">네 개의 의미 역할</b>
+              <b className="block text-xs-tight font-semibold mb-1">네 개의 의미 역할</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 ink · brand · accent · muted
               </span>
@@ -316,7 +316,7 @@ export default function HomePage() {
               <span className="font-cinematic text-[28px] leading-none">가Aa</span>
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
-              <b className="block text-xs-tight font-semibold mb-[3px]">전시 64 / 본문 14</b>
+              <b className="block text-xs-tight font-semibold mb-1">전시 64 / 본문 14</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 serif display · sans UI
               </span>

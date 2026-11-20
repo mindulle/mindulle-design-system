@@ -136,7 +136,7 @@ export function BrandShowcase() {
               }}
             >
               {/* Top Double Hairline */}
-              <div className="w-full flex flex-col gap-[3px]" aria-hidden="true">
+              <div className="w-full flex flex-col gap-1" aria-hidden="true">
                 <div
                   className="w-full h-[2px]"
                   style={{ backgroundColor: !isDark ? '#161616' : '#F7EEEC' }}
@@ -203,7 +203,7 @@ export function BrandShowcase() {
               </div>
 
               {/* Bottom Double Hairline */}
-              <div className="w-full flex flex-col gap-[3px] mt-5" aria-hidden="true">
+              <div className="w-full flex flex-col gap-1 mt-5" aria-hidden="true">
                 <div
                   className="w-full h-[1px]"
                   style={{ backgroundColor: !isDark ? '#D6D3CD' : '#383431' }}
