@@ -199,7 +199,24 @@ export async function fileFindings(findings, runDir, report, { dryRun = false } 
     errors: [],
   };
 
-  if (findings.length === 0) return summary;
+  const apiKey = planeApiKey();
+  if (!apiKey) {
+    return { ...summary, enabled: false, reason: 'PLANE_API_KEY is not set' };
+  }
+
+  if (findings.length === 0) {
+    // A clean run still proves the credential works, so a silently expired
+    // token cannot hide behind zero violations.
+    if (!dryRun) {
+      try {
+        await planeJson(`${planeV1()}/labels/`, { apiKey });
+        summary.checked = true;
+      } catch (error) {
+        summary.errors.push(`plane check: ${error.message}`);
+      }
+    }
+    return summary;
+  }
 
   const groups = groupFindings(findings);
   summary.groups = groups.length;
@@ -212,11 +229,6 @@ export async function fileFindings(findings, runDir, report, { dryRun = false } 
       attachments: [...group.screenshots],
     }));
     return summary;
-  }
-
-  const apiKey = planeApiKey();
-  if (!apiKey) {
-    return { ...summary, enabled: false, reason: 'PLANE_API_KEY is not set' };
   }
 
   try {
