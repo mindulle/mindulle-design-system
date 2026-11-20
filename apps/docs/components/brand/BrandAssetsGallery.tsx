@@ -86,7 +86,7 @@ export function BrandAssetsGallery() {
   };
 
   return (
-    <div className="w-full my-8 rounded-xl border border-fd-border bg-fd-card overflow-hidden not-prose">
+    <div data-audit-block="specimen" className="w-full my-8 rounded-xl border border-fd-border bg-fd-card overflow-hidden not-prose">
       {/* Toolbar */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-fd-border bg-fd-muted/30 px-4 py-3">
         <div className="flex items-center rounded-lg border border-fd-border bg-fd-background p-0.5 text-xs">

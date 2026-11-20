@@ -92,7 +92,7 @@ export function TypographySpecimen() {
   };
 
   return (
-    <div className="not-prose my-8 space-y-6">
+    <div data-audit-block="specimen" className="not-prose my-8 space-y-6">
       {/* Top Banner: sonagi-graph Visual Consistency Validation */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 rounded-[4px] border-2 border-fd-border bg-fd-card/60">
         <div className="flex items-center gap-2.5">

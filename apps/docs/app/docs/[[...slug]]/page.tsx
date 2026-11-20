@@ -62,5 +62,8 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: page.data.title,
     description: page.data.description,
+    other: {
+      'mds-archetype': page.data.archetype,
+    },
   };
 }

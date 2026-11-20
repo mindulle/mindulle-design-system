@@ -32,7 +32,7 @@ export function IconGalleryViewer() {
   };
 
   return (
-    <div className="my-6 space-y-4">
+    <div data-audit-block="specimen" className="my-6 space-y-4">
       {/* Search Input */}
       <div className="relative">
         <input

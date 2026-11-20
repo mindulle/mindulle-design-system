@@ -79,7 +79,7 @@ export function ColorMatrix() {
   };
 
   return (
-    <div className="not-prose my-6 overflow-hidden rounded-md border-2 border-fd-border bg-fd-card">
+    <div data-audit-block="specimen" className="not-prose my-6 overflow-hidden rounded-md border-2 border-fd-border bg-fd-card">
       <div className="px-4 py-3 bg-fd-muted/40 border-b-2 border-fd-border flex items-center justify-between">
         <div>
           <h4 className="font-bold text-sm">W3C Semantic Colors Matrix</h4>

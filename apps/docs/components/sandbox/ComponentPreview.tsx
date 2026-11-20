@@ -403,7 +403,7 @@ export function ComponentPreview({ name, defaultProps = {} }: ComponentPreviewPr
   };
 
   return (
-    <div className="not-prose my-6 rounded-[4px] border-2 border-fd-border bg-fd-card overflow-hidden">
+    <div data-audit-block="preview" className="not-prose my-6 rounded-[4px] border-2 border-fd-border bg-fd-card overflow-hidden">
       {/* Top Header / Bar */}
       <div className="flex items-center justify-between border-b-2 border-fd-border bg-fd-muted/50 px-4 py-2 text-xs">
         <div className="flex items-center gap-2">

@@ -18,7 +18,7 @@ export function BrandShowcase() {
   const isDark = previewTheme === 'dark';
 
   return (
-    <div className="w-full my-8 rounded-xl border border-fd-border bg-fd-card overflow-hidden not-prose">
+    <div data-audit-block="specimen" className="w-full my-8 rounded-xl border border-fd-border bg-fd-card overflow-hidden not-prose">
       {/* 1. Header Toolbar */}
       <div className="flex flex-wrap items-center justify-between border-b border-fd-border bg-fd-muted/30 px-4 py-3 gap-2">
         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">

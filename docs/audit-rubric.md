@@ -55,15 +55,15 @@ Plane 이슈 **MDS #61**의 판정 정본입니다. 배포된 화면이 민들�
 
 모든 항목은 `PASS` / `FAIL` 이진 판정입니다. `FAIL`에는 화면 좌표와 근거 1문장을 붙입니다.
 
-| ID  | 규칙                                                                   | 판정 방식                 | v1                  |
-| --- | ---------------------------------------------------------------------- | ------------------------- | ------------------- |
-| R1  | 소프트 섀도우·글로우 금지. 깊이는 보더와 surface 단차로만              | 결정론 (`box-shadow`)     | ✅                  |
-| R2  | 포인트 컬러·그래픽 면적 15% 이하, 85%는 지면 골격                      | 결정론 (픽셀 히스토그램)  | ✅                  |
-| R3  | 레거시 브랜드 잔재 금지 (`SONAGI` 스텐실, 틸-블루 `#1991B9`)           | 결정론 (DOM 텍스트·색)    | ✅                  |
-| R4  | 테마 위계 보존. 순수 흑/백 남용 없음, Base→Surface→Elevated 단차 유지  | 결정론 (해석된 토큰 대조) | ✅                  |
-| R5  | A. Landing: Hero → 시작 단계 → 링크 카드. 프리뷰·Props 표 금지         | 결정론 (DOM 순서)         | ⚠️ 셀렉터 계약 필요 |
-| R6  | B. Component: 라이브 프리뷰 최상단, 섹션 순서 고정, 스크린샷 대체 금지 | 결정론 (DOM 순서)         | ⚠️ 셀렉터 계약 필요 |
-| R7  | C/D: 표본과 산문의 역할 분리. Props 표가 Guide에 침범 금지             | 결정론 (DOM)              | ⚠️ 셀렉터 계약 필요 |
+| ID  | 규칙                                                                   | 판정 방식                 | v1  |
+| --- | ---------------------------------------------------------------------- | ------------------------- | --- |
+| R1  | 소프트 섀도우·글로우 금지. 깊이는 보더와 surface 단차로만              | 결정론 (`box-shadow`)     | ✅  |
+| R2  | 포인트 컬러·그래픽 면적 15% 이하, 85%는 지면 골격                      | 결정론 (픽셀 히스토그램)  | ✅  |
+| R3  | 레거시 브랜드 잔재 금지 (`SONAGI` 스텐실, 틸-블루 `#1991B9`)           | 결정론 (DOM 텍스트·색)    | ✅  |
+| R4  | 테마 위계 보존. 순수 흑/백 남용 없음, Base→Surface→Elevated 단차 유지  | 결정론 (해석된 토큰 대조) | ✅  |
+| R5  | A. Landing: Hero → 시작 단계 → 링크 카드. 프리뷰·Props 표 금지         | 결정론 (DOM 구조)         | ✅  |
+| R6  | B. Component: 라이브 프리뷰 최상단, 섹션 순서 고정, 스크린샷 대체 금지 | 결정론 (DOM 구조)         | ✅  |
+| R7  | C/D: 표본과 산문의 역할 분리. Props 표가 Guide에 침범 금지             | 결정론 (DOM 구조)         | ✅  |
 
 ### R1 — 소프트 섀도우 금지 (ADR-0003, ADR-0013)
 
@@ -90,6 +90,18 @@ Plane 이슈 **MDS #61**의 판정 정본입니다. 배포된 화면이 민들�
 - 순수 `#000000` / `#ffffff`는 **팔레트에 있을 때만** 허용합니다. 라이트 테마의 surface는 실제로 `#ffffff`이므로, "흰색 금지"가 아니라 "토큰 밖 흰색 금지"입니다.
 - 반투명 배경(`/20` 오버레이 등)은 합성 결과가 토큰이 아니므로 팔레트 검사에서 제외합니다.
 - `data-surface="editorial"` 구역은 paper 팔레트가 팔레트 집합에 포함되어 있으므로 별도 분기가 필요 없습니다.
+
+### R5~R7 — 구조 계약
+
+페이지는 `<meta name="mds-archetype">`로 아키타입을 선언하고, 구조 블록은 `data-audit-block`으로 표시합니다. 검사 범위는 `article .prose`이며, Fumadocs 페이지네이션은 제외합니다. 클래스명에 의존하지 않습니다.
+
+| 규칙 | 검사                                                                                                                                 |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| R5   | `preview` 0개, Props 표 0개, 단계 목록(`ol` 또는 번호 h2 2개 이상), 내부 `/docs` 링크 1개 이상                                       |
+| R6   | `preview` 1개 이상, Props 표 존재, 프리뷰가 Props 표보다 위, 프리뷰 내부 `img` 0개, 섹션 순서 Props → 사용 규칙 → 접근성 → 변경 이력 |
+| R7   | foundation: `specimen` 1개 이상. guide: Props 표·토큰 표 0개                                                                         |
+
+표 판별은 헤더 텍스트로 합니다. Props 표는 `Prop`+`Type`, 토큰 표는 `토큰`+`값`(또는 `Token`+`Value`)입니다.
 
 ## 4. 수치 상수
 
@@ -236,7 +248,7 @@ VLM Pairwise Judge는 2단계이며, **결정론 필터를 통과한 화면에�
 | ---------- | ---------------------------------------------------------------- |
 | 스크립트   | `apps/docs/scripts/design-audit.mjs`                             |
 | 실행       | `pnpm --filter @mindulle/docs audit:design`                      |
-| 규칙       | R1~R4 결정론. R2는 스크린샷 픽셀 히스토그램                      |
+| 규칙       | R1~R7 결정론. R2는 스크린샷 픽셀 히스토그램, R5~R7은 구조 계약   |
 | 출력       | `apps/docs/tests/audit-runs/<run>/report.json` (gitignore)       |
 | 차단       | 기본 advisory. `--fail-on-violations` 또는 `audit:design:strict` |
 | Plane 발행 | 미구현 (저장소·자격증명 미정)                                    |
@@ -244,6 +256,8 @@ VLM Pairwise Judge는 2단계이며, **결정론 필터를 통과한 화면에�
 **첫 실행 결과**: 32 캡처, 위반 4건 (R1 4 / R2 0 / R3 0 / R4 0), 최대 액센트 면적 0.93%.
 
 R1 4건은 모두 `/docs/brand`의 `BrandShowcase` 라이브 프리뷰 컨테이너였습니다. 인라인 `box-shadow: 0 4px 20px -2px rgba(0,0,0,0.06)`를 제거하고(elevation은 border와 surface 단차로 대체) 재실행해 **0건**을 확인했습니다. 시각 회귀 베이스라인은 임계값 이내라 갱신하지 않았습니다.
+
+R5~R7 계약을 붙인 뒤 `/docs`(landing)에서 **다음에 볼 내부 링크 0건**이 잡혔습니다. `PAGE-ARCHETYPES.md` A의 필수 순서를 위반한 상태이며, 콘텐츠 수정 전이라 advisory로 남겨 둡니다.
 
 ## 7. 결과와 중복 방지
 
@@ -282,7 +296,6 @@ screenshot_url
 | `audit_runs` / `audit_findings` 저장소  | 미정 — Postgres 신설 vs llmops SQLite 마트 |
 | `cdn.sonagi.space` 업로드 경로·자격증명 | 미정                                       |
 | VLM 비용                                | 32조합 기준 재계산 필요                    |
-| R5~R7 DOM 셀렉터 계약                   | `data-audit-*` 속성 부여 필요              |
 | 실행 주체                               | GitHub Actions cron vs sonagi-ops 루틴     |
 | 표본 지면 디스플레이 스케일             | 56/78 등 미결정 — 결정 후 §4.5 기준선 축소 |
 
@@ -340,3 +353,13 @@ screenshot_url
   "dedupHash": "sha1(route + '|' + ruleId + '|' + theme)"
 }
 ```
+
+## 부록 B. 구조 셀렉터 계약
+
+| 속성                          | 위치                                                                                                 | 값                      |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------- |
+| `<meta name="mds-archetype">` | `generateMetadata().other` (`apps/docs/app/docs/[[...slug]]/page.tsx`)                               | frontmatter `archetype` |
+| `data-audit-block="preview"`  | `ComponentPreview` 루트                                                                              | —                       |
+| `data-audit-block="specimen"` | `ColorMatrix`, `TypographySpecimen`, `IconGalleryViewer`, `BrandAssetsGallery`, `BrandShowcase` 루트 | —                       |
+
+새 시각 블록을 추가하면 루트에 `data-audit-block="specimen"`을 붙입니다. 붙이지 않으면 R7이 "표본 없음"으로 판정합니다.

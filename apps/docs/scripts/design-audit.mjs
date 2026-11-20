@@ -199,7 +199,6 @@ function collectDomEvidence() {
     surface: toColor(cssVar('--mds-color-background-surface')),
     elevated: toColor(cssVar('--mds-color-background-elevated')),
   };
-
   const shadows = [];
   const backgroundDeviations = [];
   const legacyHits = [];
@@ -253,12 +252,44 @@ function collectDomEvidence() {
     }
   }
 
+  // R5-R7: every docs page declares its archetype on a wrapper and marks
+  // structural blocks, so the audit never depends on CSS class names.
+  const archetypeMeta = document.querySelector('meta[name="mds-archetype"]');
+  // Scope to the MDX prose container so Fumadocs pagination and chrome never
+  // satisfy an archetype rule on the author's behalf.
+  const scope =
+    document.querySelector('article .prose') ??
+    document.querySelector('article') ??
+    document.body;
+  const offsetTop = (el) => el.getBoundingClientRect().top + window.scrollY;
+  const previewEls = [...scope.querySelectorAll('[data-audit-block="preview"]')];
+  const structure = {
+    archetype: archetypeMeta?.getAttribute('content') ?? null,
+    previews: previewEls.length,
+    previewImages: previewEls.reduce((count, el) => count + el.querySelectorAll('img').length, 0),
+    previewTop: previewEls.length > 0 ? offsetTop(previewEls[0]) : null,
+    specimens: scope.querySelectorAll('[data-audit-block="specimen"]').length,
+    orderedLists: scope.querySelectorAll('ol').length,
+    docsLinks: scope.querySelectorAll('a[href^="/docs"]').length,
+    headings: [...scope.querySelectorAll('h2, h3')].map((heading) => ({
+      text: (heading.textContent || '').trim().slice(0, 80),
+      top: offsetTop(heading),
+    })),
+    tables: [...scope.querySelectorAll('table')].map((table) => ({
+      headers: [...table.querySelectorAll('thead th')].map((cell) =>
+        (cell.textContent || '').trim().toLowerCase()
+      ),
+      top: offsetTop(table),
+    })),
+  };
+
   return {
     layers,
     paletteSize: palette.size,
     shadows,
     backgroundDeviations,
     legacyHits,
+    structure,
     stats: { painted, shellShadows },
   };
 }
@@ -330,7 +361,7 @@ async function main() {
   const findings = [];
   const captures = [];
   const accentByTarget = [];
-  const ruleCounts = { R1: 0, R2: 0, R3: 0, R4: 0 };
+  const ruleCounts = { R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, R6: 0, R7: 0 };
   let violationCount = 0;
 
   const record = (rule, target, viewport, theme, evidence) => {
@@ -446,6 +477,90 @@ async function main() {
             });
           }
 
+          // R5-R7 — archetype structure contracts.
+          const structure = dom.structure;
+          let structureFailures = 0;
+          const propsTable = structure.tables.find(
+            (table) => table.headers.includes('prop') && table.headers.includes('type')
+          );
+          const tokenTable = structure.tables.find(
+            (table) =>
+              (table.headers.includes('토큰') && table.headers.includes('값')) ||
+              (table.headers.includes('token') && table.headers.includes('value'))
+          );
+          const headingTop = (pattern) =>
+            structure.headings.find((heading) => pattern.test(heading.text))?.top ?? null;
+          const sectionTops = [
+            headingTop(/^props\b/i),
+            headingTop(/사용\s*규칙|do\s*\/?\s*don/i),
+            headingTop(/접근성|accessibility/i),
+            headingTop(/변경\s*이력|changelog/i),
+          ].filter((value) => value !== null);
+          const sectionOrdered = sectionTops.every(
+            (top, index) => index === 0 || top > sectionTops[index - 1]
+          );
+          const numberedHeadings = structure.headings.filter((heading) =>
+            /^\d+[.)]\s/.test(heading.text)
+          ).length;
+          const hasSteps = structure.orderedLists > 0 || numberedHeadings >= 2;
+          const structureEvidence = {
+            archetype: structure.archetype,
+            previews: structure.previews,
+            preview_images: structure.previewImages,
+            specimens: structure.specimens,
+            ordered_lists: structure.orderedLists,
+            numbered_headings: numberedHeadings,
+            docs_links: structure.docsLinks,
+            props_table: Boolean(propsTable),
+            token_table: Boolean(tokenTable),
+            section_ordered: sectionOrdered,
+          };
+
+          if (structure.archetype === 'landing') {
+            const problems = [];
+            if (structure.previews > 0) problems.push('preview block is forbidden on landing');
+            if (propsTable) problems.push('props table is forbidden on landing');
+            if (!hasSteps) problems.push('missing step list (ol or numbered h2 headings)');
+            if (structure.docsLinks === 0) problems.push('missing next-step docs link');
+            if (problems.length > 0) {
+              structureFailures++;
+              record('R5', target, viewportName, theme, { problems, ...structureEvidence });
+            }
+          }
+
+          if (structure.archetype === 'component') {
+            const problems = [];
+            if (structure.previews === 0) problems.push('missing live preview');
+            if (!propsTable) problems.push('missing props table');
+            if (structure.previews > 0 && propsTable && structure.previewTop > propsTable.top) {
+              problems.push('props table precedes the preview');
+            }
+            if (structure.previewImages > 0) problems.push('preview replaced by an image');
+            if (!sectionOrdered)
+              problems.push('section order broken (props → rules → a11y → history)');
+            if (problems.length > 0) {
+              structureFailures++;
+              record('R6', target, viewportName, theme, { problems, ...structureEvidence });
+            }
+          }
+
+          if (structure.archetype === 'foundation' || structure.archetype === 'guide') {
+            const problems = [];
+            if (structure.archetype === 'foundation' && structure.specimens === 0) {
+              problems.push('missing visual specimen');
+            }
+            if (structure.archetype === 'guide' && propsTable) {
+              problems.push('props table belongs on a component page');
+            }
+            if (structure.archetype === 'guide' && tokenTable) {
+              problems.push('token spec table belongs on a foundation page');
+            }
+            if (problems.length > 0) {
+              structureFailures++;
+              record('R7', target, viewportName, theme, { problems, ...structureEvidence });
+            }
+          }
+
           captures.push(capture);
           const marks = [
             badShadows.length ? `R1:${badShadows.length}` : '',
@@ -453,6 +568,7 @@ async function main() {
             dom.backgroundDeviations.length || layersCollapsed
               ? `R4:${dom.backgroundDeviations.length}${layersCollapsed ? '/collapsed' : ''}`
               : '',
+            structureFailures > 0 ? `R5-7:${structureFailures}` : '',
           ].filter(Boolean);
           console.log(
             `[${marks.length ? 'FAIL' : 'PASS'}] ${file}${marks.length ? ` — ${marks.join(' ')}` : ''}`
@@ -502,7 +618,9 @@ async function main() {
   console.log('');
   console.log(`captures: ${captures.length}`);
   console.log(
-    `violations: ${violationCount} (R1 ${ruleCounts.R1} / R2 ${ruleCounts.R2} / R3 ${ruleCounts.R3} / R4 ${ruleCounts.R4})`
+    `violations: ${violationCount} (${Object.entries(ruleCounts)
+      .map(([rule, count]) => `${rule} ${count}`)
+      .join(' / ')})`
   );
   if (worstAccent) {
     console.log(
