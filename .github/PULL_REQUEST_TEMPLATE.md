@@ -5,9 +5,13 @@
 
 ## 🔗 Plane
 
-<!-- 조인 키. 모르면 Backlog에서 찾아 적는다. 임의로 만들지 말 것. -->
+<!--
+  대괄호 필수: Plane이 이 형식만 PR 상태 자동화(열림/머지)로 인식한다.
+  제목은 conventional commits를 지키고, 자동화는 이 줄이 담당한다.
+  모르면 Backlog에서 찾아 적는다. 임의 번호를 만들지 말 것.
+-->
 
-Plane: MDS-
+Plane: [MDS-00]
 
 ## 📌 Description
 
