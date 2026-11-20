@@ -70,6 +70,9 @@ function sha1(value) {
 }
 
 function currentCommit() {
+  // CI containers may run git as a different user than the checkout owner.
+  const fromEnv = process.env.GITHUB_SHA?.slice(0, 7);
+  if (fromEnv) return fromEnv;
   try {
     return execFileSync('git', ['rev-parse', '--short', 'HEAD'], { cwd: REPO_DIR })
       .toString()
