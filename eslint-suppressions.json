@@ -11,7 +11,7 @@
   },
   "apps/docs/app/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 92
+      "count": 64
     }
   },
   "apps/docs/app/plates/page.tsx": {
@@ -21,7 +21,7 @@
   },
   "apps/docs/app/rules/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 29
+      "count": 28
     }
   },
   "apps/docs/components/brand/BrandShowcase.tsx": {
@@ -56,7 +56,7 @@
   },
   "apps/docs/components/specimen/SpecimenShell.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 41
+      "count": 35
     }
   },
   "apps/docs/components/tokens/TypographySpecimen.tsx": {
