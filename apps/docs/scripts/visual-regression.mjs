@@ -11,6 +11,8 @@ const BASELINE_DIR = path.join(DOCS_DIR, 'tests', 'visual-baselines');
 const DIFF_DIR = path.join(DOCS_DIR, 'tests', 'visual-diffs');
 
 const UPDATE = process.env.UPDATE_BASELINES === '1' || process.argv.includes('--update');
+// Baselines are generated inside mcr.microsoft.com/playwright (pinned OS +
+// browser), so both sides rasterize text the same way. Keep this strict.
 const MAX_DIFF_RATIO = Number(process.env.VISUAL_MAX_DIFF_RATIO ?? '0.005');
 
 const TARGET_PAGES = [
@@ -134,16 +136,40 @@ async function comparePngBuffers(page, baselineBuf, currentBuf) {
 
       const dataA = getData(imgA);
       const dataB = getData(imgB);
-      let diffPixels = 0;
       const totalPixels = width * height;
+      const TOLERANCE = 16;
 
-      for (let i = 0; i < dataA.length; i += 4) {
-        const dr = Math.abs(dataA[i] - dataB[i]);
-        const dg = Math.abs(dataA[i + 1] - dataB[i + 1]);
-        const db = Math.abs(dataA[i + 2] - dataB[i + 2]);
-        const da = Math.abs(dataA[i + 3] - dataB[i + 3]);
-        if (dr + dg + db + da > 16) {
-          diffPixels++;
+      const channelDelta = (i, j) =>
+        Math.abs(dataA[i] - dataB[j]) +
+        Math.abs(dataA[i + 1] - dataB[j + 1]) +
+        Math.abs(dataA[i + 2] - dataB[j + 2]) +
+        Math.abs(dataA[i + 3] - dataB[j + 3]);
+
+      const mask = new Uint8Array(totalPixels);
+      for (let p = 0; p < totalPixels; p++) {
+        if (channelDelta(p * 4, p * 4) > TOLERANCE) mask[p] = 1;
+      }
+
+      // Font rasterization shifts glyph edges by up to 1px between machines.
+      // A pixel that matches any neighbour in the other image is antialiasing,
+      // not a visual change, so it must not fail the gate.
+      let diffPixels = 0;
+      for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+          const p = y * width + x;
+          if (!mask[p]) continue;
+
+          const i = p * 4;
+          let matched = false;
+          for (let dy = -1; dy <= 1 && !matched; dy++) {
+            for (let dx = -1; dx <= 1 && !matched; dx++) {
+              const nx = x + dx;
+              const ny = y + dy;
+              if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
+              if (channelDelta(i, (ny * width + nx) * 4) <= TOLERANCE) matched = true;
+            }
+          }
+          if (!matched) diffPixels++;
         }
       }
 
@@ -171,7 +197,15 @@ async function main() {
   const browser = await chromium.launch({
     headless: true,
     ...(executablePath ? { executablePath } : {}),
-    args: ['--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage'],
+    args: [
+      '--no-sandbox',
+      '--disable-gpu',
+      '--disable-dev-shm-usage',
+      // Normalize text rasterization so local and CI renders agree.
+      '--font-render-hinting=none',
+      '--disable-lcd-text',
+      '--force-color-profile=srgb',
+    ],
     env: {
       ...process.env,
       HOME: process.env.HOME && process.env.HOME !== '/' ? process.env.HOME : '/tmp',
@@ -181,6 +215,7 @@ async function main() {
   });
 
   let failures = 0;
+  const report = [];
   try {
     for (const vp of VIEWPORTS) {
       const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
@@ -203,7 +238,12 @@ async function main() {
 
           const filename = `${target.name}-${vp.name}-${theme}.png`;
           const baselinePath = path.join(BASELINE_DIR, filename);
-          const currentBuf = await page.screenshot({ fullPage: true });
+          const currentBuf = await page.screenshot({
+            fullPage: true,
+            animations: 'disabled',
+            caret: 'hide',
+            scale: 'css',
+          });
 
           if (UPDATE) {
             fs.writeFileSync(baselinePath, currentBuf);
@@ -212,6 +252,9 @@ async function main() {
           }
 
           if (!fs.existsSync(baselinePath)) {
+            fs.mkdirSync(DIFF_DIR, { recursive: true });
+            fs.writeFileSync(path.join(DIFF_DIR, filename), currentBuf);
+            report.push({ file: filename, status: 'MISSING BASELINE', diff: null });
             console.error(`[MISSING BASELINE] ${filename} (run "pnpm --filter @mindulle/docs test:visual:update")`);
             failures++;
             continue;
@@ -224,6 +267,11 @@ async function main() {
           if (result.sizeMismatch || result.diffRatio > MAX_DIFF_RATIO) {
             fs.mkdirSync(DIFF_DIR, { recursive: true });
             fs.writeFileSync(path.join(DIFF_DIR, filename), currentBuf);
+            report.push({
+              file: filename,
+              status: result.sizeMismatch ? 'SIZE MISMATCH' : 'DIFF',
+              diff: pct,
+            });
             console.error(`[FAIL] ${filename} — diff=${pct}% (max ${(MAX_DIFF_RATIO * 100).toFixed(2)}%)`);
             failures++;
           } else {
@@ -240,6 +288,21 @@ async function main() {
   }
 
   if (failures > 0) {
+    fs.mkdirSync(DIFF_DIR, { recursive: true });
+    const lines = [
+      `# Visual regression failures (${failures}/${report.length})`,
+      '',
+      `threshold: ${(MAX_DIFF_RATIO * 100).toFixed(2)}%`,
+      '',
+      '| file | status | diff % |',
+      '| --- | --- | --- |',
+      ...report.map((r) => `| ${r.file} | ${r.status} | ${r.diff ?? '-'} |`),
+      '',
+      '`visual-diffs/*.png` are the CURRENT screenshots, not rendered diffs.',
+      'Compare them against `tests/visual-baselines/`.',
+    ];
+    fs.writeFileSync(path.join(DIFF_DIR, 'report.md'), lines.join('\n') + '\n');
+    console.error(`[REPORT] ${path.join(DIFF_DIR, 'report.md')}`);
     process.exit(1);
   }
 }
