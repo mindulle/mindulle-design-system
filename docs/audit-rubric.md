@@ -257,7 +257,7 @@ VLM Pairwise Judge는 2단계이며, **결정론 필터를 통과한 화면에�
 
 R1 4건은 모두 `/docs/brand`의 `BrandShowcase` 라이브 프리뷰 컨테이너였습니다. 인라인 `box-shadow: 0 4px 20px -2px rgba(0,0,0,0.06)`를 제거하고(elevation은 border와 surface 단차로 대체) 재실행해 **0건**을 확인했습니다. 시각 회귀 베이스라인은 임계값 이내라 갱신하지 않았습니다.
 
-R5~R7 계약을 붙인 뒤 `/docs`(landing)에서 **다음에 볼 내부 링크 0건**이 잡혔습니다. `PAGE-ARCHETYPES.md` A의 필수 순서를 위반한 상태이며, 콘텐츠 수정 전이라 advisory로 남겨 둡니다.
+R5~R7 계약을 붙인 뒤 `/docs`(landing)에서 **다음에 볼 내부 링크 0건**이 잡혔습니다. `PAGE-ARCHETYPES.md` A의 필수 순서 위반이라 `Cards` 블록 3개를 추가해 해소했고, `archetype-a-landing` 베이스라인 4장을 갱신했습니다.
 
 ## 7. 결과와 중복 방지
 
