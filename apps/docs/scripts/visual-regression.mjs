@@ -11,7 +11,11 @@ const BASELINE_DIR = path.join(DOCS_DIR, 'tests', 'visual-baselines');
 const DIFF_DIR = path.join(DOCS_DIR, 'tests', 'visual-diffs');
 
 const UPDATE = process.env.UPDATE_BASELINES === '1' || process.argv.includes('--update');
-const MAX_DIFF_RATIO = Number(process.env.VISUAL_MAX_DIFF_RATIO ?? '0.005');
+// Noise floor: with self-hosted fonts, no animations and 1px shift tolerance,
+// the same build measures ~0.85% between local and CI because of glyph
+// rasterization. Real drift observed on this repo has been 2.4%+ (layout or
+// colour change), so the gate sits above the noise and below real regressions.
+const MAX_DIFF_RATIO = Number(process.env.VISUAL_MAX_DIFF_RATIO ?? '0.015');
 
 const TARGET_PAGES = [
   { name: 'specimen-cover', route: '/' },
