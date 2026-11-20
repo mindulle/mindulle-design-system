@@ -11,7 +11,7 @@
   },
   "apps/docs/app/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 100
+      "count": 92
     }
   },
   "apps/docs/app/plates/page.tsx": {
@@ -26,7 +26,7 @@
   },
   "apps/docs/components/brand/BrandShowcase.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 8
+      "count": 6
     }
   },
   "apps/docs/components/landing/HeroVisual.tsx": {
