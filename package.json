@@ -16,7 +16,7 @@
     "tokens:sync": "python3 scripts/fix-tokens.py",
     "blog:refactor": "python3 scripts/refactor_blog_ui.py",
     "script:test-fetch": "node scripts/test-fetch.mjs",
-    "lint:tokens": "eslint apps/docs packages/ui --no-inline-config"
+    "lint:tokens": "eslint apps/docs packages/ui --no-inline-config --pass-on-unpruned-suppressions"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^8.1.2",

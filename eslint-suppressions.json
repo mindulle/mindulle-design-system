@@ -39,16 +39,6 @@
       "count": 2
     }
   },
-  "apps/docs/components/landing/InteractiveShowcase.tsx": {
-    "tailwindcss/no-arbitrary-value": {
-      "count": 1
-    }
-  },
-  "apps/docs/components/landing/MotifShowcase.tsx": {
-    "tailwindcss/no-arbitrary-value": {
-      "count": 3
-    }
-  },
   "apps/docs/components/sandbox/ComponentPreview.tsx": {
     "tailwindcss/no-arbitrary-value": {
       "count": 11
@@ -72,16 +62,6 @@
   "apps/docs/components/specimen/SpecimenShell.tsx": {
     "tailwindcss/no-arbitrary-value": {
       "count": 47
-    }
-  },
-  "apps/docs/components/tokens/ColorMatrix.tsx": {
-    "tailwindcss/no-arbitrary-value": {
-      "count": 6
-    }
-  },
-  "apps/docs/components/tokens/IconGalleryViewer.tsx": {
-    "tailwindcss/no-arbitrary-value": {
-      "count": 1
     }
   },
   "apps/docs/components/tokens/TypographySpecimen.tsx": {
