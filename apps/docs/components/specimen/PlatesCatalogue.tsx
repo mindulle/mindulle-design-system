@@ -32,7 +32,7 @@ export function PlatesCatalogue() {
         </div>
         <div className="p-4 flex-1 flex flex-col justify-between gap-2">
           <div>
-            <b className="block text-[13.5px] font-semibold mb-1">유일한 채움면</b>
+            <b className="block text-sm-tight font-semibold mb-1">유일한 채움면</b>
             <span className="font-mono text-3xs text-[var(--color-fd-muted-foreground)]">
               Button · variant=&quot;primary&quot; · radius 4
             </span>
@@ -63,7 +63,7 @@ export function PlatesCatalogue() {
         </div>
         <div className="p-4 flex-1 flex flex-col justify-between gap-2">
           <div>
-            <b className="block text-[13.5px] font-semibold mb-1">되돌릴 수 있는 행동과 경고</b>
+            <b className="block text-sm-tight font-semibold mb-1">되돌릴 수 있는 행동과 경고</b>
             <span className="font-mono text-3xs text-[var(--color-fd-muted-foreground)]">
               Button · 2px stem · semantic danger
             </span>
@@ -100,7 +100,7 @@ export function PlatesCatalogue() {
         </div>
         <div className="p-4 flex-1 flex flex-col justify-between gap-2">
           <div>
-            <b className="block text-[13.5px] font-semibold mb-1">행동이 아닌 상태의 표식</b>
+            <b className="block text-sm-tight font-semibold mb-1">행동이 아닌 상태의 표식</b>
             <span className="font-mono text-3xs text-[var(--color-fd-muted-foreground)]">
               Badge · pill (status) · label (tag)
             </span>
@@ -126,7 +126,7 @@ export function PlatesCatalogue() {
         </div>
         <div className="p-4 flex-1 flex flex-col justify-between gap-2">
           <div>
-            <b className="block text-[13.5px] font-semibold mb-1">그림자 없이 선으로 구획된 입력</b>
+            <b className="block text-sm-tight font-semibold mb-1">그림자 없이 선으로 구획된 입력</b>
             <span className="font-mono text-3xs text-[var(--color-fd-muted-foreground)]">
               Input · 2px border · 4px radius
             </span>
@@ -153,7 +153,7 @@ export function PlatesCatalogue() {
         </div>
         <div className="p-4 flex-1 flex flex-col justify-between gap-2">
           <div>
-            <b className="block text-[13.5px] font-semibold mb-1">복수 선택과 배타 선택의 시각 문법</b>
+            <b className="block text-sm-tight font-semibold mb-1">복수 선택과 배타 선택의 시각 문법</b>
             <span className="font-mono text-3xs text-[var(--color-fd-muted-foreground)]">
               Checkbox · Radio · 4px vs full
             </span>
@@ -177,12 +177,12 @@ export function PlatesCatalogue() {
             <span className="font-mono text-3xs text-[var(--mds-color-brand-primary)]">
               FLAT SURFACE
             </span>
-            <span className="text-[13px] font-medium">선으로만 층위를 만든다</span>
+            <span className="text-sm-tight font-medium">선으로만 층위를 만든다</span>
           </Card>
         </div>
         <div className="p-4 flex-1 flex flex-col justify-between gap-2">
           <div>
-            <b className="block text-[13.5px] font-semibold mb-1">블러 섀도우 없는 평면 위계</b>
+            <b className="block text-sm-tight font-semibold mb-1">블러 섀도우 없는 평면 위계</b>
             <span className="font-mono text-3xs text-[var(--color-fd-muted-foreground)]">
               Card · elevation=&quot;flat&quot; · border-2
             </span>
@@ -209,7 +209,7 @@ export function PlatesCatalogue() {
         </div>
         <div className="p-4 flex-1 flex flex-col justify-between gap-2">
           <div>
-            <b className="block text-[13.5px] font-semibold mb-1">이미지 유실 시 이니셜 폴백</b>
+            <b className="block text-sm-tight font-semibold mb-1">이미지 유실 시 이니셜 폴백</b>
             <span className="font-mono text-3xs text-[var(--color-fd-muted-foreground)]">
               Avatar · md / lg · 2px frame
             </span>
@@ -233,7 +233,7 @@ export function PlatesCatalogue() {
         </div>
         <div className="p-4 flex-1 flex flex-col justify-between gap-2">
           <div>
-            <b className="block text-[13.5px] font-semibold mb-1">판면 번호 이동 장치</b>
+            <b className="block text-sm-tight font-semibold mb-1">판면 번호 이동 장치</b>
             <span className="font-mono text-3xs text-[var(--color-fd-muted-foreground)]">
               Pagination · tabular-nums
             </span>
@@ -260,7 +260,7 @@ export function PlatesCatalogue() {
         </div>
         <div className="p-4 flex-1 flex flex-col justify-between gap-2">
           <div>
-            <b className="block text-[13.5px] font-semibold mb-1">2px 단일 획 브랜드 마크</b>
+            <b className="block text-sm-tight font-semibold mb-1">2px 단일 획 브랜드 마크</b>
             <span className="font-mono text-3xs text-[var(--color-fd-muted-foreground)]">
               MindulleLogo · SonagiLogo
             </span>

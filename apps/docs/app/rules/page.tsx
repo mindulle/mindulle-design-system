@@ -124,7 +124,7 @@ export default function RulesPage() {
               <p className="text-[16px] leading-[1.75] text-[var(--color-fd-foreground)] max-w-[46ch] m-0 mb-4 font-medium break-keep">
                 {essay.lead}
               </p>
-              <div className="text-[14px] leading-[1.8] text-[var(--mds-color-text-secondary)] max-w-[48ch] space-y-3 break-keep [hyphens:none]">
+              <div className="text-sm-tight leading-[1.8] text-[var(--mds-color-text-secondary)] max-w-[48ch] space-y-3 break-keep [hyphens:none]">
                 {essay.paragraphs.map((p, idx) => (
                   <p key={idx} className="m-0">
                     {p}
@@ -140,10 +140,10 @@ export default function RulesPage() {
               <dl className="m-0">
                 {essay.specs.map((spec) => (
                   <div key={spec.k} className="mb-3.5">
-                    <dt className="text-[12px] text-[var(--color-fd-muted-foreground)] mb-[2px]">
+                    <dt className="text-xs-tight text-[var(--color-fd-muted-foreground)] mb-[2px]">
                       {spec.k}
                     </dt>
-                    <dd className="m-0 font-mono text-[13px] text-[var(--color-fd-foreground)]">
+                    <dd className="m-0 font-mono text-sm-tight text-[var(--color-fd-foreground)]">
                       {spec.v}
                     </dd>
                   </div>

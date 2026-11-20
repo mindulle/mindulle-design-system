@@ -47,6 +47,12 @@
   --text-3xs--line-height: inherit;
   --text-2xs: var(--mds-font-size-2xs);
   --text-2xs--line-height: inherit;
+  /* "-tight" = same px as the Tailwind step but without its built-in leading,
+     so swapping an arbitrary size in does not change line boxes */
+  --text-xs-tight: var(--mds-font-size-xs);
+  --text-xs-tight--line-height: inherit;
+  --text-sm-tight: var(--mds-font-size-sm);
+  --text-sm-tight--line-height: inherit;
 }
 
 @source '../node_modules/fumadocs-ui/dist/**/*.js';

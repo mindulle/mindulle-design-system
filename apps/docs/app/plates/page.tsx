@@ -13,7 +13,7 @@ export default function PlatesPage() {
         </h1>
         <p className="text-[15.5px] leading-[1.75] text-[var(--mds-color-text-secondary)] max-w-[54ch] m-0 break-keep">
           모든 도판은 정적 이미지가 아니라 라이브{' '}
-          <code className="font-mono text-[13px]">@mindulle/ui</code> 빌드에서 직접 렌더링합니다.
+          <code className="font-mono text-sm-tight">@mindulle/ui</code> 빌드에서 직접 렌더링합니다.
           각 도판의 캡션은 기능 요약이 아니라 조형적 판단입니다.
         </p>
       </section>

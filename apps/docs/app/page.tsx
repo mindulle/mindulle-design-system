@@ -53,25 +53,25 @@ export default function HomePage() {
           <dl className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-6 gap-y-4 font-mono text-2xs tracking-[0.08em] text-fd-muted-foreground border-t border-fd-border pt-3.5 max-w-[420px] m-0">
             <div>
               <dt className="font-normal">LAWS</dt>
-              <dd className="m-0 mt-1 text-[12px] font-semibold tracking-[0.02em] text-fd-foreground">
+              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-[0.02em] text-fd-foreground">
                 03
               </dd>
             </div>
             <div>
               <dt className="font-normal">COMPONENTS</dt>
-              <dd className="m-0 mt-1 text-[12px] font-semibold tracking-[0.02em] text-fd-foreground">
+              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-[0.02em] text-fd-foreground">
                 22
               </dd>
             </div>
             <div>
               <dt className="font-normal">TOKENS</dt>
-              <dd className="m-0 mt-1 text-[12px] font-semibold tracking-[0.02em] text-fd-foreground">
+              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-[0.02em] text-fd-foreground">
                 184
               </dd>
             </div>
             <div>
               <dt className="font-normal">BASELINE</dt>
-              <dd className="m-0 mt-1 text-[12px] font-semibold tracking-[0.02em] text-fd-foreground">
+              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-[0.02em] text-fd-foreground">
                 6px
               </dd>
             </div>
@@ -102,7 +102,7 @@ export default function HomePage() {
             <span className="font-cinematic text-2xl sm:text-[34px] leading-none tracking-[-0.01em]">
               2px
             </span>
-            <span className="font-mono text-[13px] text-text-secondary">
+            <span className="font-mono text-sm-tight text-text-secondary">
               stem · solid · no gradient
             </span>
           </div>
@@ -110,7 +110,7 @@ export default function HomePage() {
             <span className="font-cinematic text-2xl sm:text-[34px] leading-none tracking-[-0.01em]">
               곡률 4px
             </span>
-            <span className="font-mono text-[13px] text-text-secondary">
+            <span className="font-mono text-sm-tight text-text-secondary">
               radius · weathered · 1x legible
             </span>
           </div>
@@ -140,7 +140,7 @@ export default function HomePage() {
             <span className="text-[14.5px] font-semibold block mb-[5px] text-fd-foreground">
               {item.t}
             </span>
-            <span className="text-[12px] text-fd-muted-foreground leading-[1.5] break-keep block">
+            <span className="text-xs-tight text-fd-muted-foreground leading-[1.5] break-keep block">
               {item.d}
             </span>
           </a>
@@ -168,7 +168,7 @@ export default function HomePage() {
             사라지고, 검토용 덱에 들어가며 한 번 더 사라진다. 3px는 우리가 고르지 않은 목소리로
             말한다.
           </p>
-          <div className="text-[14px] leading-[1.8] text-text-secondary max-w-[46ch] break-keep text-left [hyphens:none] space-y-3">
+          <div className="text-sm-tight leading-[1.8] text-text-secondary max-w-[46ch] break-keep text-left [hyphens:none] space-y-3">
             <p className="m-0">
               그래서 선의 두께를 먼저 고정했다. 피그마에서 코드로, 코드에서 프로젝터로 옮겨가는
               동안 형태를 유지하는 값은 2px뿐이었다. 나머지 결정도 같은 기준을 따랐다 — 작업이
@@ -195,26 +195,26 @@ export default function HomePage() {
             Specification
           </div>
           <dl className="m-0 mb-[26px]">
-            <dt className="text-[12px] text-fd-muted-foreground mb-[3px]">Stem</dt>
-            <dd className="m-0 mb-[14px] font-mono text-[13px] text-fd-foreground">
+            <dt className="text-xs-tight text-fd-muted-foreground mb-[3px]">Stem</dt>
+            <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
               2px solid
             </dd>
-            <dt className="text-[12px] text-fd-muted-foreground mb-[3px]">
+            <dt className="text-xs-tight text-fd-muted-foreground mb-[3px]">
               Radius
             </dt>
-            <dd className="m-0 mb-[14px] font-mono text-[13px] text-fd-foreground">
+            <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
               4px weathered
             </dd>
-            <dt className="text-[12px] text-fd-muted-foreground mb-[3px]">
+            <dt className="text-xs-tight text-fd-muted-foreground mb-[3px]">
               Baseline
             </dt>
-            <dd className="m-0 mb-[14px] font-mono text-[13px] text-fd-foreground">
+            <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
               6px
             </dd>
-            <dt className="text-[12px] text-fd-muted-foreground mb-[3px]">
+            <dt className="text-xs-tight text-fd-muted-foreground mb-[3px]">
               Accent
             </dt>
-            <dd className="m-0 mb-[14px] font-mono text-[13px] text-fd-foreground">
+            <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
               one per screen
             </dd>
           </dl>
@@ -264,7 +264,7 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
-              <b className="block text-[12.5px] font-semibold mb-[3px]">유일한 채움면</b>
+              <b className="block text-xs-tight font-semibold mb-[3px]">유일한 채움면</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-[0.04em]">
                 radius 4 · ink on paper
               </span>
@@ -281,7 +281,7 @@ export default function HomePage() {
               </Button>
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
-              <b className="block text-[12.5px] font-semibold mb-[3px]">되돌릴 수 있는 행동</b>
+              <b className="block text-xs-tight font-semibold mb-[3px]">되돌릴 수 있는 행동</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-[0.04em]">
                 2px stem · no fill
               </span>
@@ -301,7 +301,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
-              <b className="block text-[12.5px] font-semibold mb-[3px]">네 개의 의미 역할</b>
+              <b className="block text-xs-tight font-semibold mb-[3px]">네 개의 의미 역할</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-[0.04em]">
                 ink · brand · accent · muted
               </span>
@@ -316,7 +316,7 @@ export default function HomePage() {
               <span className="font-cinematic text-[28px] leading-none">가Aa</span>
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
-              <b className="block text-[12.5px] font-semibold mb-[3px]">전시 64 / 본문 14</b>
+              <b className="block text-xs-tight font-semibold mb-[3px]">전시 64 / 본문 14</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-[0.04em]">
                 serif display · sans UI
               </span>
@@ -364,10 +364,10 @@ export default function HomePage() {
                 · {item.date}
               </div>
               <div>
-                <div className="text-[14px] font-semibold text-fd-foreground mb-1">
+                <div className="text-sm-tight font-semibold text-fd-foreground mb-1">
                   {item.title}
                 </div>
-                <p className="text-[13px] leading-[1.7] text-text-secondary m-0 break-keep">
+                <p className="text-sm-tight leading-[1.7] text-text-secondary m-0 break-keep">
                   {item.note}
                 </p>
               </div>

@@ -92,7 +92,7 @@ export default function ErrataPage() {
                 <h2 className="text-[15px] font-semibold text-[var(--color-fd-foreground)] m-0 mb-1.5">
                   {d.title}
                 </h2>
-                <p className="text-[13.5px] leading-[1.72] text-[var(--mds-color-text-secondary)] m-0 break-keep">
+                <p className="text-sm-tight leading-[1.72] text-[var(--mds-color-text-secondary)] m-0 break-keep">
                   {d.summary}
                 </p>
               </div>

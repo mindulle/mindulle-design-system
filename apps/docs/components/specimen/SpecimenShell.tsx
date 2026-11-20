@@ -27,12 +27,12 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
             <span className="font-mono text-2xs tracking-[0.1em] text-[var(--mds-color-brand-primary)] font-semibold">
               ED. 04
             </span>
-            <span className="text-[12px] tracking-[0.02em] text-[var(--mds-color-text-secondary)] group-hover:text-[var(--color-fd-foreground)] transition-colors">
+            <span className="text-xs-tight tracking-[0.02em] text-[var(--mds-color-text-secondary)] group-hover:text-[var(--color-fd-foreground)] transition-colors">
               Mindulle Specimen · v0.1.0 · Nov 2026
             </span>
           </Link>
 
-          <nav aria-label="Primary periodical navigation" className="flex flex-wrap items-center gap-4 sm:gap-[22px] text-[12.5px]">
+          <nav aria-label="Primary periodical navigation" className="flex flex-wrap items-center gap-4 sm:gap-[22px] text-xs-tight">
             {NAV_ITEMS.map((item) => {
               const isActive = item.key === active;
               return (
@@ -69,7 +69,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
               <h4 className="font-mono text-3xs tracking-[0.18em] uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
                 Colophon
               </h4>
-              <p className="text-[12px] leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
+              <p className="text-xs-tight leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
                 Cormorant Garamond · Noto Serif KR · Pretendard · 6px baseline. Tokens published as
                 W3C DTCG. React 19, TypeScript, CSS custom properties.
               </p>
@@ -78,7 +78,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
               <h4 className="font-mono text-3xs tracking-[0.18em] uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
                 Correspondence
               </h4>
-              <p className="text-[12px] leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
+              <p className="text-xs-tight leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
                 결정과 번복은 공개 기록에 남는다.{' '}
                 <Link
                   href="/errata"
@@ -100,7 +100,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
               <h4 className="font-mono text-3xs tracking-[0.18em] uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
                 Next edition
               </h4>
-              <p className="text-[12px] leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
+              <p className="text-xs-tight leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
                 Edition 05 — 폼, 검증, 그리고 빨간 별표의 비용.{' '}
                 <Link
                   href="/docs"
