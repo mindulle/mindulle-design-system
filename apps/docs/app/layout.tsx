@@ -1,3 +1,18 @@
+import '@fontsource/cormorant-garamond/400.css';
+import '@fontsource/cormorant-garamond/400-italic.css';
+import '@fontsource/cormorant-garamond/500.css';
+import '@fontsource/cormorant-garamond/600.css';
+import '@fontsource/cormorant-garamond/700.css';
+import '@fontsource/cormorant-garamond/700-italic.css';
+import '@fontsource/noto-serif-kr/korean-500.css';
+import '@fontsource/noto-serif-kr/korean-600.css';
+import '@fontsource/noto-serif-kr/korean-700.css';
+import '@fontsource/noto-serif-kr/korean-900.css';
+import '@fontsource/pretendard/400.css';
+import '@fontsource/pretendard/500.css';
+import '@fontsource/pretendard/600.css';
+import '@fontsource/pretendard/700.css';
+import '@fontsource/pretendard/800.css';
 import './global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
 import type { ReactNode } from 'react';
@@ -14,22 +29,6 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Noto+Serif+KR:wght@500;600;700;900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-        />
-        <link
-          rel="stylesheet"
-          href="https://hangeul.pstatic.net/hangeul_style/css/maru-buri.css"
-        />
-      </head>
       <body className="flex flex-col min-h-screen bg-fd-background text-fd-foreground antialiased selection:bg-brand-primary selection:text-text-inverse">
         <RootProvider>{children}</RootProvider>
       </body>

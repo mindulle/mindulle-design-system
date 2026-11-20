@@ -32,6 +32,15 @@ importers:
 
   apps/docs:
     dependencies:
+      '@fontsource/cormorant-garamond':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource/noto-serif-kr':
+        specifier: ^5.3.1
+        version: 5.3.1
+      '@fontsource/pretendard':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@mindulle/icons':
         specifier: workspace:*
         version: link:../../packages/icons
@@ -998,6 +1007,15 @@ packages:
 
   '@floating-ui/utils@0.2.12':
     resolution: {integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==}
+
+  '@fontsource/cormorant-garamond@5.3.0':
+    resolution: {integrity: sha512-weuGsCirGVWBWqpt6YUp0yLThTe4G8YO45noq8wxeJCRvEpq5lFrxNMFSTxcyOyV5k5otzJ8guDzYegdYlcLMQ==}
+
+  '@fontsource/noto-serif-kr@5.3.1':
+    resolution: {integrity: sha512-xtsAgK4S4MjPllHRSAFaMiB7xnFb8Nlhx47uPaD/qvyTP5WgRICNawZmwGzLVshCyA/QmydSVzA9kWF8otycpQ==}
+
+  '@fontsource/pretendard@5.3.0':
+    resolution: {integrity: sha512-IDvI+QlHSFW9AkBX8cKXFi9nRJXdj7IQSGSqgemwFqII6EptpWQmWKcs3OfTZBT2yftzqt6VF6abQpUeAmHxMA==}
 
   '@formatjs/intl-localematcher@0.6.2':
     resolution: {integrity: sha512-XOMO2Hupl0wdd172Y06h6kLpBz6Dv+J4okPLl4LPtzbr8f66WbIoy4ev98EBuZ6ZK4h5ydTN6XneT4QVpD7cdA==}
@@ -7477,6 +7495,12 @@ snapshots:
       react-dom: 19.3.0(react@19.3.0)
 
   '@floating-ui/utils@0.2.12': {}
+
+  '@fontsource/cormorant-garamond@5.3.0': {}
+
+  '@fontsource/noto-serif-kr@5.3.1': {}
+
+  '@fontsource/pretendard@5.3.0': {}
 
   '@formatjs/intl-localematcher@0.6.2':
     dependencies:

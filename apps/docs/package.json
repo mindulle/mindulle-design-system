@@ -12,6 +12,9 @@
     "test:visual:update": "UPDATE_BASELINES=1 node scripts/visual-regression.mjs"
   },
   "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/noto-serif-kr": "^5.3.1",
+    "@fontsource/pretendard": "^5.3.0",
     "@mindulle/icons": "workspace:*",
     "@mindulle/tokens": "workspace:*",
     "@mindulle/ui": "workspace:*",

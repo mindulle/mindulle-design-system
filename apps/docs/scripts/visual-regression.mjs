@@ -204,7 +204,12 @@ async function main() {
 
           const filename = `${target.name}-${vp.name}-${theme}.png`;
           const baselinePath = path.join(BASELINE_DIR, filename);
-          const currentBuf = await page.screenshot({ fullPage: true });
+          const currentBuf = await page.screenshot({
+            fullPage: true,
+            animations: 'disabled',
+            caret: 'hide',
+            scale: 'css',
+          });
 
           if (UPDATE) {
             fs.writeFileSync(baselinePath, currentBuf);
