@@ -134,16 +134,40 @@ async function comparePngBuffers(page, baselineBuf, currentBuf) {
 
       const dataA = getData(imgA);
       const dataB = getData(imgB);
-      let diffPixels = 0;
       const totalPixels = width * height;
+      const TOLERANCE = 16;
 
-      for (let i = 0; i < dataA.length; i += 4) {
-        const dr = Math.abs(dataA[i] - dataB[i]);
-        const dg = Math.abs(dataA[i + 1] - dataB[i + 1]);
-        const db = Math.abs(dataA[i + 2] - dataB[i + 2]);
-        const da = Math.abs(dataA[i + 3] - dataB[i + 3]);
-        if (dr + dg + db + da > 16) {
-          diffPixels++;
+      const channelDelta = (i, j) =>
+        Math.abs(dataA[i] - dataB[j]) +
+        Math.abs(dataA[i + 1] - dataB[j + 1]) +
+        Math.abs(dataA[i + 2] - dataB[j + 2]) +
+        Math.abs(dataA[i + 3] - dataB[j + 3]);
+
+      const mask = new Uint8Array(totalPixels);
+      for (let p = 0; p < totalPixels; p++) {
+        if (channelDelta(p * 4, p * 4) > TOLERANCE) mask[p] = 1;
+      }
+
+      // Font rasterization shifts glyph edges by up to 1px between machines.
+      // A pixel that matches any neighbour in the other image is antialiasing,
+      // not a visual change, so it must not fail the gate.
+      let diffPixels = 0;
+      for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+          const p = y * width + x;
+          if (!mask[p]) continue;
+
+          const i = p * 4;
+          let matched = false;
+          for (let dy = -1; dy <= 1 && !matched; dy++) {
+            for (let dx = -1; dx <= 1 && !matched; dx++) {
+              const nx = x + dx;
+              const ny = y + dy;
+              if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
+              if (channelDelta(i, (ny * width + nx) * 4) <= TOLERANCE) matched = true;
+            }
+          }
+          if (!matched) diffPixels++;
         }
       }
 
