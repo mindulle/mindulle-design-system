@@ -1,0 +1,137 @@
+{
+  "apps/docs/app/errata/page.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 24
+    }
+  },
+  "apps/docs/app/layout.config.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 3
+    }
+  },
+  "apps/docs/app/page.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 250
+    }
+  },
+  "apps/docs/app/plates/page.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 13
+    }
+  },
+  "apps/docs/app/rules/page.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 40
+    }
+  },
+  "apps/docs/components/brand/BrandAssetsGallery.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 10
+    }
+  },
+  "apps/docs/components/brand/BrandShowcase.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 74
+    }
+  },
+  "apps/docs/components/landing/HeroVisual.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 10
+    }
+  },
+  "apps/docs/components/landing/InteractiveShowcase.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 1
+    }
+  },
+  "apps/docs/components/landing/MotifShowcase.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 3
+    }
+  },
+  "apps/docs/components/sandbox/ComponentPreview.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 11
+    }
+  },
+  "apps/docs/components/specimen/InstrumentWorkbench.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 70
+    }
+  },
+  "apps/docs/components/specimen/NightEditionToggle.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 5
+    }
+  },
+  "apps/docs/components/specimen/PlatesCatalogue.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 107
+    }
+  },
+  "apps/docs/components/specimen/SpecimenShell.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 57
+    }
+  },
+  "apps/docs/components/tokens/ColorMatrix.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 6
+    }
+  },
+  "apps/docs/components/tokens/IconGalleryViewer.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 1
+    }
+  },
+  "apps/docs/components/tokens/TypographySpecimen.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 3
+    }
+  },
+  "packages/ui/src/components/Badge/Badge.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 1
+    }
+  },
+  "packages/ui/src/components/Card/Card.stories.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 2
+    }
+  },
+  "packages/ui/src/components/Checkbox/Checkbox.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 2
+    }
+  },
+  "packages/ui/src/components/HoverPreview/HoverPreview.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 1
+    }
+  },
+  "packages/ui/src/components/MobileHeader/MobileHeader.stories.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 2
+    }
+  },
+  "packages/ui/src/components/Modal/Modal.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 2
+    }
+  },
+  "packages/ui/src/components/Radio/Radio.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 2
+    }
+  },
+  "packages/ui/src/components/TableOfContents/TableOfContents.stories.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 2
+    }
+  },
+  "packages/ui/src/components/Tooltip/Tooltip.tsx": {
+    "tailwindcss/no-arbitrary-value": {
+      "count": 1
+    }
+  }
+}
