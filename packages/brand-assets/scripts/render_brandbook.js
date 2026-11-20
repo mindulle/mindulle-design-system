@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = '/home/ubuntu/sonagi-design-system/packages/brand-assets';
+const ROOT = path.resolve(__dirname, '..');
 const OUT_PDF = path.join(ROOT, '05_guidelines/mindulle-master-brandbook-v0.1.0.pdf');
 
 // Read SVGs for embedding
@@ -25,9 +25,9 @@ const ragSvg = getSvg('03_product_bi/sonagi-rag/sonagi-rag.svg');
 const socialCardSvg = getSvg('04_touchpoints/social_cards/social-card-light.svg');
 const mobileSvg = getSvg('04_touchpoints/mobile_artboard/mindulle-mobile-artboard.svg');
 
-const sonagi1Svg = fs.readFileSync('/home/ubuntu/sonagi-design-system/apps/portal/public/brand/sonagi-cand1-droplet.svg', 'utf8').replace(/<\?xml.*?\?>/, '');
-const sonagi2Svg = fs.readFileSync('/home/ubuntu/sonagi-design-system/apps/portal/public/brand/sonagi-cand2-cascading-s.svg', 'utf8').replace(/<\?xml.*?\?>/, '');
-const sonagi3Svg = fs.readFileSync('/home/ubuntu/sonagi-design-system/apps/portal/public/brand/sonagi-cand3-prism.svg', 'utf8').replace(/<\?xml.*?\?>/, '');
+const sonagi1Svg = getSvg('01_master_seal/sonagi-candidates/sonagi-cand1-droplet.svg');
+const sonagi2Svg = getSvg('01_master_seal/sonagi-candidates/sonagi-cand2-cascading-s.svg');
+const sonagi3Svg = getSvg('01_master_seal/sonagi-candidates/sonagi-cand3-prism.svg');
 
 const htmlContent = `<!DOCTYPE html>
 <html lang="ko">

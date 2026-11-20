@@ -22,12 +22,13 @@
 | 패키지 / 앱                  | 역할 및 설명                                               | 경로 / 문서                                                  |
 | :--------------------------- | :--------------------------------------------------------- | :----------------------------------------------------------- |
 | **`@mindulle/docs`**         | FumaDocs 기반 컴포넌트 실시간 프리뷰 및 W3C 토큰 공식 문서 | [`apps/docs`](./apps/docs)                                   |
-| **`portal`**                 | 3D 글래스 파빌리온 및 5대 전시실 브랜드 쇼룸               | [`apps/portal`](./apps/portal)                               |
 | **`@mindulle/tokens`**       | W3C 표준 Primitives & Semantics 토큰 (CSS Variables SSOT)  | [`packages/tokens`](./packages/tokens/README.md)             |
 | **`@mindulle/ui`**           | 16종 UI 컴포넌트 라이브러리 및 `MindulleLogo` 심볼         | [`packages/ui`](./packages/ui/README.md)                     |
 | **`@mindulle/icons`**        | 24x24 2px stroke 시스템 벡터 아이콘                        | [`packages/icons`](./packages/icons/README.md)               |
 | **`@mindulle/brand-assets`** | 공식 CI 마스터 인장, 락업, 소셜 카드, 벡터 에셋 킷         | [`packages/brand-assets`](./packages/brand-assets/README.md) |
 | **`@mindulle/discord-ui`**   | 디스코드 봇 메시지 디자인 가이드라인 래퍼                  | [`packages/discord-ui`](./packages/discord-ui/README.md)     |
+
+> `apps/portal`(브랜드 쇼룸 SPA)은 이 저장소에서 제거되었습니다. 소스와 브랜드 시안 자산은 `archive/portal` 브랜치에 보존되어 있습니다 (`ARCHIVE-PORTAL.md` 참고).
 
 <br/>
 
