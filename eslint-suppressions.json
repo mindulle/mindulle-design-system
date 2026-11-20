@@ -24,14 +24,9 @@
       "count": 29
     }
   },
-  "apps/docs/components/brand/BrandAssetsGallery.tsx": {
-    "tailwindcss/no-arbitrary-value": {
-      "count": 8
-    }
-  },
   "apps/docs/components/brand/BrandShowcase.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 48
+      "count": 8
     }
   },
   "apps/docs/components/landing/HeroVisual.tsx": {
@@ -41,7 +36,7 @@
   },
   "apps/docs/components/sandbox/ComponentPreview.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 11
+      "count": 6
     }
   },
   "apps/docs/components/specimen/InstrumentWorkbench.tsx": {
