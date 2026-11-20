@@ -252,6 +252,8 @@ VLM Pairwise Judge는 2단계이며, **결정론 필터를 통과한 화면에�
 | 출력       | `apps/docs/tests/audit-runs/<run>/report.json` (gitignore)       |
 | 차단       | 기본 advisory. `--fail-on-violations` 또는 `audit:design:strict` |
 | Plane 발행 | 미구현 (저장소·자격증명 미정)                                    |
+| 스케줄     | GitHub Actions `Design Audit`, 매일 18:00 UTC (03:00 KST)        |
+| 산출물     | Actions artifact `design-audit-<run_id>` (14일 보관)             |
 
 **첫 실행 결과**: 32 캡처, 위반 4건 (R1 4 / R2 0 / R3 0 / R4 0), 최대 액센트 면적 0.93%.
 
@@ -291,13 +293,13 @@ screenshot_url
 
 ## 9. 미해결
 
-| 항목                                    | 상태                                       |
-| --------------------------------------- | ------------------------------------------ |
-| `audit_runs` / `audit_findings` 저장소  | 미정 — Postgres 신설 vs llmops SQLite 마트 |
-| `cdn.sonagi.space` 업로드 경로·자격증명 | 미정                                       |
-| VLM 비용                                | 32조합 기준 재계산 필요                    |
-| 실행 주체                               | GitHub Actions cron vs sonagi-ops 루틴     |
-| 표본 지면 디스플레이 스케일             | 56/78 등 미결정 — 결정 후 §4.5 기준선 축소 |
+| 항목                                    | 상태                                         |
+| --------------------------------------- | -------------------------------------------- |
+| `audit_runs` / `audit_findings` 저장소  | 미정 — Postgres 신설 vs llmops SQLite 마트   |
+| `cdn.sonagi.space` 업로드 경로·자격증명 | 미정                                         |
+| VLM 비용                                | 32조합 기준 재계산 필요                      |
+| 실행 주체                               | GitHub Actions `design-audit.yml` (advisory) |
+| 표본 지면 디스플레이 스케일             | 56/78 등 미결정 — 결정 후 §4.5 기준선 축소   |
 
 ## 10. 변경 절차
 

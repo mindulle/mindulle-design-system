@@ -1,0 +1,121 @@
+name: Design Audit
+
+# MDS #61 — post-deployment audit. Advisory by default: the job records
+# violations and uploads evidence, but only fails when dispatched with
+# strict=true.
+on:
+  schedule:
+    # 03:00 KST (18:00 UTC) — after the day's merges have landed.
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+    inputs:
+      strict:
+        description: Fail the job when any rule fails
+        type: boolean
+        default: false
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    name: Design Consistency Audit
+    runs-on: ubuntu-latest
+    # Same pinned image as the visual gate so computed styles and screenshots
+    # come from the same browser/OS pair.
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.1-jammy
+      options: --user root
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Enable pnpm
+        run: corepack enable && corepack prepare pnpm@11.1.2 --activate
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build workspace
+        run: pnpm run build
+
+      - name: Audit design consistency (R1-R7)
+        env:
+          STRICT: ${{ inputs.strict == true && '--fail-on-violations' || '' }}
+        run: pnpm --filter @mindulle/docs audit:design -- $STRICT
+
+      - name: Write run summary
+        if: always()
+        run: |
+          node - <<'EOF'
+          const fs = require('node:fs');
+          const path = require('node:path');
+
+          const root = 'apps/docs/tests/audit-runs';
+          const summaryPath = process.env.GITHUB_STEP_SUMMARY;
+          const dirs = fs.existsSync(root)
+            ? fs.readdirSync(root).map((name) => ({
+                name,
+                when: fs.statSync(path.join(root, name)).mtimeMs,
+              }))
+            : [];
+
+          if (dirs.length === 0) {
+            fs.appendFileSync(summaryPath, '## Design audit\n\nNo run directory was produced.\n');
+            process.exit(0);
+          }
+
+          dirs.sort((a, b) => b.when - a.when);
+          const runDir = path.join(root, dirs[0].name);
+          const report = JSON.parse(fs.readFileSync(path.join(runDir, 'report.json'), 'utf8'));
+
+          const lines = [
+            '## Design audit (MDS #61)',
+            '',
+            `- commit: \`${report.commit}\``,
+            `- captures: ${report.summary.captures}`,
+            `- violations: **${report.summary.violations}**`,
+            `- advisory: ${report.advisory}`,
+            '',
+            '| rule | count |',
+            '| --- | --- |',
+            ...Object.entries(report.summary.by_rule).map(([rule, count]) => `| ${rule} | ${count} |`),
+            '',
+          ];
+
+          if (report.summary.max_accent_ratio) {
+            const accent = report.summary.max_accent_ratio;
+            lines.push(
+              `max accent area: ${(accent.ratio * 100).toFixed(2)}% (${accent.route} ${accent.viewport} ${accent.theme})`,
+              '',
+            );
+          }
+
+          if (report.findings.length > 0) {
+            lines.push('| route | theme | viewport | rule | evidence |', '| --- | --- | --- | --- | --- |');
+            for (const finding of report.findings.slice(0, 20)) {
+              const evidence = finding.evidence.problems
+                ? finding.evidence.problems.join('; ')
+                : finding.evidence.message ?? '';
+              lines.push(
+                `| ${finding.route} | ${finding.theme} | ${finding.viewport} | ${finding.rule} | ${evidence} |`,
+              );
+            }
+            lines.push('');
+          }
+
+          fs.appendFileSync(summaryPath, `${lines.join('\n')}\n`);
+          EOF
+
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: design-audit-${{ github.run_id }}
+          path: apps/docs/tests/audit-runs/
+          if-no-files-found: warn
+          retention-days: 14
