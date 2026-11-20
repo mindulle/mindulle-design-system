@@ -133,7 +133,7 @@ export default function RulesPage() {
               </div>
             </div>
 
-            <aside className="border-t lg:border-t-0 lg:border-l border-[var(--color-fd-border)] pt-6 lg:pt-0 lg:pl-[26px]">
+            <aside className="border-t lg:border-t-0 lg:border-l border-[var(--color-fd-border)] pt-6 lg:pt-0 lg:pl-6">
               <div className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] mb-3">
                 Specification
               </div>

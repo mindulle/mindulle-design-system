@@ -32,7 +32,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
             </span>
           </Link>
 
-          <nav aria-label="Primary periodical navigation" className="flex flex-wrap items-center gap-4 sm:gap-[22px] text-xs-tight">
+          <nav aria-label="Primary periodical navigation" className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs-tight">
             {NAV_ITEMS.map((item) => {
               const isActive = item.key === active;
               return (
@@ -64,9 +64,9 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
           id="colophon"
           className="mt-9 border-t-2 border-[var(--color-fd-foreground)] pt-[22px]"
         >
-          <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr] gap-8 md:gap-9 pb-[18px]">
+          <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr] gap-8 md:gap-9 pb-4">
             <div>
-              <h4 className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
+              <h4 className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] mb-2 font-semibold">
                 Colophon
               </h4>
               <p className="text-xs-tight leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
@@ -75,7 +75,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
               </p>
             </div>
             <div>
-              <h4 className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
+              <h4 className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] mb-2 font-semibold">
                 Correspondence
               </h4>
               <p className="text-xs-tight leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
@@ -97,7 +97,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
               </p>
             </div>
             <div>
-              <h4 className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
+              <h4 className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] mb-2 font-semibold">
                 Next edition
               </h4>
               <p className="text-xs-tight leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
@@ -112,7 +112,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-between gap-2 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)] pb-[18px]">
+          <div className="flex flex-wrap justify-between gap-2 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)] pb-4">
             <span>MINDULLE SPECIMEN — ED. 04</span>
             <span>DESIGN.SONAGI.SPACE</span>
           </div>

@@ -36,17 +36,17 @@ export default function HomePage() {
   return (
     <SpecimenShell active="specimen">
       {/* Cover: asymmetric title + 2:1 specimen field */}
-      <section className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-[54px] py-9 sm:py-[38px] pb-10 items-end">
+      <section className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-[54px] py-9 sm:py-10 pb-10 items-end">
         <div className="pb-1.5 text-left">
           <div className="font-mono text-2xs tracking-display uppercase text-brand-primary mb-5">
             A specimen of one design system
           </div>
-          <h1 className="font-cinematic font-normal text-5xl sm:text-[64px] lg:text-[78px] leading-[0.94] tracking-tight text-fd-foreground m-0 mb-[18px]">
+          <h1 className="font-cinematic font-normal text-5xl sm:text-[64px] lg:text-[78px] leading-[0.94] tracking-tight text-fd-foreground m-0 mb-4">
             Mindulle
             <br />
             <em className="italic text-brand-primary">Specimen</em>
           </h1>
-          <p className="text-[15.5px] leading-[1.72] text-text-secondary max-w-[38ch] m-0 mb-[26px] break-keep text-left [hyphens:none]">
+          <p className="text-[15.5px] leading-[1.72] text-text-secondary max-w-[38ch] m-0 mb-6 break-keep text-left [hyphens:none]">
             세 개의 조형 법칙, 스물두 개의 컴포넌트, 하나의 서체 계열. 이 문서는 시스템을
             설명하지 않고 전시합니다.
           </p>
@@ -132,9 +132,9 @@ export default function HomePage() {
           <a
             key={item.n}
             href={item.href}
-            className="py-[18px] sm:px-5 lg:first:pl-0 lg:last:pr-0 no-underline text-inherit hover:bg-fd-muted/60 transition-colors block"
+            className="py-4 sm:px-5 lg:first:pl-0 lg:last:pr-0 no-underline text-inherit hover:bg-fd-muted/60 transition-colors block"
           >
-            <span className="font-mono text-3xs text-brand-primary tracking-wider block mb-[9px]">
+            <span className="font-mono text-3xs text-brand-primary tracking-wider block mb-2">
               {item.n}
             </span>
             <span className="text-[14.5px] font-semibold block mb-[5px] text-fd-foreground">
@@ -151,7 +151,7 @@ export default function HomePage() {
       <section
         id="laws"
         aria-labelledby="law-01-heading"
-        className="grid grid-cols-1 lg:grid-cols-[1.6fr_0.9fr] gap-10 lg:gap-[56px] py-10 sm:py-[44px] pb-[38px] border-b border-fd-border text-left"
+        className="grid grid-cols-1 lg:grid-cols-[1.6fr_0.9fr] gap-10 lg:gap-[56px] py-10 sm:py-[44px] pb-10 border-b border-fd-border text-left"
       >
         <div>
           <div className="font-mono text-2xs tracking-label uppercase text-brand-primary mb-4">
@@ -159,7 +159,7 @@ export default function HomePage() {
           </div>
           <h2
             id="law-01-heading"
-            className="font-cinematic font-normal text-3xl sm:text-[44px] leading-[1.14] tracking-tight m-0 mb-[22px] break-keep text-fd-foreground"
+            className="font-cinematic font-normal text-3xl sm:text-[44px] leading-[1.14] tracking-tight m-0 mb-6 break-keep text-fd-foreground"
           >
             획은 <em className="italic">2px</em>이다, 뼈가 얇아서
           </h2>
@@ -190,31 +190,31 @@ export default function HomePage() {
           </div>
         </div>
 
-        <aside className="border-t lg:border-t-0 lg:border-l border-fd-border pt-6 lg:pt-0 lg:pl-[26px]">
+        <aside className="border-t lg:border-t-0 lg:border-l border-fd-border pt-6 lg:pt-0 lg:pl-6">
           <div className="font-mono text-3xs tracking-label uppercase text-fd-muted-foreground mb-3">
             Specification
           </div>
-          <dl className="m-0 mb-[26px]">
+          <dl className="m-0 mb-6">
             <dt className="text-xs-tight text-fd-muted-foreground mb-1">Stem</dt>
-            <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
+            <dd className="m-0 mb-4 font-mono text-sm-tight text-fd-foreground">
               2px solid
             </dd>
             <dt className="text-xs-tight text-fd-muted-foreground mb-1">
               Radius
             </dt>
-            <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
+            <dd className="m-0 mb-4 font-mono text-sm-tight text-fd-foreground">
               4px weathered
             </dd>
             <dt className="text-xs-tight text-fd-muted-foreground mb-1">
               Baseline
             </dt>
-            <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
+            <dd className="m-0 mb-4 font-mono text-sm-tight text-fd-foreground">
               6px
             </dd>
             <dt className="text-xs-tight text-fd-muted-foreground mb-1">
               Accent
             </dt>
-            <dd className="m-0 mb-[14px] font-mono text-sm-tight text-fd-foreground">
+            <dd className="m-0 mb-4 font-mono text-sm-tight text-fd-foreground">
               one per screen
             </dd>
           </dl>
@@ -234,9 +234,9 @@ export default function HomePage() {
       <section
         id="plates"
         aria-labelledby="plates-heading"
-        className="py-[38px] pb-[30px] border-b border-fd-border text-left"
+        className="py-10 pb-8 border-b border-fd-border text-left"
       >
-        <div className="flex flex-wrap justify-between items-baseline gap-2 mb-[22px]">
+        <div className="flex flex-wrap justify-between items-baseline gap-2 mb-6">
           <h3 id="plates-heading" className="text-[15px] font-semibold m-0">
             Specimen plates
           </h3>
@@ -256,14 +256,14 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px] bg-fd-border border border-fd-border">
           <div className="bg-fd-background">
             <div className="bg-fd-muted h-[150px] grid place-items-center relative">
-              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
+              <span className="absolute top-2 left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
                 PL. 01
               </span>
               <Button variant="primary" size="md">
                 Primary action
               </Button>
             </div>
-            <div className="px-3 py-[11px] pb-[13px]">
+            <div className="px-3 py-3 pb-3">
               <b className="block text-xs-tight font-semibold mb-1">유일한 채움면</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 radius 4 · ink on paper
@@ -273,14 +273,14 @@ export default function HomePage() {
 
           <div className="bg-fd-background">
             <div className="bg-fd-muted h-[150px] grid place-items-center relative">
-              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
+              <span className="absolute top-2 left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
                 PL. 02
               </span>
               <Button variant="secondary" size="md">
                 Secondary
               </Button>
             </div>
-            <div className="px-3 py-[11px] pb-[13px]">
+            <div className="px-3 py-3 pb-3">
               <b className="block text-xs-tight font-semibold mb-1">되돌릴 수 있는 행동</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 2px stem · no fill
@@ -290,7 +290,7 @@ export default function HomePage() {
 
           <div className="bg-fd-background">
             <div className="bg-fd-muted h-[150px] grid place-items-center relative">
-              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
+              <span className="absolute top-2 left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
                 PL. 03
               </span>
               <div className="flex gap-1" aria-label="Semantic color swatches">
@@ -300,7 +300,7 @@ export default function HomePage() {
                 <i className="w-5 h-[42px] block border border-fd-border bg-[var(--mds-primitive-neutral-500)]" />
               </div>
             </div>
-            <div className="px-3 py-[11px] pb-[13px]">
+            <div className="px-3 py-3 pb-3">
               <b className="block text-xs-tight font-semibold mb-1">네 개의 의미 역할</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 ink · brand · accent · muted
@@ -310,12 +310,12 @@ export default function HomePage() {
 
           <div className="bg-fd-background">
             <div className="bg-fd-muted h-[150px] grid place-items-center relative">
-              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
+              <span className="absolute top-2 left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
                 PL. 04
               </span>
               <span className="font-cinematic text-[28px] leading-none">가Aa</span>
             </div>
-            <div className="px-3 py-[11px] pb-[13px]">
+            <div className="px-3 py-3 pb-3">
               <b className="block text-xs-tight font-semibold mb-1">전시 64 / 본문 14</b>
               <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 serif display · sans UI
