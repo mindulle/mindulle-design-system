@@ -11,7 +11,7 @@
   },
   "apps/docs/app/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 250
+      "count": 174
     }
   },
   "apps/docs/app/plates/page.tsx": {
