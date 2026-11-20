@@ -36,6 +36,15 @@ Plane: [MDS-00]
 - [ ] `pnpm run lint` 통과
 - [ ] 시각 변경이면 `test:visual` 통과 (베이스라인 갱신 시 사유 명시, L-023)
 
+## 🎨 Token
+
+<!-- 토큰을 새로 만들었거나 스케일을 확장했다면 전부 체크한다. -->
+
+- [ ] `primitives.json` 수정 후 `pnpm --filter @mindulle/tokens build` 실행
+- [ ] Figma Variables 동기화 완료
+- [ ] `pnpm run tokens:map`으로 매핑표 재생성
+- [ ] 원장 L-011에 사유 기록
+
 ## ⚖️ Rule Check
 
 <!-- 결정 원장(llm-wiki/00_System/DECISION_LEDGER.md)과 어긋나는 부분이 있으면 적는다. -->
