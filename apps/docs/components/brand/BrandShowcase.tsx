@@ -149,7 +149,7 @@ export function BrandShowcase() {
 
               {/* Meta Line */}
               <div
-                className="w-full py-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-[10px] sm:text-xs font-mono uppercase tracking-widest"
+                className="w-full py-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 text-3xs sm:text-xs font-mono uppercase tracking-widest"
                 style={{ color: !isDark ? '#57534E' : '#B8B0A8' }}
               >
                 <span className="shrink-0">VOL. 01 • ISSUE 01</span>
@@ -244,9 +244,9 @@ export function BrandShowcase() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* 16px Favicon */}
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
-                <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
+                <div className="w-full flex justify-between items-center gap-2 text-2xs font-mono border-b border-fd-border pb-2">
                   <span className="font-bold text-brand-primary whitespace-nowrap">16px</span>
-                  <span className="text-[10px] text-fd-muted-foreground whitespace-nowrap shrink-0">극소형 탭</span>
+                  <span className="text-3xs text-fd-muted-foreground whitespace-nowrap shrink-0">극소형 탭</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
                   style={{ backgroundColor: !isDark ? '#FBF9F5' : '#12100E' }}
@@ -265,16 +265,16 @@ export function BrandShowcase() {
                     </svg>
                   </div>
                 </div>
-                <p className="text-[11px] text-fd-muted-foreground text-center break-keep">
+                <p className="text-2xs text-fd-muted-foreground text-center break-keep">
                   2px 기둥 + 3가닥 깃털 (16px 힌팅)
                 </p>
               </div>
 
               {/* 32px Favicon */}
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
-                <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
+                <div className="w-full flex justify-between items-center gap-2 text-2xs font-mono border-b border-fd-border pb-2">
                   <span className="font-bold text-brand-primary whitespace-nowrap">32px</span>
-                  <span className="text-[10px] text-fd-muted-foreground whitespace-nowrap shrink-0">표준 파비콘</span>
+                  <span className="text-3xs text-fd-muted-foreground whitespace-nowrap shrink-0">표준 파비콘</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
                   style={{ backgroundColor: !isDark ? '#FBF9F5' : '#12100E' }}
@@ -296,16 +296,16 @@ export function BrandShowcase() {
                     </svg>
                   </div>
                 </div>
-                <p className="text-[11px] text-fd-muted-foreground text-center break-keep">
+                <p className="text-2xs text-fd-muted-foreground text-center break-keep">
                   5방향 깃털 낙하산 + 2px 대 + 골드 씨앗
                 </p>
               </div>
 
               {/* 64px Responsive Favicon */}
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
-                <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
+                <div className="w-full flex justify-between items-center gap-2 text-2xs font-mono border-b border-fd-border pb-2">
                   <span className="font-bold text-brand-primary whitespace-nowrap">64px</span>
-                  <span className="text-[10px] text-fd-muted-foreground whitespace-nowrap shrink-0">반응형 마스터</span>
+                  <span className="text-3xs text-fd-muted-foreground whitespace-nowrap shrink-0">반응형 마스터</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
                   style={{ backgroundColor: !isDark ? '#FBF9F5' : '#12100E' }}
@@ -331,16 +331,16 @@ export function BrandShowcase() {
                     </svg>
                   </div>
                 </div>
-                <p className="text-[11px] text-fd-muted-foreground text-center break-keep">
+                <p className="text-2xs text-fd-muted-foreground text-center break-keep">
                   7방향 깃털 + 미세 골드 오라
                 </p>
               </div>
 
               {/* 120px Master Emblem */}
               <div className="p-4 rounded-lg border border-fd-border bg-fd-background flex flex-col items-center justify-between gap-3 overflow-hidden">
-                <div className="w-full flex justify-between items-center gap-2 text-[11px] font-mono border-b border-fd-border pb-2">
+                <div className="w-full flex justify-between items-center gap-2 text-2xs font-mono border-b border-fd-border pb-2">
                   <span className="font-bold text-brand-primary whitespace-nowrap">120px</span>
-                  <span className="text-[10px] text-fd-muted-foreground whitespace-nowrap shrink-0">마스터 심볼</span>
+                  <span className="text-3xs text-fd-muted-foreground whitespace-nowrap shrink-0">마스터 심볼</span>
                 </div>
                 <div className="w-full h-36 rounded-md overflow-hidden flex items-center justify-center border border-fd-border/60"
                   style={{ backgroundColor: !isDark ? '#FBF9F5' : '#12100E' }}
@@ -366,7 +366,7 @@ export function BrandShowcase() {
                     </svg>
                   </div>
                 </div>
-                <p className="text-[11px] text-fd-muted-foreground text-center break-keep">
+                <p className="text-2xs text-fd-muted-foreground text-center break-keep">
                   스튜디오 공식 마스터 홀씨 엠블럼
                 </p>
               </div>
@@ -391,7 +391,7 @@ export function BrandShowcase() {
                   color: !isDark ? '#161616' : '#F7EEEC',
                 }}
               >
-                <span className="text-[10px] font-mono uppercase tracking-wider text-brand-primary font-bold">
+                <span className="text-3xs font-mono uppercase tracking-wider text-brand-primary font-bold">
                   MOTIF 01 • SPROUT
                 </span>
                 <div className="p-3">
@@ -409,7 +409,7 @@ export function BrandShowcase() {
                   <h4 className="text-xs font-bold font-sans break-keep" style={{ color: !isDark ? '#161616' : '#F7EEEC' }}>
                     돌 틈의 싹
                   </h4>
-                  <p className="text-[11px] mt-0.5 break-keep" style={{ color: !isDark ? '#57534E' : '#A8A29E' }}>
+                  <p className="text-2xs mt-0.5 break-keep" style={{ color: !isDark ? '#57534E' : '#A8A29E' }}>
                     2px 줄기와 떡잎 선화
                   </p>
                 </div>
@@ -424,7 +424,7 @@ export function BrandShowcase() {
                   color: !isDark ? '#161616' : '#F7EEEC',
                 }}
               >
-                <span className="text-[10px] font-mono uppercase tracking-wider text-brand-primary font-bold">
+                <span className="text-3xs font-mono uppercase tracking-wider text-brand-primary font-bold">
                   MOTIF 02 • SEED
                 </span>
                 <div className="p-3" style={{ color: !isDark ? '#9E5A03' : '#FFC837' }}>
@@ -439,7 +439,7 @@ export function BrandShowcase() {
                   <h4 className="text-xs font-bold font-sans break-keep" style={{ color: !isDark ? '#161616' : '#F7EEEC' }}>
                     생명력의 씨앗
                   </h4>
-                  <p className="text-[11px] mt-0.5 break-keep" style={{ color: !isDark ? '#57534E' : '#A8A29E' }}>
+                  <p className="text-2xs mt-0.5 break-keep" style={{ color: !isDark ? '#57534E' : '#A8A29E' }}>
                     3방향 방사선 오르빗
                   </p>
                 </div>
@@ -454,7 +454,7 @@ export function BrandShowcase() {
                   color: !isDark ? '#161616' : '#F7EEEC',
                 }}
               >
-                <span className="text-[10px] font-mono uppercase tracking-wider text-brand-primary font-bold">
+                <span className="text-3xs font-mono uppercase tracking-wider text-brand-primary font-bold">
                   MOTIF 03 • PAPPUS
                 </span>
                 <div className="p-3">
@@ -468,7 +468,7 @@ export function BrandShowcase() {
                   <h4 className="text-xs font-bold font-sans break-keep" style={{ color: !isDark ? '#161616' : '#F7EEEC' }}>
                     비행하는 깃털 홀씨
                   </h4>
-                  <p className="text-[11px] mt-0.5 break-keep" style={{ color: !isDark ? '#57534E' : '#A8A29E' }}>
+                  <p className="text-2xs mt-0.5 break-keep" style={{ color: !isDark ? '#57534E' : '#A8A29E' }}>
                     지혜와 도구의 확산
                   </p>
                 </div>
@@ -483,7 +483,7 @@ export function BrandShowcase() {
                   color: !isDark ? '#161616' : '#F7EEEC',
                 }}
               >
-                <span className="text-[10px] font-mono uppercase tracking-wider text-brand-primary font-bold">
+                <span className="text-3xs font-mono uppercase tracking-wider text-brand-primary font-bold">
                   MOTIF 04 • END MARK
                 </span>
                 <div className="p-3" style={{ color: !isDark ? '#9E5A03' : '#FFC837' }}>
@@ -498,7 +498,7 @@ export function BrandShowcase() {
                   <h4 className="text-xs font-bold font-sans break-keep" style={{ color: !isDark ? '#161616' : '#F7EEEC' }}>
                     기사 종결부호 ❦
                   </h4>
-                  <p className="text-[11px] mt-0.5 break-keep" style={{ color: !isDark ? '#57534E' : '#A8A29E' }}>
+                  <p className="text-2xs mt-0.5 break-keep" style={{ color: !isDark ? '#57534E' : '#A8A29E' }}>
                     본문 끝에 놓이는 인쇄 부호
                   </p>
                 </div>

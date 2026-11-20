@@ -24,7 +24,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
         {/* Top strip: magazine issue line, left aligned */}
         <header className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-b border-[var(--color-fd-border)] pb-[11px]">
           <Link href="/" className="flex items-baseline gap-3.5 no-underline group">
-            <span className="font-mono text-[11px] tracking-[0.1em] text-[var(--mds-color-brand-primary)] font-semibold">
+            <span className="font-mono text-2xs tracking-[0.1em] text-[var(--mds-color-brand-primary)] font-semibold">
               ED. 04
             </span>
             <span className="text-[12px] tracking-[0.02em] text-[var(--mds-color-text-secondary)] group-hover:text-[var(--color-fd-foreground)] transition-colors">
@@ -66,7 +66,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
         >
           <div className="grid grid-cols-1 md:grid-cols-[1.3fr_1fr_1fr] gap-8 md:gap-9 pb-[18px]">
             <div>
-              <h4 className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
+              <h4 className="font-mono text-3xs tracking-[0.18em] uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
                 Colophon
               </h4>
               <p className="text-[12px] leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
@@ -75,7 +75,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
               </p>
             </div>
             <div>
-              <h4 className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
+              <h4 className="font-mono text-3xs tracking-[0.18em] uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
                 Correspondence
               </h4>
               <p className="text-[12px] leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
@@ -97,7 +97,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
               </p>
             </div>
             <div>
-              <h4 className="font-mono text-[9.5px] tracking-[0.18em] uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
+              <h4 className="font-mono text-3xs tracking-[0.18em] uppercase text-[var(--color-fd-muted-foreground)] mb-[9px] font-semibold">
                 Next edition
               </h4>
               <p className="text-[12px] leading-[1.65] text-[var(--mds-color-text-secondary)] m-0 break-keep">
@@ -112,7 +112,7 @@ export function SpecimenShell({ active = 'specimen', children }: SpecimenShellPr
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-between gap-2 font-mono text-[10px] tracking-[0.1em] text-[var(--color-fd-muted-foreground)] pb-[18px]">
+          <div className="flex flex-wrap justify-between gap-2 font-mono text-3xs tracking-[0.1em] text-[var(--color-fd-muted-foreground)] pb-[18px]">
             <span>MINDULLE SPECIMEN — ED. 04</span>
             <span>DESIGN.SONAGI.SPACE</span>
           </div>

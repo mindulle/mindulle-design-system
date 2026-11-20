@@ -69,6 +69,8 @@
   --mds-font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
   --mds-font-wordmark-en: 'Jura Light', sans-serif;
   --mds-font-wordmark-ko: 'Designhouse Light', sans-serif;
+  --mds-font-size-3xs: 10px;
+  --mds-font-size-2xs: 11px;
   --mds-font-size-xs: 12px;
   --mds-font-size-sm: 14px;
   --mds-font-size-base: 16px;
@@ -500,7 +502,9 @@
   --sng-font-sans: var(--mds-font-sans);
   --sng-font-serif: var(--mds-font-serif);
   --sng-font-size-2xl: var(--mds-font-size-2xl);
+  --sng-font-size-2xs: var(--mds-font-size-2xs);
   --sng-font-size-3xl: var(--mds-font-size-3xl);
+  --sng-font-size-3xs: var(--mds-font-size-3xs);
   --sng-font-size-4xl: var(--mds-font-size-4xl);
   --sng-font-size-base: var(--mds-font-size-base);
   --sng-font-size-lg: var(--mds-font-size-lg);

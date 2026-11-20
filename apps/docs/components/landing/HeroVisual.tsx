@@ -20,11 +20,11 @@ export function HeroVisual() {
             <span className="size-2 rounded-full border border-fd-foreground/60" />
             <span className="size-2 rounded-full border border-brand-primary" />
           </div>
-          <span className="font-mono text-[10px] tracking-widest uppercase text-fd-muted-foreground ml-2">
+          <span className="font-mono text-3xs tracking-widest uppercase text-fd-muted-foreground ml-2">
             WORKBENCH · EDITORIAL SPECIMEN
           </span>
         </div>
-        <span className="font-mono text-[10px] tracking-widest uppercase text-brand-primary">
+        <span className="font-mono text-3xs tracking-widest uppercase text-brand-primary">
           MDS-51 · 2:1 MODULAR
         </span>
       </div>
@@ -34,10 +34,10 @@ export function HeroVisual() {
         {/* Left 2/3: Typography & Real-Scale UI Specimen */}
         <div className="md:col-span-8 rounded-sm border border-fd-border bg-fd-background/50 p-6 sm:p-8 flex flex-col justify-between gap-8">
           <div className="flex items-center justify-between gap-4">
-            <span className="font-mono text-[11px] font-semibold tracking-wider text-brand-primary">
+            <span className="font-mono text-2xs font-semibold tracking-wider text-brand-primary">
               01 · TYPOGRAPHY &amp; UI SPECIMEN
             </span>
-            <span className="font-mono text-[11px] text-fd-muted-foreground">
+            <span className="font-mono text-2xs text-fd-muted-foreground">
               W3C DTCG · REACT 19
             </span>
           </div>
@@ -52,7 +52,7 @@ export function HeroVisual() {
                 한국어 에디토리얼 조판과 1px 모노라인
               </span>
             </div>
-            <p className="font-mono text-[11px] text-fd-muted-foreground">
+            <p className="font-mono text-2xs text-fd-muted-foreground">
               Display 64px · Body 16px (1.65) · --mds-bg-base · --mds-brand-primary
             </p>
           </div>
@@ -101,10 +101,10 @@ export function HeroVisual() {
         {/* Right 1/3: <=15% Botanical Monoline Spot */}
         <div className="md:col-span-4 rounded-sm border border-fd-border bg-fd-background/50 p-6 sm:p-8 flex flex-col justify-between gap-6">
           <div className="flex items-center justify-between">
-            <span className="font-mono text-[11px] font-semibold text-fd-foreground">
+            <span className="font-mono text-2xs font-semibold text-fd-foreground">
               02 · MOTIF
             </span>
-            <span className="font-mono text-[11px] text-brand-primary">85:15 RULE</span>
+            <span className="font-mono text-2xs text-brand-primary">85:15 RULE</span>
           </div>
 
           <div className="flex items-center justify-center py-3">
@@ -137,7 +137,7 @@ export function HeroVisual() {
             </svg>
           </div>
 
-          <div className="flex items-center justify-between border-t border-fd-border pt-3.5 font-mono text-[11px]">
+          <div className="flex items-center justify-between border-t border-fd-border pt-3.5 font-mono text-2xs">
             <span className="text-fd-muted-foreground">1px Monoline</span>
             <Link
               href="/docs/brand"

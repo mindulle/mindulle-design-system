@@ -178,14 +178,14 @@ export function BrandAssetsGallery() {
                     <h4 className="text-sm font-bold text-fd-foreground break-keep">
                       {asset.title}
                     </h4>
-                    <span className="text-[11px] font-mono text-fd-muted-foreground shrink-0">
+                    <span className="text-2xs font-mono text-fd-muted-foreground shrink-0">
                       SVG
                     </span>
                   </div>
                   <p className="text-xs text-fd-muted-foreground break-keep">
                     {asset.subtitle} · {asset.minSize}
                   </p>
-                  <code className="block text-[11px] font-mono text-fd-muted-foreground truncate pt-0.5">
+                  <code className="block text-2xs font-mono text-fd-muted-foreground truncate pt-0.5">
                     {officialPath}
                   </code>
                 </div>

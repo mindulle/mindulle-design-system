@@ -87,7 +87,7 @@ export function ColorMatrix() {
             Light / Dark 모드 1:1 페어링 및 클릭 시 CSS 변수 즉시 복사
           </p>
         </div>
-        <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20 font-bold">
+        <span className="text-2xs font-mono px-2 py-0.5 rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20 font-bold">
           SSOT
         </span>
       </div>
@@ -95,7 +95,7 @@ export function ColorMatrix() {
       <div className="overflow-x-auto">
         <table className="w-full text-left text-xs">
           <thead>
-            <tr className="border-b border-fd-border bg-fd-muted/20 font-mono text-[11px] text-fd-muted-foreground uppercase">
+            <tr className="border-b border-fd-border bg-fd-muted/20 font-mono text-2xs text-fd-muted-foreground uppercase">
               <th className="px-4 py-3">Token Name</th>
               <th className="px-4 py-3">CSS Variable</th>
               <th className="px-4 py-3">Light Mode</th>
@@ -108,7 +108,7 @@ export function ColorMatrix() {
               <tr key={t.cssVar} className="hover:bg-fd-muted/30 transition-colors">
                 <td className="px-4 py-3 font-semibold">
                   <div>{t.name}</div>
-                  <div className="text-[11px] font-normal text-fd-muted-foreground">
+                  <div className="text-2xs font-normal text-fd-muted-foreground">
                     {t.description}
                   </div>
                 </td>
@@ -119,7 +119,7 @@ export function ColorMatrix() {
                       className="w-5 h-5 rounded border border-black/10 inline-block"
                       style={{ backgroundColor: t.lightValue }}
                     />
-                    <span className="font-mono text-[11px]">{t.lightValue}</span>
+                    <span className="font-mono text-2xs">{t.lightValue}</span>
                   </div>
                 </td>
                 <td className="px-4 py-3">
@@ -128,13 +128,13 @@ export function ColorMatrix() {
                       className="w-5 h-5 rounded border border-white/20 inline-block"
                       style={{ backgroundColor: t.darkValue }}
                     />
-                    <span className="font-mono text-[11px]">{t.darkValue}</span>
+                    <span className="font-mono text-2xs">{t.darkValue}</span>
                   </div>
                 </td>
                 <td className="px-4 py-3 text-right">
                   <button
                     onClick={() => copyVar(t.cssVar)}
-                    className="px-2.5 py-1 rounded border border-fd-border bg-fd-background hover:bg-fd-muted font-mono text-[11px] transition-colors"
+                    className="px-2.5 py-1 rounded border border-fd-border bg-fd-background hover:bg-fd-muted font-mono text-2xs transition-colors"
                   >
                     {copiedToken === t.cssVar ? '✓ Copied' : 'Copy var()'}
                   </button>

@@ -287,6 +287,14 @@
       }
     },
     "fontSize": {
+      "3xs": {
+        "$value": "10px",
+        "$type": "dimension"
+      },
+      "2xs": {
+        "$value": "11px",
+        "$type": "dimension"
+      },
       "xs": {
         "$value": "12px",
         "$type": "dimension"

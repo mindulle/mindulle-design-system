@@ -65,7 +65,7 @@ export function IconGalleryViewer() {
               <span className="font-mono text-xs font-semibold text-fd-foreground text-center">
                 {icon.name}
               </span>
-              <span className="text-[11px] text-fd-muted-foreground text-center mt-1">
+              <span className="text-2xs text-fd-muted-foreground text-center mt-1">
                 {icon.desc}
               </span>
 

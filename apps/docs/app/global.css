@@ -41,6 +41,12 @@
   --radius-lg: var(--mds-radius-lg);
   --radius-xl: var(--mds-radius-xl);
   --font-sans: var(--mds-font-sans);
+  /* micro steps inherit line-height so swapping an arbitrary px size for these
+     does not add Tailwind's built-in leading and reflow the page */
+  --text-3xs: var(--mds-font-size-3xs);
+  --text-3xs--line-height: inherit;
+  --text-2xs: var(--mds-font-size-2xs);
+  --text-2xs--line-height: inherit;
 }
 
 @source '../node_modules/fumadocs-ui/dist/**/*.js';

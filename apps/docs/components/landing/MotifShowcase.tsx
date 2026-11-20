@@ -142,7 +142,7 @@ export function MotifShowcase() {
     <div className="w-full my-16 text-left">
       {/* Section Title */}
       <div className="mb-8 flex flex-col items-center text-center">
-        <span className="text-[11px] font-mono font-bold uppercase tracking-widest text-brand-primary mb-1">
+        <span className="text-2xs font-mono font-bold uppercase tracking-widest text-brand-primary mb-1">
           MDS-28 GRAPHIC MOTIF SYSTEM
         </span>
         <h2 className="font-cinematic text-2xl sm:text-3xl font-bold tracking-tight">
@@ -173,7 +173,7 @@ export function MotifShowcase() {
                   <span className="font-mono text-xs font-bold text-brand-primary">
                     {motif.num} / {motif.name.toUpperCase()}
                   </span>
-                  <span className="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-fd-muted text-fd-foreground border border-fd-border">
+                  <span className="text-2xs font-mono font-semibold px-2 py-0.5 rounded bg-fd-muted text-fd-foreground border border-fd-border">
                     {motif.role}
                   </span>
                 </div>
@@ -189,7 +189,7 @@ export function MotifShowcase() {
                 </p>
               </div>
 
-              <div className="pt-4 mt-4 border-t border-fd-border/70 text-[11px] font-mono text-fd-muted-foreground flex items-center justify-between">
+              <div className="pt-4 mt-4 border-t border-fd-border/70 text-2xs font-mono text-fd-muted-foreground flex items-center justify-between">
                 <span>적용: {motif.usage.split(',')[0]}</span>
                 <span className="text-brand-primary font-bold">확인 →</span>
               </div>

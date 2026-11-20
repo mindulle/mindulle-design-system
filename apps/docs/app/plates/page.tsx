@@ -5,7 +5,7 @@ export default function PlatesPage() {
   return (
     <SpecimenShell active="plates">
       <section className="py-10 border-b border-[var(--color-fd-border)] text-left">
-        <div className="font-mono text-[10.5px] tracking-[0.2em] uppercase text-[var(--mds-color-brand-primary)] mb-4">
+        <div className="font-mono text-2xs tracking-[0.2em] uppercase text-[var(--mds-color-brand-primary)] mb-4">
           Edition 04 — Specimen Plates
         </div>
         <h1 className="font-cinematic font-normal text-4xl sm:text-[56px] leading-[1.02] tracking-[-0.025em] m-0 mb-4">

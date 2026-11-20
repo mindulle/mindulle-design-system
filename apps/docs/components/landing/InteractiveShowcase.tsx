@@ -38,7 +38,7 @@ export function InteractiveShowcase() {
           <span className="font-mono text-xs font-bold tracking-wider uppercase text-fd-foreground">
             MDS Live Component Playground
           </span>
-          <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20 font-bold">
+          <span className="text-3xs font-mono px-1.5 py-0.5 rounded bg-brand-primary/10 text-brand-primary border border-brand-primary/20 font-bold">
             Interactive
           </span>
         </div>
