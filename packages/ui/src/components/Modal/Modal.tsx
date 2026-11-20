@@ -32,7 +32,7 @@ export function Modal({
 
       {/* Modal Dialog Box */}
       <div
-            className={`relative z-[301] w-full max-w-lg overflow-hidden rounded-xl border border-border-default bg-bg-elevated p-mds-container-lg shadow-lg transition-all flex flex-col gap-mds-gap-group ${className}`}
+            className={`relative z-[301] w-full max-w-lg overflow-hidden rounded-xl border border-border-default bg-bg-elevated p-mds-container-lg transition-all flex flex-col gap-mds-gap-group ${className}`}
         role="dialog"
         aria-modal="true"
       >

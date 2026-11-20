@@ -30,7 +30,7 @@ export function InteractiveShowcase() {
   };
 
   return (
-    <div className="w-full my-12 rounded-sm border-2 border-fd-border bg-fd-card/90 shadow-sm overflow-hidden text-left">
+    <div className="w-full my-12 rounded-sm border-2 border-fd-border bg-fd-card/90 overflow-hidden text-left">
       {/* Top Header Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b-2 border-fd-border bg-fd-muted/40 px-5 py-3.5 gap-3">
         <div className="flex items-center gap-2">
@@ -137,7 +137,7 @@ export function InteractiveShowcase() {
 
         {/* Right: Live Interactive Canvas */}
         <div className="lg:col-span-8 p-6 sm:p-8 flex flex-col justify-center gap-6 bg-fd-background/50">
-          <Card className="p-6 border-2 border-fd-border bg-fd-card text-fd-card-foreground shadow-sm">
+          <Card className="p-6 border-2 border-fd-border bg-fd-card text-fd-card-foreground">
             <div className="flex items-start justify-between gap-4 mb-4">
               <div className="flex items-center gap-3">
                 <MindulleLogo size={36} />

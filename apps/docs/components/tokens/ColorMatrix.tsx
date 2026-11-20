@@ -116,7 +116,7 @@ export function ColorMatrix() {
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-2">
                     <span
-                      className="w-5 h-5 rounded border border-black/10 inline-block shadow-sm"
+                      className="w-5 h-5 rounded border border-black/10 inline-block"
                       style={{ backgroundColor: t.lightValue }}
                     />
                     <span className="font-mono text-[11px]">{t.lightValue}</span>
@@ -125,7 +125,7 @@ export function ColorMatrix() {
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-2">
                     <span
-                      className="w-5 h-5 rounded border border-white/20 inline-block shadow-sm"
+                      className="w-5 h-5 rounded border border-white/20 inline-block"
                       style={{ backgroundColor: t.darkValue }}
                     />
                     <span className="font-mono text-[11px]">{t.darkValue}</span>

@@ -28,7 +28,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
     return (
       <div ref={ref} className={`relative inline-flex group ${className}`} {...props}>
         {children}
-        <div className={`absolute z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 px-3 py-1.5 bg-text-primary text-bg-base font-medium text-xs rounded-md shadow-lg whitespace-nowrap pointer-events-none ${positionClasses[position]}`}>
+        <div className={`absolute z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 px-3 py-1.5 bg-text-primary text-bg-base font-medium text-xs rounded-md border border-border-strong whitespace-nowrap pointer-events-none ${positionClasses[position]}`}>
           {content}
           <div className={`absolute border-[5px] ${caretClasses[position]}`} />
         </div>

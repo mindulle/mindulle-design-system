@@ -71,7 +71,7 @@ export function HoverPreview({
       {visible && (
         <span
           role="tooltip"
-          className="absolute z-[500] bottom-full mb-2 left-1/2 -translate-x-1/2 w-80 p-4 flex flex-col gap-2 rounded-xl bg-bg-elevated border border-border-subtle shadow-md pointer-events-none"
+          className="absolute z-[500] bottom-full mb-2 left-1/2 -translate-x-1/2 w-80 p-4 flex flex-col gap-2 rounded-xl bg-bg-elevated border border-border-strong pointer-events-none"
         >
           {loading ? (
             <span className="text-sm text-text-muted animate-pulse">불러오는 중...</span>

@@ -164,7 +164,7 @@ export function MotifShowcase() {
               onClick={() => setActiveMotif(motif.id)}
               className={`cursor-pointer p-6 rounded-sm border-2 transition-all duration-200 flex flex-col justify-between ${
                 isSelected
-                  ? 'border-brand-primary bg-brand-primary/[0.04] shadow-md shadow-brand-primary/10'
+                  ? 'border-brand-primary bg-brand-primary/[0.04]'
                   : 'border-fd-border bg-fd-card/70 hover:border-fd-foreground/40'
               }`}
             >

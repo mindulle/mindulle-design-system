@@ -21,13 +21,16 @@ export function Card({
   
   const baseClasses = 'flex flex-col bg-bg-surface border border-border-default rounded-lg p-5 gap-3';
   
+  // L-002: no box-shadow. Elevation is border weight + surface step only.
   const elevationClasses = {
-    flat: 'shadow-none',
-    raised: 'shadow-sm',
-    floating: 'shadow-md',
+    flat: 'bg-bg-base border-border-subtle',
+    raised: 'bg-bg-surface border-border-default',
+    floating: 'bg-bg-elevated border-border-strong border-2',
   };
 
-  const clickableClasses = clickable ? 'cursor-pointer transition-all duration-150 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0' : '';
+  const clickableClasses = clickable
+    ? 'cursor-pointer transition-colors duration-150 hover:border-border-strong hover:bg-bg-elevated'
+    : '';
 
   const cardClass = [
     baseClasses,

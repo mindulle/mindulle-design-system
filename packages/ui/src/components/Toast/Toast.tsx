@@ -26,7 +26,7 @@ export const Toast = React.forwardRef<HTMLDivElement, ToastProps>(
     };
 
     return (
-      <div ref={ref} className={`flex items-start justify-between w-full max-w-sm p-4 rounded-xl border shadow-lg ${typeClasses[type]} ${className}`} {...props}>
+      <div ref={ref} className={`flex items-start justify-between w-full max-w-sm p-4 rounded-xl border ${typeClasses[type]} ${className}`} {...props}>
         <div className="flex items-start gap-3">
           {/* 심플 상태 인디케이터 (원) */}
           <div className={`mt-1 shrink-0 w-2.5 h-2.5 rounded-full bg-current ${iconColors[type]}`} />
