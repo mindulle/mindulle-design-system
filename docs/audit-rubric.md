@@ -251,7 +251,7 @@ VLM Pairwise Judge는 2단계이며, **결정론 필터를 통과한 화면에�
 | 규칙       | R1~R7 결정론. R2는 스크린샷 픽셀 히스토그램, R5~R7은 구조 계약   |
 | 출력       | `apps/docs/tests/audit-runs/<run>/report.json` (gitignore)       |
 | 차단       | 기본 advisory. `--fail-on-violations` 또는 `audit:design:strict` |
-| Plane 발행 | 미구현 (저장소·자격증명 미정)                                    |
+| Plane 발행 | `--file` — external_id dedup, 재오픈, v2 첨부                    |
 | 스케줄     | GitHub Actions `Design Audit`, 매일 18:00 UTC (03:00 KST)        |
 | 산출물     | Actions artifact `design-audit-<run_id>` (14일 보관)             |
 
@@ -273,7 +273,10 @@ rule_id, status(PASS|FAIL), evidence, dedup_hash, plane_issue_id,
 screenshot_url
 ```
 
-- 닫힌 해시가 다시 `FAIL`이면 `regression` 라벨 + 우선순위 High.
+- 중복 상태는 **Plane 이슈 자체**에 저장합니다. 이슈의 `external_source="design-audit"`, `external_id=<dedup_hash>`를 조회해 DB 없이 판정합니다.
+- 열린 이슈가 있으면 코멘트로 재발 실행만 추가합니다.
+- 닫힌 이슈가 다시 `FAIL`이면 **같은 이슈를 재오픈**하고 `regression` 라벨 + 우선순위 High를 붙입니다(중복 발행 금지).
+- 증거 스크린샷은 Plane 첨부(v2 3단계 업로드)로 이슈에 직접 붙입니다. `cdn.sonagi.space`는 선택 사항입니다.
 - `false-positive` 라벨로 닫힌 사례는 다음 실행의 Negative Few-shot 후보로 보관합니다.
 
 ## 8. 오탐·예외 정책

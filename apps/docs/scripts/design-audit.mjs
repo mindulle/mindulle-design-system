@@ -12,6 +12,7 @@
  * CDN credentials are still undecided).
  */
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -22,6 +23,7 @@ import {
   loadPlaywright,
   startStaticServer,
 } from './lib/static-preview.mjs';
+import { fileFindings } from './lib/plane-filing.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DOCS_DIR = path.resolve(__dirname, '..');
@@ -42,11 +44,13 @@ const TARGETS = [
 ];
 
 function parseArgs(argv) {
-  const out = { outDir: DEFAULT_OUT, failOnViolations: false, skipShots: false };
+  const out = { outDir: DEFAULT_OUT, failOnViolations: false, skipShots: false, file: false, dryRun: false };
   for (const arg of argv.slice(2)) {
     if (arg === '--') continue;
     if (arg === '--fail-on-violations') out.failOnViolations = true;
     else if (arg === '--skip-shots') out.skipShots = true;
+    else if (arg === '--file') out.file = true;
+    else if (arg === '--dry-run') out.dryRun = true;
     else if (arg.startsWith('--out=')) out.outDir = path.resolve(arg.slice(6));
     else {
       console.error(`Unknown argument: ${arg}`);
@@ -341,6 +345,7 @@ async function accentRatio(page, screenshotBuffer) {
   }, screenshotBuffer.toString('base64'));
 }
 
+
 async function main() {
   const args = parseArgs(process.argv);
   const constants = loadConstants();
@@ -366,6 +371,7 @@ async function main() {
   const accentByTarget = [];
   const ruleCounts = { R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, R6: 0, R7: 0 };
   let violationCount = 0;
+  let currentScreenshot = null;
 
   const record = (rule, target, viewport, theme, evidence) => {
     violationCount++;
@@ -378,6 +384,7 @@ async function main() {
       theme,
       viewport,
       dedup_hash: sha1(`${target.route}|${rule}|${theme}`),
+      screenshot: currentScreenshot,
       evidence,
     });
   };
@@ -407,6 +414,7 @@ async function main() {
           }, theme);
 
           const file = `${target.name}-${viewportName}-${theme}.png`;
+          currentScreenshot = args.skipShots ? null : file;
           let screenshotBuffer = null;
           if (!args.skipShots) {
             screenshotBuffer = await page.screenshot({
@@ -615,6 +623,10 @@ async function main() {
     accent_samples: accentByTarget,
   };
 
+  if (args.file) {
+    report.filing = await fileFindings(findings, runDir, report, { dryRun: args.dryRun });
+  }
+
   const reportPath = path.join(runDir, 'report.json');
   fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`);
 
@@ -629,6 +641,17 @@ async function main() {
     console.log(
       `max accent ratio: ${(worstAccent.ratio * 100).toFixed(2)}% (${worstAccent.route} ${worstAccent.viewport} ${worstAccent.theme})`
     );
+  }
+  if (report.filing) {
+    const filing = report.filing;
+    if (!filing.enabled) {
+      console.log(`plane: skipped (${filing.reason})`);
+    } else {
+      console.log(
+        `plane: ${filing.dry_run ? 'dry-run' : 'filed'} — created ${filing.created}, commented ${filing.commented}, reopened ${filing.reopened}, attachments ${filing.attachments}`,
+      );
+      for (const error of filing.errors ?? []) console.log(`  ! ${error}`);
+    }
   }
   console.log(`report: ${reportPath}`);
 

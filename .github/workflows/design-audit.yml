@@ -45,8 +45,9 @@ jobs:
 
       - name: Audit design consistency (R1-R7)
         env:
+          PLANE_API_KEY: ${{ secrets.PLANE_API_KEY }}
           STRICT: ${{ inputs.strict == true && '--fail-on-violations' || '' }}
-        run: pnpm --filter @mindulle/docs audit:design -- $STRICT
+        run: pnpm --filter @mindulle/docs audit:design -- --file $STRICT
 
       - name: Write run summary
         if: always()
