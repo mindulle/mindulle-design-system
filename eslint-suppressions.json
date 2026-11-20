@@ -1,7 +1,7 @@
 {
   "apps/docs/app/errata/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 24
+      "count": 22
     }
   },
   "apps/docs/app/layout.config.tsx": {
@@ -11,32 +11,32 @@
   },
   "apps/docs/app/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 174
+      "count": 152
     }
   },
   "apps/docs/app/plates/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 13
+      "count": 12
     }
   },
   "apps/docs/app/rules/page.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 40
+      "count": 37
     }
   },
   "apps/docs/components/brand/BrandAssetsGallery.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 10
+      "count": 8
     }
   },
   "apps/docs/components/brand/BrandShowcase.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 74
+      "count": 53
     }
   },
   "apps/docs/components/landing/HeroVisual.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 10
+      "count": 2
     }
   },
   "apps/docs/components/landing/InteractiveShowcase.tsx": {
@@ -56,22 +56,22 @@
   },
   "apps/docs/components/specimen/InstrumentWorkbench.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 70
+      "count": 55
     }
   },
   "apps/docs/components/specimen/NightEditionToggle.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 5
+      "count": 4
     }
   },
   "apps/docs/components/specimen/PlatesCatalogue.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 107
+      "count": 79
     }
   },
   "apps/docs/components/specimen/SpecimenShell.tsx": {
     "tailwindcss/no-arbitrary-value": {
-      "count": 57
+      "count": 52
     }
   },
   "apps/docs/components/tokens/ColorMatrix.tsx": {
