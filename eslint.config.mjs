@@ -8,6 +8,11 @@ import babelParser from '@babel/eslint-parser';
 //
 // Parser note: typescript-eslint refuses TypeScript 7.0, so we parse TSX with
 // @babel/eslint-parser instead. Swap back once typescript-eslint supports TS 7.
+//
+// Exception policy (L-011): typographic measure (max-w-[Nch]), display leading
+// (leading-[0.94]) and CSS-only properties ([hyphens:none]) are not token
+// candidates; they stay in the suppressions baseline and must be renewed with a
+// reason when touched. Spacing, color and radius must become tokens.
 export default [
   {
     ignores: [
