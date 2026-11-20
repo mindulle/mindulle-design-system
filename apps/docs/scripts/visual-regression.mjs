@@ -11,12 +11,9 @@ const BASELINE_DIR = path.join(DOCS_DIR, 'tests', 'visual-baselines');
 const DIFF_DIR = path.join(DOCS_DIR, 'tests', 'visual-diffs');
 
 const UPDATE = process.env.UPDATE_BASELINES === '1' || process.argv.includes('--update');
-// Noise floor measured on this repo (2026-11-20): the same build renders
-// ~1.57% differently between local and CI after self-hosting fonts, disabling
-// animations and tolerating 1px shifts. Layout/colour drift observed earlier
-// was 2.4%+, so 2% sits above the noise and below real regressions.
-// Reducing this further needs a pinned container, not a lower threshold.
-const MAX_DIFF_RATIO = Number(process.env.VISUAL_MAX_DIFF_RATIO ?? '0.02');
+// Baselines are generated inside mcr.microsoft.com/playwright (pinned OS +
+// browser), so both sides rasterize text the same way. Keep this strict.
+const MAX_DIFF_RATIO = Number(process.env.VISUAL_MAX_DIFF_RATIO ?? '0.005');
 
 const TARGET_PAGES = [
   { name: 'specimen-cover', route: '/' },

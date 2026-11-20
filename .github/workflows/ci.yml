@@ -66,6 +66,31 @@ jobs:
       - name: Test
         run: pnpm run test
 
+  visual:
+    name: Visual Regression
+    runs-on: ubuntu-latest
+    # Pinned browser + OS image so local and CI rasterize text identically.
+    # Bump the tag together with packages/ui playwright, then regenerate baselines
+    # with the same image (see apps/docs/README or routines).
+    container:
+      image: mcr.microsoft.com/playwright:v1.61.1-jammy
+      options: --user root
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Enable pnpm
+        run: corepack enable && corepack prepare pnpm@11.1.2 --activate
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build workspace
+        run: pnpm run build
+
       - name: Visual Regression (Docs)
         run: pnpm --filter @mindulle/docs test:visual
 
