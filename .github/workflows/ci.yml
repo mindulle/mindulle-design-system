@@ -68,3 +68,12 @@ jobs:
 
       - name: Visual Regression (Docs)
         run: pnpm --filter @mindulle/docs test:visual
+
+      - name: Upload visual diffs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-diffs
+          path: apps/docs/tests/visual-diffs/
+          if-no-files-found: ignore
+          retention-days: 7

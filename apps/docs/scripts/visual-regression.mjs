@@ -181,6 +181,7 @@ async function main() {
   });
 
   let failures = 0;
+  const report = [];
   try {
     for (const vp of VIEWPORTS) {
       const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
@@ -212,6 +213,9 @@ async function main() {
           }
 
           if (!fs.existsSync(baselinePath)) {
+            fs.mkdirSync(DIFF_DIR, { recursive: true });
+            fs.writeFileSync(path.join(DIFF_DIR, filename), currentBuf);
+            report.push({ file: filename, status: 'MISSING BASELINE', diff: null });
             console.error(`[MISSING BASELINE] ${filename} (run "pnpm --filter @mindulle/docs test:visual:update")`);
             failures++;
             continue;
@@ -224,6 +228,11 @@ async function main() {
           if (result.sizeMismatch || result.diffRatio > MAX_DIFF_RATIO) {
             fs.mkdirSync(DIFF_DIR, { recursive: true });
             fs.writeFileSync(path.join(DIFF_DIR, filename), currentBuf);
+            report.push({
+              file: filename,
+              status: result.sizeMismatch ? 'SIZE MISMATCH' : 'DIFF',
+              diff: pct,
+            });
             console.error(`[FAIL] ${filename} — diff=${pct}% (max ${(MAX_DIFF_RATIO * 100).toFixed(2)}%)`);
             failures++;
           } else {
@@ -240,6 +249,21 @@ async function main() {
   }
 
   if (failures > 0) {
+    fs.mkdirSync(DIFF_DIR, { recursive: true });
+    const lines = [
+      `# Visual regression failures (${failures}/${report.length})`,
+      '',
+      `threshold: ${(MAX_DIFF_RATIO * 100).toFixed(2)}%`,
+      '',
+      '| file | status | diff % |',
+      '| --- | --- | --- |',
+      ...report.map((r) => `| ${r.file} | ${r.status} | ${r.diff ?? '-'} |`),
+      '',
+      '`visual-diffs/*.png` are the CURRENT screenshots, not rendered diffs.',
+      'Compare them against `tests/visual-baselines/`.',
+    ];
+    fs.writeFileSync(path.join(DIFF_DIR, 'report.md'), lines.join('\n') + '\n');
+    console.error(`[REPORT] ${path.join(DIFF_DIR, 'report.md')}`);
     process.exit(1);
   }
 }
