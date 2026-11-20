@@ -57,10 +57,10 @@ export default function ErrataPage() {
   return (
     <SpecimenShell active="errata">
       <section className="py-10 border-b border-[var(--color-fd-border)] text-left">
-        <div className="font-mono text-2xs tracking-[0.2em] uppercase text-[var(--mds-color-brand-primary)] mb-4">
+        <div className="font-mono text-2xs tracking-display uppercase text-[var(--mds-color-brand-primary)] mb-4">
           Edition 04 — Errata &amp; Decisions
         </div>
-        <h1 className="font-cinematic font-normal text-4xl sm:text-[56px] leading-[1.02] tracking-[-0.025em] m-0 mb-4">
+        <h1 className="font-cinematic font-normal text-4xl sm:text-[56px] leading-[1.02] tracking-tight m-0 mb-4">
           Errata <em className="italic text-[var(--mds-color-brand-primary)]">Ledger</em>
         </h1>
         <p className="text-[15.5px] leading-[1.75] text-[var(--mds-color-text-secondary)] max-w-[54ch] m-0 break-keep">

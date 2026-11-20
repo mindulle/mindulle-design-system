@@ -88,10 +88,10 @@ export default function RulesPage() {
   return (
     <SpecimenShell active="rules">
       <section className="py-10 border-b border-[var(--color-fd-border)] text-left">
-        <div className="font-mono text-2xs tracking-[0.2em] uppercase text-[var(--mds-color-brand-primary)] mb-4">
+        <div className="font-mono text-2xs tracking-display uppercase text-[var(--mds-color-brand-primary)] mb-4">
           Edition 04 — Rules &amp; Essays
         </div>
-        <h1 className="font-cinematic font-normal text-4xl sm:text-[56px] leading-[1.02] tracking-[-0.025em] m-0 mb-4">
+        <h1 className="font-cinematic font-normal text-4xl sm:text-[56px] leading-[1.02] tracking-tight m-0 mb-4">
           The Rules, <em className="italic text-[var(--mds-color-brand-primary)]">Argued</em>
         </h1>
         <p className="text-[15.5px] leading-[1.75] text-[var(--mds-color-text-secondary)] max-w-[52ch] m-0 break-keep">
@@ -115,10 +115,10 @@ export default function RulesPage() {
             className="grid grid-cols-1 lg:grid-cols-[1.6fr_0.9fr] gap-10 lg:gap-[56px] py-10 text-left"
           >
             <div>
-              <div className="font-mono text-2xs tracking-[0.18em] uppercase text-[var(--mds-color-brand-primary)] mb-3.5">
+              <div className="font-mono text-2xs tracking-label uppercase text-[var(--mds-color-brand-primary)] mb-3.5">
                 {essay.kicker}
               </div>
-              <h2 className="font-cinematic font-normal text-3xl sm:text-[36px] leading-[1.18] tracking-[-0.015em] m-0 mb-5 break-keep">
+              <h2 className="font-cinematic font-normal text-3xl sm:text-[36px] leading-[1.18] tracking-tight m-0 mb-5 break-keep">
                 {essay.title}
               </h2>
               <p className="text-[16px] leading-[1.75] text-[var(--color-fd-foreground)] max-w-[46ch] m-0 mb-4 font-medium break-keep">
@@ -134,7 +134,7 @@ export default function RulesPage() {
             </div>
 
             <aside className="border-t lg:border-t-0 lg:border-l border-[var(--color-fd-border)] pt-6 lg:pt-0 lg:pl-[26px]">
-              <div className="font-mono text-3xs tracking-[0.16em] uppercase text-[var(--color-fd-muted-foreground)] mb-3">
+              <div className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] mb-3">
                 Specification
               </div>
               <dl className="m-0">

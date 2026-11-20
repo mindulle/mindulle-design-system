@@ -154,7 +154,7 @@ export function BrandShowcase() {
               >
                 <span className="shrink-0">VOL. 01 • ISSUE 01</span>
                 <span
-                  className="font-bold tracking-[0.2em] sm:tracking-[0.25em] text-center"
+                  className="font-bold tracking-display sm:tracking-display text-center"
                   style={{ fontFamily: 'Georgia, serif', color: !isDark ? '#292524' : '#E7E0D8' }}
                 >
                   MINDULLE ATELIER
@@ -182,14 +182,14 @@ export function BrandShowcase() {
                     <path d="M 16 22.5 C 14.2 24.5, 14.2 28, 16 29.5 C 17.8 28, 17.8 24.5, 16 22.5 Z" fill={!isDark ? '#9E5A03' : '#FFC837'} />
                   </svg>
                   <h2
-                    className="text-xl sm:text-3xl md:text-4xl font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase break-keep"
+                    className="text-xl sm:text-3xl md:text-4xl font-bold tracking-display sm:tracking-display uppercase break-keep"
                     style={{ fontFamily: 'Georgia, serif', color: !isDark ? '#161616' : '#F7EEEC' }}
                   >
                     MINDULLE GARDEN
                   </h2>
                 </div>
                 <p
-                  className="text-xs sm:text-sm font-semibold tracking-[0.35em] break-keep"
+                  className="text-xs sm:text-sm font-semibold tracking-hero break-keep"
                   style={{ color: !isDark ? '#57534E' : '#D6CEC4' }}
                 >
                   민 들 레 정 원

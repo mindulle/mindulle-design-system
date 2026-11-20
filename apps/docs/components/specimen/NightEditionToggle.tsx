@@ -34,7 +34,7 @@ export function NightEditionToggle() {
       type="button"
       onClick={toggle}
       aria-pressed={mounted ? isNight : undefined}
-      className="font-mono text-2xs tracking-[0.08em] uppercase text-[var(--color-fd-muted-foreground)] hover:text-[var(--mds-color-brand-primary)] transition-colors cursor-pointer bg-transparent border-0 p-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--mds-color-brand-primary)]"
+      className="font-mono text-2xs tracking-wider uppercase text-[var(--color-fd-muted-foreground)] hover:text-[var(--mds-color-brand-primary)] transition-colors cursor-pointer bg-transparent border-0 p-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--mds-color-brand-primary)]"
     >
       {mounted ? (isNight ? '주간판 · Day' : '야간판 · Night') : '야간판 · Night'}
     </button>

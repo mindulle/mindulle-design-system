@@ -23,7 +23,7 @@ export function PlatesCatalogue() {
       {/* PL. 01 */}
       <div className="bg-[var(--color-fd-background)] flex flex-col">
         <div className="bg-[var(--color-fd-muted)] h-[180px] grid place-items-center relative p-6">
-          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-[0.1em] text-[var(--color-fd-muted-foreground)]">
+          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             PL. 01
           </span>
           <Button variant="primary" size="md">
@@ -49,7 +49,7 @@ export function PlatesCatalogue() {
       {/* PL. 02 */}
       <div className="bg-[var(--color-fd-background)] flex flex-col">
         <div className="bg-[var(--color-fd-muted)] h-[180px] grid place-items-center relative p-6">
-          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-[0.1em] text-[var(--color-fd-muted-foreground)]">
+          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             PL. 02
           </span>
           <div className="flex gap-2">
@@ -80,7 +80,7 @@ export function PlatesCatalogue() {
       {/* PL. 03 */}
       <div className="bg-[var(--color-fd-background)] flex flex-col">
         <div className="bg-[var(--color-fd-muted)] h-[180px] grid place-items-center relative p-6">
-          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-[0.1em] text-[var(--color-fd-muted-foreground)]">
+          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             PL. 03
           </span>
           <div className="flex flex-wrap justify-center gap-2">
@@ -117,7 +117,7 @@ export function PlatesCatalogue() {
       {/* PL. 04 */}
       <div className="bg-[var(--color-fd-background)] flex flex-col">
         <div className="bg-[var(--color-fd-muted)] h-[180px] grid place-items-center relative p-6">
-          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-[0.1em] text-[var(--color-fd-muted-foreground)]">
+          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             PL. 04
           </span>
           <div className="w-full max-w-[240px]">
@@ -143,7 +143,7 @@ export function PlatesCatalogue() {
       {/* PL. 05 */}
       <div className="bg-[var(--color-fd-background)] flex flex-col">
         <div className="bg-[var(--color-fd-muted)] h-[180px] grid place-items-center relative p-6">
-          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-[0.1em] text-[var(--color-fd-muted-foreground)]">
+          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             PL. 05
           </span>
           <div className="space-y-2.5">
@@ -170,7 +170,7 @@ export function PlatesCatalogue() {
       {/* PL. 06 */}
       <div className="bg-[var(--color-fd-background)] flex flex-col">
         <div className="bg-[var(--color-fd-muted)] h-[180px] grid place-items-center relative p-6">
-          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-[0.1em] text-[var(--color-fd-muted-foreground)]">
+          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             PL. 06
           </span>
           <Card elevation="flat" className="w-full max-w-[230px]">
@@ -199,7 +199,7 @@ export function PlatesCatalogue() {
       {/* PL. 07 */}
       <div className="bg-[var(--color-fd-background)] flex flex-col">
         <div className="bg-[var(--color-fd-muted)] h-[180px] grid place-items-center relative p-6">
-          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-[0.1em] text-[var(--color-fd-muted-foreground)]">
+          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             PL. 07
           </span>
           <div className="flex items-center gap-4">
@@ -226,7 +226,7 @@ export function PlatesCatalogue() {
       {/* PL. 08 */}
       <div className="bg-[var(--color-fd-background)] flex flex-col">
         <div className="bg-[var(--color-fd-muted)] h-[180px] grid place-items-center relative p-6">
-          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-[0.1em] text-[var(--color-fd-muted-foreground)]">
+          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             PL. 08
           </span>
           <Pagination currentPage={page} totalPages={5} onPageChange={setPage} />
@@ -250,7 +250,7 @@ export function PlatesCatalogue() {
       {/* PL. 09 */}
       <div className="bg-[var(--color-fd-background)] flex flex-col">
         <div className="bg-[var(--color-fd-muted)] h-[180px] grid place-items-center relative p-6">
-          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-[0.1em] text-[var(--color-fd-muted-foreground)]">
+          <span className="absolute top-3 left-3.5 font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             PL. 09
           </span>
           <div className="flex items-center gap-6">

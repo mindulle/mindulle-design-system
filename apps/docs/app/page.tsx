@@ -38,10 +38,10 @@ export default function HomePage() {
       {/* Cover: asymmetric title + 2:1 specimen field */}
       <section className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-[54px] py-9 sm:py-[38px] pb-10 items-end">
         <div className="pb-1.5 text-left">
-          <div className="font-mono text-2xs tracking-[0.2em] uppercase text-brand-primary mb-5">
+          <div className="font-mono text-2xs tracking-display uppercase text-brand-primary mb-5">
             A specimen of one design system
           </div>
-          <h1 className="font-cinematic font-normal text-5xl sm:text-[64px] lg:text-[78px] leading-[0.94] tracking-[-0.03em] text-fd-foreground m-0 mb-[18px]">
+          <h1 className="font-cinematic font-normal text-5xl sm:text-[64px] lg:text-[78px] leading-[0.94] tracking-tight text-fd-foreground m-0 mb-[18px]">
             Mindulle
             <br />
             <em className="italic text-brand-primary">Specimen</em>
@@ -50,28 +50,28 @@ export default function HomePage() {
             세 개의 조형 법칙, 스물두 개의 컴포넌트, 하나의 서체 계열. 이 문서는 시스템을
             설명하지 않고 전시합니다.
           </p>
-          <dl className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-6 gap-y-4 font-mono text-2xs tracking-[0.08em] text-fd-muted-foreground border-t border-fd-border pt-3.5 max-w-[420px] m-0">
+          <dl className="grid grid-cols-2 sm:flex sm:flex-wrap gap-x-6 gap-y-4 font-mono text-2xs tracking-wider text-fd-muted-foreground border-t border-fd-border pt-3.5 max-w-[420px] m-0">
             <div>
               <dt className="font-normal">LAWS</dt>
-              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-[0.02em] text-fd-foreground">
+              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-wide text-fd-foreground">
                 03
               </dd>
             </div>
             <div>
               <dt className="font-normal">COMPONENTS</dt>
-              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-[0.02em] text-fd-foreground">
+              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-wide text-fd-foreground">
                 22
               </dd>
             </div>
             <div>
               <dt className="font-normal">TOKENS</dt>
-              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-[0.02em] text-fd-foreground">
+              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-wide text-fd-foreground">
                 184
               </dd>
             </div>
             <div>
               <dt className="font-normal">BASELINE</dt>
-              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-[0.02em] text-fd-foreground">
+              <dd className="m-0 mt-1 text-xs-tight font-semibold tracking-wide text-fd-foreground">
                 6px
               </dd>
             </div>
@@ -83,7 +83,7 @@ export default function HomePage() {
           aria-label="SPECIMEN 01 — TYPE & SURFACE"
           className="bg-fd-muted border border-fd-border sm:aspect-[2/1] relative flex flex-col justify-center px-6 py-10 sm:px-10 sm:py-0"
         >
-          <span className="sm:absolute sm:top-3 sm:left-3.5 font-mono text-3xs tracking-[0.12em] text-fd-muted-foreground mb-4 sm:mb-0">
+          <span className="sm:absolute sm:top-3 sm:left-3.5 font-mono text-3xs tracking-wider text-fd-muted-foreground mb-4 sm:mb-0">
             SPECIMEN 01 — TYPE &amp; SURFACE
           </span>
           <span
@@ -96,10 +96,10 @@ export default function HomePage() {
           />
 
           <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 py-3.5 border-b border-fd-border">
-            <span className="font-cinematic text-4xl sm:text-[56px] leading-none tracking-[-0.02em]">
+            <span className="font-cinematic text-4xl sm:text-[56px] leading-none tracking-tight">
               획
             </span>
-            <span className="font-cinematic text-2xl sm:text-[34px] leading-none tracking-[-0.01em]">
+            <span className="font-cinematic text-2xl sm:text-[34px] leading-none tracking-tight">
               2px
             </span>
             <span className="font-mono text-sm-tight text-text-secondary">
@@ -107,7 +107,7 @@ export default function HomePage() {
             </span>
           </div>
           <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 py-3.5 border-b border-fd-border">
-            <span className="font-cinematic text-2xl sm:text-[34px] leading-none tracking-[-0.01em]">
+            <span className="font-cinematic text-2xl sm:text-[34px] leading-none tracking-tight">
               곡률 4px
             </span>
             <span className="font-mono text-sm-tight text-text-secondary">
@@ -134,7 +134,7 @@ export default function HomePage() {
             href={item.href}
             className="py-[18px] sm:px-5 lg:first:pl-0 lg:last:pr-0 no-underline text-inherit hover:bg-fd-muted/60 transition-colors block"
           >
-            <span className="font-mono text-3xs text-brand-primary tracking-[0.1em] block mb-[9px]">
+            <span className="font-mono text-3xs text-brand-primary tracking-wider block mb-[9px]">
               {item.n}
             </span>
             <span className="text-[14.5px] font-semibold block mb-[5px] text-fd-foreground">
@@ -154,12 +154,12 @@ export default function HomePage() {
         className="grid grid-cols-1 lg:grid-cols-[1.6fr_0.9fr] gap-10 lg:gap-[56px] py-10 sm:py-[44px] pb-[38px] border-b border-fd-border text-left"
       >
         <div>
-          <div className="font-mono text-2xs tracking-[0.18em] uppercase text-brand-primary mb-4">
+          <div className="font-mono text-2xs tracking-label uppercase text-brand-primary mb-4">
             Law 01 — the stem
           </div>
           <h2
             id="law-01-heading"
-            className="font-cinematic font-normal text-3xl sm:text-[44px] leading-[1.14] tracking-[-0.02em] m-0 mb-[22px] break-keep text-fd-foreground"
+            className="font-cinematic font-normal text-3xl sm:text-[44px] leading-[1.14] tracking-tight m-0 mb-[22px] break-keep text-fd-foreground"
           >
             획은 <em className="italic">2px</em>이다, 뼈가 얇아서
           </h2>
@@ -183,7 +183,7 @@ export default function HomePage() {
           <div className="mt-6">
             <Link
               href="/rules"
-              className="font-mono text-2xs tracking-[0.08em] uppercase text-brand-primary underline underline-offset-4 hover:text-fd-foreground"
+              className="font-mono text-2xs tracking-wider uppercase text-brand-primary underline underline-offset-4 hover:text-fd-foreground"
             >
               Read all 5 essays in Rules →
             </Link>
@@ -191,7 +191,7 @@ export default function HomePage() {
         </div>
 
         <aside className="border-t lg:border-t-0 lg:border-l border-fd-border pt-6 lg:pt-0 lg:pl-[26px]">
-          <div className="font-mono text-3xs tracking-[0.16em] uppercase text-fd-muted-foreground mb-3">
+          <div className="font-mono text-3xs tracking-label uppercase text-fd-muted-foreground mb-3">
             Specification
           </div>
           <dl className="m-0 mb-[26px]">
@@ -218,12 +218,12 @@ export default function HomePage() {
               one per screen
             </dd>
           </dl>
-          <div className="font-mono text-3xs tracking-[0.16em] uppercase text-fd-muted-foreground mb-3">
+          <div className="font-mono text-3xs tracking-label uppercase text-fd-muted-foreground mb-3">
             From the editor
           </div>
           <blockquote className="font-cinematic text-[21px] leading-[1.55] italic m-0 text-fd-foreground break-keep">
             “시스템은 그리는 것이 아니다. 지켜보지 않아도 남는 것이다.”
-            <cite className="block mt-2.5 font-mono text-3xs not-italic tracking-[0.1em] text-fd-muted-foreground">
+            <cite className="block mt-2.5 font-mono text-3xs not-italic tracking-wider text-fd-muted-foreground">
               편집자의 글
             </cite>
           </blockquote>
@@ -241,12 +241,12 @@ export default function HomePage() {
             Specimen plates
           </h3>
           <div className="flex items-center gap-4">
-            <span className="font-mono text-3xs tracking-[0.08em] text-fd-muted-foreground">
+            <span className="font-mono text-3xs tracking-wider text-fd-muted-foreground">
               PL. 01–04 · rendered from the live build
             </span>
             <Link
               href="/plates"
-              className="font-mono text-2xs tracking-[0.08em] uppercase text-brand-primary underline underline-offset-4"
+              className="font-mono text-2xs tracking-wider uppercase text-brand-primary underline underline-offset-4"
             >
               All Plates →
             </Link>
@@ -256,7 +256,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[2px] bg-fd-border border border-fd-border">
           <div className="bg-fd-background">
             <div className="bg-fd-muted h-[150px] grid place-items-center relative">
-              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-[0.1em]">
+              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
                 PL. 01
               </span>
               <Button variant="primary" size="md">
@@ -265,7 +265,7 @@ export default function HomePage() {
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
               <b className="block text-xs-tight font-semibold mb-[3px]">유일한 채움면</b>
-              <span className="font-mono text-3xs text-fd-muted-foreground tracking-[0.04em]">
+              <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 radius 4 · ink on paper
               </span>
             </div>
@@ -273,7 +273,7 @@ export default function HomePage() {
 
           <div className="bg-fd-background">
             <div className="bg-fd-muted h-[150px] grid place-items-center relative">
-              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-[0.1em]">
+              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
                 PL. 02
               </span>
               <Button variant="secondary" size="md">
@@ -282,7 +282,7 @@ export default function HomePage() {
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
               <b className="block text-xs-tight font-semibold mb-[3px]">되돌릴 수 있는 행동</b>
-              <span className="font-mono text-3xs text-fd-muted-foreground tracking-[0.04em]">
+              <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 2px stem · no fill
               </span>
             </div>
@@ -290,7 +290,7 @@ export default function HomePage() {
 
           <div className="bg-fd-background">
             <div className="bg-fd-muted h-[150px] grid place-items-center relative">
-              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-[0.1em]">
+              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
                 PL. 03
               </span>
               <div className="flex gap-1" aria-label="Semantic color swatches">
@@ -302,7 +302,7 @@ export default function HomePage() {
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
               <b className="block text-xs-tight font-semibold mb-[3px]">네 개의 의미 역할</b>
-              <span className="font-mono text-3xs text-fd-muted-foreground tracking-[0.04em]">
+              <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 ink · brand · accent · muted
               </span>
             </div>
@@ -310,14 +310,14 @@ export default function HomePage() {
 
           <div className="bg-fd-background">
             <div className="bg-fd-muted h-[150px] grid place-items-center relative">
-              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-[0.1em]">
+              <span className="absolute top-[9px] left-[10px] font-mono text-3xs text-fd-muted-foreground tracking-wider">
                 PL. 04
               </span>
               <span className="font-cinematic text-[28px] leading-none">가Aa</span>
             </div>
             <div className="px-3 py-[11px] pb-[13px]">
               <b className="block text-xs-tight font-semibold mb-[3px]">전시 64 / 본문 14</b>
-              <span className="font-mono text-3xs text-fd-muted-foreground tracking-[0.04em]">
+              <span className="font-mono text-3xs text-fd-muted-foreground tracking-wide">
                 serif display · sans UI
               </span>
             </div>
@@ -336,7 +336,7 @@ export default function HomePage() {
       >
         <div className="flex flex-wrap justify-between items-baseline gap-2 mb-6">
           <div>
-            <span className="font-mono text-2xs tracking-[0.18em] uppercase text-brand-primary block mb-1.5">
+            <span className="font-mono text-2xs tracking-label uppercase text-brand-primary block mb-1.5">
               04 · Errata
             </span>
             <h3 id="errata-heading" className="text-[15px] font-semibold m-0">
@@ -345,7 +345,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/errata"
-            className="font-mono text-2xs tracking-[0.08em] uppercase text-brand-primary underline underline-offset-4"
+            className="font-mono text-2xs tracking-wider uppercase text-brand-primary underline underline-offset-4"
           >
             Full Errata Ledger →
           </Link>

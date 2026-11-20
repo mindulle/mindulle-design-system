@@ -92,6 +92,9 @@
   --mds-letter-spacing-normal: 0em;
   --mds-letter-spacing-wide: 0.05em;
   --mds-letter-spacing-wider: 0.1em;
+  --mds-letter-spacing-label: 0.16em;
+  --mds-letter-spacing-display: 0.2em;
+  --mds-letter-spacing-hero: 0.3em;
   --mds-spacing-0: 0px;
   --mds-spacing-1: 4px;
   --mds-spacing-2: 8px;
@@ -520,6 +523,9 @@
   --sng-layout-grid-baseline: var(--mds-layout-grid-baseline);
   --sng-layout-grid-gap: var(--mds-layout-grid-gap);
   --sng-layout-grid-padding: var(--mds-layout-grid-padding);
+  --sng-letter-spacing-display: var(--mds-letter-spacing-display);
+  --sng-letter-spacing-hero: var(--mds-letter-spacing-hero);
+  --sng-letter-spacing-label: var(--mds-letter-spacing-label);
   --sng-letter-spacing-normal: var(--mds-letter-spacing-normal);
   --sng-letter-spacing-tight: var(--mds-letter-spacing-tight);
   --sng-letter-spacing-wide: var(--mds-letter-spacing-wide);

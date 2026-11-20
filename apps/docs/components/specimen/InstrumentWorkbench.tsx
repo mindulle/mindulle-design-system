@@ -34,7 +34,7 @@ export function InstrumentWorkbench() {
     >
       <div className="flex flex-wrap justify-between items-baseline gap-3 mb-6">
         <div>
-          <span className="font-mono text-2xs tracking-[0.18em] uppercase text-[var(--mds-color-brand-primary)] block mb-1.5">
+          <span className="font-mono text-2xs tracking-label uppercase text-[var(--mds-color-brand-primary)] block mb-1.5">
             03 · Instrument
           </span>
           <h3 id="instrument-heading" className="text-[15px] font-semibold m-0">
@@ -42,13 +42,13 @@ export function InstrumentWorkbench() {
           </h3>
         </div>
         <div className="flex items-center gap-4">
-          <span className="font-mono text-3xs tracking-[0.08em] text-[var(--color-fd-muted-foreground)]">
+          <span className="font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             LIVE BUILD · @MINDULLE/UI
           </span>
           <button
             type="button"
             onClick={handleCopy}
-            className="font-mono text-2xs tracking-[0.06em] px-2.5 py-1 border border-[var(--color-fd-border)] rounded-[4px] bg-[var(--color-fd-card)] text-[var(--color-fd-foreground)] hover:border-[var(--mds-color-brand-primary)] transition-colors cursor-pointer"
+            className="font-mono text-2xs tracking-wide px-2.5 py-1 border border-[var(--color-fd-border)] rounded-[4px] bg-[var(--color-fd-card)] text-[var(--color-fd-foreground)] hover:border-[var(--mds-color-brand-primary)] transition-colors cursor-pointer"
           >
             {copied ? 'COPIED' : 'COPY JSX'}
           </button>
@@ -59,7 +59,7 @@ export function InstrumentWorkbench() {
         {/* Controls Column */}
         <div className="p-6 border-b lg:border-b-0 lg:border-r border-[var(--color-fd-border)] space-y-5 text-left">
           <div>
-            <span className="font-mono text-3xs tracking-[0.14em] uppercase text-[var(--color-fd-muted-foreground)] block mb-2">
+            <span className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] block mb-2">
               Button Variant
             </span>
             <div className="flex flex-wrap gap-1.5">
@@ -81,7 +81,7 @@ export function InstrumentWorkbench() {
           </div>
 
           <div>
-            <span className="font-mono text-3xs tracking-[0.14em] uppercase text-[var(--color-fd-muted-foreground)] block mb-2">
+            <span className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] block mb-2">
               Button Size
             </span>
             <div className="flex flex-wrap gap-1.5">
@@ -103,7 +103,7 @@ export function InstrumentWorkbench() {
           </div>
 
           <div>
-            <span className="font-mono text-3xs tracking-[0.14em] uppercase text-[var(--color-fd-muted-foreground)] block mb-2">
+            <span className="font-mono text-3xs tracking-label uppercase text-[var(--color-fd-muted-foreground)] block mb-2">
               Badge Semantic Role
             </span>
             <div className="flex flex-wrap gap-1.5">
@@ -133,14 +133,14 @@ export function InstrumentWorkbench() {
 
         {/* Live Specimen Preview */}
         <div className="p-6 sm:p-8 bg-[var(--color-fd-muted)] flex flex-col justify-between gap-6">
-          <div className="flex items-center justify-between font-mono text-3xs tracking-[0.12em] text-[var(--color-fd-muted-foreground)]">
+          <div className="flex items-center justify-between font-mono text-3xs tracking-wider text-[var(--color-fd-muted-foreground)]">
             <span>PLATE LIVE — INTERACTIVE</span>
             <span>2px STEM · 4px RADIUS</span>
           </div>
 
           <Card elevation="flat" className="w-full max-w-md mx-auto">
             <div className="flex items-center justify-between gap-2">
-              <span className="font-mono text-2xs tracking-[0.08em] uppercase text-[var(--color-fd-muted-foreground)]">
+              <span className="font-mono text-2xs tracking-wider uppercase text-[var(--color-fd-muted-foreground)]">
                 Token Specimen
               </span>
               <Badge variant="pill" color={badgeColor}>
@@ -149,7 +149,7 @@ export function InstrumentWorkbench() {
             </div>
 
             <label className="block space-y-1.5 text-left">
-              <span className="font-mono text-3xs tracking-[0.1em] uppercase text-[var(--color-fd-muted-foreground)] block">
+              <span className="font-mono text-3xs tracking-wider uppercase text-[var(--color-fd-muted-foreground)] block">
                 표제 입력
               </span>
               <Input

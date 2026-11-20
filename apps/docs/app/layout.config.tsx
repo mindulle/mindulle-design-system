@@ -7,7 +7,7 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <span className="flex items-center gap-2.5 font-semibold tracking-tight text-sm py-1">
         <MindulleLogo size={22} />
-        <span className="font-mono text-xs tracking-[0.08em] text-[var(--mds-color-brand-primary)]">
+        <span className="font-mono text-xs tracking-wider text-[var(--mds-color-brand-primary)]">
           ED. 04
         </span>
         <span>Mindulle Specimen</span>
