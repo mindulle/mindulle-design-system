@@ -1,8 +1,12 @@
 import fs from 'node:fs';
-import http from 'node:http';
 import path from 'node:path';
-import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
+import {
+  chromiumLaunchOptions,
+  findChromiumExecutable,
+  loadPlaywright,
+  startStaticServer,
+} from './lib/static-preview.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DOCS_DIR = path.resolve(__dirname, '..');
@@ -32,82 +36,6 @@ const VIEWPORTS = [
 ];
 
 const THEMES = ['light', 'dark'];
-
-const MIME_TYPES = {
-  '.html': 'text/html; charset=utf-8',
-  '.js': 'application/javascript; charset=utf-8',
-  '.css': 'text/css; charset=utf-8',
-  '.json': 'application/json; charset=utf-8',
-  '.svg': 'image/svg+xml',
-  '.png': 'image/png',
-  '.jpg': 'image/jpeg',
-  '.woff2': 'font/woff2',
-  '.txt': 'text/plain; charset=utf-8',
-};
-
-function loadPlaywright() {
-  const require = createRequire(import.meta.url);
-  const candidates = [
-    path.resolve(DOCS_DIR, 'node_modules/playwright'),
-    path.resolve(DOCS_DIR, '../../packages/ui/node_modules/playwright'),
-    path.resolve(DOCS_DIR, '../../node_modules/playwright'),
-  ];
-  for (const candidate of candidates) {
-    if (fs.existsSync(candidate)) {
-      return require(candidate);
-    }
-  }
-  return require('playwright');
-}
-
-function findChromiumExecutable(chromium) {
-  if (process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH && fs.existsSync(process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH)) {
-    return process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH;
-  }
-  try {
-    const bundled = chromium.executablePath();
-    if (bundled && fs.existsSync(bundled)) return undefined;
-  } catch {}
-  const candidates = ['/usr/bin/chromium', '/usr/bin/chromium-browser', '/usr/bin/google-chrome'];
-  return candidates.find((p) => fs.existsSync(p));
-}
-
-function resolveStaticFile(urlPath) {
-  const clean = decodeURIComponent(urlPath.split('?')[0]);
-  const rel = clean.replace(/^\/+/, '');
-  const candidates = [
-    path.join(OUT_DIR, rel),
-    path.join(OUT_DIR, `${rel}.html`),
-    path.join(OUT_DIR, rel, 'index.html'),
-  ];
-  for (const file of candidates) {
-    if (file.startsWith(OUT_DIR) && fs.existsSync(file) && fs.statSync(file).isFile()) {
-      return file;
-    }
-  }
-  return null;
-}
-
-function startStaticServer() {
-  const server = http.createServer((req, res) => {
-    const file = resolveStaticFile(req.url || '/');
-    if (!file) {
-      res.writeHead(404);
-      res.end('Not found');
-      return;
-    }
-    const ext = path.extname(file);
-    res.writeHead(200, { 'Content-Type': MIME_TYPES[ext] || 'application/octet-stream' });
-    fs.createReadStream(file).pipe(res);
-  });
-
-  return new Promise((resolve) => {
-    server.listen(0, '127.0.0.1', () => {
-      const addr = server.address();
-      resolve({ server, baseUrl: `http://127.0.0.1:${addr.port}` });
-    });
-  });
-}
 
 async function comparePngBuffers(page, baselineBuf, currentBuf) {
   const b64A = baselineBuf.toString('base64');
@@ -186,39 +114,25 @@ async function comparePngBuffers(page, baselineBuf, currentBuf) {
 
 async function main() {
   if (!fs.existsSync(OUT_DIR)) {
-    console.error(`Missing static build at ${OUT_DIR}. Run "pnpm --filter @mindulle/docs build" first.`);
+    console.error(
+      `Missing static build at ${OUT_DIR}. Run "pnpm --filter @mindulle/docs build" first.`
+    );
     process.exit(1);
   }
 
   fs.mkdirSync(BASELINE_DIR, { recursive: true });
-  const { chromium } = loadPlaywright();
-  const { server, baseUrl } = await startStaticServer();
+  const { chromium } = loadPlaywright(DOCS_DIR);
+  const { server, baseUrl } = await startStaticServer(OUT_DIR);
   const executablePath = findChromiumExecutable(chromium);
-  const browser = await chromium.launch({
-    headless: true,
-    ...(executablePath ? { executablePath } : {}),
-    args: [
-      '--no-sandbox',
-      '--disable-gpu',
-      '--disable-dev-shm-usage',
-      // Normalize text rasterization so local and CI renders agree.
-      '--font-render-hinting=none',
-      '--disable-lcd-text',
-      '--force-color-profile=srgb',
-    ],
-    env: {
-      ...process.env,
-      HOME: process.env.HOME && process.env.HOME !== '/' ? process.env.HOME : '/tmp',
-      XDG_CONFIG_HOME: process.env.XDG_CONFIG_HOME || '/tmp/xdg',
-      XDG_CACHE_HOME: process.env.XDG_CACHE_HOME || '/tmp/xdg-cache',
-    },
-  });
+  const browser = await chromium.launch(chromiumLaunchOptions(executablePath));
 
   let failures = 0;
   const report = [];
   try {
     for (const vp of VIEWPORTS) {
-      const context = await browser.newContext({ viewport: { width: vp.width, height: vp.height } });
+      const context = await browser.newContext({
+        viewport: { width: vp.width, height: vp.height },
+      });
       const page = await context.newPage();
 
       for (const target of TARGET_PAGES) {
@@ -255,7 +169,9 @@ async function main() {
             fs.mkdirSync(DIFF_DIR, { recursive: true });
             fs.writeFileSync(path.join(DIFF_DIR, filename), currentBuf);
             report.push({ file: filename, status: 'MISSING BASELINE', diff: null });
-            console.error(`[MISSING BASELINE] ${filename} (run "pnpm --filter @mindulle/docs test:visual:update")`);
+            console.error(
+              `[MISSING BASELINE] ${filename} (run "pnpm --filter @mindulle/docs test:visual:update")`
+            );
             failures++;
             continue;
           }
@@ -272,7 +188,9 @@ async function main() {
               status: result.sizeMismatch ? 'SIZE MISMATCH' : 'DIFF',
               diff: pct,
             });
-            console.error(`[FAIL] ${filename} — diff=${pct}% (max ${(MAX_DIFF_RATIO * 100).toFixed(2)}%)`);
+            console.error(
+              `[FAIL] ${filename} — diff=${pct}% (max ${(MAX_DIFF_RATIO * 100).toFixed(2)}%)`
+            );
             failures++;
           } else {
             console.log(`[PASS] ${filename} — diff=${pct}%`);

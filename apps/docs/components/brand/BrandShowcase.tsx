@@ -131,9 +131,6 @@ export function BrandShowcase() {
                   ? 'bg-paper border-paper-line text-ink'
                   : 'bg-ink-deep border-ink-soft text-paper-soft'
               }`}
-              style={{
-                boxShadow: '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
-              }}
             >
               {/* Top Double Hairline */}
               <div className="w-full flex flex-col gap-1" aria-hidden="true">
