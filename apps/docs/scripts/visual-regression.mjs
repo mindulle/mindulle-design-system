@@ -171,7 +171,15 @@ async function main() {
   const browser = await chromium.launch({
     headless: true,
     ...(executablePath ? { executablePath } : {}),
-    args: ['--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage'],
+    args: [
+      '--no-sandbox',
+      '--disable-gpu',
+      '--disable-dev-shm-usage',
+      // Normalize text rasterization so local and CI renders agree.
+      '--font-render-hinting=none',
+      '--disable-lcd-text',
+      '--force-color-profile=srgb',
+    ],
     env: {
       ...process.env,
       HOME: process.env.HOME && process.env.HOME !== '/' ? process.env.HOME : '/tmp',
