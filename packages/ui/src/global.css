@@ -15,6 +15,43 @@ body {
   background-color: var(--mds-color-bg-base);
 }
 
+/* Checkbox / Radio — Tailwind 유틸이 없는 소비 문맥에서도 UA 기본(파란) 스타일을 쓰지 않는다.
+   유틸리티가 있으면 그쪽이 우선하고(소스 순서상 utilities가 뒤), 이 규칙은 폴백이다. */
+.sng-checkbox,
+.sng-radio {
+  -webkit-appearance: none;
+  appearance: none;
+  accent-color: var(--mds-color-brand-primary);
+  background-color: var(--mds-color-bg-elevated);
+  border: 2px solid var(--mds-color-border-default);
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+
+.sng-radio {
+  border-radius: 9999px;
+}
+
+.sng-checkbox:checked,
+.sng-checkbox:indeterminate {
+  background-color: var(--mds-color-brand-primary);
+  border-color: var(--mds-color-brand-primary);
+}
+
+.sng-radio:checked {
+  border-color: var(--mds-color-brand-primary);
+}
+
+.sng-checkbox:disabled,
+.sng-radio:disabled {
+  background-color: var(--mds-color-bg-base);
+  border-color: var(--mds-color-border-subtle);
+  cursor: not-allowed;
+}
+
 /* Spinner for loading state */
 .sng-btn__spinner {
   width: 1em;
