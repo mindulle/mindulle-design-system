@@ -103,6 +103,24 @@ pnpm --filter @mindulle/tokens test   # validate-tokens.js + vitest
 로컬에서 빌드·테스트를 통과하더라도 **절대 `main` 브랜치에 직접 푸시하지 마십시오.**
 반드시 새 브랜치를 파서 푸시한 뒤 **Pull Request를 생성**해야 합니다. 이를 통해 Chromatic 시각적 회귀 테스트 및 릴리스 파이프라인이 정상 동작합니다.
 
+### 7. 외부 검사기 계약 (GRAPH-5 `token_sync.py`)
+
+`sonagi-graph`의 검사기가 정본을 읽어 경고를 냅니다. **경고가 남아도 정상인 항목**을
+여기에 기록합니다. 재실측 때 같은 조사를 반복하지 마십시오.
+
+2026-11-24 MDS-71 이후: `errors 0 · unresolved 0 · warnings 2`.
+
+| 검사                     | 계약                                    | 정본 규칙                                                              |
+| ------------------------ | --------------------------------------- | ---------------------------------------------------------------------- |
+| `alias_resolution`       | 모든 참조가 primitive까지 착지          | 합성 타이포는 `{typography.fontFamily.*}`, `{font.*}` 금지             |
+| `no_raw_hex_in_semantic` | semantic에 원시 hex·`var()` 리터럴 금지 | `state.error[-bg]`는 `{semantic.<mode>.color.state.danger[-bg]}`       |
+| `scales` (radius)        | 3단계 **값** 계약 4/6/8px               | primitive `borderRadius.sm/base/md`. **semantic 레이어는 두지 않는다** |
+| `scales` (space)         | 8px 그리드, 4px 하프스텝 허용           | `spacing.1/3/5` = 4/12/20px는 의도된 하프스텝                          |
+
+radius semantic 레이어를 추가하지 않는 이유: radius는 Light/Dark 분기가 없는 축이라
+의미 계층에 둘 이유가 없고, `semantic.radius.*`를 넣으면 `--mds-radius-*` 이름이
+primitive와 중복 생성됩니다. 계층 정리는 ADR 0010이 breaking change로 미뤘습니다.
+
 ---
 
 ## 배포 (Delivery)
